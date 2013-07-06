@@ -1,0 +1,7 @@
+abiword --to=txt myfile.doc
+
+abiword --to=txt --to-name=output.txt myfile.doc
+
+abiword --to=pdf myfile.doc
+
+# see also http://superuser.com/questions/165978

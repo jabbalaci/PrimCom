@@ -1,0 +1,14 @@
+# ~/.gitconfig
+[merge]
+    tool = kdiff3
+[alias]
+    mylog = log --pretty=format:'%h - %an, %ar : %s'
+
+    st = status
+    br = branch
+    ci = commit
+    co = checkout
+    df = diff
+    dt = difftool
+[push]
+    default = simple

@@ -1,0 +1,35 @@
+add(elem)
+    Add element elem to the set.
+remove(elem)
+    Remove element elem from the set. Raises KeyError if elem is not contained in the set.
+discard(elem)
+    Remove element elem from the set if it is present.
+pop()
+    Remove and return an arbitrary element from the set. Raises KeyError if the set is empty.
+clear()
+    Remove all elements from the set.
+
+isdisjoint(other)
+    Return True if the set has no elements in common with other. Sets are disjoint if and only if their intersection is the empty set.
+    New in version 2.6.
+issubset(other)
+set <= other
+    Test whether every element in the set is in other.
+set < other
+    Test whether the set is a proper subset of other, that is, set <= other and set != other.
+issuperset(other)
+set >= other
+    Test whether every element in other is in the set.
+set > other
+    Test whether the set is a proper superset of other, that is, set >= other and set != other.
+union(other, ...)
+    Return a new set with elements from the set and all others.
+    Changed in version 2.6: Accepts multiple input iterables.
+intersection(other, ...)
+    Return a new set with elements common to the set and all others.
+    Changed in version 2.6: Accepts multiple input iterables.
+difference(other, ...)
+    Return a new set with elements in the set that are not in the others.
+    Changed in version 2.6: Accepts multiple input iterables.
+symmetric_difference(other)
+    Return a new set with elements in either the set or other but not both.

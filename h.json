@@ -1,0 +1,952 @@
+{
+    "20130529a": {
+        "doc": "use accented characters in Python source code", 
+        "action": [
+            "cat", 
+            "data/python/accent.py"
+        ], 
+        "tags": [
+            "accent", 
+            "ekezet"
+        ]
+    }, 
+    "20130529b": {
+        "doc": "a Perl to Python regexp tutorial", 
+        "action": [
+            "open_url", 
+            "http://www.loria.fr/~szathmar/pmwiki/index.php?n=Python.20091106Perl2PythonRegex"
+        ], 
+        "tags": [
+            "regex", 
+            "regexp", 
+            "re", 
+            "perl"
+        ]
+    }, 
+    "20130529c": {
+        "doc": "split path", 
+        "action": [
+            "cat", 
+            "data/python/split_path.py"
+        ], 
+        "tags": [
+            "split path", 
+            "splitext", 
+            "basename"
+        ]
+    }, 
+    "20130529d": {
+        "doc": "join path", 
+        "action": [
+            "cat", 
+            "data/python/join_path.py"
+        ], 
+        "tags": [
+            "join path"
+        ]
+    }, 
+    "20130529e": {
+        "doc": "split url", 
+        "action": [
+            "cat", 
+            "data/python/split_url.py"
+        ], 
+        "tags": [
+            "split url", 
+            "urlparse"
+        ]
+    }, 
+    "20130529f": {
+        "doc": "join url", 
+        "action": [
+            "cat", 
+            "data/python/join_url.py"
+        ], 
+        "tags": [
+            "join url", 
+            "urljoin"
+        ]
+    }, 
+    "20130529g": {
+        "doc": "alap (basic) Python script", 
+        "action": [
+            "cat", 
+            "data/python/alap.py"
+        ], 
+        "tags": [
+            "alap"
+        ]
+    }, 
+    "20130529h": {
+        "doc": "Python Module of the Week", 
+        "action": [
+            "open_url", 
+            "http://pymotw.com/2/contents.html"
+        ], 
+        "tags": [
+            "pymotw"
+        ]
+    }, 
+    "20130529i": {
+        "doc": "queue", 
+        "action": [
+            "cat", 
+            "data/python/my_queue.py"
+        ], 
+        "tags": [
+            "queue", 
+            "sor"
+        ]
+    }, 
+    "20130529j": {
+        "doc": "stack", 
+        "action": [
+            "cat", 
+            "data/python/my_stack.py"
+        ], 
+        "tags": [
+            "stack", 
+            "verem"
+        ]
+    }, 
+    "20130529k": {
+        "doc": "threading", 
+        "action": [
+            "cat", 
+            "data/python/my_threading.py"
+        ], 
+        "tags": [
+            "multithreading", 
+            "super"
+        ]
+    }, 
+    "20130529l": {
+        "doc": "PyCon US 2012", 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/17"
+        ], 
+        "tags": [
+            "pycon us 2012"
+        ]
+    }, 
+    "20130529m": {
+        "doc": "PyCon US 2013", 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/33/pycon-us-2013"
+        ], 
+        "tags": [
+            "pycon us 2013"
+        ]
+    }, 
+    "20130529n": {
+        "doc": "google search", 
+        "action": [
+            "open_url", 
+            "https://www.google.com/"
+        ], 
+        "tags": [
+            "go", 
+            "google"
+        ]
+    }, 
+    "20130529o": {
+        "doc": "dist-packages paths", 
+        "action": [
+            "cat", 
+            "data/text/dist-packages.txt"
+        ], 
+        "tags": [
+            "dist", 
+            "dist-packages", 
+            "path"
+        ]
+    }, 
+    "20130529p": {
+        "doc": "http server on localhost with Python", 
+        "action": [
+            "cat", 
+            "data/python/http_server.sh"
+        ], 
+        "tags": [
+            "http server"
+        ]
+    }, 
+    "20130529q": {
+        "doc": "bash loops", 
+        "action": [
+            "cat", 
+            "data/shell/bash_loop.sh"
+        ], 
+        "tags": [
+            "bash loop", 
+            "bash for", 
+            "bash while", 
+            "basename"
+        ]
+    }, 
+    "20130529r": {
+        "doc": "json", 
+        "action": [
+            "cat", 
+            "data/python/my_json.py"
+        ], 
+        "tags": [
+            "json", 
+            "OrderedDict"
+        ]
+    }, 
+    "20130602a": {
+        "doc": "curses with curses.wrapper", 
+        "action": [
+            "cat", 
+            "data/python/curses_wrapper.py"
+        ], 
+        "tags": [
+            "curses.wrapper"
+        ]
+    }, 
+    "20130603a": {
+        "doc": "Python job scheduling for humans", 
+        "action": [
+            "cat", 
+            "data/python/schedule.py"
+        ], 
+        "tags": [
+            "schedule"
+        ]
+    }, 
+    "20130603b": {
+        "doc": "the atexit module defines a single function to register cleanup functions", 
+        "action": [
+            "cat", 
+            "data/python/atexit.py"
+        ], 
+        "tags": [
+            "atexit"
+        ]
+    }, 
+    "20130604a": {
+        "doc": "How can I make a chain of function decorators in Python?", 
+        "action": [
+            "cat", 
+            "data/python/decorators.py"
+        ], 
+        "tags": [
+            "decorators"
+        ]
+    }, 
+    "20130604b": {
+        "doc": "equivalent of the which command in Python", 
+        "action": [
+            "cat", 
+            "data/python/which.py"
+        ], 
+        "tags": [
+            "which"
+        ]
+    }, 
+    "20130604c": {
+        "doc": "regex to find urls in string", 
+        "action": [
+            "cat", 
+            "data/python/urls_in_string.py"
+        ], 
+        "tags": [
+            "urls in string"
+        ]
+    }, 
+    "20130604d": {
+        "doc": "smokesignal is a simple Python library for sending and receiving signals", 
+        "action": [
+            "cat", 
+            "data/python/smokesignal.py"
+        ], 
+        "tags": [
+            "smokesignal", 
+            "signal"
+        ]
+    }, 
+    "20130604e": {
+        "doc": "Python 2 Standard Library", 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/2/library/"
+        ], 
+        "tags": [
+            "python2 standard library", 
+            "stdlib"
+        ]
+    }, 
+    "20130604f": {
+        "doc": "Python 3 Standard Library", 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/3/library/"
+        ], 
+        "tags": [
+            "python3 standard library", 
+            "stdlib"
+        ]
+    }, 
+    "20130604g": {
+        "doc": "PyPI - the Python Package Index", 
+        "action": [
+            "open_url", 
+            "https://pypi.python.org/pypi"
+        ], 
+        "tags": [
+            "pypi"
+        ]
+    }, 
+    "20130604h": {
+        "doc": "wordpress: python sourcecode tag", 
+        "action": [
+            "cat", 
+            "data/text/wordpress_sourcecode_python.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "20130604i": {
+        "doc": "autocomplete with TAB", 
+        "action": [
+            "cat", 
+            "data/python/autocomplete.py"
+        ], 
+        "tags": [
+            "autocomplete", 
+            "tab completion"
+        ]
+    }, 
+    "20130605a": {
+        "doc": "syntax-highlighted \"cat\" in command line", 
+        "action": [
+            "cat", 
+            "data/shell/pygmentize.sh"
+        ], 
+        "tags": [
+            "pygmentize", 
+            "colored cat", 
+            "colored less"
+        ]
+    }, 
+    "20130606a": {
+        "doc": "Black Hat World", 
+        "action": [
+            "open_url", 
+            "http://www.blackhatworld.com/blackhat-seo/forum.php"
+        ], 
+        "tags": [
+            "black hat"
+        ]
+    }, 
+    "20130606b": {
+        "doc": "String formatting in Python", 
+        "action": [
+            "open_url", 
+            "http://knowledgestockpile.blogspot.com/2011/01/string-formatting-in-python_09.html"
+        ], 
+        "tags": [
+            "string formatting"
+        ]
+    }, 
+    "20130606c": {
+        "doc": "Digitally Imported radio stations", 
+        "action": [
+            "open_url", 
+            "http://ubuntuincident.wordpress.com/2013/06/06/digitally-imported-station-urls/"
+        ], 
+        "tags": [
+            "di", 
+            "music"
+        ]
+    }, 
+    "20130606d": {
+        "doc": "10 Minute Mail", 
+        "action": [
+            "open_url", 
+            "http://10minutemail.com"
+        ], 
+        "tags": [
+            "trashmail"
+        ]
+    }, 
+    "20130608a": {
+        "doc": "import from parent directory", 
+        "action": [
+            "cat", 
+            "data/python/import-from-parent-dir.py"
+        ], 
+        "tags": [
+            "sys.path", 
+            "import from parent"
+        ]
+    }, 
+    "20130609a": {
+        "doc": "same output as Unix's date command", 
+        "action": [
+            "cat", 
+            "data/python/unix-date.py"
+        ], 
+        "tags": [
+            "unix date"
+        ]
+    }, 
+    "20130609b": {
+        "doc": "psutil (CPU, memory, disks, network, users)", 
+        "action": [
+            "open_url", 
+            "http://code.google.com/p/psutil/#Process_management"
+        ], 
+        "tags": [
+            "psutil", 
+            "ps"
+        ]
+    }, 
+    "20130609c": {
+        "doc": "PRAW: The Python Reddit Api Wrapper", 
+        "action": [
+            "open_url", 
+            "https://praw.readthedocs.org/en/latest/"
+        ], 
+        "tags": [
+            "praw", 
+            "reddit API"
+        ]
+    }, 
+    "20130609d": {
+        "doc": "open url in a new Firefox tab (workaround)", 
+        "action": [
+            "cat", 
+            "data/python/open_url.py"
+        ], 
+        "tags": [
+            "open url", 
+            "webbrowser"
+        ]
+    }, 
+    "20130610a": {
+        "doc": "grub2 info and example", 
+        "action": [
+            "cat", 
+            "data/text/grub2.txt"
+        ], 
+        "tags": [
+            "grub2"
+        ]
+    }, 
+    "20130611a": {
+        "doc": "a sample .bashrc file", 
+        "action": [
+            "cat", 
+            "data/shell/bashrc.sh"
+        ], 
+        "tags": [
+            ".bashrc"
+        ]
+    }, 
+    "20130619a": {
+        "doc": "reverse list", 
+        "action": [
+            "cat", 
+            "data/python/my_reverse.py"
+        ], 
+        "tags": [
+            "reverse"
+        ]
+    }, 
+    "20130619b": {
+        "doc": "vim tricks", 
+        "action": [
+            "cat", 
+            "data/text/vim.txt"
+        ], 
+        "tags": [
+            "vim"
+        ]
+    }, 
+    "20130619c": {
+        "doc": "python oneliner", 
+        "action": [
+            "cat", 
+            "data/shell/python_oneliner.sh"
+        ], 
+        "tags": [
+            "oneliner"
+        ]
+    }, 
+    "20130619d": {
+        "doc": "extract URLs", 
+        "action": [
+            "cat", 
+            "data/python/extract_urls.py"
+        ], 
+        "tags": [
+            "extract URLs"
+        ]
+    }, 
+    "20130619e": {
+        "doc": "list/dict/set comprehensions", 
+        "action": [
+            "cat", 
+            "data/python/comprehensions.py"
+        ], 
+        "tags": [
+            "comprehensions", 
+            "set"
+        ]
+    }, 
+    "20130619f": {
+        "doc": "positive and negative infinity", 
+        "action": [
+            "cat", 
+            "data/python/infinity.py"
+        ], 
+        "tags": [
+            "infinity"
+        ]
+    }, 
+    "20130619g": {
+        "doc": "splat operator ('*' and '**')", 
+        "action": [
+            "cat", 
+            "data/python/asterisks.py"
+        ], 
+        "tags": [
+            "splat", 
+            "asterisks"
+        ]
+    }, 
+    "20130619h": {
+        "doc": "itertools", 
+        "action": [
+            "cat", 
+            "data/python/my_itertools.py"
+        ], 
+        "tags": [
+            "itertools"
+        ]
+    }, 
+    "20130620a": {
+        "doc": "create a temp file", 
+        "action": [
+            "cat", 
+            "data/python/tempfile.py"
+        ], 
+        "tags": [
+            "tempfile"
+        ]
+    }, 
+    "20130622a": {
+        "doc": "configuration manager (dict, json, yaml, .ini, python file)", 
+        "action": [
+            "open_url", 
+            "https://github.com/emre/kaptan"
+        ], 
+        "tags": [
+            "configuration manager"
+        ]
+    }, 
+    "20130622b": {
+        "doc": "BeautifulSoup4 example", 
+        "action": [
+            "cat", 
+            "data/python/bs4_example.py"
+        ], 
+        "tags": [
+            "bs4"
+        ]
+    }, 
+    "20130622c": {
+        "doc": "collections.defaultdict", 
+        "action": [
+            "cat", 
+            "data/python/my_defaultdict.py"
+        ], 
+        "tags": [
+            "defaultdict"
+        ]
+    }, 
+    "20130625a": {
+        "doc": "verify if the given external command is available", 
+        "action": [
+            "cat", 
+            "data/python/requires.py"
+        ], 
+        "tags": [
+            "requires"
+        ]
+    }, 
+    "20130625b": {
+        "doc": "exceptions", 
+        "action": [
+            "cat", 
+            "data/python/my_exception.py"
+        ], 
+        "tags": [
+            "exceptions"
+        ]
+    }, 
+    "20130625c": {
+        "doc": "UberWriter is a writing application for markdown", 
+        "action": [
+            "open_url", 
+            "http://uberwriter.wolfvollprecht.de/"
+        ], 
+        "tags": [
+            "markdown"
+        ]
+    }, 
+    "20130625d": {
+        "doc": "static variable (keep its value between function calls)", 
+        "action": [
+            "cat", 
+            "data/python/static_var.py"
+        ], 
+        "tags": [
+            "static variable", 
+            "hasattr"
+        ]
+    }, 
+    "20130625e": {
+        "doc": "variables and functions of an object", 
+        "action": [
+            "cat", 
+            "data/python/object_inspection.py"
+        ], 
+        "tags": [
+            "object inspection"
+        ]
+    }, 
+    "20130625f": {
+        "doc": "PyData's Videos", 
+        "action": [
+            "open_url", 
+            "http://vimeo.com/pydata/videos"
+        ], 
+        "tags": [
+            "pydata"
+        ]
+    }, 
+    "20130625g": {
+        "doc": "install a package with pip from a github repository", 
+        "action": [
+            "cat", 
+            "data/python/pip_from_github.txt"
+        ], 
+        "tags": [
+            "pip", 
+            "github"
+        ]
+    }, 
+    "20130625h": {
+        "doc": "read XML with untangle", 
+        "action": [
+            "cat", 
+            "data/python/my_untangle.py"
+        ], 
+        "tags": [
+            "read xml"
+        ]
+    }, 
+    "20130625i": {
+        "doc": "Ubuntu update script", 
+        "action": [
+            "cat", 
+            "data/shell/good_shape.sh"
+        ], 
+        "tags": [
+            "good_shape.sh"
+        ]
+    }, 
+    "20130625j": {
+        "doc": "update all Python packages", 
+        "action": [
+            "cat", 
+            "data/python/update-pip.py"
+        ], 
+        "tags": [
+            "update pip"
+        ]
+    }, 
+    "20130625k": {
+        "doc": "lamdba functions", 
+        "action": [
+            "cat", 
+            "data/python/my_lambda.py"
+        ], 
+        "tags": [
+            "lambda"
+        ]
+    }, 
+    "20130626a": {
+        "doc": "increase a string by one", 
+        "action": [
+            "cat", 
+            "data/python/inc_string.py"
+        ], 
+        "tags": [
+            "increase string"
+        ]
+    }, 
+    "20130626b": {
+        "doc": "traverse directory recursively", 
+        "action": [
+            "cat", 
+            "data/python/recursive_dir_traversal.py"
+        ], 
+        "tags": [
+            "recursive dir. traversal", 
+            "traverse", 
+            "walk"
+        ]
+    }, 
+    "20130627a": {
+        "doc": "crontab example", 
+        "action": [
+            "cat", 
+            "data/shell/crontab.txt"
+        ], 
+        "tags": [
+            "crontab"
+        ]
+    }, 
+    "20130628a": {
+        "doc": "set operations", 
+        "action": [
+            "cat", 
+            "data/python/my_set.txt"
+        ], 
+        "tags": [
+            "set"
+        ]
+    }, 
+    "20130628b": {
+        "doc": "kill a process", 
+        "action": [
+            "cat", 
+            "data/python/my_kill.py"
+        ], 
+        "tags": [
+            "kill"
+        ]
+    }, 
+    "20130628c": {
+        "doc": "blinker example", 
+        "action": [
+            "cat", 
+            "data/python/my_blinker.py"
+        ], 
+        "tags": [
+            "blinker", 
+            "signal"
+        ]
+    }, 
+    "20130630a": {
+        "doc": "convert .doc to .txt", 
+        "action": [
+            "cat", 
+            "data/shell/doc2txt.txt"
+        ], 
+        "tags": [
+            "doc2txt", 
+            "abiword"
+        ]
+    }, 
+    "20130701a": {
+        "doc": "get external command's output", 
+        "action": [
+            "cat", 
+            "data/python/command_output.py"
+        ], 
+        "tags": [
+            "command output"
+        ]
+    }, 
+    "20130705a": {
+        "doc": "a function defined in .bashrc to facilitate using virtualenv", 
+        "action": [
+            "cat", 
+            "data/python/virtualenv_function.sh"
+        ], 
+        "tags": [
+            "virtualenv"
+        ]
+    }, 
+    "20130705b": {
+        "doc": "Add History and Tab Completion to the Default Python Shell", 
+        "action": [
+            "cat", 
+            "data/python/tab_completion_python_shell.py"
+        ], 
+        "tags": [
+            "tab completion", 
+            "history"
+        ]
+    }, 
+    "20130705c": {
+        "doc": "try / except / else / finally", 
+        "action": [
+            "cat", 
+            "data/python/my_except.py"
+        ], 
+        "tags": [
+            "try / except / else / finally"
+        ]
+    }, 
+    "20130706a": {
+        "doc": "pdftk examples", 
+        "action": [
+            "cat", 
+            "data/shell/pdftk.sh"
+        ], 
+        "tags": [
+            "pdftk"
+        ]
+    }, 
+    "20130706b": {
+        "doc": "directory of the file (even if you called it from another directory)", 
+        "action": [
+            "cat", 
+            "data/python/PATH.py"
+        ], 
+        "tags": [
+            "PATH"
+        ]
+    }, 
+    "20130706c": {
+        "doc": "sample .gitconfig file", 
+        "action": [
+            "cat", 
+            "data/text/gitconfig.txt"
+        ], 
+        "tags": [
+            ".gitconfig"
+        ]
+    }, 
+    "20130706d": {
+        "doc": "Is there anybody listening on a given port?", 
+        "action": [
+            "cat", 
+            "data/shell/anyone_listening.sh"
+        ], 
+        "tags": [
+            "netstat", 
+            "port"
+        ]
+    }, 
+    "20130706e": {
+        "doc": "a basic socket client server example", 
+        "action": [
+            "open_url", 
+            "https://pythonadventures.wordpress.com/2013/07/06/a-basic-socket-client-server-example/"
+        ], 
+        "tags": [
+            "socket", 
+            "client server"
+        ]
+    }, 
+    "20130706f": {
+        "doc": "socket server and socket client", 
+        "action": [
+            "cat", 
+            "data/python/my_socket.py"
+        ], 
+        "tags": [
+            "socket", 
+            "client server"
+        ]
+    }, 
+    "20130706g": {
+        "doc": "mc tips", 
+        "action": [
+            "cat", 
+            "data/text/mc.txt"
+        ], 
+        "tags": [
+            "mc"
+        ]
+    }, 
+    "acacd191ee638f7b50250449": {
+        "doc": "96 bit random hash", 
+        "meta": {
+            "date": "20130706_193110"
+        }, 
+        "action": [
+            "cat", 
+            "data/python/random_hash.py"
+        ], 
+        "tags": [
+            "random hash"
+        ], 
+        "extra": []
+    }, 
+    "55f23f50922a17c1032765c6": {
+        "doc": "wordpress: pre tag", 
+        "meta": {
+            "date": "20130706_201344"
+        }, 
+        "action": [
+            "cat", 
+            "data/text/wp_pre.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "60900e9066202501e789243e": {
+        "doc": "wordpress: sub tag", 
+        "meta": {
+            "date": "20130706_201610"
+        }, 
+        "action": [
+            "cat", 
+            "data/text/wp_sub.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "9afb90e1a1561b0128c1fee4": {
+        "doc": "wordpress: ul tag", 
+        "meta": {
+            "date": "20130706_201704"
+        }, 
+        "action": [
+            "cat", 
+            "data/text/wp_ul.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "f9fc957d5fe79b2e15acf066": {
+        "doc": "wordpress: ol tag", 
+        "meta": {
+            "date": "20130706_201810"
+        }, 
+        "action": [
+            "cat", 
+            "data/text/wp_ol.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": []
+    }
+}

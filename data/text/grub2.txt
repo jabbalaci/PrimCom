@@ -1,0 +1,31 @@
+# It is the main file, but you are not supposed to edit it! 
+# It is generated automatically from some other config files.
+/boot/grub/grub.cfg 
+~~~~~~~~~~
+# run it as root to update everything nicely
+update-grub
+~~~~~~~~~~
+# modifications in this file will be incorporated in grub.cfg
+# This is the file you are likely want to edit!
+/etc/default/grub
+
+# Here is mine:
+GRUB_DEFAULT=0
+#GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=7
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="acpi=noirq splash"
+GRUB_CMDLINE_LINUX=""
+
+# http://ubuntuforums.org/showthread.php?t=1598854&page=2
+GRUB_RECORDFAIL_TIMEOUT=7
+~~~~~~~~~~
+# the files in this directory are read during execution of the
+# update-grub command and their instructions are incorporated into
+# /boot/grub/grub.cfg
+/etc/grub.d/ 
+~~~~~~~~~~
+# see also https://ubuntuincident.wordpress.com/2010/09/30/grub2/
+# if Windows is missing from GRUB’s menu.lst:
+#     https://ubuntuincident.wordpress.com/2011/07/21/windows-is-missing-from-grubs-menu-lst/
