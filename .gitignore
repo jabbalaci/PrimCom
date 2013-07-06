@@ -2,7 +2,6 @@
 
 # own
 .history
-tmp/*
 
 # C extensions
 *.so
@@ -19,7 +18,6 @@ var
 sdist
 develop-eggs
 .installed.cfg
-lib
 lib64
 
 # Installer logs
