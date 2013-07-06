@@ -18,7 +18,7 @@ PrimCom can perform two main actions: print the content of a file, or
 open a web page.
 
 PrimCom has several useful features too. It can copy the
-content of a file to the clipboard; it can synatx highlight your
+content of a file to the clipboard; it can syntax highlight your
 code snippets; it has a built-in radio player, etc. See the help for a 
 detailed list.
 
