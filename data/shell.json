@@ -1,0 +1,149 @@
+{
+    "7274408f3e9e5844f53aca84": {
+        "doc": "bash loops", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "shell/bash_loop.sh"
+        ], 
+        "tags": [
+            "bash loop", 
+            "bash for", 
+            "bash while", 
+            "basename"
+        ], 
+        "extra": []
+    }, 
+    "883d467a183e619785744c8d": {
+        "doc": "syntax-highlighted \"cat\" in command line", 
+        "meta": {
+            "date": "20130605"
+        }, 
+        "action": [
+            "cat", 
+            "shell/pygmentize.sh"
+        ], 
+        "tags": [
+            "pygmentize", 
+            "colored cat", 
+            "colored less"
+        ], 
+        "extra": []
+    }, 
+    "3e8d52a952672eb3a67e27b6": {
+        "doc": "a sample .bashrc file", 
+        "meta": {
+            "date": "20130611"
+        }, 
+        "action": [
+            "cat", 
+            "shell/bashrc.sh"
+        ], 
+        "tags": [
+            ".bashrc"
+        ], 
+        "extra": []
+    }, 
+    "a4c021a4cc5a4250604d8d7b": {
+        "doc": "python oneliner", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "shell/python_oneliner.sh"
+        ], 
+        "tags": [
+            "oneliner"
+        ], 
+        "extra": []
+    }, 
+    "18a229ed635566dbc7791b71": {
+        "doc": "Ubuntu update script", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "shell/good_shape.sh"
+        ], 
+        "tags": [
+            "good_shape.sh"
+        ], 
+        "extra": []
+    }, 
+    "833e200e6077b7faf0a3d3c8": {
+        "doc": "crontab example", 
+        "meta": {
+            "date": "20130627"
+        }, 
+        "action": [
+            "cat", 
+            "shell/crontab.txt"
+        ], 
+        "tags": [
+            "crontab"
+        ], 
+        "extra": []
+    }, 
+    "7f74ec531da7512ef1d3ec0b": {
+        "doc": "convert .doc to .txt", 
+        "meta": {
+            "date": "20130630"
+        }, 
+        "action": [
+            "cat", 
+            "shell/doc2txt.txt"
+        ], 
+        "tags": [
+            "doc2txt", 
+            "abiword"
+        ], 
+        "extra": []
+    }, 
+    "3441292735343faa43111477": {
+        "doc": "pdftk examples", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "shell/pdftk.sh"
+        ], 
+        "tags": [
+            "pdftk"
+        ], 
+        "extra": []
+    }, 
+    "17a15bb3c676bad1d41afef6": {
+        "doc": "Is there anybody listening on a given port?", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "shell/anyone_listening.sh"
+        ], 
+        "tags": [
+            "netstat", 
+            "port"
+        ], 
+        "extra": []
+    }, 
+    "78bb078c0bdbbbbedf36a65d": {
+        "doc": "remove .svn directories recursively", 
+        "meta": {
+            "date": "20130707_181009"
+        }, 
+        "action": [
+            "cat", 
+            "shell/rm_svn.sh"
+        ], 
+        "tags": [
+            "svn"
+        ], 
+        "extra": []
+    }
+}

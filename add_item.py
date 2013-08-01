@@ -12,9 +12,9 @@ import readline
 import random
 
 
-def read_hdict():
-    with open(cfg.JSON) as f:
-        return json.load(f, object_pairs_hook=OrderedDict)
+#def read_hdict():
+#    with open(cfg.JSON) as f:
+#        return json.load(f, object_pairs_hook=OrderedDict)
 
 
 def my_hash(bits=96):
@@ -38,9 +38,66 @@ def get_timestamp_from_year_to_second():
     return template.format(year=date.year, month=date.month, day=date.day, hour=time.hour, minute=time.minute, second=time.second)
 
 
-def get_new_item(hdict):
+def create_db(db):
+    dbfile = "data/{db}.json".format(db=db)
+    if not os.path.isfile(dbfile):
+        with open(dbfile, "w") as f:
+            f.write("{}")    # empty dict.
+    else:
+        print "Warning! The file {db} already exists.".format(db=dbfile)
+    #
+    dbdir = "data/{db}".format(db=db)
+    if not os.path.isdir(dbdir):
+        os.mkdir(dbdir)
+    else:
+        print "Warning! The dir. {db} already exists.".format(db=dbdir)
+
+
+def strip_end(text, suffix):
+    if not text.endswith(suffix):
+        return text
+    return text[:len(text)-len(suffix)]
+
+
+def get_db():
+    li = [e for e in os.listdir("data") if e.endswith(".json")]
+    for index, db in enumerate(li, start=1):
+        print "[{i}] {db}".format(i=index, db=strip_end(db, ".json"))
+    print "[n] new..."
+    print "[q] quit"
+    while True:
+        try:
+            inp = raw_input("~~> ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print
+            sys.exit(0)
+        if len(inp) == 0:
+            continue
+        elif inp in ('q', 'qq'):
+            sys.exit(0)
+        elif inp == "n":
+            db = raw_input("New DB: ").strip()
+            if db:
+                create_db(db)
+        else:
+            try:
+                index = int(inp)-1
+                if index < 0:
+                    raise IndexError
+                db = li[index]
+            except IndexError:
+                print "out of range..."
+            except ValueError:
+                print 'Wat?'
+        #
+        if db:
+            break
+    #
+    return strip_end(db, ".json")
+
+
+def get_new_item():
     myid = my_hash()
-    assert myid not in hdict    # its chance is almost zero
     doc = raw_input("doc: ").strip()
     action = raw_input("action: (c)at or (o)pen_url [c/o]? ").strip()
     if action not in ('c', 'o'):
@@ -49,36 +106,49 @@ def get_new_item(hdict):
     action_value = None
     if action == 'c':
         action_text = "cat"
-        action_value = raw_input("    cat: ").strip()
-        fname = action_value
+        print "Choose category:"
+        db = get_db() 
+        action_value = raw_input("  filename: ").strip()
+        action_value = "{db}/{av}".format(db=db, av=action_value)
+        fname = "data/{db}/{f}".format(db=db, f=action_value)
         if os.path.isfile(fname):
             print "Error: the file {fname} already exists.".format(fname=fname)
             sys.exit(1)
+        dbfile = "data/{db}.json".format(db=db)
     else:
         action_text = "open_url"
         action_value = raw_input("    open_url: ").strip()
+        dbfile = "data/urls.json"
+    #
     tags = [tag.strip() for tag in raw_input("tags: ").split(",")]
 
-    hdict[myid] = OrderedDict()
-    d = hdict[myid]
+    with open(dbfile) as f:
+        dbdict = json.load(f, object_pairs_hook=OrderedDict)
+
+    dbdict[myid] = OrderedDict()
+    d = dbdict[myid]
     d["doc"] = doc
     d["meta"] = {"date": get_timestamp_from_year_to_second()}
     d["action"] = [action_text, action_value]
     d["tags"] = tags
     d["extra"] = []
     #
-    return d, hdict
+    return d, dbdict, db
 
 
-def save_new_json(d, hdict):
-    os.rename(cfg.JSON, cfg.JSON_BAK)
-    assert os.path.isfile(cfg.JSON_BAK)
-    with open(cfg.JSON, 'w') as f:
+def save_new_json(d, hdict, db):
+    orig = "data/{db}.json".format(db=db)
+    bak = "tmp/{db}.json.bak".format(db=db)
+    print orig, bak
+    #
+    os.rename(orig, bak)
+    assert os.path.isfile(bak)
+    with open(orig, 'w') as f:
         json.dump(hdict, f, indent=4)
-    assert os.path.getsize(cfg.JSON) > os.path.getsize(cfg.JSON_BAK)
+    assert os.path.getsize(orig) > os.path.getsize(bak)
     print "# added"
     if d["action"][0] == "cat":
-        fname = d["action"][1]
+        fname = "data/"+d["action"][1]
         if not os.path.isfile(fname):
             if fs.touch(fname):
                 print "# {f} touched".format(f=fname)
@@ -88,9 +158,9 @@ def save_new_json(d, hdict):
 
 
 def main():
-    hdict = read_hdict()    # it's an OrderedDict
-    d, hdict = get_new_item(hdict)
-    save_new_json(d, hdict)
+#    hdict = read_hdict()    # it's an OrderedDict
+    d, hdict, db = get_new_item()
+    save_new_json(d, hdict, db)
 
 #############################################################################
 

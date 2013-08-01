@@ -1,0 +1,152 @@
+{
+    "10c4e5f40e1862ce535dcdd3": {
+        "doc": "dist-packages paths", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "ext/dist-packages.txt"
+        ], 
+        "tags": [
+            "dist", 
+            "dist-packages", 
+            "path"
+        ], 
+        "extra": []
+    }, 
+    "597060835b6c50deb39b819f": {
+        "doc": "wordpress: python sourcecode tag", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "ext/wordpress_sourcecode_python.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "99bf3e16f6d2c88c021b0f27": {
+        "doc": "grub2 info and example", 
+        "meta": {
+            "date": "20130610"
+        }, 
+        "action": [
+            "cat", 
+            "ext/grub2.txt"
+        ], 
+        "tags": [
+            "grub2"
+        ], 
+        "extra": []
+    }, 
+    "cb162ffcf1a4d8f5024a3afa": {
+        "doc": "vim tricks", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "ext/vim.txt"
+        ], 
+        "tags": [
+            "vim"
+        ], 
+        "extra": []
+    }, 
+    "a30b64a4b84db02f36933e2e": {
+        "doc": "sample .gitconfig file", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "ext/gitconfig.txt"
+        ], 
+        "tags": [
+            ".gitconfig"
+        ], 
+        "extra": []
+    }, 
+    "94d489fc72a6313c03e1931e": {
+        "doc": "mc tips", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "ext/mc.txt"
+        ], 
+        "tags": [
+            "mc"
+        ], 
+        "extra": []
+    }, 
+    "ec63b808dd2eb3704bc4fd20": {
+        "doc": "wordpress: pre tag", 
+        "meta": {
+            "date": "20130706_201344"
+        }, 
+        "action": [
+            "cat", 
+            "ext/wp_pre.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "7675f7a9f30a019df72efb52": {
+        "doc": "wordpress: sub tag", 
+        "meta": {
+            "date": "20130706_201610"
+        }, 
+        "action": [
+            "cat", 
+            "ext/wp_sub.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "90a2c5020c56b47f28de09f1": {
+        "doc": "wordpress: ul tag", 
+        "meta": {
+            "date": "20130706_201704"
+        }, 
+        "action": [
+            "cat", 
+            "ext/wp_ul.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "5af3725e6a9e55c281348a9c": {
+        "doc": "wordpress: ol tag", 
+        "meta": {
+            "date": "20130706_201810"
+        }, 
+        "action": [
+            "cat", 
+            "ext/wp_ol.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": []
+    }
+}

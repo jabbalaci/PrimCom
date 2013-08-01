@@ -44,13 +44,12 @@ import atexit
 from threading import Thread
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.2.5"
-__date__ = "20130706"
+__version__ = "0.2.6"
+__date__ = "20130801"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
 pcat = "pygmentize -f terminal256 -O style=native -g {0}"
-JSON = 'h.json'
 PLAYER='mplayer -ao alsa'    # "-ao alsa" is a workaround to make mplayer quit
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -70,6 +69,8 @@ dependencies = {
     'pygmentize': 'sudo apt-get install python-pygments',
     'xsel': 'sudo apt-get install xsel',
 }
+
+LOAD_JSON = cfg.LOAD_JSON
 
 exit_signal = signal('exit')
 
@@ -150,6 +151,19 @@ def setup_history_and_tab_completion():
     if os.path.isfile(histfile):
         readline.read_history_file(histfile)
     atexit.register(readline.write_history_file, histfile)
+
+
+def get_db_by_key(key):
+    """
+    Having a key, tell which DB the item belongs to.
+    """
+    o = hdict[key]
+    action = o["action"]
+    if action[0] == "cat":
+        val = action[1]
+        return val[:val.find('/')]
+    #
+    return None
 
 #############
 ## Classes ##
@@ -349,7 +363,7 @@ pid_checker = PidChecker()
 ##########
 
 def process(d):
-    global tag2keys, autocomplete_commands
+    t2k = OrderedDict()    # tag2keys
     #
     for k in d.iterkeys():
         o = d[k]
@@ -370,28 +384,36 @@ def process(d):
             if len(t) == 1:
                 print "Error: the tag '{t}' in {k} is too short.".format(t=t, k=k)
                 my_exit(1)
-            if t in tag2keys:
-                tag2keys[t].append(k)
+            if t in t2k:
+                t2k[t].append(k)
             else:
-                tag2keys[t] = [k]
-            #
-            autocomplete_commands.append("_"+t.lower())
+                t2k[t] = [k]
+            #autocomplete_commands.append("_"+t.lower())
+    #
+    return t2k
 
 
 def read_json(verbose=True):
-    global hdict, tag2keys, search_result, last_key, autocomplete_commands
+    global hdict, tag2keys, search_result, last_key
+    #
     hdict = OrderedDict()
     tag2keys = OrderedDict()
     search_result = []
     last_key = None
-    autocomplete_commands = [c for c in autocomplete_commands if not c.startswith("_")]
     #
-    with open(JSON) as f:
-        hdict = json.load(f, object_pairs_hook=OrderedDict)
+    for db in LOAD_JSON:
+        tmp = OrderedDict()
+        with open("data/"+db) as f:
+            tmp = json.load(f, object_pairs_hook=OrderedDict)
+        for k in tmp:
+            hdict[k] = tmp[k]
+        if verbose:
+            print "# {db} reloaded".format(db=db)
     #
-    process(hdict)
-    if verbose:
-        print "# json reloaded"
+    # sort hdict items by date
+    hdict = OrderedDict(sorted(hdict.iteritems(), key=lambda x: x[1]["meta"]["date"]))
+    #
+    tag2keys = process(hdict)
 
 
 def cat(fname, o):
@@ -401,6 +423,8 @@ def cat(fname, o):
     If pygmentize is available, show a syntax-highlighted output.
     Otherwise fall back to a normal "cat".
     """
+    fname = "data/" + fname
+    #
     print bold("-" * 78)
     doc = o["doc"]
     if doc:
@@ -456,7 +480,7 @@ def show_urls(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        fname = action[1]
+        fname = "data/"+action[1]
     else:
         return
 
@@ -685,6 +709,7 @@ def watch_pid():
         return
     except (KeyboardInterrupt, EOFError):
         print
+        return
     # else
     if pid not in psutil.get_pid_list():
         print 'Warning: no such PID.'
@@ -764,6 +789,11 @@ def perform_action(key):
         my_exit(1)
 
 
+def view_edit_json(key):
+    db = get_db_by_key(key)
+    os.system("{ed} {f}".format(ed=cfg.EDITOR, f="data/{db}.json".format(db=db)))
+
+
 def to_clipboards(key):
     if fs.which("xsel"):
         o = hdict[key]
@@ -771,7 +801,7 @@ def to_clipboards(key):
         action = o["action"]
         verb = action[0]
         if verb == 'cat':
-            with open(action[1]) as f:
+            with open("data/"+action[1]) as f:
                 text_to_clipboards(f.read().rstrip("\n"))
     else:
         print "Warning: xsel is not installed, cannot copy to clipboards."
@@ -789,7 +819,7 @@ def edit(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("{ed} {fname}".format(ed=cfg.EDITOR, fname=action[1]))
+        os.system("{ed} {fname}".format(ed=cfg.EDITOR, fname="data/"+action[1]))
 
 
 @requires(cfg.GEDIT)
@@ -799,7 +829,7 @@ def gedit(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("{ed} {fname} &".format(ed=cfg.GEDIT, fname=action[1]))
+        os.system("{ed} {fname} &".format(ed=cfg.GEDIT, fname="data/"+action[1]))
 
 
 def less(key):
@@ -808,7 +838,7 @@ def less(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("less {fname}".format(fname=action[1]))
+        os.system("less {fname}".format(fname="data/"+action[1]))
 
 
 def first_google_hit(keyword):
@@ -854,8 +884,8 @@ def add_item():
 
 
 def edit_entry(key):
-    global hdict
-    #
+    db = get_db_by_key(key)
+    dbfile = "data/{db}.json".format(db=db)
     d = OrderedDict()
     d[key] = hdict[key]
     tmpfile = 'tmp/temp.{pid}.json'.format(pid=os.getpid())
@@ -866,13 +896,17 @@ def edit_entry(key):
     #
     with open(tmpfile) as f:
         d = json.load(f, object_pairs_hook=OrderedDict)
-    hdict[key] = d[key]
+    with open(dbfile) as f:
+        dbdict = json.load(f, object_pairs_hook=OrderedDict)
+    #
+    dbdict[key] = d[key]
     os.unlink(tmpfile)
     #
-    os.rename(cfg.JSON, cfg.JSON_BAK)
-    assert os.path.isfile(cfg.JSON_BAK)
-    with open(cfg.JSON, 'w') as f:
-        json.dump(hdict, f, indent=4)
+    tmpfile = "tmp/{db}.json.bak".format(db=db)
+    os.rename(dbfile, tmpfile)
+    assert os.path.isfile(tmpfile)
+    with open(dbfile, 'w') as f:
+        json.dump(dbdict, f, indent=4)
     print "# edited"
     read_json()
 
@@ -944,8 +978,9 @@ def menu():
         elif inp == 'json.reload()':
             read_json()
         elif inp in ('json.view()', 'json.edit()'):
-            os.system("{ed} {json}".format(ed=cfg.EDITOR, json=JSON))
-            read_json()
+            if last_key:
+                view_edit_json(last_key)
+                read_json()
         elif inp in ("json.edit(this)", "jet()"):
             if last_key:
                 edit_entry(last_key)

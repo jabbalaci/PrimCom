@@ -1,0 +1,752 @@
+{
+    "ba79370cb5115985efde1d3a": {
+        "doc": "use accented characters in Python source code", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/accent.py"
+        ], 
+        "tags": [
+            "accent", 
+            "ekezet"
+        ], 
+        "extra": []
+    }, 
+    "d692c7d59def8a8312dbb9ff": {
+        "doc": "split path", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/split_path.py"
+        ], 
+        "tags": [
+            "split path", 
+            "splitext", 
+            "basename"
+        ], 
+        "extra": []
+    }, 
+    "e653535ac4240c7eca68c57c": {
+        "doc": "join path", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/join_path.py"
+        ], 
+        "tags": [
+            "join path"
+        ], 
+        "extra": []
+    }, 
+    "ad5eb0f391a57337f7dd14cc": {
+        "doc": "split url", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/split_url.py"
+        ], 
+        "tags": [
+            "split url", 
+            "urlparse"
+        ], 
+        "extra": []
+    }, 
+    "c1ebee77d0e1205305b72617": {
+        "doc": "join url", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/join_url.py"
+        ], 
+        "tags": [
+            "join url", 
+            "urljoin"
+        ], 
+        "extra": []
+    }, 
+    "f9fea2d68daf88189d5cac21": {
+        "doc": "alap (basic) Python script", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/alap.py"
+        ], 
+        "tags": [
+            "alap"
+        ], 
+        "extra": []
+    }, 
+    "7ece1a3debbfe5ac51dc12f0": {
+        "doc": "queue", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_queue.py"
+        ], 
+        "tags": [
+            "queue", 
+            "sor"
+        ], 
+        "extra": []
+    }, 
+    "67af6aa710fa87203d9f9a0a": {
+        "doc": "stack", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_stack.py"
+        ], 
+        "tags": [
+            "stack", 
+            "verem"
+        ], 
+        "extra": []
+    }, 
+    "44eb0218109462fa29cf7894": {
+        "doc": "threading", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_threading.py"
+        ], 
+        "tags": [
+            "multithreading", 
+            "super"
+        ], 
+        "extra": []
+    }, 
+    "cb89925bbfb8654a6a924049": {
+        "doc": "http server on localhost with Python", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/http_server.sh"
+        ], 
+        "tags": [
+            "http server"
+        ], 
+        "extra": []
+    }, 
+    "e10a7f4be12a793428d4a0ba": {
+        "doc": "json", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_json.py"
+        ], 
+        "tags": [
+            "json", 
+            "OrderedDict"
+        ], 
+        "extra": []
+    }, 
+    "4d0f332abf429cd87b23f4fa": {
+        "doc": "curses with curses.wrapper", 
+        "meta": {
+            "date": "20130602"
+        }, 
+        "action": [
+            "cat", 
+            "python/curses_wrapper.py"
+        ], 
+        "tags": [
+            "curses.wrapper"
+        ], 
+        "extra": []
+    }, 
+    "e3787d8815b7542a132c9a5f": {
+        "doc": "Python job scheduling for humans", 
+        "meta": {
+            "date": "20130603"
+        }, 
+        "action": [
+            "cat", 
+            "python/schedule.py"
+        ], 
+        "tags": [
+            "schedule"
+        ], 
+        "extra": []
+    }, 
+    "d811f79387bb3d2b799bce85": {
+        "doc": "the atexit module defines a single function to register cleanup functions", 
+        "meta": {
+            "date": "20130603"
+        }, 
+        "action": [
+            "cat", 
+            "python/atexit.py"
+        ], 
+        "tags": [
+            "atexit"
+        ], 
+        "extra": []
+    }, 
+    "d6444599441b25087a418516": {
+        "doc": "How can I make a chain of function decorators in Python?", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "python/decorators.py"
+        ], 
+        "tags": [
+            "decorators"
+        ], 
+        "extra": []
+    }, 
+    "3a27552c899773a38da6058a": {
+        "doc": "equivalent of the which command in Python", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "python/which.py"
+        ], 
+        "tags": [
+            "which"
+        ], 
+        "extra": []
+    }, 
+    "7b482dfabe13d6a6c6dd0ff0": {
+        "doc": "regex to find urls in string", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "python/urls_in_string.py"
+        ], 
+        "tags": [
+            "urls in string"
+        ], 
+        "extra": []
+    }, 
+    "3de7b4841ccbe9935e09ceca": {
+        "doc": "smokesignal is a simple Python library for sending and receiving signals", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "python/smokesignal.py"
+        ], 
+        "tags": [
+            "smokesignal", 
+            "signal"
+        ], 
+        "extra": []
+    }, 
+    "3aa95e828b8e8628033d602a": {
+        "doc": "autocomplete with TAB", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "cat", 
+            "python/autocomplete.py"
+        ], 
+        "tags": [
+            "autocomplete", 
+            "tab completion"
+        ], 
+        "extra": []
+    }, 
+    "d278a20418337cc863a08e31": {
+        "doc": "import from parent directory", 
+        "meta": {
+            "date": "20130608"
+        }, 
+        "action": [
+            "cat", 
+            "python/import-from-parent-dir.py"
+        ], 
+        "tags": [
+            "sys.path", 
+            "import from parent"
+        ], 
+        "extra": []
+    }, 
+    "a2231d013e736a2e29d85184": {
+        "doc": "same output as Unix's date command", 
+        "meta": {
+            "date": "20130609"
+        }, 
+        "action": [
+            "cat", 
+            "python/unix-date.py"
+        ], 
+        "tags": [
+            "unix date"
+        ], 
+        "extra": []
+    }, 
+    "8b059812a9627d27b13b863a": {
+        "doc": "open url in a new Firefox tab (workaround)", 
+        "meta": {
+            "date": "20130609"
+        }, 
+        "action": [
+            "cat", 
+            "python/open_url.py"
+        ], 
+        "tags": [
+            "open url", 
+            "webbrowser"
+        ], 
+        "extra": []
+    }, 
+    "4c414df9f2f53803994c02eb": {
+        "doc": "reverse list", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_reverse.py"
+        ], 
+        "tags": [
+            "reverse"
+        ], 
+        "extra": []
+    }, 
+    "8b387427a3949aba23628b14": {
+        "doc": "extract URLs", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/extract_urls.py"
+        ], 
+        "tags": [
+            "extract URLs"
+        ], 
+        "extra": []
+    }, 
+    "a1daf97268d826e12b5d49db": {
+        "doc": "list/dict/set comprehensions", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/comprehensions.py"
+        ], 
+        "tags": [
+            "comprehensions", 
+            "set"
+        ], 
+        "extra": []
+    }, 
+    "a0bd3d16ac9c44a157623fbd": {
+        "doc": "positive and negative infinity", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/infinity.py"
+        ], 
+        "tags": [
+            "infinity"
+        ], 
+        "extra": []
+    }, 
+    "3d77e9788ea9f5ad2919a3d8": {
+        "doc": "splat operator ('*' and '**')", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/asterisks.py"
+        ], 
+        "tags": [
+            "splat", 
+            "asterisks"
+        ], 
+        "extra": []
+    }, 
+    "b8cf2e7f2c62a8a970937b6a": {
+        "doc": "itertools", 
+        "meta": {
+            "date": "20130619"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_itertools.py"
+        ], 
+        "tags": [
+            "itertools"
+        ], 
+        "extra": []
+    }, 
+    "6f0a8c3fe6bcc717fafc9661": {
+        "doc": "create a temp file", 
+        "meta": {
+            "date": "20130620"
+        }, 
+        "action": [
+            "cat", 
+            "python/tempfile.py"
+        ], 
+        "tags": [
+            "tempfile"
+        ], 
+        "extra": []
+    }, 
+    "58c9da6dab3b61d19a5d24b0": {
+        "doc": "BeautifulSoup4 example", 
+        "meta": {
+            "date": "20130622"
+        }, 
+        "action": [
+            "cat", 
+            "python/bs4_example.py"
+        ], 
+        "tags": [
+            "bs4"
+        ], 
+        "extra": []
+    }, 
+    "78714ae96645c9b19262615b": {
+        "doc": "collections.defaultdict", 
+        "meta": {
+            "date": "20130622"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_defaultdict.py"
+        ], 
+        "tags": [
+            "defaultdict"
+        ], 
+        "extra": []
+    }, 
+    "e52f57cc4623aa72516cae30": {
+        "doc": "verify if the given external command is available", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/requires.py"
+        ], 
+        "tags": [
+            "requires"
+        ], 
+        "extra": []
+    }, 
+    "6aee693fc11150a673b21a7f": {
+        "doc": "exceptions", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_exception.py"
+        ], 
+        "tags": [
+            "exceptions"
+        ], 
+        "extra": []
+    }, 
+    "5179fbed82ddd70357c5b56e": {
+        "doc": "static variable (keep its value between function calls)", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/static_var.py"
+        ], 
+        "tags": [
+            "static variable", 
+            "hasattr"
+        ], 
+        "extra": []
+    }, 
+    "89bae683ea414f9c63088b95": {
+        "doc": "variables and functions of an object", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/object_inspection.py"
+        ], 
+        "tags": [
+            "object inspection"
+        ], 
+        "extra": []
+    }, 
+    "5e213078e2166e333150db76": {
+        "doc": "install a package with pip from a github repository", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/pip_from_github.txt"
+        ], 
+        "tags": [
+            "pip", 
+            "github"
+        ], 
+        "extra": []
+    }, 
+    "fa6b7c394636449593b6a2fb": {
+        "doc": "read XML with untangle", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_untangle.py"
+        ], 
+        "tags": [
+            "read xml"
+        ], 
+        "extra": []
+    }, 
+    "802a77e0681eda5f6dfadad2": {
+        "doc": "update all Python packages", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/update-pip.py"
+        ], 
+        "tags": [
+            "update pip"
+        ], 
+        "extra": []
+    }, 
+    "f6eb272ae9934035572a2f8e": {
+        "doc": "lamdba functions", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_lambda.py"
+        ], 
+        "tags": [
+            "lambda"
+        ], 
+        "extra": []
+    }, 
+    "6bc4814dfaf4daaf8afc750d": {
+        "doc": "increase a string by one", 
+        "meta": {
+            "date": "20130626"
+        }, 
+        "action": [
+            "cat", 
+            "python/inc_string.py"
+        ], 
+        "tags": [
+            "increase string"
+        ], 
+        "extra": []
+    }, 
+    "e668d6b16b2f1da075ff9952": {
+        "doc": "traverse directory recursively", 
+        "meta": {
+            "date": "20130626"
+        }, 
+        "action": [
+            "cat", 
+            "python/recursive_dir_traversal.py"
+        ], 
+        "tags": [
+            "recursive dir. traversal", 
+            "traverse", 
+            "walk"
+        ], 
+        "extra": []
+    }, 
+    "24a5d4b2f105a6eec4cee3a6": {
+        "doc": "set operations", 
+        "meta": {
+            "date": "20130628"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_set.txt"
+        ], 
+        "tags": [
+            "set"
+        ], 
+        "extra": []
+    }, 
+    "9c0569c13a1f494604dff6d9": {
+        "doc": "kill a process", 
+        "meta": {
+            "date": "20130628"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_kill.py"
+        ], 
+        "tags": [
+            "kill"
+        ], 
+        "extra": []
+    }, 
+    "c14ea9c6ef41996075c024bf": {
+        "doc": "blinker example", 
+        "meta": {
+            "date": "20130628"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_blinker.py"
+        ], 
+        "tags": [
+            "blinker", 
+            "signal"
+        ], 
+        "extra": []
+    }, 
+    "193134321ebbaa17e219265d": {
+        "doc": "get external command's output", 
+        "meta": {
+            "date": "20130701"
+        }, 
+        "action": [
+            "cat", 
+            "python/command_output.py"
+        ], 
+        "tags": [
+            "command output"
+        ], 
+        "extra": []
+    }, 
+    "73f87539cc0911eda6366492": {
+        "doc": "a function defined in .bashrc to facilitate using virtualenv", 
+        "meta": {
+            "date": "20130705"
+        }, 
+        "action": [
+            "cat", 
+            "python/virtualenv_function.sh"
+        ], 
+        "tags": [
+            "virtualenv"
+        ], 
+        "extra": []
+    }, 
+    "9b3c9b901f65774b4740069d": {
+        "doc": "Add History and Tab Completion to the Default Python Shell", 
+        "meta": {
+            "date": "20130705"
+        }, 
+        "action": [
+            "cat", 
+            "python/tab_completion_python_shell.py"
+        ], 
+        "tags": [
+            "tab completion", 
+            "history"
+        ], 
+        "extra": []
+    }, 
+    "a8e43a7e35ecbc6140b1758c": {
+        "doc": "try / except / else / finally", 
+        "meta": {
+            "date": "20130705"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_except.py"
+        ], 
+        "tags": [
+            "try / except / else / finally"
+        ], 
+        "extra": []
+    }, 
+    "f6a739649b3f9cfa39edea56": {
+        "doc": "directory of the file (even if you called it from another directory)", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "python/PATH.py"
+        ], 
+        "tags": [
+            "PATH"
+        ], 
+        "extra": []
+    }, 
+    "cd481ec45eebc9c12d126628": {
+        "doc": "socket server and socket client", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_socket.py"
+        ], 
+        "tags": [
+            "socket", 
+            "client server"
+        ], 
+        "extra": []
+    }, 
+    "fe944af77392808a2d3ed059": {
+        "doc": "96 bit random hash", 
+        "meta": {
+            "date": "20130706_193110"
+        }, 
+        "action": [
+            "cat", 
+            "python/random_hash.py"
+        ], 
+        "tags": [
+            "random hash"
+        ], 
+        "extra": []
+    }, 
+    "ed50c8b6773a92bf0632c6d4": {
+        "doc": "remove a substring from the end of a string", 
+        "meta": {
+            "date": "20130802_002744"
+        }, 
+        "action": [
+            "cat", 
+            "python/strip_end.py"
+        ], 
+        "tags": [
+            "rstrip"
+        ], 
+        "extra": []
+    }
+}

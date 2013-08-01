@@ -1,0 +1,264 @@
+{
+    "2453a795e0fa29b78679fac8": {
+        "doc": "a Perl to Python regexp tutorial", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.loria.fr/~szathmar/pmwiki/index.php?n=Python.20091106Perl2PythonRegex"
+        ], 
+        "tags": [
+            "regex", 
+            "regexp", 
+            "re", 
+            "perl"
+        ], 
+        "extra": []
+    }, 
+    "2a1b9a4546497db0529cf503": {
+        "doc": "Python Module of the Week", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pymotw.com/2/contents.html"
+        ], 
+        "tags": [
+            "pymotw"
+        ], 
+        "extra": []
+    }, 
+    "6b3bee0a0879cb029aca2232": {
+        "doc": "PyCon US 2012", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/17"
+        ], 
+        "tags": [
+            "pycon us 2012"
+        ], 
+        "extra": []
+    }, 
+    "6b760768afb378da87db2bb4": {
+        "doc": "PyCon US 2013", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/33/pycon-us-2013"
+        ], 
+        "tags": [
+            "pycon us 2013"
+        ], 
+        "extra": []
+    }, 
+    "ee256869ff1d33b2155e3ed4": {
+        "doc": "google search", 
+        "meta": {
+            "date": "20130529"
+        }, 
+        "action": [
+            "open_url", 
+            "https://www.google.com/"
+        ], 
+        "tags": [
+            "go", 
+            "google"
+        ], 
+        "extra": []
+    }, 
+    "537d61007e0c198e474e5a7b": {
+        "doc": "Python 2 Standard Library", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/2/library/"
+        ], 
+        "tags": [
+            "python2 standard library", 
+            "stdlib"
+        ], 
+        "extra": []
+    }, 
+    "3edb6d26369b3468fa529fca": {
+        "doc": "Python 3 Standard Library", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/3/library/"
+        ], 
+        "tags": [
+            "python3 standard library", 
+            "stdlib"
+        ], 
+        "extra": []
+    }, 
+    "fc30c38d9fe5e8e1aab5979f": {
+        "doc": "PyPI - the Python Package Index", 
+        "meta": {
+            "date": "20130604"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pypi.python.org/pypi"
+        ], 
+        "tags": [
+            "pypi"
+        ], 
+        "extra": []
+    }, 
+    "7d86ae403036c5c3a8ce273b": {
+        "doc": "Black Hat World", 
+        "meta": {
+            "date": "20130606"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.blackhatworld.com/blackhat-seo/forum.php"
+        ], 
+        "tags": [
+            "black hat"
+        ], 
+        "extra": []
+    }, 
+    "30ff1a4969b9814546ad8d82": {
+        "doc": "String formatting in Python", 
+        "meta": {
+            "date": "20130606"
+        }, 
+        "action": [
+            "open_url", 
+            "http://knowledgestockpile.blogspot.com/2011/01/string-formatting-in-python_09.html"
+        ], 
+        "tags": [
+            "string formatting"
+        ], 
+        "extra": []
+    }, 
+    "aa364a19c9eb8d190194ccf2": {
+        "doc": "Digitally Imported radio stations", 
+        "meta": {
+            "date": "20130606"
+        }, 
+        "action": [
+            "open_url", 
+            "http://ubuntuincident.wordpress.com/2013/06/06/digitally-imported-station-urls/"
+        ], 
+        "tags": [
+            "di", 
+            "music"
+        ], 
+        "extra": []
+    }, 
+    "51cd0e3e8bc9ea588adab60a": {
+        "doc": "10 Minute Mail", 
+        "meta": {
+            "date": "20130606"
+        }, 
+        "action": [
+            "open_url", 
+            "http://10minutemail.com"
+        ], 
+        "tags": [
+            "trashmail"
+        ], 
+        "extra": []
+    }, 
+    "12aec1e54f30a05ff506b98a": {
+        "doc": "psutil (CPU, memory, disks, network, users)", 
+        "meta": {
+            "date": "20130609"
+        }, 
+        "action": [
+            "open_url", 
+            "http://code.google.com/p/psutil/#Process_management"
+        ], 
+        "tags": [
+            "psutil", 
+            "ps"
+        ], 
+        "extra": []
+    }, 
+    "f32f59f3b78db40c88617f1e": {
+        "doc": "PRAW: The Python Reddit Api Wrapper", 
+        "meta": {
+            "date": "20130609"
+        }, 
+        "action": [
+            "open_url", 
+            "https://praw.readthedocs.org/en/latest/"
+        ], 
+        "tags": [
+            "praw", 
+            "reddit API"
+        ], 
+        "extra": []
+    }, 
+    "5c0fe232dcbdf815e6b8b990": {
+        "doc": "configuration manager (dict, json, yaml, .ini, python file)", 
+        "meta": {
+            "date": "20130622"
+        }, 
+        "action": [
+            "open_url", 
+            "https://github.com/emre/kaptan"
+        ], 
+        "tags": [
+            "configuration manager"
+        ], 
+        "extra": []
+    }, 
+    "27f1a431952c3934d57e71ed": {
+        "doc": "UberWriter is a writing application for markdown", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "open_url", 
+            "http://uberwriter.wolfvollprecht.de/"
+        ], 
+        "tags": [
+            "markdown"
+        ], 
+        "extra": []
+    }, 
+    "fc24b8414f96f7d133ef597d": {
+        "doc": "PyData's Videos", 
+        "meta": {
+            "date": "20130625"
+        }, 
+        "action": [
+            "open_url", 
+            "http://vimeo.com/pydata/videos"
+        ], 
+        "tags": [
+            "pydata"
+        ], 
+        "extra": []
+    }, 
+    "be0b68bbfce29eb4224a9093": {
+        "doc": "a basic socket client server example", 
+        "meta": {
+            "date": "20130706"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pythonadventures.wordpress.com/2013/07/06/a-basic-socket-client-server-example/"
+        ], 
+        "tags": [
+            "socket", 
+            "client server"
+        ], 
+        "extra": []
+    }
+}
