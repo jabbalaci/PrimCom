@@ -13,14 +13,14 @@ remember it and I can modify it to my needs. However, looking
 up something on the Internet can take time (at least 30-60 seconds).
 
 With PrimCom you can collect *your own code snippets* with *your
-own examples*. You can assign tags to them to find them easily later.
+own examples*. You can assign tags to them and find them easily later.
 PrimCom can perform two main actions: print the content of a file, or 
 open a web page.
 
 PrimCom has several useful features too. It can copy the
 content of a file to the clipboard; it can syntax highlight your
-code snippets; it has a built-in radio player, etc. See the help for a 
-detailed list.
+code snippets; it has a built-in radio player, etc. See the built-in 
+help for a detailed list.
 
 Usage
 -----
@@ -28,6 +28,9 @@ Usage
 Open a terminal with *dark* background and launch it:
 
     $ ./h.py
+
+If you prefer light background, use the `light()` command or
+modify directly the `config.py` file.
 
 Type `h` for help, `d` for the list of available tags.
 

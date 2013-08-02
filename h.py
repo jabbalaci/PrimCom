@@ -44,8 +44,8 @@ import atexit
 from threading import Thread
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.2.6"
-__date__ = "20130801"
+__version__ = "0.2.7"
+__date__ = "20130802"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
