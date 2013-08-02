@@ -49,7 +49,9 @@ __date__ = "20130801"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
-pcat = "pygmentize -f terminal256 -O style=native -g {0}"
+BACKGROUND = cfg.BACKGROUND
+
+pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
 PLAYER='mplayer -ao alsa'    # "-ao alsa" is a workaround to make mplayer quit
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -87,11 +89,15 @@ def color(text, color, attrs=[]):
     return colored(text, color, attrs=attrs)
 
 
-def bold(text, color='white'):
+def bold(text, color=None):
+    if color is None:
+        color=cfg.colors[BACKGROUND]["bold"]
     return colored(text, color, attrs=['bold'])
 
 
-def cindex(text, color="yellow"):
+def cindex(text, color=None):
+    if color is None:
+        color=cfg.colors[BACKGROUND]["cindex"]
     return colored(text, color, attrs=['bold'])
 
 
@@ -106,7 +112,7 @@ def header():
     s = "PrimCom {v}".format(v=__version__)
     size = len(s)
     horizontal = '+' + '-' * (size+2) + '+'
-    col = "green"
+    col = cfg.colors[BACKGROUND]["header"]
     print bold(horizontal, col)
     print bold('| ' + s + ' |', col)
     print bold(horizontal, col)
@@ -281,7 +287,7 @@ class Hit(object):
     def to_str(self, index):
         s = ""
         if self.is_link():
-            s += cindex('({0}) '.format(index), color="magenta")
+            s += cindex('({0}) '.format(index), color=cfg.colors[BACKGROUND]["cindex_link"])
         else:
             s += cindex('({0}) '.format(index))
         s += self.tag
@@ -431,7 +437,7 @@ def cat(fname, o):
         print bold(doc)
         print bold("-" * 78)
     if fs.which("pygmentize"):
-        os.system(pcat.format(fname))
+        os.system(pcat.format(cfg.colors[BACKGROUND]["pygmentize_style"], fname))
     else:
         with open(fname) as f:
             for line in f:
@@ -519,7 +525,7 @@ def subcommand(li):
 
     for index, k in enumerate(li, start=1):
         if is_link(k):
-            pre = cindex('[{0}]'.format(index), color="magenta")
+            pre = cindex('[{0}]'.format(index), color=cfg.colors[BACKGROUND]["cindex_link"])
         else:
             pre = cindex('[{0}]'.format(index))
         print "{pre} {main_tag} ({doc})".format(
@@ -927,6 +933,8 @@ PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013
 
 @requires(cfg.EDITOR)
 def menu():
+    global BACKGROUND
+    #
     while True:
         try:
             inp = raw_input(bold('pc> ')).strip()
@@ -945,6 +953,11 @@ def menu():
         elif inp in ('c', 'clear()'):
             os.system('clear')
             header()
+        elif inp in ('light()', 'dark()'):
+            if inp == 'light()':
+                BACKGROUND = cfg.LIGHT
+            else:
+                BACKGROUND = cfg.DARK
         elif inp in ('t', 'tags()', 'all()', 'd'):
             SearchHits.show_tag_list(tag2keys.keys())
         elif inp == 'p':
@@ -1076,6 +1089,7 @@ def menu():
 
 autocomplete_commands += [
     'debug()',    # for development only
+    'light()', 'dark()',
     'help()',
     'tags()', 'all()',
     'last()',
@@ -1105,40 +1119,41 @@ def info():
     # If you add something to it, add it to the
     # global autocomplete_commands list too!
     text = """
-h           - this help (or: help())
-t, d        - available tags (or: tags(), all())
-p           - python shell
-<key>       - call the action that is associated to <key>
-<number>    - select a key from the previously shown list of keys
-last()      - show last key (debug)
-doc()       - show the doc of the last item
-!!          - call last command
-!cmd        - execute shell command (ex.: !date)
-edit()      - edit the file last shown
-gedit()     - open the file last shown with gedit
-less()      - open the file last shown with less
-urls()      - show URLs in the file last shown
-tocb()      - copy the output of the last command to the clipboards (or: cb())
+h               - this help (or: help())
+t, d            - available tags (or: tags(), all())
+p               - python shell
+<key>           - call the action that is associated to <key>
+<number>        - select a key from the previously shown list of keys
+last()          - show last key (debug)
+doc()           - show the doc of the last item
+!!              - call last command
+!cmd            - execute shell command (ex.: !date)
+edit()          - edit the file last shown
+gedit()         - open the file last shown with gedit
+less()          - open the file last shown with less
+urls()          - show URLs in the file last shown
+tocb()          - copy the output of the last command to the clipboards (or: cb())
 json
-  .reload()    - reload the json "database"
-  .view()      - view the json "database"
-  .edit()      - edit the json "database"
-  .edit(this)  - edit the json entry of the last selection (or: jet())
+  .reload()     - reload the json "database"
+  .view()       - view the json "database"
+  .edit()       - edit the json "database"
+  .edit(this)   - edit the json entry of the last selection (or: jet())
 NUM         - where NUM is the number of a tag in the search list
   .doc, .action, .tags, .key, .json, .url, .link, .jet, .edit
 this
   .doc, .action, .tags, .json, .url, .link, .key, .jet, .edit
-hits()      - latest search hits
-reddit()    - reddit...
-radio()     - radio player...
-mute()      - stop radio player
-myip()      - my public IP address
-v           - version (or: version())
-commands()  - list available commands (a command has the form cmd:param)
-add()       - add new item
-pid()       - pid alert...
-c           - clear screen (or: clear())
-q           - quit (or: qq, qq(), quit(), exit())
+hits()          - latest search hits
+reddit()        - reddit...
+radio()         - radio player...
+mute()          - stop radio player
+myip()          - my public IP address
+v               - version (or: version())
+commands()      - list available commands (a command has the form cmd:param)
+add()           - add new item
+pid()           - pid alert...
+light(), dark() - adjust colors to background
+c               - clear screen (or: clear())
+q               - quit (or: qq, qq(), quit(), exit())
 """
     print text.strip()
 

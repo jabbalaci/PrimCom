@@ -2,11 +2,21 @@
 >>> "python.json".rstrip(".json")
 'pyth'
 
-# remove suffix from the end of text ( http://stackoverflow.com/questions/1038824 ):
-def strip_end(text, suffix):
+# remove suffix from the right side of text ( http://stackoverflow.com/questions/1038824 ):
+def strip_right(text, suffix):
     if not text.endswith(suffix):
         return text
-    return text[:len(text)-len(suffix)]
+    # else
+    return text[:-len(suffix)]
 
->>> strip_end("python.json", ".json")
+def strip_left(text, prefix):
+    if not text.startswith(prefix):
+        return text
+    # else
+    return text[len(prefix):]
+
+>>> strip_right("python.json", ".json")
 'python'
+
+>>> strip_left("data/text/vmi.txt", "data/")
+'text/vmi.txt'

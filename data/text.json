@@ -6,7 +6,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/dist-packages.txt"
+            "text/dist-packages.txt"
         ], 
         "tags": [
             "dist", 
@@ -22,7 +22,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/wordpress_sourcecode_python.txt"
+            "text/wordpress_sourcecode_python.txt"
         ], 
         "tags": [
             "wp"
@@ -38,7 +38,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/grub2.txt"
+            "text/grub2.txt"
         ], 
         "tags": [
             "grub2"
@@ -52,7 +52,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/vim.txt"
+            "text/vim.txt"
         ], 
         "tags": [
             "vim"
@@ -66,7 +66,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/gitconfig.txt"
+            "text/gitconfig.txt"
         ], 
         "tags": [
             ".gitconfig"
@@ -80,7 +80,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/mc.txt"
+            "text/mc.txt"
         ], 
         "tags": [
             "mc"
@@ -94,7 +94,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/wp_pre.txt"
+            "text/wp_pre.txt"
         ], 
         "tags": [
             "wp"
@@ -110,7 +110,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/wp_sub.txt"
+            "text/wp_sub.txt"
         ], 
         "tags": [
             "wp"
@@ -126,7 +126,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/wp_ul.txt"
+            "text/wp_ul.txt"
         ], 
         "tags": [
             "wp"
@@ -142,7 +142,7 @@
         }, 
         "action": [
             "cat", 
-            "ext/wp_ol.txt"
+            "text/wp_ol.txt"
         ], 
         "tags": [
             "wp"

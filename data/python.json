@@ -745,7 +745,8 @@
             "python/strip_end.py"
         ], 
         "tags": [
-            "rstrip"
+            "rstrip", 
+            "lstrip"
         ], 
         "extra": []
     }
