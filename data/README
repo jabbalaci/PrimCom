@@ -3,3 +3,6 @@ This is the "database" of the application.
 A database consists of two parts:
 * <category>.json (file)
 * <category>      (directory)
+
+urls.json is somewhat special: it has no corresponding
+  directory since it contains URLs only (that can be opened)

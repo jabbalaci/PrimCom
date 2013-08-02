@@ -12,7 +12,7 @@ from config import ROOT             # from ..
 
 def radio(url, stop=False):
     # "static variables":
-    # radio.radio_on, radio.pid
+    # radio.radio_on, radio.pid, radio.url
     if not hasattr(radio, "on"):
         radio.on = False    # it doesn't exist yet, so initialize it
     #
