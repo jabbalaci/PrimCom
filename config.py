@@ -1,12 +1,16 @@
 import os
 
+# root directory of the application
+ROOT = os.path.dirname(os.path.abspath(__file__))
+
 EDITOR = 'vim'
 GEDIT = 'gedit'
+PLAYER = 'mplayer -ao alsa'    # "-ao alsa" is a workaround to make mplayer quit
 
-ALERT = "assets/alert.wav"
+ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
 # data/*.json are loaded automatically
-LOAD_JSON = sorted([e for e in os.listdir("data") if e.endswith(".json")])
+LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.endswith(".json")])
 
 # OR: set manually which databases to load
 #LOAD_JSON = [
@@ -35,3 +39,4 @@ colors = {
         "header": "green"
     }
 }
+

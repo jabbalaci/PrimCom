@@ -21,30 +21,23 @@ Some rules:
 """
 
 import sys
-# to be able to import blinker
-sys.path.insert(0, "./lib/")
-
 import os
 import re
 import json
 from collections import OrderedDict
-#from pprint import pprint
-#import webbrowser
 from lib.termcolor import colored
 from lib.clipboard import text_to_clipboards
 import requests
 import config as cfg
 from lib import fs
 import readline
-import psutil    # sudo apt-get install python-psutil
-from signal import SIGTERM        # first this
-from lib.blinker import signal    # then this
-from time import sleep
 import atexit
-from threading import Thread
+from lib.common import exit_signal, requires, my_exit
+
+from modules import radio, pidcheck
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.2.7"
+__version__ = "0.2.8"
 __date__ = "20130802"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
@@ -52,7 +45,6 @@ __license__ = "GPL"
 BACKGROUND = cfg.BACKGROUND
 
 pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
-PLAYER='mplayer -ao alsa'    # "-ao alsa" is a workaround to make mplayer quit
 
 # If you want the command "less" to use colors, follow the steps in this post:
 # https://ubuntuincident.wordpress.com/2013/06/05/syntax-highlighted-less-in-command-line/
@@ -64,8 +56,6 @@ tag2keys = OrderedDict()   # will be set later
 last_key = None            # will be updated after each command
 autocomplete_commands = [] # will be filled later (used for autocomplete)
 
-pid_checker = None         # it'll be a PidChecker object
-
 dependencies = {
     # command: package installation
     'pygmentize': 'sudo apt-get install python-pygments',
@@ -73,8 +63,6 @@ dependencies = {
 }
 
 LOAD_JSON = cfg.LOAD_JSON
-
-exit_signal = signal('exit')
 
 
 #############
@@ -116,19 +104,6 @@ def header():
     print bold(horizontal, col)
     print bold('| ' + s + ' |', col)
     print bold(horizontal, col)
-
-
-def requires(fpath):
-    def _decorator(fn):
-        if not fs.which(fpath):
-            print "Error: {f} doesn't exist".format(f=fpath)
-            print "Traceback: {func}() in {src}".format(func=fn.__name__, src=__file__)
-            my_exit(1)
-        #
-        def step_func(*args, **kwargs):
-            return fn(*args, **kwargs)
-        return step_func
-    return _decorator
 
 
 def completer(text, state):
@@ -197,7 +172,6 @@ class SearchHits(object):
                     #li.append(t)
                     SearchHits.add(t)
         #
-        #li = remove_duplicates_keep_order(li)
         SearchHits.remove_duplicates_and_keep_order()
         #
         #if li:
@@ -296,75 +270,6 @@ class Hit(object):
         return s
 
 ##########
-
-class PidChecker(Thread):
-    def __init__(self):
-        super(PidChecker, self).__init__()
-        self.checklist = set()
-        self.running = True
-        exit_signal.connect(self.terminate)
-
-    def add(self, pid):
-        try:
-            pid = int(pid)
-        except ValueError:
-            print 'Hm?'
-            return
-        # else
-        try:
-            self.checklist.add(psutil.Process(pid))
-            if not self.isAlive():
-                self.start()
-        except psutil._error.NoSuchProcess:
-            print 'Warning: no such PID.'
-
-    def remove(self, pid):
-        try:
-            pid = int(pid)
-        except ValueError:
-            print 'Hm?'
-            return
-        # else
-        for proc in self.checklist:
-            if pid == proc.pid:
-                self.checklist.remove(proc)
-                break
-        else:
-            print 'Warning: no such PID.'
-
-
-    def stop(self):
-        self.running = False
-
-    def terminate(self, data):
-        if self.isAlive():
-            self.stop()
-            self.join()
-
-    def contents(self):
-        if not self.checklist:
-            print '<empty>'
-        else:
-            for p in sorted(self.checklist, key=lambda p: p.pid):
-                print '*', p
-
-    def run(self):
-        while self.running:
-            pids = set(psutil.get_pid_list())
-            try:
-                for proc in self.checklist:
-                    pid = proc.pid
-                    if pid not in pids:
-                        play_beep()
-                        notify_send("Process with PID {pid} stopped.".format(pid=pid))
-                        self.checklist.remove(proc)
-            except RuntimeError:
-                continue
-            sleep(1)
-
-pid_checker = PidChecker()
-
-##########
 ## Core ##
 ##########
 
@@ -394,7 +299,6 @@ def process(d):
                 t2k[t].append(k)
             else:
                 t2k[t] = [k]
-            #autocomplete_commands.append("_"+t.lower())
     #
     return t2k
 
@@ -591,184 +495,9 @@ def reddit():
             print 'Wat?'
 
 
-def get_pid_by_name(name):
-    # process PIDs that started after this current process
-    li = [x for x in psutil.get_pid_list() if x > os.getpid()]
-    for pid in li:
-        p = psutil.Process(pid)
-        if p.name == name: 
-            return pid
-    #
-    return None
-
-
-@requires('mplayer')
-def play_audio(audio):
-    """
-    Audio can be a file or an URL stream.
-    """
-    cmd = '{mplayer} "{audio}" 1>/dev/null 2>&1 &'.format(mplayer=PLAYER, audio=audio)
-    os.system(cmd)
-
-
-def radio(url, stop=False):
-    # "static variables":
-    # slay.radio_on, slay.pid
-    if not hasattr(radio, "on"):
-        radio.on = False    # it doesn't exist yet, so initialize it
-    #
-    # for cleaning up:
-    if stop:
-        if radio.on:
-            try:
-                os.kill(radio.pid, SIGTERM)
-            except OSError:
-                pass
-            radio.on = False
-        return
-    #
-    if radio.on:
-        radio(None, stop=True)
-    #
-    if not radio.on:
-        play_audio(url)
-        sleep(.1)
-        radio.pid = get_pid_by_name("mplayer")
-        radio.on = True
-        radio.url = url
-        #print '# radio on'
-    else:
-        os.kill(radio.pid, SIGTERM)
-        radio.on = False
-        #print '# radio off'
-
-
-@exit_signal.connect
-def radio_stop(sender):
-    radio(None, stop=True)
-
-
-def read_radio_data():
-    """Read the input .csv file."""
-    li = []
-    dic = {}
-    with open("assets/stations.csv", 'r') as f:
-        for index, line in enumerate(f):
-            li.append(line.rstrip("\n").split(';'))
-            dic[li[-1][0]] = index
-
-    return li, dic
-
-
-def radio_player():
-    li, dic = read_radio_data()
-    for index, e in enumerate(li[1:], start=1):
-        print "({pos}) {id:20}[{url}]".format(pos=index, id=e[0], url=e[1])
-    print "[s] stop current radio"
-    print "[q] <<"
-    while True:
-        try:
-            inp = raw_input("~~> ").strip()
-        except (KeyboardInterrupt, EOFError):
-            print
-            return None
-        if len(inp) == 0:
-            continue
-        elif inp == 'q':
-            return
-        elif inp == 's':
-            radio(None, stop=True)
-            return
-        elif inp == 'qq':
-            my_exit(0)
-        try:
-            index = int(inp)
-            if index < 0:
-                raise IndexError
-            #print '#', li[index]
-            radio(li[index][1])
-            return
-        except IndexError:
-            print "out of range..."
-        except ValueError:
-            print 'Wat?'
-
-
-def play_beep():
-    play_audio(cfg.ALERT)
-
-
-def notify_send(msg):
-    logo = os.path.abspath("assets/logo.xpm")
-    main = "PrimCom Alert"
-    sub = msg
-    cmd = 'notify-send -i {logo} "{main}" "{sub}"'.format(logo=logo, main=main, sub=sub)
-    os.system(cmd)
-
-
-def watch_pid():
-    pid_checker.contents()
-    try:
-        pid = int(raw_input("PID: ").strip())
-    except ValueError:
-        print 'Wat?'
-        return
-    except (KeyboardInterrupt, EOFError):
-        print
-        return
-    # else
-    if pid not in psutil.get_pid_list():
-        print 'Warning: no such PID.'
-        return
-    # else
-    pid_checker.add(pid)
-
-
-def pid_alert():
-    text = """
-(1) ps
-(2) adjust alert volume
-(3) set pid to watch (add:<pid>, remove:<pid>)
-(4) list of watched processes (d)
-[m] this menu
-[q] <<
-""".strip()
-    print text
-    while True:
-        try:
-            inp = raw_input("~~> ").strip()
-        except (KeyboardInterrupt, EOFError):
-            print
-            return None
-        if len(inp) == 0:
-            continue
-        elif inp == 'q':
-            return
-        elif inp == 'qq':
-            my_exit(0)
-        elif inp == 'm':
-            print text
-        elif inp.startswith('!'):
-            cmd = inp[1:]
-            os.system(cmd)
-        elif inp in ('1', 'ps'):
-            os.system("ps ux")
-        elif inp == '2':
-            play_beep()
-        elif inp == '3':
-            watch_pid()
-        elif inp in ('4', 'd'):
-            pid_checker.contents()
-        elif inp.startswith('add:'):
-            pid_checker.add(inp[inp.find(':')+1:])
-        elif inp.startswith('remove:'):
-            pid_checker.remove(inp[inp.find(':')+1:])
-        else:
-            print 'Wat?'
-
-
 def debug():
-    watch_pid()
+    #watch_pid()
+    print "debug..."
 
 
 def command(inp):
@@ -943,9 +672,6 @@ def menu():
             my_exit(0)
         if len(inp) == 0:
             continue
-        #if len(inp) > 1 and inp[0] == '_':    # ??? remove?
-        #    inp = inp[1:]
-        #
         if inp in ('h', 'help()'):
             info()
         elif inp in ('q', 'qq', 'quit()', 'exit()'):
@@ -1000,9 +726,9 @@ def menu():
         elif inp == 'reddit()':
             reddit()
         elif inp == 'radio()':
-            radio_player()
+            radio.radio_player()
         elif inp == 'mute()':
-            radio(None, stop=True)
+            radio.radio(None, stop=True)
         elif inp == 'myip()':
             show_my_ip()
         elif inp in ('v', 'version()'):
@@ -1075,7 +801,7 @@ def menu():
             except NoLastKeyError:
                 pass
         elif inp == 'pid()':
-            pid_alert()
+            pidcheck.pid_alert()
         elif inp == 'debug()':
             debug()
         else:
@@ -1192,13 +918,6 @@ shorten:    - shorten URL
 
 # -------------------------------------
 
-def my_exit(error_code=0):
-    # threads are subscribed to this signal
-    exit_signal.send()
-    #
-    sys.exit(error_code)
-
-
 def cleanup():
     exit_signal.send()
 
@@ -1216,3 +935,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

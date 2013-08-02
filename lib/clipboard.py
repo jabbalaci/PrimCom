@@ -44,3 +44,4 @@ if __name__ == "__main__":
     text = "this should go on the clipboards"
     print text
     text_to_clipboards(text)
+

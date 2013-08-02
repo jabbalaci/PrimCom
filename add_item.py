@@ -4,17 +4,11 @@ import json
 from datetime import datetime
 import sys
 from collections import OrderedDict
-#from pprint import pprint
 import os
 import config as cfg
 from lib import fs
 import readline
 import random
-
-
-#def read_hdict():
-#    with open(cfg.JSON) as f:
-#        return json.load(f, object_pairs_hook=OrderedDict)
 
 
 def my_hash(bits=96):
@@ -158,7 +152,6 @@ def save_new_json(d, hdict, db):
 
 
 def main():
-#    hdict = read_hdict()    # it's an OrderedDict
     d, hdict, db = get_new_item()
     save_new_json(d, hdict, db)
 
@@ -170,3 +163,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print
         print "interrupted."
+

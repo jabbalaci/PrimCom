@@ -1,8 +1,5 @@
 *.py[cod]
 
-# own
-.history
-
 # C extensions
 *.so
 
@@ -40,4 +37,5 @@ nosetests.xml
 .idea
 
 # own
+.history
 old/
