@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="PrimCom : manage and access your personal knowledge base easily" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>PrimCom</title>
+    <title>PrimCom by jabbalaci</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>PrimCom</h1>
+        <h2>manage and access your personal knowledge base easily</h2>
+        <a href="https://github.com/jabbalaci/PrimCom" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jabbalaci/PrimCom">View on GitHub</a>
-
-          <h1 id="project_title">PrimCom</h1>
-          <h2 id="project_tagline">manage and access your personal knowledge base easily</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/jabbalaci/PrimCom/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/jabbalaci/PrimCom/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
 <a name="primcom" class="anchor" href="#primcom"><span class="octicon octicon-link"></span></a>PrimCom</h1>
 
 <p>PrimCom is a personal <em>knowledge base manager</em>, primarily made for programmers. It is meant to be running in a terminal, thus you can access and consult it quickly while working.</p>
@@ -49,7 +46,7 @@ such a piece of code, either I look it up on my blog (if I had written about it)
 <h3>
 <a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick start</h3>
 
-<p>Open a terminal with <em>dark</em> background and launch it:</p>
+<p>Open a terminal with <em>dark</em> background and launch PrimCom:</p>
 
 <pre><code>$ ./h.py
 </code></pre>
@@ -120,7 +117,7 @@ cd ~/primcom
 <h3>
 <a name="database" class="anchor" href="#database"><span class="octicon octicon-link"></span></a>Database</h3>
 
-<p>At this point you may wonder where and how the entries are stored. They are in the <code>data</code> folder and they are categorized. For instance, <code>python.json</code> contains the description of the entries that are stored in the <code>python</code> folder. The descriptions are in JSON format and they look like this:</p>
+<p>At this point you may wonder where and how the entries are stored. They are in the <code>data</code> folder and they are categorized. For instance, <code>python.json</code> contains the description of the entries that are stored in the <code>python</code> folder. The descriptions are in JSON format and they look like this (sample):</p>
 
 <pre><code>"ed50c8b6773a92bf0632c6d4": {
     "doc": "remove a substring from the end of a string",
@@ -141,7 +138,7 @@ cd ~/primcom
 
 <ul>
 <li>the long hexa number is a unique ID and it is generated automatically</li>
-<li>doc: a textual description of the entry</li>
+<li>doc: a short textual description of the entry</li>
 <li>meta/date: creation date and time (old: <code>yyyymmdd</code>; new: <code>yyyymmdd_hhmmss</code>)</li>
 <li>action: it can be "cat" (print the content of the given file), or "open_url" (open a webpage)</li>
 <li>tags: list of tags</li>
@@ -157,9 +154,9 @@ cd ~/primcom
 
 <ul>
 <li>doc: give a short description</li>
-<li>action: do you want to print the content of a file or open a URL? 
-** If you chose "c" (cat), then select a category or create a new category. Then provide a filename (just a filename without any path).
-** If you chose "o" (open_url), enter the URL.</li>
+<li>action: do you want to print the content of a file or open a URL? </li>
+<li> If you chose "c" (cat), then select a category or create a new category. Then provide a filename (just a filename without any path).</li>
+<li>If you chose "o" (open_url), enter the URL.</li>
 <li>tags: provide one or more keywords, separated by comma</li>
 <li>At the end you can open the file and fill its content.</li>
 </ul><p>Let's see a concrete example. We want to create a new category for C++ and we want to add the classic "hello world" example:</p>
@@ -197,13 +194,13 @@ Do you want to edit data/cpp/hello.cpp [y/n] (default: yes)?
 <h3>
 <a name="editing-the-whole-json-file" class="anchor" href="#editing-the-whole-json-file"><span class="octicon octicon-link"></span></a>Editing the whole JSON file</h3>
 
-<p>In the previous subsection we saw how to edit the JSON description of one entry. But what if you want to view/edit the whole JSON database?</p>
+<p>In the previous subsection we saw how to edit the JSON description of an entry. But what if you want to view/edit the whole JSON database?</p>
 
 <p>Again, select an entry, i.e. print it to the screen. Then use one of these commands:</p>
 
 <ul>
-<li>json.view()</li>
-<li>json.edit()</li>
+<li><code>json.view()</code></li>
+<li><code>json.edit()</code></li>
 </ul><p>Example: you selected "1", which is in "python.json". Thus, "json.edit()" will open "python.json" for editing.</p>
 
 <h3>
@@ -221,7 +218,29 @@ Do you want to edit data/cpp/hello.cpp [y/n] (default: yes)?
 <code>cb()</code>: copy the content of the file to the clipboard</li>
 <li>
 <code>gedit()</code>: open the file with gedit, then copy just a part of it from gedit and paste it wherever you want</li>
-</ul><h3>
+</ul><p>You can also have such code snippets that you always want to copy to the clipboard. You print its content and you copy it immediately. It would be nice to say "whenever I select this entry, copy its content to the clipboard automatically". Well, you can do that. Here is an example:</p>
+
+<pre><code>"597060835b6c50deb39b819f": {
+    "doc": "wordpress: python sourcecode tag",
+    "meta": {
+        "date": "20130604"
+    },
+    "action": [
+        "cat",
+        "text/wordpress_sourcecode_python.txt"
+    ],
+    "tags": [
+        "wp"
+    ],
+    "extra": [
+        "cb()"
+    ]
+}
+</code></pre>
+
+<p>Notice the "<code>cb()</code>" command in the "extra" list.</p>
+
+<h3>
 <a name="follow-urls" class="anchor" href="#follow-urls"><span class="octicon octicon-link"></span></a>Follow URLs</h3>
 
 <p>Some textual entries may include URLs. It would be great if you could visit them easily. Well, you can. Just use the command <code>links()</code> and select the URL you want to open.</p>
@@ -269,7 +288,7 @@ shorten:    - shorten URL
 
 <p>It can happen that you launch a program that takes too much time to finish. You don't want to sit next to your machine but you would like to get some audio notification when the program is done. PrimCom's pid checker can monitor a process and play a sound when the process terminates.</p>
 
-<p>Example: launch the command "yes" in a terminal window. In PrimCom execute the command <code>pid()</code>. Press "2" to adjust the audio volume. With "ps" list processes and find out the PID of "yes". Say it's 5219. With "m" you can always print the mini menu. Start monitoring "yes" with the command "<code>add:5219</code>". With "d" you can list the monitored processes. Now stop "yes" in the other terminal. A few seconds later you should hear the audio alert. Under Ubuntu you should also see a notification in the top right corner of the screen.</p>
+<p>Example: launch the command "yes" in a terminal window. In PrimCom execute the command <code>pid()</code>. Press "2" to adjust the audio volume. With "ps" list processes and find out the PID of "yes". Say it's 5219 (it will be different in your case, thus use your own value). With "m" you can always print the mini menu. Start monitoring "yes" with the command "<code>add:5219</code>". With "d" you can list the monitored processes. Now stop "yes" in the other terminal. A few seconds later you should hear the audio alert. Under Ubuntu you should also see a notification in the top right corner of the screen.</p>
 
 <h3>
 <a name="project-structure" class="anchor" href="#project-structure"><span class="octicon octicon-link"></span></a>Project structure</h3>
@@ -287,7 +306,7 @@ shorten:    - shorten URL
 <li>
 <code>config.py</code>: configuration file. Editor, colors, etc. can be customized here.</li>
 <li>
-<code>assets</code> dir.: static files (audio, logo, etc)</li>
+<code>assets</code> dir.: static files (audio, logo, etc.)</li>
 <li>
 <code>data</code> dir.: databases are here</li>
 <li>
@@ -299,19 +318,26 @@ shorten:    - shorten URL
 </ul><h3>
 <a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h3>
 
-<p>PrimCom was written by Laszlo Szathmary, alias Jabba Laci. You can contact me at <a href="mailto:jabba.laci@gmail.com">jabba.laci@gmail.com</a>. Feedbacks are appreciated.</p>
-      </section>
+<p>PrimCom was written by Laszlo Szathmary, alias Jabba Laci, 2013. You can contact me at <a href="mailto:jabba.laci@gmail.com">jabba.laci@gmail.com</a>. Feedbacks are appreciated.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jabbalaci/PrimCom/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jabbalaci/PrimCom/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jabbalaci/PrimCom"></a> is maintained by <a href="https://github.com/jabbalaci">jabbalaci</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">PrimCom maintained by <a href="https://github.com/jabbalaci">jabbalaci</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+  
   </body>
 </html>
