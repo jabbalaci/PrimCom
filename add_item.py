@@ -54,7 +54,7 @@ def strip_end(text, suffix):
 
 
 def get_db():
-    li = [e for e in os.listdir("data") if e.endswith(".json")]
+    li = [e for e in os.listdir("data") if e.endswith(".json") and e != "urls.json"]
     for index, db in enumerate(li, start=1):
         print "[{i}] {db}".format(i=index, db=strip_end(db, ".json"))
     print "[n] new..."
@@ -111,7 +111,8 @@ def get_new_item():
         dbfile = "data/{db}.json".format(db=db)
     else:
         action_text = "open_url"
-        action_value = raw_input("    open_url: ").strip()
+        action_value = raw_input("  open_url: ").strip()
+        db = "urls"
         dbfile = "data/urls.json"
     #
     tags = [tag.strip() for tag in raw_input("tags: ").split(",")]
@@ -133,14 +134,13 @@ def get_new_item():
 def save_new_json(d, hdict, db):
     orig = "data/{db}.json".format(db=db)
     bak = "tmp/{db}.json.bak".format(db=db)
-    print orig, bak
     #
     os.rename(orig, bak)
     assert os.path.isfile(bak)
     with open(orig, 'w') as f:
         json.dump(hdict, f, indent=4)
     assert os.path.getsize(orig) > os.path.getsize(bak)
-    print "# added"
+    print "# added to {db}.json".format(db=db)
     if d["action"][0] == "cat":
         fname = "data/"+d["action"][1]
         if not os.path.isfile(fname):

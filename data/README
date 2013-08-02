@@ -5,4 +5,4 @@ A database consists of two parts:
 * <category>      (directory)
 
 urls.json is somewhat special: it has no corresponding
-  directory since it contains URLs only (that can be opened)
+  directory since it contains URLs only (that can be opened).
