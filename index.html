@@ -32,36 +32,274 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h1>
+<a name="primcom" class="anchor" href="#primcom"><span class="octicon octicon-link"></span></a>PrimCom</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>PrimCom is a personal <em>knowledge base manager</em>, primarily made for programmers. It is meant to be running in a terminal, thus you can access and consult it quickly while working.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h3>
+<a name="motivation" class="anchor" href="#motivation"><span class="octicon octicon-link"></span></a>Motivation</h3>
+
+<p>There are lots of code snippets that I use often but I couldn't reproduce them easily by heart. When I need
+such a piece of code, either I look it up on my blog (if I had written about it), or Google it. When I see the code, I remember it and I can modify it to my needs. However, looking up something on the Internet can take time (at least 30-60 seconds).</p>
+
+<p>With PrimCom you can collect <em>your own code snippets</em> with <em>your own examples</em>. You can assign tags to them and find them easily later. PrimCom can perform two main actions: print the content of a file, or open a web page.</p>
+
+<p>PrimCom has several useful features. It has tab completion; it can copy the content of a file to the clipboard; it can syntax highlight your code snippets; it even has a built-in radio player, etc. See the built-in help for a detailed list.</p>
+
+<h3>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick start</h3>
+
+<p>Open a terminal with <em>dark</em> background and launch it:</p>
+
+<pre><code>$ ./h.py
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>If you prefer light background, use the <code>light()</code> command or modify directly the <code>config.py</code> file.</p>
+
+<p>Type <code>h</code> for help, <code>d</code> for the list of available tags.</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>With dark background:
+<img src="https://dl.dropboxusercontent.com/u/144888/wordpress/20130802-PrimCom/pc01.png" alt="dark background"></p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>With light background:
+<img src="https://dl.dropboxusercontent.com/u/144888/wordpress/20130802-PrimCom/pc02.png" alt="light background"></p>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>The project was developed under Ubuntu GNU/Linux with Python 2.7. It is suggested that you install the following packages (via apt-get):</p>
+
+<ul>
+<li>python-pygments (for syntax highlighting)</li>
+<li>xsel (for copying to the clipboard)</li>
+<li>mplayer2 (for the radio)</li>
+<li>python-psutil (for process manipulation)</li>
+</ul><hr><h2>
+<a name="details" class="anchor" href="#details"><span class="octicon octicon-link"></span></a>Details</h2>
+
+<p>The description above should be enough to get started. Now let's see the details...</p>
+
+<h3>
+<a name="starting-primcom" class="anchor" href="#starting-primcom"><span class="octicon octicon-link"></span></a>Starting PrimCom</h3>
+
+<p>Here I suppose you extracted PrimCom to your HOME directory in this folder: <code>~/primcom</code>. Enter this directory and launch <code>h.py</code> or <code>start.sh</code>:</p>
+
+<pre><code>$ cd
+$ cd primcom
+$ ./h.py
+</code></pre>
+
+<p>Another way is to call it from a shell script. To avoid problems, the launcher script should enter <code>~/primcom</code>:</p>
+
+<pre><code># ~/bin/h
+cd ~/primcom
+./h.py
+</code></pre>
+
+<p>I call the script <code>h</code> and it's in my <code>~/bin</code> folder (where <code>~/bin</code> is in my <code>PATH</code>). This way I can launch PrimCom from anywhere with the "command" <code>h</code>.</p>
+
+<p>[The project's first name was "Help Project", hence the file name <code>h.py</code>. Later I renamed it to PrimCom.]</p>
+
+<h3>
+<a name="quit" class="anchor" href="#quit"><span class="octicon octicon-link"></span></a>Quit</h3>
+
+<p>CTRL+C and CTRL+D work. With <code>q</code> you can step back one level (if you are on the main level, you will quit from the application). The command <code>qq</code> terminates the application whichever level you are on.</p>
+
+<h3>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic usage</h3>
+
+<p>OK, now we have PrimCom running. With <code>h</code> you can access the built-in help. The most important command is <code>d</code> (from the word "dir") that lists all the tags. PrimCom treats two kinds of entries: (1) a note (code snippet), that is stored in a file, and (2) a link to a webpage. In the list of tags, the two kinds of entries are numbered with different colors. The "<code>...</code>" at the end of a tag means that this tag is assigned to at least two entries, thus you will have to select from an interactive list.</p>
+
+<p>When you enter the number of a tag in the prompt, you will get the corresponding entry. It can be the content of a file, or you can be redirected to a webpage if it was a link. File contents are syntax highlighted according to the file's extension.</p>
+
+<p>At the prompt you can enter keyword(s) too. Try for instance "url". You will get a list of entries that contain the given keyword(s). Select a number to get the content of the entry.</p>
+
+<h3>
+<a name="database" class="anchor" href="#database"><span class="octicon octicon-link"></span></a>Database</h3>
+
+<p>At this point you may wonder where and how the entries are stored. They are in the <code>data</code> folder and they are categorized. For instance, <code>python.json</code> contains the description of the entries that are stored in the <code>python</code> folder. The descriptions are in JSON format and they look like this:</p>
+
+<pre><code>"ed50c8b6773a92bf0632c6d4": {
+    "doc": "remove a substring from the end of a string",
+    "meta": {
+        "date": "20130802_002744"
+    },
+    "action": [
+        "cat",
+        "python/strip_end.py"
+    ],
+    "tags": [
+        "rstrip",
+        "lstrip"
+    ],
+    "extra": []
+}
+</code></pre>
+
+<ul>
+<li>the long hexa number is a unique ID and it is generated automatically</li>
+<li>doc: a textual description of the entry</li>
+<li>meta/date: creation date and time (old: <code>yyyymmdd</code>; new: <code>yyyymmdd_hhmmss</code>)</li>
+<li>action: it can be "cat" (print the content of the given file), or "open_url" (open a webpage)</li>
+<li>tags: list of tags</li>
+<li>extra: extra operations. There is only one operation implemented here ("<code>cb()</code>"), which copies the content of a file to the clipboard right after it was printed to the standard output.</li>
+</ul><p>The file <code>urls.json</code> contains the webpage links and it has no corresponding subfolder. Do not rename this file, its name is hardwired in the source.</p>
+
+<p>Do not edit these JSON files manually if you want to add a new entry. There is a dedicated script for this task, see the next subsection.</p>
+
+<h3>
+<a name="adding-a-new-entry" class="anchor" href="#adding-a-new-entry"><span class="octicon octicon-link"></span></a>Adding a new entry</h3>
+
+<p>If you want to add a new entry, launch the command <code>add()</code>. PrimCom has tab completion too, thus you can type <code>ad&lt;TAB&gt;</code>. It will launch the script <code>add_item.py</code>:</p>
+
+<ul>
+<li>doc: give a short description</li>
+<li>action: do you want to print the content of a file or open a URL? 
+** If you chose "c" (cat), then select a category or create a new category. Then provide a filename (just a filename without any path).
+** If you chose "o" (open_url), enter the URL.</li>
+<li>tags: provide one or more keywords, separated by comma</li>
+<li>At the end you can open the file and fill its content.</li>
+</ul><p>Let's see a concrete example. We want to create a new category for C++ and we want to add the classic "hello world" example:</p>
+
+<pre><code>pc&gt; add()
+doc: hello world in C++
+action: (c)at or (o)pen_url [c/o]? c
+Choose category:
+[1] python
+[2] text
+[3] shell
+[n] new...
+[q] quit
+~~&gt; n
+New DB: cpp
+  filename: hello.cpp
+tags: hello world
+# added to cpp.json
+# data/cpp/hello.cpp touched
+Do you want to edit data/cpp/hello.cpp [y/n] (default: yes)?
+</code></pre>
+
+<h3>
+<a name="editing-an-entry" class="anchor" href="#editing-an-entry"><span class="octicon octicon-link"></span></a>Editing an entry</h3>
+
+<p>While using PrimCom, you may want to edit the description of an entry and/or the content of a file. For this you don't need to quit PrimCom. First select the entry, i.e. print it to the screen. Then you can use these commands:</p>
+
+<ul>
+<li>
+<code>edit()</code>: edit the content of the file</li>
+<li>
+<code>jet()</code>: edit the JSON description ("jet()" stands for "json edit this"). If you chose this one, then DO NOT MODIFY the long hexa ID!</li>
+</ul><p>Alternatives: <code>this.edit()</code>, <code>this.jet()</code>.</p>
+
+<h3>
+<a name="editing-the-whole-json-file" class="anchor" href="#editing-the-whole-json-file"><span class="octicon octicon-link"></span></a>Editing the whole JSON file</h3>
+
+<p>In the previous subsection we saw how to edit the JSON description of one entry. But what if you want to view/edit the whole JSON database?</p>
+
+<p>Again, select an entry, i.e. print it to the screen. Then use one of these commands:</p>
+
+<ul>
+<li>json.view()</li>
+<li>json.edit()</li>
+</ul><p>Example: you selected "1", which is in "python.json". Thus, "json.edit()" will open "python.json" for editing.</p>
+
+<h3>
+<a name="entry-info" class="anchor" href="#entry-info"><span class="octicon octicon-link"></span></a>Entry info</h3>
+
+<p>When you have lots of tags, you may forget what entries they mean. In this case you can print the JSON description of an entry with the command <code>&lt;NUM&gt;.json</code>, e.g. <code>3.json</code>.</p>
+
+<h3>
+<a name="copy-to-clipboard" class="anchor" href="#copy-to-clipboard"><span class="octicon octicon-link"></span></a>Copy to clipboard</h3>
+
+<p>If you collect your code snippets with PrimCom, you might want to copy them to the clipboard. When you selected an entry, you can use these options:</p>
+
+<ul>
+<li>
+<code>cb()</code>: copy the content of the file to the clipboard</li>
+<li>
+<code>gedit()</code>: open the file with gedit, then copy just a part of it from gedit and paste it wherever you want</li>
+</ul><h3>
+<a name="follow-urls" class="anchor" href="#follow-urls"><span class="octicon octicon-link"></span></a>Follow URLs</h3>
+
+<p>Some textual entries may include URLs. It would be great if you could visit them easily. Well, you can. Just use the command <code>links()</code> and select the URL you want to open.</p>
+
+<h3>
+<a name="light-background-dark-background" class="anchor" href="#light-background-dark-background"><span class="octicon octicon-link"></span></a>Light background, dark background</h3>
+
+<p>You can adjust the colors of PrimCom to light background and dark background with the commands <code>light()</code> and <code>dark()</code>, respectively. The default is dark, but you can change it easily in <code>config.py</code>.</p>
+
+<h3>
+<a name="special-commands" class="anchor" href="#special-commands"><span class="octicon octicon-link"></span></a>Special commands</h3>
+
+<p>The list of special commands can be listed with <code>commands()</code>:</p>
+
+<pre><code>pc&gt; commands()
+Available commands:
+-------------------
+pymotw:     - open on PyMOTW, e.g. pymotw:atexit
+go:         - Google search list
+go1:        - open first google hit
+imdb:       - open on IMDb
+youtube:    - open on YouTube
+wp:         - open on wikipedia
+lib:        - look up in Python 2 Standard Library
+lib3:       - look up in Python 3 Standard Library
+shorten:    - shorten URL
+</code></pre>
+
+<p>General form: <code>&lt;command&gt;:&lt;keyword(s)&gt;</code>, e.g. <code>imdb:star wars V</code>.</p>
+
+<p>Some other useful commands:</p>
+
+<ul>
+<li>
+<code>myip()</code>: your public IP address</li>
+<li>
+<code>reddit()</code>: open your favourite subreddit easily</li>
+</ul><h3>
+<a name="radio" class="anchor" href="#radio"><span class="octicon octicon-link"></span></a>Radio</h3>
+
+<p>You can start the radio with the command <code>radio()</code>. Just select a channel. You can stop the current channel with <code>mute()</code>. Quitting PrimCom shuts down the radio.</p>
+
+<h3>
+<a name="pid-checker" class="anchor" href="#pid-checker"><span class="octicon octicon-link"></span></a>Pid checker</h3>
+
+<p>It can happen that you launch a program that takes too much time to finish. You don't want to sit next to your machine but you would like to get some audio notification when the program is done. PrimCom's pid checker can monitor a process and play a sound when the process terminates.</p>
+
+<p>Example: launch the command "yes" in a terminal window. In PrimCom execute the command <code>pid()</code>. Press "2" to adjust the audio volume. With "ps" list processes and find out the PID of "yes". Say it's 5219. With "m" you can always print the mini menu. Start monitoring "yes" with the command "<code>add:5219</code>". With "d" you can list the monitored processes. Now stop "yes" in the other terminal. A few seconds later you should hear the audio alert. Under Ubuntu you should also see a notification in the top right corner of the screen.</p>
+
+<h3>
+<a name="project-structure" class="anchor" href="#project-structure"><span class="octicon octicon-link"></span></a>Project structure</h3>
+
+<p>Now let's see the structure of the project:</p>
+
+<ul>
+<li>
+<code>h.py</code>: main file</li>
+<li>
+<code>edit.sh</code>: edit <code>h.py</code>; <code>start.sh</code>: launch <code>h.py</code>
+</li>
+<li>
+<code>add_item.py</code>: add a new item. It can be launched from PrimCom too with the command <code>add()</code>.</li>
+<li>
+<code>config.py</code>: configuration file. Editor, colors, etc. can be customized here.</li>
+<li>
+<code>assets</code> dir.: static files (audio, logo, etc)</li>
+<li>
+<code>data</code> dir.: databases are here</li>
+<li>
+<code>lib</code> dir.: own and 3rd party libraries</li>
+<li>
+<code>modules</code> dir.: extra features of the application (radio, pid checker)</li>
+<li>
+<code>tmp</code> dir.: database backups. Do not delete this directory.</li>
+</ul><h3>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h3>
+
+<p>PrimCom was written by Laszlo Szathmary, alias Jabba Laci. You can contact me at <a href="mailto:jabba.laci@gmail.com">jabba.laci@gmail.com</a>. Feedbacks are appreciated.</p>
       </section>
     </div>
 
