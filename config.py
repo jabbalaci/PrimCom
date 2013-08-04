@@ -1,4 +1,5 @@
 import os
+from lib.podium import get_short_fingerprint
 
 # root directory of the application
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -21,8 +22,12 @@ LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.
 #]
 
 LIGHT, DARK = range(2)
-BACKGROUND = DARK
-#BACKGROUND = LIGHT
+if get_short_fingerprint() == "d8acf3":
+    # my laptop
+    BACKGROUND = LIGHT
+else:
+    # anything else
+    BACKGROUND = DARK
 colors = {
     LIGHT: {
         "pygmentize_style": "default",

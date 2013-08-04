@@ -37,8 +37,8 @@ from lib.common import exit_signal, requires, my_exit
 from modules import radio, pidcheck
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.2.8"
-__date__ = "20130802"
+__version__ = "0.2.9"
+__date__ = "20130804"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -808,6 +808,7 @@ def menu():
             if len(inp) == 1:
                 print "too short..."
             else:
+                inp = inp.lower()
                 SearchHits.show_hint(inp)
 
 

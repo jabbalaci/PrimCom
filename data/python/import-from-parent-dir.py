@@ -2,11 +2,10 @@
 import os
 import sys
 
-# import from parent directory
+# import from parent directory, i.e. 
+# add the path of the parent directory to sys.path
 if __name__ == "__main__":
-    package_dir = ".."
-    package_dir_path = os.path.join(os.path.dirname(__file__), package_dir)
-    sys.path.insert(0, package_dir_path)
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # ~~~~~~~~~~~~~~~~~~~~
 
