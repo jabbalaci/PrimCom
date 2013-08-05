@@ -749,5 +749,19 @@
             "lstrip"
         ], 
         "extra": []
+    }, 
+    "58c41d8b0a8fd59b3eb065df": {
+        "doc": "logging with Python", 
+        "meta": {
+            "date": "20130805_100429"
+        }, 
+        "action": [
+            "cat", 
+            "python/mylogging.py"
+        ], 
+        "tags": [
+            "logging"
+        ], 
+        "extra": []
     }
 }

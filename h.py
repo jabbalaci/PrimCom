@@ -542,6 +542,20 @@ def to_clipboards(key):
         print "Warning: xsel is not installed, cannot copy to clipboards."
 
 
+def path_to_clipboards(key):
+    if fs.which("xsel"):
+        o = hdict[key]
+        #
+        action = o["action"]
+        verb = action[0]
+        if verb == 'cat':
+            f = os.path.abspath("data/"+action[1])
+            print '#', f
+            text_to_clipboards(f)
+    else:
+        print "Warning: xsel is not installed, cannot copy to clipboards."
+
+
 def show_doc(key):
     o = hdict[key]
     print o["doc"]
@@ -711,6 +725,9 @@ def menu():
         elif inp in ('cb()', 'tocb()'):
             if last_key:
                 to_clipboards(last_key)
+        elif inp == 'path()':
+            if last_key:
+                path_to_clipboards(last_key)
         elif inp == "doc()":
             if last_key:
                 show_doc(last_key)
@@ -827,6 +844,7 @@ autocomplete_commands += [
     'bash', 'python',    # to be used as !bash and !python
     'urls()', 'links()',
     'cb()', 'tocb()',
+    'path()',
     'json.reload()', 'json.view()', 'json.edit()', 'jet()',
     'this.doc', 'this.action', 'this.tags', 'this.json', 'this.url', 'this.link', 'this.key', 'this.jet()', 'this.edit()',
     'hits()',
@@ -860,6 +878,7 @@ gedit()         - open the file last shown with gedit
 less()          - open the file last shown with less
 urls()          - show URLs in the file last shown
 tocb()          - copy the output of the last command to the clipboards (or: cb())
+path()          - copy the path of the file last shown to the clipboards
 json
   .reload()     - reload the json "database"
   .view()       - view the json "database"
