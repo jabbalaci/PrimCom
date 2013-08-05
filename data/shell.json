@@ -145,5 +145,19 @@
             "svn"
         ], 
         "extra": []
+    }, 
+    "5e7a32d72a9a08676dd9258a": {
+        "doc": "pretty print XML", 
+        "meta": {
+            "date": "20130804_233945"
+        }, 
+        "action": [
+            "cat", 
+            "shell/xmllint.sh"
+        ], 
+        "tags": [
+            "xmllint"
+        ], 
+        "extra": []
     }
 }

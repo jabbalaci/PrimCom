@@ -7,7 +7,7 @@ def strip_right(text, suffix):
     if not text.endswith(suffix):
         return text
     # else
-    return text[:-len(suffix)]
+    return text[:len(text)-len(suffix)]
 
 def strip_left(text, prefix):
     if not text.startswith(prefix):
