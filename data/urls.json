@@ -40,7 +40,8 @@
             "http://pyvideo.org/category/17"
         ], 
         "tags": [
-            "pycon us 2012"
+            "pycon us 2012", 
+            "video"
         ], 
         "extra": []
     }, 
@@ -54,7 +55,8 @@
             "http://pyvideo.org/category/33/pycon-us-2013"
         ], 
         "tags": [
-            "pycon us 2013"
+            "pycon us 2013", 
+            "video"
         ], 
         "extra": []
     }, 
@@ -258,6 +260,35 @@
         "tags": [
             "socket", 
             "client server"
+        ], 
+        "extra": []
+    }, 
+    "1c7baff8bef77de670f2064f": {
+        "doc": "APScheduler examples", 
+        "meta": {
+            "date": "20130806_012730"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pythonadventures.wordpress.com/2013/08/06/apscheduler-examples/"
+        ], 
+        "tags": [
+            "APScheduler"
+        ], 
+        "extra": []
+    }, 
+    "e50ce97b6512f74f2bece723": {
+        "doc": "PyOhio 2013", 
+        "meta": {
+            "date": "20130809_221708"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/41/pyohio-2013"
+        ], 
+        "tags": [
+            "PyOhio 2013", 
+            "video"
         ], 
         "extra": []
     }

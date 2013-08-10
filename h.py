@@ -143,6 +143,8 @@ def get_db_by_key(key):
     if action[0] == "cat":
         val = action[1]
         return val[:val.find('/')]
+    elif action[0] == "open_url":
+        return "urls"
     #
     return None
 

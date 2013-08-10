@@ -39,5 +39,5 @@ The project was developed under Ubuntu GNU/Linux with Python 2.7. It is suggeste
 
 ## Details
 
-To learn more about PrimCom, refer to this page: [http://jabbalaci.github.io/PrimCom].
+To learn more about PrimCom, refer to this page: http://jabbalaci.github.io/PrimCom.
 
