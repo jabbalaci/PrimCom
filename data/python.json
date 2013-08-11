@@ -763,5 +763,19 @@
             "logging"
         ], 
         "extra": []
+    }, 
+    "1a01193c5de28576aa3b60a0": {
+        "doc": "pickle serialization", 
+        "meta": {
+            "date": "20130811_223855"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_pickle.py"
+        ], 
+        "tags": [
+            "pickle"
+        ], 
+        "extra": []
     }
 }

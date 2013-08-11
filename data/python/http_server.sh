@@ -1,6 +1,9 @@
 python -m SimpleHTTPServer
 python -m SimpleHTTPServer 8080
 
+# Python 3:
+python3 -m http.server
+
 # from http://www.quora.com/Python-programming-language-1/What-are-some-cool-Python-tricks :
 # For example: To share a complete directory with someone over the Internet,
 # I cd to the directory and start the server. The directory is shared,
