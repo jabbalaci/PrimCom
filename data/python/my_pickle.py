@@ -19,6 +19,7 @@ print 'SAME?:', (data1 is data2)
 print 'EQUAL?:', (data1 == data2)
 
 # * By default, the pickled byte stream contains ASCII characters only.
+# * The pickle format is specific to Python.
 # * Never unpickle data received from an untrusted or unauthenticated source.
 # * Only the data for the instance is pickled, not the class definition, thus
 #     when you want to unpickle instances of a class, don’t forget to import 

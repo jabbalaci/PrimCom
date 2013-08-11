@@ -777,5 +777,19 @@
             "pickle"
         ], 
         "extra": []
+    }, 
+    "1d3e136442f29a2e0dc0dbf8": {
+        "doc": "redis example", 
+        "meta": {
+            "date": "20130812_011000"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_redis.py"
+        ], 
+        "tags": [
+            "redis"
+        ], 
+        "extra": []
     }
 }
