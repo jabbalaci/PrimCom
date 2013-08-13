@@ -128,7 +128,7 @@
             "python/my_threading.py"
         ], 
         "tags": [
-            "multithreading", 
+            "threads", 
             "super"
         ], 
         "extra": []
@@ -788,6 +788,65 @@
             "python/my_redis.py"
         ], 
         "tags": [
+            "redis"
+        ], 
+        "extra": []
+    }, 
+    "ee860382f822552c7b19eb94": {
+        "doc": "random module", 
+        "meta": {
+            "date": "20130813_003940"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_random.py"
+        ], 
+        "tags": [
+            "random"
+        ], 
+        "extra": []
+    }, 
+    "711f0289c800e357e285b37c": {
+        "doc": "prime test (basic)", 
+        "meta": {
+            "date": "20130813_092022"
+        }, 
+        "action": [
+            "cat", 
+            "python/prime_basic.py"
+        ], 
+        "tags": [
+            "prime"
+        ], 
+        "extra": []
+    }, 
+    "5c0097f2ffba9e98aedc2b3c": {
+        "doc": "concurrent.futures example with ThreadPoolExecutor", 
+        "meta": {
+            "date": "20130813_115737"
+        }, 
+        "action": [
+            "cat", 
+            "python/concurrent.futures_with_threads.py"
+        ], 
+        "tags": [
+            "concurrent.futures", 
+            "threads"
+        ], 
+        "extra": []
+    }, 
+    "6d9f811246e31eb1c3531355": {
+        "doc": "concurrent.futures example with ProcessPoolExecutor", 
+        "meta": {
+            "date": "20130813_120045"
+        }, 
+        "action": [
+            "cat", 
+            "python/concurrent.futures_with_processes.py"
+        ], 
+        "tags": [
+            "concurrent.futures", 
+            "processes", 
             "redis"
         ], 
         "extra": []

@@ -159,5 +159,19 @@
             "xmllint"
         ], 
         "extra": []
+    }, 
+    "408b0b0846a9cac770bd9ed6": {
+        "doc": "wget examples", 
+        "meta": {
+            "date": "20130813_121125"
+        }, 
+        "action": [
+            "cat", 
+            "shell/wget.sh"
+        ], 
+        "tags": [
+            "wget"
+        ], 
+        "extra": []
     }
 }
