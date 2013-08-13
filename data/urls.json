@@ -291,5 +291,35 @@
             "video"
         ], 
         "extra": []
+    }, 
+    "3bec518b13362c5a6eb8997e": {
+        "doc": "PyCon US 2010", 
+        "meta": {
+            "date": "20130813_191426"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pyvideo.org/category/6/pycon-us-2010"
+        ], 
+        "tags": [
+            "PyCon US 2010", 
+            "video"
+        ], 
+        "extra": []
+    }, 
+    "ea9068b28767f9e1424ebd73": {
+        "doc": "a simple script that adds history and basic tab completion to the default python shell", 
+        "meta": {
+            "date": "20130813_213846"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pythonadventures.wordpress.com/2013/07/05/add-history-and-tab-completion-to-the-default-python-shell/"
+        ], 
+        "tags": [
+            "tab completion", 
+            "python shell"
+        ], 
+        "extra": []
     }
 }

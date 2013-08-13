@@ -501,7 +501,9 @@
             "python/object_inspection.py"
         ], 
         "tags": [
-            "object inspection"
+            "object inspection", 
+            "getattr", 
+            "hasattr"
         ], 
         "extra": []
     }, 
@@ -660,21 +662,6 @@
         ], 
         "tags": [
             "virtualenv"
-        ], 
-        "extra": []
-    }, 
-    "9b3c9b901f65774b4740069d": {
-        "doc": "Add History and Tab Completion to the Default Python Shell", 
-        "meta": {
-            "date": "20130705"
-        }, 
-        "action": [
-            "cat", 
-            "python/tab_completion_python_shell.py"
-        ], 
-        "tags": [
-            "tab completion", 
-            "history"
         ], 
         "extra": []
     }, 
