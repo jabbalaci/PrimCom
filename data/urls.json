@@ -30,36 +30,6 @@
         ], 
         "extra": []
     }, 
-    "6b3bee0a0879cb029aca2232": {
-        "doc": "PyCon US 2012", 
-        "meta": {
-            "date": "20130529"
-        }, 
-        "action": [
-            "open_url", 
-            "http://pyvideo.org/category/17"
-        ], 
-        "tags": [
-            "pycon us 2012", 
-            "video"
-        ], 
-        "extra": []
-    }, 
-    "6b760768afb378da87db2bb4": {
-        "doc": "PyCon US 2013", 
-        "meta": {
-            "date": "20130529"
-        }, 
-        "action": [
-            "open_url", 
-            "http://pyvideo.org/category/33/pycon-us-2013"
-        ], 
-        "tags": [
-            "pycon us 2013", 
-            "video"
-        ], 
-        "extra": []
-    }, 
     "ee256869ff1d33b2155e3ed4": {
         "doc": "google search", 
         "meta": {
@@ -244,7 +214,7 @@
             "http://vimeo.com/pydata/videos"
         ], 
         "tags": [
-            "pydata"
+            "pydata", "video"
         ], 
         "extra": []
     }, 
@@ -274,36 +244,6 @@
         ], 
         "tags": [
             "APScheduler"
-        ], 
-        "extra": []
-    }, 
-    "e50ce97b6512f74f2bece723": {
-        "doc": "PyOhio 2013", 
-        "meta": {
-            "date": "20130809_221708"
-        }, 
-        "action": [
-            "open_url", 
-            "http://pyvideo.org/category/41/pyohio-2013"
-        ], 
-        "tags": [
-            "PyOhio 2013", 
-            "video"
-        ], 
-        "extra": []
-    }, 
-    "3bec518b13362c5a6eb8997e": {
-        "doc": "PyCon US 2010", 
-        "meta": {
-            "date": "20130813_191426"
-        }, 
-        "action": [
-            "open_url", 
-            "http://pyvideo.org/category/6/pycon-us-2010"
-        ], 
-        "tags": [
-            "PyCon US 2010", 
-            "video"
         ], 
         "extra": []
     }, 

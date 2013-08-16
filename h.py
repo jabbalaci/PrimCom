@@ -25,24 +25,22 @@ import os
 import re
 import json
 from collections import OrderedDict
-from lib.termcolor import colored
 from lib.clipboard import text_to_clipboards
 import requests
 import config as cfg
 from lib import fs
 import readline
 import atexit
-from lib.common import exit_signal, requires, my_exit
+from lib.common import exit_signal, requires, my_exit, open_url, bold, cindex
 
-from modules import radio, pidcheck
+from modules import radio, pidcheck, conferences
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.2.9"
-__date__ = "20130804"
+__version__ = "0.3.0"
+__date__ = "20130816"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
-BACKGROUND = cfg.BACKGROUND
 
 pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
 
@@ -72,22 +70,6 @@ LOAD_JSON = cfg.LOAD_JSON
 class NoLastKeyError(Exception):
     pass
 
-def color(text, color, attrs=[]):
-    """Produce a colored text for the terminal."""
-    return colored(text, color, attrs=attrs)
-
-
-def bold(text, color=None):
-    if color is None:
-        color=cfg.colors[BACKGROUND]["bold"]
-    return colored(text, color, attrs=['bold'])
-
-
-def cindex(text, color=None):
-    if color is None:
-        color=cfg.colors[BACKGROUND]["cindex"]
-    return colored(text, color, attrs=['bold'])
-
 
 def check_dependencies():
     for prg in dependencies:
@@ -100,7 +82,7 @@ def header():
     s = "PrimCom {v}".format(v=__version__)
     size = len(s)
     horizontal = '+' + '-' * (size+2) + '+'
-    col = cfg.colors[BACKGROUND]["header"]
+    col = cfg.colors[cfg.g.BACKGROUND]["header"]
     print bold(horizontal, col)
     print bold('| ' + s + ' |', col)
     print bold(horizontal, col)
@@ -263,7 +245,7 @@ class Hit(object):
     def to_str(self, index):
         s = ""
         if self.is_link():
-            s += cindex('({0}) '.format(index), color=cfg.colors[BACKGROUND]["cindex_link"])
+            s += cindex('({0}) '.format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
         else:
             s += cindex('({0}) '.format(index))
         s += self.tag
@@ -343,7 +325,7 @@ def cat(fname, o):
         print bold(doc)
         print bold("-" * 78)
     if fs.which("pygmentize"):
-        os.system(pcat.format(cfg.colors[BACKGROUND]["pygmentize_style"], fname))
+        os.system(pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname))
     else:
         with open(fname) as f:
             for line in f:
@@ -367,18 +349,6 @@ def process_extras(fname, o):
             text_to_clipboards(open(fname).read().rstrip("\n"))
         else:
             print "Warning: unknown extra option: {e}".format(e=e)
-
-
-def open_url(url, doc=None):
-    # Firefox 21.0 (and maybe some other versions too) drops an error
-    # message on Ubuntu 13.04: GLib-CRITICAL **: g_slice_set_config: assertion `sys_page_size == 0' failed
-    # until it is resolved, I forward the stderr to /dev/null
-    #webbrowser.open_new_tab(url)    ## use this if the problem is solved
-    if doc:
-        print bold("-" * 78)
-        print bold(doc)
-        print bold("-" * 78)
-    os.system('firefox -url "{url}" 2>/dev/null'.format(url=url))    ## workaround
 
 
 def extract_urls(fname):
@@ -431,7 +401,7 @@ def subcommand(li):
 
     for index, k in enumerate(li, start=1):
         if is_link(k):
-            pre = cindex('[{0}]'.format(index), color=cfg.colors[BACKGROUND]["cindex_link"])
+            pre = cindex('[{0}]'.format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
         else:
             pre = cindex('[{0}]'.format(index))
         print "{pre} {main_tag} ({doc})".format(
@@ -746,6 +716,8 @@ def menu():
             reddit()
         elif inp == 'radio()':
             radio.radio_player()
+        elif inp == 'conferences()':
+            conferences.conferences()
         elif inp == 'mute()':
             radio.radio(None, stop=True)
         elif inp == 'myip()':
@@ -852,6 +824,7 @@ autocomplete_commands += [
     'hits()',
     'reddit()',
     'radio()', 'mute()',
+    'conferences()',
     'myip()',
     'commands()',
     'add()',
@@ -893,6 +866,7 @@ this
 hits()          - latest search hits
 reddit()        - reddit...
 radio()         - radio player...
+conferences()   - Python conferences
 mute()          - stop radio player
 myip()          - my public IP address
 v               - version (or: version())
