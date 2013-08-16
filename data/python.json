@@ -837,5 +837,19 @@
             "redis"
         ], 
         "extra": []
+    }, 
+    "94368dcb5fc257c71e1d57f3": {
+        "doc": "redirect command output to /dev/null", 
+        "meta": {
+            "date": "20130817_001400"
+        }, 
+        "action": [
+            "cat", 
+            "python/to_dev_null.py"
+        ], 
+        "tags": [
+            "devnull"
+        ], 
+        "extra": []
     }
 }

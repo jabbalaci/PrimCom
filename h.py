@@ -32,6 +32,9 @@ from lib import fs
 import readline
 import atexit
 from lib.common import exit_signal, requires, my_exit, open_url, bold, cindex
+from threading import Thread
+import shlex
+from subprocess import call
 
 from modules import radio, pidcheck, conferences
 
@@ -646,8 +649,23 @@ PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013
     print text.strip()
 
 
+def cache_pygmentize():
+    """
+    The first call of pygmentize is slow, thus we call it upon
+    startup in the background.
+    """
+    fname = "{root}/assets/alap.py".format(root=cfg.ROOT)
+    if fs.which("pygmentize") and os.path.isfile(fname):
+        with open(os.devnull, 'w') as devnull:
+            cmd = pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname)
+            args = shlex.split(cmd)
+            call(args, stdout=devnull, stderr=devnull)
+
+
 @requires(cfg.EDITOR)
 def menu():
+    Thread(target=cache_pygmentize).start()
+    #
     while True:
         try:
             inp = raw_input(bold('pc> ')).strip()
