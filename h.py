@@ -648,8 +648,6 @@ PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013
 
 @requires(cfg.EDITOR)
 def menu():
-    global BACKGROUND
-    #
     while True:
         try:
             inp = raw_input(bold('pc> ')).strip()
@@ -667,9 +665,9 @@ def menu():
             header()
         elif inp in ('light()', 'dark()'):
             if inp == 'light()':
-                BACKGROUND = cfg.LIGHT
+                cfg.g.BACKGROUND = cfg.LIGHT
             else:
-                BACKGROUND = cfg.DARK
+                cfg.g.BACKGROUND = cfg.DARK
         elif inp in ('t', 'tags()', 'all()', 'd'):
             SearchHits.show_tag_list(tag2keys.keys())
         elif inp == 'p':
