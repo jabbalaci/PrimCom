@@ -173,5 +173,19 @@
             "wget"
         ], 
         "extra": []
+    }, 
+    "97a7a55f90a6a372f4e0f9bb": {
+        "doc": "blackness screensaver", 
+        "meta": {
+            "date": "20130815_074740"
+        }, 
+        "action": [
+            "cat", 
+            "shell/blackness.sh"
+        ], 
+        "tags": [
+            "blackness"
+        ], 
+        "extra": []
     }
 }

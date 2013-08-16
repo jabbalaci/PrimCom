@@ -51,7 +51,7 @@ def read_radio_data():
     """Read the input .csv file."""
     li = []
     dic = {}
-    with open("{root}/assets/stations.csv".format(root=ROOT), 'r') as f:
+    with open("{root}/modules/assets/radio.csv".format(root=ROOT), 'r') as f:
         for index, line in enumerate(f):
             li.append(line.rstrip("\n").split(';'))
             dic[li[-1][0]] = index
