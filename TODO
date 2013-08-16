@@ -1,0 +1,4 @@
+Replace 96 bit random hash IDs with 64 bit hashes
+generated with SimpleFlake [1].
+
+[1] https://github.com/SawdustSoftware/simpleflake

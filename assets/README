@@ -1,1 +1,3 @@
 Static files (audio, logo, etc).
+
+alap.py: used for caching pygmentize
