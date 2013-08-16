@@ -8,17 +8,7 @@ import os
 import config as cfg
 from lib import fs
 import readline
-import random
-
-
-def my_hash(bits=96):
-    assert bits % 8 == 0
-    required_length = bits / 8 * 2
-    s = hex(random.getrandbits(bits)).lstrip('0x').rstrip('L')
-    if len(s) < required_length:
-        return my_hash(bits)
-    else:
-        return s
+from lib.simpleflake import simpleflake
 
 
 def get_timestamp_from_year_to_second():
@@ -91,7 +81,7 @@ def get_db():
 
 
 def get_new_item():
-    myid = my_hash()
+    myid = simpleflake()
     doc = raw_input("doc: ").strip()
     action = raw_input("action: (c)at or (o)pen_url [c/o]? ").strip()
     if action not in ('c', 'o'):

@@ -1,5 +1,5 @@
 {
-    "ba79370cb5115985efde1d3a": {
+    "3607027024939045888": {
         "doc": "use accented characters in Python source code", 
         "meta": {
             "date": "20130529"
@@ -14,7 +14,7 @@
         ], 
         "extra": []
     }, 
-    "d692c7d59def8a8312dbb9ff": {
+    "3607027025021730359": {
         "doc": "split path", 
         "meta": {
             "date": "20130529"
@@ -30,7 +30,7 @@
         ], 
         "extra": []
     }, 
-    "e653535ac4240c7eca68c57c": {
+    "3607027025103537400": {
         "doc": "join path", 
         "meta": {
             "date": "20130529"
@@ -44,7 +44,7 @@
         ], 
         "extra": []
     }, 
-    "ad5eb0f391a57337f7dd14cc": {
+    "3607027025189264916": {
         "doc": "split url", 
         "meta": {
             "date": "20130529"
@@ -59,7 +59,7 @@
         ], 
         "extra": []
     }, 
-    "c1ebee77d0e1205305b72617": {
+    "3607027025285429311": {
         "doc": "join url", 
         "meta": {
             "date": "20130529"
@@ -74,7 +74,7 @@
         ], 
         "extra": []
     }, 
-    "f9fea2d68daf88189d5cac21": {
+    "3607027025367505007": {
         "doc": "alap (basic) Python script", 
         "meta": {
             "date": "20130529"
@@ -88,7 +88,7 @@
         ], 
         "extra": []
     }, 
-    "7ece1a3debbfe5ac51dc12f0": {
+    "3607027025452113531": {
         "doc": "queue", 
         "meta": {
             "date": "20130529"
@@ -103,7 +103,7 @@
         ], 
         "extra": []
     }, 
-    "67af6aa710fa87203d9f9a0a": {
+    "3607027025539161085": {
         "doc": "stack", 
         "meta": {
             "date": "20130529"
@@ -118,7 +118,7 @@
         ], 
         "extra": []
     }, 
-    "44eb0218109462fa29cf7894": {
+    "3607027025617336220": {
         "doc": "threading", 
         "meta": {
             "date": "20130529"
@@ -133,7 +133,7 @@
         ], 
         "extra": []
     }, 
-    "cb89925bbfb8654a6a924049": {
+    "3607027025710782437": {
         "doc": "http server on localhost with Python", 
         "meta": {
             "date": "20130529"
@@ -147,7 +147,7 @@
         ], 
         "extra": []
     }, 
-    "e10a7f4be12a793428d4a0ba": {
+    "3607027025791486766": {
         "doc": "json", 
         "meta": {
             "date": "20130529"
@@ -162,7 +162,7 @@
         ], 
         "extra": []
     }, 
-    "4d0f332abf429cd87b23f4fa": {
+    "3607027025875776188": {
         "doc": "curses with curses.wrapper", 
         "meta": {
             "date": "20130602"
@@ -176,7 +176,7 @@
         ], 
         "extra": []
     }, 
-    "e3787d8815b7542a132c9a5f": {
+    "3607027025958829579": {
         "doc": "Python job scheduling for humans", 
         "meta": {
             "date": "20130603"
@@ -190,7 +190,7 @@
         ], 
         "extra": []
     }, 
-    "d811f79387bb3d2b799bce85": {
+    "3607027026046936883": {
         "doc": "the atexit module defines a single function to register cleanup functions", 
         "meta": {
             "date": "20130603"
@@ -204,7 +204,7 @@
         ], 
         "extra": []
     }, 
-    "d6444599441b25087a418516": {
+    "3607027026138885153": {
         "doc": "How can I make a chain of function decorators in Python?", 
         "meta": {
             "date": "20130604"
@@ -218,7 +218,7 @@
         ], 
         "extra": []
     }, 
-    "3a27552c899773a38da6058a": {
+    "3607027026219184433": {
         "doc": "equivalent of the which command in Python", 
         "meta": {
             "date": "20130604"
@@ -232,7 +232,7 @@
         ], 
         "extra": []
     }, 
-    "7b482dfabe13d6a6c6dd0ff0": {
+    "3607027026303229048": {
         "doc": "regex to find urls in string", 
         "meta": {
             "date": "20130604"
@@ -246,7 +246,7 @@
         ], 
         "extra": []
     }, 
-    "3de7b4841ccbe9935e09ceca": {
+    "3607027026390659287": {
         "doc": "smokesignal is a simple Python library for sending and receiving signals", 
         "meta": {
             "date": "20130604"
@@ -261,7 +261,7 @@
         ], 
         "extra": []
     }, 
-    "3aa95e828b8e8628033d602a": {
+    "3607027026476547624": {
         "doc": "autocomplete with TAB", 
         "meta": {
             "date": "20130604"
@@ -276,7 +276,7 @@
         ], 
         "extra": []
     }, 
-    "d278a20418337cc863a08e31": {
+    "3607027026570281020": {
         "doc": "import from parent directory", 
         "meta": {
             "date": "20130608"
@@ -291,7 +291,7 @@
         ], 
         "extra": []
     }, 
-    "a2231d013e736a2e29d85184": {
+    "3607027026652901813": {
         "doc": "same output as Unix's date command", 
         "meta": {
             "date": "20130609"
@@ -305,7 +305,7 @@
         ], 
         "extra": []
     }, 
-    "8b059812a9627d27b13b863a": {
+    "3607027026734969827": {
         "doc": "open url in a new Firefox tab (workaround)", 
         "meta": {
             "date": "20130609"
@@ -320,7 +320,7 @@
         ], 
         "extra": []
     }, 
-    "4c414df9f2f53803994c02eb": {
+    "3607027026821642559": {
         "doc": "reverse list", 
         "meta": {
             "date": "20130619"
@@ -334,7 +334,7 @@
         ], 
         "extra": []
     }, 
-    "8b387427a3949aba23628b14": {
+    "3607027026906568713": {
         "doc": "extract URLs", 
         "meta": {
             "date": "20130619"
@@ -348,7 +348,7 @@
         ], 
         "extra": []
     }, 
-    "a1daf97268d826e12b5d49db": {
+    "3607027026987125778": {
         "doc": "list/dict/set comprehensions", 
         "meta": {
             "date": "20130619"
@@ -363,7 +363,7 @@
         ], 
         "extra": []
     }, 
-    "a0bd3d16ac9c44a157623fbd": {
+    "3607027027082429146": {
         "doc": "positive and negative infinity", 
         "meta": {
             "date": "20130619"
@@ -377,7 +377,7 @@
         ], 
         "extra": []
     }, 
-    "3d77e9788ea9f5ad2919a3d8": {
+    "3607027027165687445": {
         "doc": "splat operator ('*' and '**')", 
         "meta": {
             "date": "20130619"
@@ -392,7 +392,7 @@
         ], 
         "extra": []
     }, 
-    "b8cf2e7f2c62a8a970937b6a": {
+    "3607027027247535451": {
         "doc": "itertools", 
         "meta": {
             "date": "20130619"
@@ -406,7 +406,7 @@
         ], 
         "extra": []
     }, 
-    "6f0a8c3fe6bcc717fafc9661": {
+    "3607027027333217952": {
         "doc": "create a temp file", 
         "meta": {
             "date": "20130620"
@@ -420,7 +420,7 @@
         ], 
         "extra": []
     }, 
-    "58c9da6dab3b61d19a5d24b0": {
+    "3607027027412155181": {
         "doc": "BeautifulSoup4 example", 
         "meta": {
             "date": "20130622"
@@ -434,7 +434,7 @@
         ], 
         "extra": []
     }, 
-    "78714ae96645c9b19262615b": {
+    "3607027027505336487": {
         "doc": "collections.defaultdict", 
         "meta": {
             "date": "20130622"
@@ -448,7 +448,7 @@
         ], 
         "extra": []
     }, 
-    "e52f57cc4623aa72516cae30": {
+    "3607027027591148889": {
         "doc": "verify if the given external command is available", 
         "meta": {
             "date": "20130625"
@@ -462,7 +462,7 @@
         ], 
         "extra": []
     }, 
-    "6aee693fc11150a673b21a7f": {
+    "3607027027672084759": {
         "doc": "exceptions", 
         "meta": {
             "date": "20130625"
@@ -476,7 +476,7 @@
         ], 
         "extra": []
     }, 
-    "5179fbed82ddd70357c5b56e": {
+    "3607027027761206028": {
         "doc": "static variable (keep its value between function calls)", 
         "meta": {
             "date": "20130625"
@@ -491,7 +491,7 @@
         ], 
         "extra": []
     }, 
-    "89bae683ea414f9c63088b95": {
+    "3607027027839915976": {
         "doc": "variables and functions of an object", 
         "meta": {
             "date": "20130625"
@@ -507,7 +507,7 @@
         ], 
         "extra": []
     }, 
-    "5e213078e2166e333150db76": {
+    "3607027027929543359": {
         "doc": "install a package with pip from a github repository", 
         "meta": {
             "date": "20130625"
@@ -522,7 +522,7 @@
         ], 
         "extra": []
     }, 
-    "fa6b7c394636449593b6a2fb": {
+    "3607027028014586271": {
         "doc": "read XML with untangle", 
         "meta": {
             "date": "20130625"
@@ -536,7 +536,7 @@
         ], 
         "extra": []
     }, 
-    "802a77e0681eda5f6dfadad2": {
+    "3607027028103837037": {
         "doc": "update all Python packages", 
         "meta": {
             "date": "20130625"
@@ -550,7 +550,7 @@
         ], 
         "extra": []
     }, 
-    "f6eb272ae9934035572a2f8e": {
+    "3607027028189141623": {
         "doc": "lamdba functions", 
         "meta": {
             "date": "20130625"
@@ -564,7 +564,7 @@
         ], 
         "extra": []
     }, 
-    "6bc4814dfaf4daaf8afc750d": {
+    "3607027028270859060": {
         "doc": "increase a string by one", 
         "meta": {
             "date": "20130626"
@@ -578,7 +578,7 @@
         ], 
         "extra": []
     }, 
-    "e668d6b16b2f1da075ff9952": {
+    "3607027028355669770": {
         "doc": "traverse directory recursively", 
         "meta": {
             "date": "20130626"
@@ -594,7 +594,7 @@
         ], 
         "extra": []
     }, 
-    "24a5d4b2f105a6eec4cee3a6": {
+    "3607027028436820002": {
         "doc": "set operations", 
         "meta": {
             "date": "20130628"
@@ -608,7 +608,7 @@
         ], 
         "extra": []
     }, 
-    "9c0569c13a1f494604dff6d9": {
+    "3607027028530980038": {
         "doc": "kill a process", 
         "meta": {
             "date": "20130628"
@@ -622,7 +622,7 @@
         ], 
         "extra": []
     }, 
-    "c14ea9c6ef41996075c024bf": {
+    "3607027028614690165": {
         "doc": "blinker example", 
         "meta": {
             "date": "20130628"
@@ -637,7 +637,7 @@
         ], 
         "extra": []
     }, 
-    "193134321ebbaa17e219265d": {
+    "3607027028699518074": {
         "doc": "get external command's output", 
         "meta": {
             "date": "20130701"
@@ -651,7 +651,7 @@
         ], 
         "extra": []
     }, 
-    "73f87539cc0911eda6366492": {
+    "3607027028778466638": {
         "doc": "a function defined in .bashrc to facilitate using virtualenv", 
         "meta": {
             "date": "20130705"
@@ -665,7 +665,7 @@
         ], 
         "extra": []
     }, 
-    "a8e43a7e35ecbc6140b1758c": {
+    "3607027028862733067": {
         "doc": "try / except / else / finally", 
         "meta": {
             "date": "20130705"
@@ -679,7 +679,7 @@
         ], 
         "extra": []
     }, 
-    "f6a739649b3f9cfa39edea56": {
+    "3607027028945415812": {
         "doc": "directory of the file (even if you called it from another directory)", 
         "meta": {
             "date": "20130706"
@@ -693,7 +693,7 @@
         ], 
         "extra": []
     }, 
-    "cd481ec45eebc9c12d126628": {
+    "3607027029037688088": {
         "doc": "socket server and socket client", 
         "meta": {
             "date": "20130706"
@@ -708,7 +708,7 @@
         ], 
         "extra": []
     }, 
-    "fe944af77392808a2d3ed059": {
+    "3607027029125326196": {
         "doc": "96 bit random hash", 
         "meta": {
             "date": "20130706_193110"
@@ -722,7 +722,7 @@
         ], 
         "extra": []
     }, 
-    "ed50c8b6773a92bf0632c6d4": {
+    "3607027029210199450": {
         "doc": "remove a substring from the end of a string", 
         "meta": {
             "date": "20130802_002744"
@@ -737,7 +737,7 @@
         ], 
         "extra": []
     }, 
-    "58c41d8b0a8fd59b3eb065df": {
+    "3607027029294168008": {
         "doc": "logging with Python", 
         "meta": {
             "date": "20130805_100429"
@@ -751,7 +751,7 @@
         ], 
         "extra": []
     }, 
-    "1a01193c5de28576aa3b60a0": {
+    "3607027029388443650": {
         "doc": "pickle serialization", 
         "meta": {
             "date": "20130811_223855"
@@ -765,7 +765,7 @@
         ], 
         "extra": []
     }, 
-    "1d3e136442f29a2e0dc0dbf8": {
+    "3607027029470032741": {
         "doc": "redis example", 
         "meta": {
             "date": "20130812_011000"
@@ -779,7 +779,7 @@
         ], 
         "extra": []
     }, 
-    "ee860382f822552c7b19eb94": {
+    "3607027029553318230": {
         "doc": "random module", 
         "meta": {
             "date": "20130813_003940"
@@ -793,7 +793,7 @@
         ], 
         "extra": []
     }, 
-    "711f0289c800e357e285b37c": {
+    "3607027029640693038": {
         "doc": "prime test (basic)", 
         "meta": {
             "date": "20130813_092022"
@@ -807,7 +807,7 @@
         ], 
         "extra": []
     }, 
-    "5c0097f2ffba9e98aedc2b3c": {
+    "3607027029720480237": {
         "doc": "concurrent.futures example with ThreadPoolExecutor", 
         "meta": {
             "date": "20130813_115737"
@@ -822,7 +822,7 @@
         ], 
         "extra": []
     }, 
-    "6d9f811246e31eb1c3531355": {
+    "3607027029810723575": {
         "doc": "concurrent.futures example with ProcessPoolExecutor", 
         "meta": {
             "date": "20130813_120045"
@@ -838,7 +838,7 @@
         ], 
         "extra": []
     }, 
-    "94368dcb5fc257c71e1d57f3": {
+    "3607027029900329672": {
         "doc": "redirect command output to /dev/null", 
         "meta": {
             "date": "20130817_001400"

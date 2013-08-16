@@ -1,5 +1,5 @@
 {
-    "2453a795e0fa29b78679fac8": {
+    "3607027148636772099": {
         "doc": "a Perl to Python regexp tutorial", 
         "meta": {
             "date": "20130529"
@@ -16,7 +16,7 @@
         ], 
         "extra": []
     }, 
-    "2a1b9a4546497db0529cf503": {
+    "3607027148725621232": {
         "doc": "Python Module of the Week", 
         "meta": {
             "date": "20130529"
@@ -30,7 +30,7 @@
         ], 
         "extra": []
     }, 
-    "ee256869ff1d33b2155e3ed4": {
+    "3607027148803071602": {
         "doc": "google search", 
         "meta": {
             "date": "20130529"
@@ -45,7 +45,7 @@
         ], 
         "extra": []
     }, 
-    "537d61007e0c198e474e5a7b": {
+    "3607027148888296269": {
         "doc": "Python 2 Standard Library", 
         "meta": {
             "date": "20130604"
@@ -60,7 +60,7 @@
         ], 
         "extra": []
     }, 
-    "3edb6d26369b3468fa529fca": {
+    "3607027148970475437": {
         "doc": "Python 3 Standard Library", 
         "meta": {
             "date": "20130604"
@@ -75,7 +75,7 @@
         ], 
         "extra": []
     }, 
-    "fc30c38d9fe5e8e1aab5979f": {
+    "3607027149067619476": {
         "doc": "PyPI - the Python Package Index", 
         "meta": {
             "date": "20130604"
@@ -89,7 +89,7 @@
         ], 
         "extra": []
     }, 
-    "7d86ae403036c5c3a8ce273b": {
+    "3607027149153461417": {
         "doc": "Black Hat World", 
         "meta": {
             "date": "20130606"
@@ -103,7 +103,7 @@
         ], 
         "extra": []
     }, 
-    "30ff1a4969b9814546ad8d82": {
+    "3607027149237282297": {
         "doc": "String formatting in Python", 
         "meta": {
             "date": "20130606"
@@ -117,7 +117,7 @@
         ], 
         "extra": []
     }, 
-    "aa364a19c9eb8d190194ccf2": {
+    "3607027149318552305": {
         "doc": "Digitally Imported radio stations", 
         "meta": {
             "date": "20130606"
@@ -132,7 +132,7 @@
         ], 
         "extra": []
     }, 
-    "51cd0e3e8bc9ea588adab60a": {
+    "3607027149409676715": {
         "doc": "10 Minute Mail", 
         "meta": {
             "date": "20130606"
@@ -146,7 +146,7 @@
         ], 
         "extra": []
     }, 
-    "12aec1e54f30a05ff506b98a": {
+    "3607027149494407662": {
         "doc": "psutil (CPU, memory, disks, network, users)", 
         "meta": {
             "date": "20130609"
@@ -161,7 +161,7 @@
         ], 
         "extra": []
     }, 
-    "f32f59f3b78db40c88617f1e": {
+    "3607027149575557262": {
         "doc": "PRAW: The Python Reddit Api Wrapper", 
         "meta": {
             "date": "20130609"
@@ -176,7 +176,7 @@
         ], 
         "extra": []
     }, 
-    "5c0fe232dcbdf815e6b8b990": {
+    "3607027149664049538": {
         "doc": "configuration manager (dict, json, yaml, .ini, python file)", 
         "meta": {
             "date": "20130622"
@@ -190,7 +190,7 @@
         ], 
         "extra": []
     }, 
-    "27f1a431952c3934d57e71ed": {
+    "3607027149743298864": {
         "doc": "UberWriter is a writing application for markdown", 
         "meta": {
             "date": "20130625"
@@ -204,7 +204,7 @@
         ], 
         "extra": []
     }, 
-    "fc24b8414f96f7d133ef597d": {
+    "3607027149840882982": {
         "doc": "PyData's Videos", 
         "meta": {
             "date": "20130625"
@@ -214,11 +214,12 @@
             "http://vimeo.com/pydata/videos"
         ], 
         "tags": [
-            "pydata", "video"
+            "pydata", 
+            "video"
         ], 
         "extra": []
     }, 
-    "be0b68bbfce29eb4224a9093": {
+    "3607027149919462933": {
         "doc": "a basic socket client server example", 
         "meta": {
             "date": "20130706"
@@ -233,7 +234,7 @@
         ], 
         "extra": []
     }, 
-    "1c7baff8bef77de670f2064f": {
+    "3607027150002387658": {
         "doc": "APScheduler examples", 
         "meta": {
             "date": "20130806_012730"
@@ -247,7 +248,7 @@
         ], 
         "extra": []
     }, 
-    "ea9068b28767f9e1424ebd73": {
+    "3607027150088435021": {
         "doc": "a simple script that adds history and basic tab completion to the default python shell", 
         "meta": {
             "date": "20130813_213846"

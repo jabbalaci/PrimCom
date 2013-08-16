@@ -1,5 +1,5 @@
 {
-    "7274408f3e9e5844f53aca84": {
+    "3607027059365975291": {
         "doc": "bash loops", 
         "meta": {
             "date": "20130529"
@@ -16,7 +16,7 @@
         ], 
         "extra": []
     }, 
-    "883d467a183e619785744c8d": {
+    "3607027059448991299": {
         "doc": "syntax-highlighted \"cat\" in command line", 
         "meta": {
             "date": "20130605"
@@ -32,7 +32,7 @@
         ], 
         "extra": []
     }, 
-    "3e8d52a952672eb3a67e27b6": {
+    "3607027059535926093": {
         "doc": "a sample .bashrc file", 
         "meta": {
             "date": "20130611"
@@ -46,7 +46,7 @@
         ], 
         "extra": []
     }, 
-    "a4c021a4cc5a4250604d8d7b": {
+    "3607027059617069257": {
         "doc": "python oneliner", 
         "meta": {
             "date": "20130619"
@@ -60,7 +60,7 @@
         ], 
         "extra": []
     }, 
-    "18a229ed635566dbc7791b71": {
+    "3607027059703756824": {
         "doc": "Ubuntu update script", 
         "meta": {
             "date": "20130625"
@@ -74,7 +74,7 @@
         ], 
         "extra": []
     }, 
-    "833e200e6077b7faf0a3d3c8": {
+    "3607027059789048091": {
         "doc": "crontab example", 
         "meta": {
             "date": "20130627"
@@ -88,7 +88,7 @@
         ], 
         "extra": []
     }, 
-    "7f74ec531da7512ef1d3ec0b": {
+    "3607027059874219514": {
         "doc": "convert .doc to .txt", 
         "meta": {
             "date": "20130630"
@@ -103,7 +103,7 @@
         ], 
         "extra": []
     }, 
-    "3441292735343faa43111477": {
+    "3607027059965863346": {
         "doc": "pdftk examples", 
         "meta": {
             "date": "20130706"
@@ -117,7 +117,7 @@
         ], 
         "extra": []
     }, 
-    "17a15bb3c676bad1d41afef6": {
+    "3607027060048919713": {
         "doc": "Is there anybody listening on a given port?", 
         "meta": {
             "date": "20130706"
@@ -132,7 +132,7 @@
         ], 
         "extra": []
     }, 
-    "78bb078c0bdbbbbedf36a65d": {
+    "3607027060128473625": {
         "doc": "remove .svn directories recursively", 
         "meta": {
             "date": "20130707_181009"
@@ -146,7 +146,7 @@
         ], 
         "extra": []
     }, 
-    "5e7a32d72a9a08676dd9258a": {
+    "3607027060214041200": {
         "doc": "pretty print XML", 
         "meta": {
             "date": "20130804_233945"
@@ -160,7 +160,7 @@
         ], 
         "extra": []
     }, 
-    "408b0b0846a9cac770bd9ed6": {
+    "3607027060304539063": {
         "doc": "wget examples", 
         "meta": {
             "date": "20130813_121125"
@@ -174,7 +174,7 @@
         ], 
         "extra": []
     }, 
-    "97a7a55f90a6a372f4e0f9bb": {
+    "3607027060391782408": {
         "doc": "blackness screensaver", 
         "meta": {
             "date": "20130815_074740"

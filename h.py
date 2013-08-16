@@ -39,8 +39,8 @@ from subprocess import call
 from modules import radio, pidcheck, conferences
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.0"
-__date__ = "20130816"
+__version__ = "0.3.1"
+__date__ = "20130817"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 
