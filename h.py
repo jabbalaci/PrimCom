@@ -40,9 +40,11 @@ from modules import radio
 from modules import pidcheck
 from modules import conferences
 from modules import reddit
+from modules import my_ip
+from modules import urlshortener
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 __date__ = "20130817"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
@@ -113,8 +115,23 @@ def completer(text, state):
             return None
 
 
+def truncate_histfile(hf):
+    """
+    Leave the last N lines of histfile.
+    """
+    hf_bak = hf + ".bak"
+    if os.path.isfile(hf):
+        os.system("tail -{N} {hf} >{hf_bak}".format(N=cfg.TRUNCATE_HISTFILE_TO_LINES, hf=hf, hf_bak=hf_bak))
+        if os.path.isfile(hf_bak):
+            os.unlink(hf)
+            os.rename(hf_bak, hf)
+
+
 def setup_history_and_tab_completion():
     histfile = ".history"
+    #
+    truncate_histfile(histfile)
+    #
     readline.set_completer(completer)
     readline.parse_and_bind("tab: complete")
     if os.path.isfile(histfile):
@@ -560,19 +577,6 @@ def cmd_go1(keyword, site=None):
     open_url(url)
 
 
-def shorten_url(long_url):
-    try:
-        url = "https://www.googleapis.com/urlshortener/v1/url"
-        data = {"longUrl": long_url}
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        r = requests.post(url, data=json.dumps(data), headers=headers)
-        short = r.json()["id"]
-        print short
-        text_to_clipboards(short)
-    except:
-        print "Hmm, strange..."
-
-
 def add_item():
     os.system("python ./add_item.py")
 
@@ -603,13 +607,6 @@ def edit_entry(key):
         json.dump(dbdict, f, indent=4)
     print "# edited"
     read_json()
-
-
-def show_my_ip():
-    r = requests.get("http://jsonip.com/")
-    ip = r.json()["ip"]
-    print ip
-    text_to_clipboards(ip)
 
 
 def version():
@@ -707,7 +704,7 @@ def menu():
         elif inp == 'mute()':
             radio.radio(None, stop=True)
         elif inp == 'myip()':
-            show_my_ip()
+            my_ip.show_my_ip()
         elif inp in ('v', 'version()'):
             version()
         elif inp == 'commands()':
@@ -742,7 +739,7 @@ def menu():
             site = "docs.python.org/3/library/"
             cmd_go1(inp[inp.find(':')+1:], site=site)
         elif inp.startswith("shorten:"):
-            shorten_url(inp[inp.find(':')+1:])
+            urlshortener.shorten_url(inp[inp.find(':')+1:])
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
