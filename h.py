@@ -36,7 +36,10 @@ from threading import Thread
 import shlex
 from subprocess import call
 
-from modules import radio, pidcheck, conferences
+from modules import radio
+from modules import pidcheck
+from modules import conferences
+from modules import reddit
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
 __version__ = "0.3.1"
@@ -437,39 +440,6 @@ def subcommand(li):
             print 'Wat?'
 
 
-def reddit():
-    li = [
-        '/r/python',
-        '/r/programming',
-    ]
-    for index, subreddit in enumerate(li, start=1):
-        print "[{i}] {sr}".format(i=index, sr=subreddit)
-    print "[q] <<"
-    while True:
-        try:
-            inp = raw_input("~~> ").strip()
-        except (KeyboardInterrupt, EOFError):
-            print
-            return None
-        if len(inp) == 0:
-            continue
-        if inp == 'q':
-            return None
-        if inp == 'qq':
-            my_exit(0)
-        try:
-            index = int(inp)-1
-            if index < 0:
-                raise IndexError
-            url = "http://www.reddit.com{sr}".format(sr=li[index])
-            open_url(url)
-            return
-        except IndexError:
-            print "out of range..."
-        except ValueError:
-            print 'Wat?'
-
-
 def debug():
     #watch_pid()
     print "debug..."
@@ -729,7 +699,7 @@ def menu():
             if last_key:
                 edit_entry(last_key)
         elif inp == 'reddit()':
-            reddit()
+            reddit.reddit()
         elif inp == 'radio()':
             radio.radio_player()
         elif inp == 'conferences()':

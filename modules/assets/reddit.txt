@@ -1,0 +1,4 @@
+# add subreddits without /r/
+
+python
+programming
