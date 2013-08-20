@@ -2,7 +2,8 @@
     "3607027148636772099": {
         "doc": "a Perl to Python regexp tutorial", 
         "meta": {
-            "date": "20130529"
+            "date": "20130529", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -19,7 +20,8 @@
     "3607027148725621232": {
         "doc": "Python Module of the Week", 
         "meta": {
-            "date": "20130529"
+            "date": "20130529", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -33,7 +35,8 @@
     "3607027148803071602": {
         "doc": "google search", 
         "meta": {
-            "date": "20130529"
+            "date": "20130529", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -48,7 +51,8 @@
     "3607027148888296269": {
         "doc": "Python 2 Standard Library", 
         "meta": {
-            "date": "20130604"
+            "date": "20130604", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -63,7 +67,8 @@
     "3607027148970475437": {
         "doc": "Python 3 Standard Library", 
         "meta": {
-            "date": "20130604"
+            "date": "20130604", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -78,7 +83,8 @@
     "3607027149067619476": {
         "doc": "PyPI - the Python Package Index", 
         "meta": {
-            "date": "20130604"
+            "date": "20130604", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -92,7 +98,8 @@
     "3607027149153461417": {
         "doc": "Black Hat World", 
         "meta": {
-            "date": "20130606"
+            "date": "20130606", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -106,7 +113,8 @@
     "3607027149237282297": {
         "doc": "String formatting in Python", 
         "meta": {
-            "date": "20130606"
+            "date": "20130606", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -120,7 +128,8 @@
     "3607027149318552305": {
         "doc": "Digitally Imported radio stations", 
         "meta": {
-            "date": "20130606"
+            "date": "20130606", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -135,7 +144,8 @@
     "3607027149409676715": {
         "doc": "10 Minute Mail", 
         "meta": {
-            "date": "20130606"
+            "date": "20130606", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -149,7 +159,8 @@
     "3607027149494407662": {
         "doc": "psutil (CPU, memory, disks, network, users)", 
         "meta": {
-            "date": "20130609"
+            "date": "20130609", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -164,7 +175,8 @@
     "3607027149575557262": {
         "doc": "PRAW: The Python Reddit Api Wrapper", 
         "meta": {
-            "date": "20130609"
+            "date": "20130609", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -179,7 +191,8 @@
     "3607027149664049538": {
         "doc": "configuration manager (dict, json, yaml, .ini, python file)", 
         "meta": {
-            "date": "20130622"
+            "date": "20130622", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -193,7 +206,8 @@
     "3607027149743298864": {
         "doc": "UberWriter is a writing application for markdown", 
         "meta": {
-            "date": "20130625"
+            "date": "20130625", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -207,7 +221,8 @@
     "3607027149840882982": {
         "doc": "PyData's Videos", 
         "meta": {
-            "date": "20130625"
+            "date": "20130625", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 
@@ -222,7 +237,8 @@
     "3607027149919462933": {
         "doc": "a basic socket client server example", 
         "meta": {
-            "date": "20130706"
+            "date": "20130706", 
+            "author": "jabba"
         }, 
         "action": [
             "open_url", 

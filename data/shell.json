@@ -2,7 +2,8 @@
     "3607027059365975291": {
         "doc": "bash loops", 
         "meta": {
-            "date": "20130529"
+            "date": "20130529",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -19,7 +20,8 @@
     "3607027059448991299": {
         "doc": "syntax-highlighted \"cat\" in command line", 
         "meta": {
-            "date": "20130605"
+            "date": "20130605",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -35,7 +37,8 @@
     "3607027059535926093": {
         "doc": "a sample .bashrc file", 
         "meta": {
-            "date": "20130611"
+            "date": "20130611",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -49,7 +52,8 @@
     "3607027059617069257": {
         "doc": "python oneliner", 
         "meta": {
-            "date": "20130619"
+            "date": "20130619",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -63,7 +67,8 @@
     "3607027059703756824": {
         "doc": "Ubuntu update script", 
         "meta": {
-            "date": "20130625"
+            "date": "20130625",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -77,7 +82,8 @@
     "3607027059789048091": {
         "doc": "crontab example", 
         "meta": {
-            "date": "20130627"
+            "date": "20130627",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -91,7 +97,8 @@
     "3607027059874219514": {
         "doc": "convert .doc to .txt", 
         "meta": {
-            "date": "20130630"
+            "date": "20130630",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -106,7 +113,8 @@
     "3607027059965863346": {
         "doc": "pdftk examples", 
         "meta": {
-            "date": "20130706"
+            "date": "20130706",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 
@@ -120,7 +128,8 @@
     "3607027060048919713": {
         "doc": "Is there anybody listening on a given port?", 
         "meta": {
-            "date": "20130706"
+            "date": "20130706",
+            "author": "jabba"
         }, 
         "action": [
             "cat", 

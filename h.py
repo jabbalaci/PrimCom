@@ -44,8 +44,8 @@ from modules import my_ip
 from modules import urlshortener
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.2"
-__date__ = "20130817"
+__version__ = "0.3.3"
+__date__ = "20130820"
 __copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
 __license__ = "GPL"
 

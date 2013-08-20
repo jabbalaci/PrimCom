@@ -9,6 +9,7 @@ import config as cfg
 from lib import fs
 import readline
 from lib.simpleflake import simpleflake
+import getpass
 
 
 def get_timestamp_from_year_to_second():
@@ -113,7 +114,10 @@ def get_new_item():
     dbdict[myid] = OrderedDict()
     d = dbdict[myid]
     d["doc"] = doc
-    d["meta"] = {"date": get_timestamp_from_year_to_second()}
+    d["meta"] = {
+        "date": get_timestamp_from_year_to_second(),
+        "author": getpass.getuser()
+    }
     d["action"] = [action_text, action_value]
     d["tags"] = tags
     d["extra"] = []
