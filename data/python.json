@@ -2,7 +2,7 @@
     "3607027024939045888": {
         "doc": "use accented characters in Python source code", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -18,7 +18,7 @@
     "3607027025021730359": {
         "doc": "split path", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -35,7 +35,7 @@
     "3607027025103537400": {
         "doc": "join path", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -50,7 +50,7 @@
     "3607027025189264916": {
         "doc": "split url", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -66,7 +66,7 @@
     "3607027025285429311": {
         "doc": "join url", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -82,7 +82,7 @@
     "3607027025367505007": {
         "doc": "alap (basic) Python script", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -97,7 +97,7 @@
     "3607027025452113531": {
         "doc": "queue", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -113,7 +113,7 @@
     "3607027025539161085": {
         "doc": "stack", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -129,7 +129,7 @@
     "3607027025617336220": {
         "doc": "threading", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -145,7 +145,7 @@
     "3607027025710782437": {
         "doc": "http server on localhost with Python", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -160,7 +160,7 @@
     "3607027025791486766": {
         "doc": "json", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -176,7 +176,7 @@
     "3607027025875776188": {
         "doc": "curses with curses.wrapper", 
         "meta": {
-            "date": "20130602",
+            "date": "20130602", 
             "author": "jabba"
         }, 
         "action": [
@@ -191,7 +191,7 @@
     "3607027025958829579": {
         "doc": "Python job scheduling for humans", 
         "meta": {
-            "date": "20130603",
+            "date": "20130603", 
             "author": "jabba"
         }, 
         "action": [
@@ -206,7 +206,7 @@
     "3607027026046936883": {
         "doc": "the atexit module defines a single function to register cleanup functions", 
         "meta": {
-            "date": "20130603",
+            "date": "20130603", 
             "author": "jabba"
         }, 
         "action": [
@@ -221,7 +221,7 @@
     "3607027026138885153": {
         "doc": "How can I make a chain of function decorators in Python?", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -236,7 +236,7 @@
     "3607027026219184433": {
         "doc": "equivalent of the which command in Python", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -251,7 +251,7 @@
     "3607027026303229048": {
         "doc": "regex to find urls in string", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -266,7 +266,7 @@
     "3607027026390659287": {
         "doc": "smokesignal is a simple Python library for sending and receiving signals", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -282,7 +282,7 @@
     "3607027026476547624": {
         "doc": "autocomplete with TAB", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -298,7 +298,7 @@
     "3607027026570281020": {
         "doc": "import from parent directory", 
         "meta": {
-            "date": "20130608",
+            "date": "20130608", 
             "author": "jabba"
         }, 
         "action": [
@@ -314,7 +314,7 @@
     "3607027026652901813": {
         "doc": "same output as Unix's date command", 
         "meta": {
-            "date": "20130609",
+            "date": "20130609", 
             "author": "jabba"
         }, 
         "action": [
@@ -329,7 +329,7 @@
     "3607027026734969827": {
         "doc": "open url in a new Firefox tab (workaround)", 
         "meta": {
-            "date": "20130609",
+            "date": "20130609", 
             "author": "jabba"
         }, 
         "action": [
@@ -345,7 +345,7 @@
     "3607027026821642559": {
         "doc": "reverse list", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -360,7 +360,7 @@
     "3607027026906568713": {
         "doc": "extract URLs", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -375,7 +375,7 @@
     "3607027026987125778": {
         "doc": "list/dict/set comprehensions", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -391,7 +391,7 @@
     "3607027027082429146": {
         "doc": "positive and negative infinity", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -406,7 +406,7 @@
     "3607027027165687445": {
         "doc": "splat operator ('*' and '**')", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -422,7 +422,7 @@
     "3607027027247535451": {
         "doc": "itertools", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -437,7 +437,7 @@
     "3607027027333217952": {
         "doc": "create a temp file", 
         "meta": {
-            "date": "20130620",
+            "date": "20130620", 
             "author": "jabba"
         }, 
         "action": [
@@ -452,7 +452,7 @@
     "3607027027412155181": {
         "doc": "BeautifulSoup4 example", 
         "meta": {
-            "date": "20130622",
+            "date": "20130622", 
             "author": "jabba"
         }, 
         "action": [
@@ -467,7 +467,7 @@
     "3607027027505336487": {
         "doc": "collections.defaultdict", 
         "meta": {
-            "date": "20130622",
+            "date": "20130622", 
             "author": "jabba"
         }, 
         "action": [
@@ -482,7 +482,7 @@
     "3607027027591148889": {
         "doc": "verify if the given external command is available", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -497,7 +497,7 @@
     "3607027027672084759": {
         "doc": "exceptions", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -512,7 +512,7 @@
     "3607027027761206028": {
         "doc": "static variable (keep its value between function calls)", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -528,7 +528,7 @@
     "3607027027839915976": {
         "doc": "variables and functions of an object", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -545,7 +545,7 @@
     "3607027027929543359": {
         "doc": "install a package with pip from a github repository", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -561,7 +561,7 @@
     "3607027028014586271": {
         "doc": "read XML with untangle", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -576,7 +576,7 @@
     "3607027028103837037": {
         "doc": "update all Python packages", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -591,7 +591,7 @@
     "3607027028189141623": {
         "doc": "lamdba functions", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -606,7 +606,7 @@
     "3607027028270859060": {
         "doc": "increase a string by one", 
         "meta": {
-            "date": "20130626",
+            "date": "20130626", 
             "author": "jabba"
         }, 
         "action": [
@@ -621,7 +621,7 @@
     "3607027028355669770": {
         "doc": "traverse directory recursively", 
         "meta": {
-            "date": "20130626",
+            "date": "20130626", 
             "author": "jabba"
         }, 
         "action": [
@@ -638,7 +638,7 @@
     "3607027028436820002": {
         "doc": "set operations", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
         }, 
         "action": [
@@ -653,7 +653,7 @@
     "3607027028530980038": {
         "doc": "kill a process", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
         }, 
         "action": [
@@ -668,7 +668,7 @@
     "3607027028614690165": {
         "doc": "blinker example", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
         }, 
         "action": [
@@ -684,7 +684,7 @@
     "3607027028699518074": {
         "doc": "get external command's output", 
         "meta": {
-            "date": "20130701",
+            "date": "20130701", 
             "author": "jabba"
         }, 
         "action": [
@@ -699,7 +699,7 @@
     "3607027028778466638": {
         "doc": "a function defined in .bashrc to facilitate using virtualenv", 
         "meta": {
-            "date": "20130705",
+            "date": "20130705", 
             "author": "jabba"
         }, 
         "action": [
@@ -714,7 +714,7 @@
     "3607027028862733067": {
         "doc": "try / except / else / finally", 
         "meta": {
-            "date": "20130705",
+            "date": "20130705", 
             "author": "jabba"
         }, 
         "action": [
@@ -729,7 +729,7 @@
     "3607027028945415812": {
         "doc": "directory of the file (even if you called it from another directory)", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -744,7 +744,7 @@
     "3607027029037688088": {
         "doc": "socket server and socket client", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -898,6 +898,21 @@
         ], 
         "tags": [
             "devnull"
+        ], 
+        "extra": []
+    }, 
+    "3620287690012737517": {
+        "doc": "measure execution time", 
+        "meta": {
+            "date": "20130904_080614", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/execution_time.py"
+        ], 
+        "tags": [
+            "execution time"
         ], 
         "extra": []
     }
