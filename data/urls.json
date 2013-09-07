@@ -278,5 +278,20 @@
             "python shell"
         ], 
         "extra": []
+    }, 
+    "3621446254540941819": {
+        "doc": "facebook mail", 
+        "meta": {
+            "date": "20130905_222748", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://www.facebook.com/messages/new"
+        ], 
+        "tags": [
+            "facebook mail"
+        ], 
+        "extra": []
     }
 }

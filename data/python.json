@@ -930,5 +930,35 @@
             "indentation"
         ], 
         "extra": []
+    }, 
+    "3622878356492663577": {
+        "doc": "file size (in bytes)", 
+        "meta": {
+            "date": "20130907_215315", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/filesize.py"
+        ], 
+        "tags": [
+            "file size"
+        ], 
+        "extra": []
+    }, 
+    "3622910815899284012": {
+        "doc": "ignored exception", 
+        "meta": {
+            "date": "20130907_225731", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/ignored_exception.py"
+        ], 
+        "tags": [
+            "ignored exception"
+        ], 
+        "extra": []
     }
 }

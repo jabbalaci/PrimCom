@@ -643,7 +643,7 @@ def menu():
             continue
         if inp in ('h', 'help()'):
             info()
-        elif inp in ('q', 'qq', 'quit()', 'exit()'):
+        elif inp in ('q', 'qq', ':q', ':x', 'quit()', 'exit()'):
             my_exit(0)
         elif inp in ('c', 'clear()'):
             os.system('clear')
