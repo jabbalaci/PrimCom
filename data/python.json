@@ -960,5 +960,36 @@
             "ignored exception"
         ], 
         "extra": []
+    }, 
+    "3623344231384939773": {
+        "doc": "1 hour from now", 
+        "meta": {
+            "date": "20130908_131903", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/one_hour.py"
+        ], 
+        "tags": [
+            "timedelta", 
+            "datetime"
+        ], 
+        "extra": []
+    }, 
+    "3623621872773349207": {
+        "doc": "generator example with Fibonacci numbers", 
+        "meta": {
+            "date": "20130908_223027", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_generator.py"
+        ], 
+        "tags": [
+            "generator"
+        ], 
+        "extra": []
     }
 }
