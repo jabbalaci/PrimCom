@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-import os
-import sys
-import socket
 import platform as p
 import uuid
 import hashlib
