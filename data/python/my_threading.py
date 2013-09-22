@@ -31,3 +31,14 @@ def main():
         t.join()
 
     print "# END"
+
+####################
+## simple version ##
+####################
+
+def this_should_run_in_the_background():
+    # some code
+
+def main():
+    # start a function in a thread
+    Thread(target=this_should_run_in_the_background).start()

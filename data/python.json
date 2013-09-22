@@ -991,5 +991,20 @@
             "generator"
         ], 
         "extra": []
+    }, 
+    "3624088738928577471": {
+        "doc": "machine fingerprint", 
+        "meta": {
+            "date": "20130909_135749", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/fingerprint.py"
+        ], 
+        "tags": [
+            "fingerprint"
+        ], 
+        "extra": []
     }
 }
