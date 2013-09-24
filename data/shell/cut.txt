@@ -1,0 +1,14 @@
+cut
+===
+    cut field(s)
+
+    -d<delimiter>       delimiter between fields
+    -f<range>           which field(s) to cut
+                            -f1         1st column
+                            -f1-3       1st, 2nd and 3rd columns
+                            -f1,7       1st and 7nd columns
+                            -f3-        all columns from the 3rd
+
+Examples:
+---------
+    cat /etc/passwd | cut -d: -f1-3

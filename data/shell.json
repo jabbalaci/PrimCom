@@ -2,7 +2,7 @@
     "3607027059365975291": {
         "doc": "bash loops", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -20,7 +20,7 @@
     "3607027059448991299": {
         "doc": "syntax-highlighted \"cat\" in command line", 
         "meta": {
-            "date": "20130605",
+            "date": "20130605", 
             "author": "jabba"
         }, 
         "action": [
@@ -37,7 +37,7 @@
     "3607027059535926093": {
         "doc": "a sample .bashrc file", 
         "meta": {
-            "date": "20130611",
+            "date": "20130611", 
             "author": "jabba"
         }, 
         "action": [
@@ -52,7 +52,7 @@
     "3607027059617069257": {
         "doc": "python oneliner", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -67,7 +67,7 @@
     "3607027059703756824": {
         "doc": "Ubuntu update script", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
         }, 
         "action": [
@@ -82,7 +82,7 @@
     "3607027059789048091": {
         "doc": "crontab example", 
         "meta": {
-            "date": "20130627",
+            "date": "20130627", 
             "author": "jabba"
         }, 
         "action": [
@@ -97,7 +97,7 @@
     "3607027059874219514": {
         "doc": "convert .doc to .txt", 
         "meta": {
-            "date": "20130630",
+            "date": "20130630", 
             "author": "jabba"
         }, 
         "action": [
@@ -113,7 +113,7 @@
     "3607027059965863346": {
         "doc": "pdftk examples", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -128,7 +128,7 @@
     "3607027060048919713": {
         "doc": "Is there anybody listening on a given port?", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -194,6 +194,51 @@
         ], 
         "tags": [
             "blackness"
+        ], 
+        "extra": []
+    }, 
+    "3634882350516705221": {
+        "doc": "sort command in bash", 
+        "meta": {
+            "date": "20130924_112307", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/sort.txt"
+        ], 
+        "tags": [
+            "sort (bash)"
+        ], 
+        "extra": []
+    }, 
+    "3634885571829205576": {
+        "doc": "tr command in bash", 
+        "meta": {
+            "date": "20130924_112911", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/tr.txt"
+        ], 
+        "tags": [
+            "tr (bash)"
+        ], 
+        "extra": []
+    }, 
+    "3634886594999558990": {
+        "doc": "cut command in bash", 
+        "meta": {
+            "date": "20130924_113108", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/cut.txt"
+        ], 
+        "tags": [
+            "cut (bash)"
         ], 
         "extra": []
     }
