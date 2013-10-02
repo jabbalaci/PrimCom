@@ -2,7 +2,7 @@
     "3607027104811646259": {
         "doc": "dist-packages paths", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
         }, 
         "action": [
@@ -19,7 +19,7 @@
     "3607027104898688939": {
         "doc": "wordpress: python sourcecode tag", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
         }, 
         "action": [
@@ -36,7 +36,7 @@
     "3607027104981688163": {
         "doc": "grub2 info and example", 
         "meta": {
-            "date": "20130610",
+            "date": "20130610", 
             "author": "jabba"
         }, 
         "action": [
@@ -51,7 +51,7 @@
     "3607027105067222243": {
         "doc": "vim tricks", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
         }, 
         "action": [
@@ -66,7 +66,7 @@
     "3607027105154465602": {
         "doc": "sample .gitconfig file", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -81,7 +81,7 @@
     "3607027105242426591": {
         "doc": "mc tips", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
         }, 
         "action": [
@@ -154,5 +154,56 @@
             "wp"
         ], 
         "extra": []
+    }, 
+    "3640720417193007424": {
+        "doc": "pmwiki: frame and code", 
+        "meta": {
+            "date": "20131002_124243", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pmwiki_frame_and_code.txt"
+        ], 
+        "tags": [
+            "pmwiki"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3640721807316294132": {
+        "doc": "pmwiki: python source", 
+        "meta": {
+            "date": "20131002_124443", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pmwiki_python_source.txt"
+        ], 
+        "tags": [
+            "pmwiki"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3640737150276330425": {
+        "doc": "wp: highlight text background", 
+        "meta": {
+            "date": "20131002_131526", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wordpress_highlight_text_bg.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
     }
 }

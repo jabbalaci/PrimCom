@@ -897,7 +897,9 @@
             "python/to_dev_null.py"
         ], 
         "tags": [
-            "devnull"
+            "devnull", 
+            "shlex", 
+            "subprocess"
         ], 
         "extra": []
     }, 
@@ -1004,6 +1006,21 @@
         ], 
         "tags": [
             "fingerprint"
+        ], 
+        "extra": []
+    }, 
+    "3640729041468095891": {
+        "doc": "md5: string and file to md5", 
+        "meta": {
+            "date": "20131002_125913", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_md5.py"
+        ], 
+        "tags": [
+            "md5"
         ], 
         "extra": []
     }

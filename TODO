@@ -1,0 +1,5 @@
+* Starting the script should be very fast, i.e.
+  the user should get the prompt immediately.
+  Speed up the startup of the script.
+  Idea: present the prompt, then load the database
+        (json) files in the background one by one.
