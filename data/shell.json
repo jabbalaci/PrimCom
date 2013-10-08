@@ -241,5 +241,50 @@
             "cut (bash)"
         ], 
         "extra": []
+    }, 
+    "3641392929502767840": {
+        "doc": "rename multiple files", 
+        "meta": {
+            "date": "20131003_105810", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/rename.sh"
+        ], 
+        "tags": [
+            "rename"
+        ], 
+        "extra": []
+    }, 
+    "3642293427420677016": {
+        "doc": "sqlite3: create .db file from the schema .sql file", 
+        "meta": {
+            "date": "20131004_164733", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/sqlite3.txt"
+        ], 
+        "tags": [
+            "sqlite3"
+        ], 
+        "extra": []
+    }, 
+    "3645214019664639877": {
+        "doc": "ACL with setfacl / getfacl", 
+        "meta": {
+            "date": "20131008_173014", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/acl.sh"
+        ], 
+        "tags": [
+            "setfacl"
+        ], 
+        "extra": []
     }
 }

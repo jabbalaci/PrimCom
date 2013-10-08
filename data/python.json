@@ -1023,5 +1023,20 @@
             "md5"
         ], 
         "extra": []
+    }, 
+    "3642274683955238695": {
+        "doc": "urandom example: return a string of n random bytes suitable for cryptographic use", 
+        "meta": {
+            "date": "20131004_161029", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/urandom.py"
+        ], 
+        "tags": [
+            "urandom"
+        ], 
+        "extra": []
     }
 }
