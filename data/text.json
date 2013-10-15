@@ -205,5 +205,22 @@
         "extra": [
             "cb()"
         ]
+    }, 
+    "3649379420012936054": {
+        "doc": "wordpress: li tag", 
+        "meta": {
+            "date": "20131014_112608", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_li.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
     }
 }

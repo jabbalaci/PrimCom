@@ -32,10 +32,11 @@ With light background:
 ### Requirements
 
 The project was developed under Ubuntu GNU/Linux with Python 2.7. It is suggested that you install the following packages (via apt-get):
-* python-pygments (for syntax highlighting)
-* xsel (for copying to the clipboard)
-* mplayer2 (for the radio)
-* python-psutil (for process manipulation)
+* python-pygments (syntax highlighting)
+* xsel (copying to the clipboard)
+* mplayer2 (radio)
+* python-psutil (process manipulation; or: pip install psutil)
+* python-requests (or: pip install requests)
 
 ## Details
 

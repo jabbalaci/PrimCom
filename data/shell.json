@@ -286,5 +286,36 @@
             "setfacl"
         ], 
         "extra": []
+    }, 
+    "3645277178640796245": {
+        "doc": "add user to group / remove user from group", 
+        "meta": {
+            "date": "20131008_193555", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/user_group.sh"
+        ], 
+        "tags": [
+            "users", 
+            "groups"
+        ], 
+        "extra": []
+    }, 
+    "3650109622011132835": {
+        "doc": "call python in a shell script", 
+        "meta": {
+            "date": "20131015_113755", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/python_from_bash.sh"
+        ], 
+        "tags": [
+            "python from bash"
+        ], 
+        "extra": []
     }
 }
