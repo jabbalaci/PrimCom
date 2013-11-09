@@ -317,5 +317,35 @@
             "python from bash"
         ], 
         "extra": []
+    }, 
+    "3656756261770434875": {
+        "doc": "installed .deb package version", 
+        "meta": {
+            "date": "20131024_154258", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/package_version.sh"
+        ], 
+        "tags": [
+            "package version"
+        ], 
+        "extra": []
+    }, 
+    "3668536944493871821": {
+        "doc": "avi to mp3", 
+        "meta": {
+            "date": "20131109_204835", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/avi2mp3.sh"
+        ], 
+        "tags": [
+            "avi2mp3"
+        ], 
+        "extra": []
     }
 }

@@ -222,5 +222,20 @@
         "extra": [
             "cb()"
         ]
+    }, 
+    "3661213994379776081": {
+        "doc": "add CSS definition to HTML source", 
+        "meta": {
+            "date": "20131030_181921", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/css_to_html.html"
+        ], 
+        "tags": [
+            "css"
+        ], 
+        "extra": []
     }
 }
