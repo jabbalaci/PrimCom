@@ -39,3 +39,4 @@ nosetests.xml
 # own
 .history
 old/
+dump.rdb

@@ -347,5 +347,20 @@
             "avi2mp3"
         ], 
         "extra": []
+    }, 
+    "3677191138427531713": {
+        "doc": "activate screensaver (blackness)", 
+        "meta": {
+            "date": "20131121_192256", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/blackness.txt"
+        ], 
+        "tags": [
+            "black"
+        ], 
+        "extra": []
     }
 }

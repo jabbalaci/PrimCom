@@ -1,4 +1,4 @@
-sqlite database.db < schema.sql
+sqlite3 database.db < schema.sql
 
 # ==========
 # a simple example for a schema (schema.sql):
@@ -10,3 +10,9 @@ create table entries (
     title text not null,
     text text not null
 );
+
+#############################################################################
+## dump the database in an SQL text format
+#############################################################################
+
+sqlite3 database.db .dump
