@@ -79,3 +79,9 @@ def my_exit(error_code=0):
     #
     sys.exit(error_code)
 
+
+def remove_non_ascii(text): 
+    """
+    Unicode hell :(
+    """
+    return ''.join(c for c in text if ord(c) < 128)

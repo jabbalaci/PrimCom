@@ -362,5 +362,20 @@
             "black"
         ], 
         "extra": []
+    }, 
+    "3684570975730387865": {
+        "doc": "curl tips and tricks", 
+        "meta": {
+            "date": "20131201_234512", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/curl.sh"
+        ], 
+        "tags": [
+            "curl"
+        ], 
+        "extra": []
     }
 }

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -6,8 +8,13 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../lib"))
 from time import sleep
 from signal import SIGTERM          # first this
 import common                       # from ../lib
-from common import exit_signal
+from common import exit_signal, remove_non_ascii
 from config import ROOT             # from ..
+
+from bs4 import BeautifulSoup
+import requests
+
+SLAY = "http://www.slayradio.org/home.php"
 
 
 def radio(url, stop=False):
@@ -35,6 +42,8 @@ def radio(url, stop=False):
         radio.pid = common.get_pid_by_name("mplayer")
         radio.on = True
         radio.url = url
+        if "slayradio" in url:
+            print "Playing:", get_song()['current']
         #print '# radio on'
     else:
         os.kill(radio.pid, SIGTERM)
@@ -91,3 +100,39 @@ def radio_player():
         except ValueError:
             print 'Wat?'
 
+
+def get_song():
+    """
+    Get info about the current and next song.
+    """
+    def get_elem(listiterator, index):
+        cnt = 0
+        for e in listiterator:
+            if cnt == index:
+                return e
+            cnt += 1
+    #
+    try:
+        r = requests.get(SLAY)
+        bs = BeautifulSoup(r.text)
+        author = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying strong")[0].text
+        div = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying")[0]
+        title = get_elem(div.children, 2)
+        p = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying p")[0].text
+        next_song = p[p.find('Next:'):]
+        result = {
+            'current' : remove_non_ascii("{a}: {t}".format(a=author, t=title)),
+            'next' : remove_non_ascii(next_song)
+        }
+    except:
+        result = {
+            'current' : 'Error :(',
+            'next' : 'Error :('
+        }
+
+    return result
+
+##############################################################################
+
+if __name__ == "__main__":
+    print get_song()

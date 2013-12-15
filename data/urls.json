@@ -293,5 +293,21 @@
             "facebook mail"
         ], 
         "extra": []
+    }, 
+    "3694623745596688510": {
+        "doc": "xpath to css", 
+        "meta": {
+            "date": "20131215_203820", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://github.com/santiycr/cssify"
+        ], 
+        "tags": [
+            "xpath", 
+            "css"
+        ], 
+        "extra": []
     }
 }

@@ -778,6 +778,8 @@ def menu():
             pidcheck.pid_alert()
         elif inp == 'debug()':
             debug()
+        elif inp == 'slay()':
+            print "Playing:", radio.get_song()['current']
         else:
             if len(inp) == 1:
                 print "too short..."
@@ -816,6 +818,7 @@ autocomplete_commands += [
     'version()',
     'doc', 'action', 'tags', 'json', 'url', 'link', 'key',
     'pid()',
+    'slay()',
 ]
 
 def info():
