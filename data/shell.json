@@ -377,5 +377,21 @@
             "curl"
         ], 
         "extra": []
+    }, 
+    "3695202220277072470": {
+        "doc": "xsel: text to clipboard", 
+        "meta": {
+            "date": "20131216_154747", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/xsel.sh"
+        ], 
+        "tags": [
+            "xsel", 
+            "clipboard"
+        ], 
+        "extra": []
     }
 }
