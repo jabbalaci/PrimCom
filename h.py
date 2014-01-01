@@ -657,6 +657,8 @@ def menu():
             SearchHits.show_tag_list(tag2keys.keys())
         elif inp == 'p':
             os.system("python")
+        elif inp == 'p3':
+            os.system("python3")
         elif inp == 'last()':
             print last_key
         elif inp == '!!':
