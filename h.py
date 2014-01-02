@@ -56,11 +56,11 @@ pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
 # https://ubuntuincident.wordpress.com/2013/06/05/syntax-highlighted-less-in-command-line/
 
 # these are all re-set in read_json()
-hdict = OrderedDict()      # will be set later
-tag2keys = OrderedDict()   # will be set later
+hdict = OrderedDict()       # will be set later
+tag2keys = OrderedDict()    # will be set later
 #search_result = []         # will be updated after each search
-last_key = None            # will be updated after each command
-autocomplete_commands = [] # will be filled later (used for autocomplete)
+last_key = None             # will be updated after each command
+autocomplete_commands = []  # will be filled later (used for autocomplete)
 
 dependencies = {
     # command: package installation
@@ -89,7 +89,7 @@ def check_dependencies():
 def header():
     s = "PrimCom {v}".format(v=__version__)
     size = len(s)
-    horizontal = '+' + '-' * (size+2) + '+'
+    horizontal = '+' + '-' * (size + 2) + '+'
     col = cfg.colors[cfg.g.BACKGROUND]["header"]
     print bold(horizontal, col)
     print bold('| ' + s + ' |', col)
@@ -161,12 +161,10 @@ class SearchHits(object):
     inp = None
     hits = []
 
-
     @staticmethod
     def reset():
         SearchHits.inp = None
         SearchHits.hits = []
-
 
     @staticmethod
     def show_hint(inp):
@@ -188,11 +186,9 @@ class SearchHits(object):
         else:
             print 'Wat?'
 
-
     @staticmethod
     def add(tag):
         SearchHits.hits.append(Hit(tag))
-
 
     @staticmethod
     def remove_duplicates_and_keep_order():
@@ -204,7 +200,6 @@ class SearchHits(object):
                 my_set.add(hit.tag)
         #
         SearchHits.hits = cleaned
-
 
     @staticmethod
     def show_tag_list(li=None):
@@ -407,7 +402,7 @@ def show_urls(key):
         if inp == 'qq':
             my_exit(0)
         try:
-            index = int(inp)-1
+            index = int(inp) - 1
             if index < 0:
                 raise IndexError
             open_url(li[index])
@@ -446,7 +441,7 @@ def subcommand(li):
         if inp == 'qq':
             my_exit(0)
         try:
-            index = int(inp)-1
+            index = int(inp) - 1
             if index < 0:
                 raise IndexError
             perform_action(li[index])
@@ -488,7 +483,8 @@ def perform_action(key):
 
 def view_edit_json(key):
     db = get_db_by_key(key)
-    os.system("{ed} {f}".format(ed=cfg.EDITOR, f="data/{db}.json".format(db=db)))
+    os.system("{ed} {f}".format(ed=cfg.EDITOR,
+                                f="data/{db}.json".format(db=db)))
 
 
 def to_clipboards(key):
@@ -498,7 +494,7 @@ def to_clipboards(key):
         action = o["action"]
         verb = action[0]
         if verb == 'cat':
-            with open("data/"+action[1]) as f:
+            with open("data/" + action[1]) as f:
                 text_to_clipboards(f.read().rstrip("\n"))
     else:
         print "Warning: xsel is not installed, cannot copy to clipboards."
@@ -511,7 +507,7 @@ def path_to_clipboards(key):
         action = o["action"]
         verb = action[0]
         if verb == 'cat':
-            f = os.path.abspath("data/"+action[1])
+            f = os.path.abspath("data/" + action[1])
             print '#', f
             text_to_clipboards(f)
     else:
@@ -530,7 +526,8 @@ def edit(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("{ed} {fname}".format(ed=cfg.EDITOR, fname="data/"+action[1]))
+        os.system("{ed} {fname}".format(ed=cfg.EDITOR,
+                                        fname="data/" + action[1]))
 
 
 @requires(cfg.GEDIT)
@@ -540,7 +537,8 @@ def gedit(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("{ed} {fname} &".format(ed=cfg.GEDIT, fname="data/"+action[1]))
+        os.system("{ed} {fname} &".format(ed=cfg.GEDIT,
+                                          fname="data/" + action[1]))
 
 
 def less(key):
@@ -549,7 +547,7 @@ def less(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("less {fname}".format(fname="data/"+action[1]))
+        os.system("less {fname}".format(fname="data/" + action[1]))
 
 
 def first_google_hit(keyword):
@@ -560,11 +558,11 @@ def first_google_hit(keyword):
 
 
 def cmd_google(keyword):
-    open_url("https://www.google.com/search?q="+keyword)
+    open_url("https://www.google.com/search?q=" + keyword)
 
 
 def cmd_youtube(keyword):
-    open_url("https://www.youtube.com/results?search_query="+keyword)
+    open_url("https://www.youtube.com/results?search_query=" + keyword)
 
 
 def cmd_go1(keyword, site=None):
@@ -659,6 +657,8 @@ def menu():
             os.system("python")
         elif inp == 'p3':
             os.system("python3")
+        elif inp == 'bpy':
+            os.system("bpython")
         elif inp == 'last()':
             print last_key
         elif inp == '!!':
@@ -780,7 +780,7 @@ def menu():
             pidcheck.pid_alert()
         elif inp == 'debug()':
             debug()
-        elif inp == 'slay()':
+        elif inp in ('slay()', 'song()'):
             print "Playing:", radio.get_song()['current']
         else:
             if len(inp) == 1:
@@ -807,10 +807,11 @@ autocomplete_commands += [
     'cb()', 'tocb()',
     'path()',
     'json.reload()', 'json.view()', 'json.edit()', 'jet()',
-    'this.doc', 'this.action', 'this.tags', 'this.json', 'this.url', 'this.link', 'this.key', 'this.jet()', 'this.edit()',
+    'this.doc', 'this.action', 'this.tags', 'this.json', 'this.url',
+    'this.link', 'this.key', 'this.jet()', 'this.edit()',
     'hits()',
     'reddit()',
-    'radio()', 'mute()',
+    'radio()', 'mute()', 'slay()', 'song()',
     'conferences()',
     'myip()',
     'commands()',
@@ -820,8 +821,8 @@ autocomplete_commands += [
     'version()',
     'doc', 'action', 'tags', 'json', 'url', 'link', 'key',
     'pid()',
-    'slay()',
 ]
+
 
 def info():
     # If you add something to it, add it to the
@@ -882,6 +883,7 @@ autocomplete_commands += [
     'shorten:',
 ]
 
+
 def show_commands():
     # If you add something to it, add it to the
     # global autocomplete_commands list too!
@@ -919,4 +921,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

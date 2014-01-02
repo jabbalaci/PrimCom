@@ -15,14 +15,16 @@ sys.path.insert(0, "./lib/")
 
 # ~~~~~~~~~~~~~~~~~~~~
 
-def load_src(rel_path, name=None):
+def load_src(name, fpath):
     import os, imp
-    if name is None:
-        name = os.path.splitext(os.path.split(rel_path)[1])[0]
-    return imp.load_source(name, os.path.join(os.path.dirname(__file__), rel_path))
+    p = fpath if os.path.isabs(fpath) \
+        else os.path.join(os.path.dirname(__file__), fpath)
+    return imp.load_source(name, p)
 
-eh = load_src("../helper/eh.py")    # equivalent to "import eh"
-gotcha = load_src("./gotcha.py")    # equivalent to "import gotcha"
+load_src("eh", "../helper/eh.py")
+import eh
+load_src("gotcha", "./gotcha.py")
+from gotcha import nothing
 
-from gotcha import semmi
 print eh.SOMETHING
+print nothing()
