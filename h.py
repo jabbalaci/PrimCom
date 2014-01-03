@@ -380,7 +380,7 @@ def show_urls(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        fname = "data/"+action[1]
+        fname = "data/" + action[1]
     else:
         return
 
@@ -575,6 +575,14 @@ def cmd_go1(keyword, site=None):
     open_url(url)
 
 
+def open_pep(num):
+    url = 'http://www.python.org/dev/peps'
+    if num:
+        url = "{url}/pep-{num}".format(url=url, num=num.zfill(4))
+    #
+    open_url(url)
+
+
 def add_item():
     os.system("python ./add_item.py")
 
@@ -609,7 +617,7 @@ def edit_entry(key):
 
 def version():
     text = """
-PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013
+PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013--2014
 """.format(v=__version__, date=__date__)
     print text.strip()
 
@@ -742,13 +750,17 @@ def menu():
             cmd_go1(inp[inp.find(':')+1:], site=site)
         elif inp.startswith("shorten:"):
             urlshortener.shorten_url(inp[inp.find(':')+1:])
+        elif inp.startswith("pep:"):
+            open_pep(inp[inp.find(':')+1:])
+        elif inp == 'pep()':
+            open_pep(None)
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
         #    command(tag)
         elif re.search(r'^\d+$', inp):
             try:
-                index = int(inp)-1
+                index = int(inp) - 1
                 if index < 0:
                     raise IndexError
                 tag = SearchHits.hits[index].tag
@@ -758,7 +770,7 @@ def menu():
         elif re.search(r'^\d+\.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$', inp):
             try:
                 pos = inp.find('.')
-                index = int(inp[:pos])-1
+                index = int(inp[:pos]) - 1
                 what = inp[pos+1:].rstrip("()")
                 if index < 0:
                     raise IndexError
@@ -788,7 +800,6 @@ def menu():
             else:
                 inp = inp.lower()
                 SearchHits.show_hint(inp)
-
 
 # -------------------------------------
 
@@ -855,6 +866,7 @@ this
 hits()          - latest search hits
 reddit()        - reddit...
 radio()         - radio player...
+slay(), song()  - title of the current song on Slay Radio
 conferences()   - Python conferences
 mute()          - stop radio player
 myip()          - my public IP address
@@ -881,6 +893,7 @@ autocomplete_commands += [
     'lib:',
     'lib3:',
     'shorten:',
+    'pep:',
 ]
 
 
@@ -899,6 +912,7 @@ wp:         - open on wikipedia
 lib:        - look up in Python 2 Standard Library
 lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
+pep:        - open PEP, e.g. pep:8
 """
     print text.strip()
 
