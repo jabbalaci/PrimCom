@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 
+import getpass
 import json
-from datetime import datetime
+import os
+import readline
 import sys
 from collections import OrderedDict
-import os
+from datetime import datetime
+
 import config as cfg
 from lib import fs
-import readline
 from lib.simpleflake import simpleflake
-import getpass
 
 
 def get_timestamp_from_year_to_second():
@@ -20,7 +21,8 @@ def get_timestamp_from_year_to_second():
     date = datetime.date(now)
     time = datetime.time(now)
     template = "{year}{month:02}{day:02}_{hour:02}{minute:02}{second:02}"
-    return template.format(year=date.year, month=date.month, day=date.day, hour=time.hour, minute=time.minute, second=time.second)
+    return template.format(year=date.year, month=date.month, day=date.day,
+                           hour=time.hour, minute=time.minute, second=time.second)
 
 
 def create_db(db):
@@ -66,7 +68,7 @@ def get_db():
                 create_db(db)
         else:
             try:
-                index = int(inp)-1
+                index = int(inp) - 1
                 if index < 0:
                     raise IndexError
                 db = li[index]
@@ -92,7 +94,7 @@ def get_new_item():
     if action == 'c':
         action_text = "cat"
         print "Choose category:"
-        db = get_db() 
+        db = get_db()
         action_value = raw_input("  filename: ").strip()
         action_value = "{db}/{av}".format(db=db, av=action_value)
         fname = "data/{db}/{f}".format(db=db, f=action_value)
@@ -136,7 +138,7 @@ def save_new_json(d, hdict, db):
     assert os.path.getsize(orig) > os.path.getsize(bak)
     print "# added to {db}.json".format(db=db)
     if d["action"][0] == "cat":
-        fname = "data/"+d["action"][1]
+        fname = "data/" + d["action"][1]
         if not os.path.isfile(fname):
             if fs.touch(fname):
                 print "# {f} touched".format(f=fname)
@@ -157,4 +159,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print
         print "interrupted."
-

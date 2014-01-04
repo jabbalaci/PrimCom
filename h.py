@@ -20,33 +20,29 @@ Some rules:
   Also, they cannot be numbers (numbers have a special meaning).
 """
 
-import sys
+import atexit
+import json
 import os
 import re
-import json
+import readline
+import shlex
+import sys
 from collections import OrderedDict
-from lib.clipboard import text_to_clipboards
+from subprocess import call
+from threading import Thread
+
 import requests
+
 import config as cfg
 from lib import fs
-import readline
-import atexit
-from lib.common import exit_signal, requires, my_exit, open_url, bold, cindex
-from threading import Thread
-import shlex
-from subprocess import call
-
-from modules import radio
-from modules import pidcheck
-from modules import conferences
-from modules import reddit
-from modules import my_ip
-from modules import urlshortener
+from lib.clipboard import text_to_clipboards
+from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
+from modules import conferences, my_ip, pidcheck, radio, reddit, urlshortener
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.3"
-__date__ = "20130820"
-__copyright__ = "Copyright (c) 2013 Laszlo Szathmary"
+__version__ = "0.3.4"
+__date__ = "20140104"
+__copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
 

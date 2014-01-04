@@ -1,4 +1,5 @@
 import os
+
 from lib.podium import get_short_fingerprint
 
 # root directory of the application
@@ -27,12 +28,14 @@ class Global(object):
 g = Global()
 
 LIGHT, DARK = range(2)
+
 if get_short_fingerprint() == "d8acf3":
     # my laptop
     g.BACKGROUND = LIGHT
 else:
     # anything else
     g.BACKGROUND = DARK
+
 colors = {
     LIGHT: {
         "pygmentize_style": "default",
