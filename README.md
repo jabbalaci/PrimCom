@@ -35,10 +35,10 @@ The project was developed under Ubuntu GNU/Linux with Python 2.7. It is suggeste
 * python-pygments (syntax highlighting)
 * xsel (copying to the clipboard)
 * mplayer2 (radio)
-* python-psutil (process manipulation; or: pip install psutil)
-* python-requests (or: pip install requests)
+* python-psutil (process manipulation; or: `pip install psutil`)
+* python-requests (or: `pip install requests`)
 
 ## Details
 
-To learn more about PrimCom, refer to this page: http://jabbalaci.github.io/PrimCom.
+To learn more about PrimCom, refer to this page: http://jabbalaci.github.io/PrimCom .
 
