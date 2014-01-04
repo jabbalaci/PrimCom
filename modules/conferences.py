@@ -1,26 +1,24 @@
-import os
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../lib"))
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
 
-from signal import SIGTERM          # first this
-import common                       # from ../lib
-from common import exit_signal, open_url
-from config import ROOT             # from ..
+from lib import common
+from config import ROOT
 
 
 def read_conferences_data():
     """Read the input .csv file."""
     li = []
-    with open("{root}/modules/assets/conferences.csv".format(root=ROOT), 'r') as f:
+    with open("{root}/modules/assets/conferences.csv".format(root=ROOT)) as f:
         for index, line in enumerate(f):
             li.append(line.rstrip("\n").split(';'))
 
     return li
 
+
 def debug(li):
-    print "li:"
-    print li
+    print("li:")
+    print(li)
+
 
 def conferences():
     li = read_conferences_data()
@@ -29,13 +27,13 @@ def conferences():
 #    return
 
     for index, e in enumerate(li[1:], start=1):
-        print "({pos}) {id:20}[{url}]".format(pos=index, id=e[0], url=e[1])
-    print "[q] <<"
+        print("({pos}) {id:20}[{url}]".format(pos=index, id=e[0], url=e[1]))
+    print("[q] <<")
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             return None
         if len(inp) == 0:
             continue
@@ -47,10 +45,9 @@ def conferences():
             index = int(inp)
             if index < 1:
                 raise IndexError
-            open_url(li[index][1])
+            common.open_url(li[index][1])
             return
         except IndexError:
-            print "out of range..."
+            print("out of range...")
         except ValueError:
-            print 'Wat?'
-
+            print('Wat?')

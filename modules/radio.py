@@ -1,18 +1,25 @@
 #!/usr/bin/env python
 
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
+####################
+if __name__ == "__main__":
+    import site
+    site.addsitedir(".")
+    del site
+####################
+
 import os
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../lib"))
-
+from signal import SIGTERM
 from time import sleep
-from signal import SIGTERM          # first this
-import common                       # from ../lib
-from common import exit_signal, remove_non_ascii
-from config import ROOT             # from ..
 
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+
+from config import ROOT
+from lib import common
+from lib.common import exit_signal, remove_non_ascii
 
 SLAY = "http://www.slayradio.org/home.php"
 
@@ -43,12 +50,12 @@ def radio(url, stop=False):
         radio.on = True
         radio.url = url
         if "slayradio" in url:
-            print "Playing:", get_song()['current']
-        #print '# radio on'
+            print("Playing:", get_song()['current'])
+        #print('# radio on')
     else:
         os.kill(radio.pid, SIGTERM)
         radio.on = False
-        #print '# radio off'
+        #print('# radio off')
 
 
 @exit_signal.connect
@@ -71,14 +78,14 @@ def read_radio_data():
 def radio_player():
     li, dic = read_radio_data()
     for index, e in enumerate(li[1:], start=1):
-        print "({pos}) {id:20}[{url}]".format(pos=index, id=e[0], url=e[1])
-    print "[s] stop current radio"
-    print "[q] <<"
+        print("({pos}) {id:20}[{url}]".format(pos=index, id=e[0], url=e[1]))
+    print("[s] stop current radio")
+    print("[q] <<")
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             return None
         if len(inp) == 0:
             continue
@@ -96,9 +103,9 @@ def radio_player():
             radio(li[index][1])
             return
         except IndexError:
-            print "out of range..."
+            print("out of range...")
         except ValueError:
-            print 'Wat?'
+            print('Wat?')
 
 
 def get_song():
@@ -121,13 +128,13 @@ def get_song():
         p = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying p")[0].text
         next_song = p[p.find('Next:'):]
         result = {
-            'current' : remove_non_ascii("{a}: {t}".format(a=author, t=title)),
-            'next' : remove_non_ascii(next_song)
+            'current': remove_non_ascii("{a}: {t}".format(a=author, t=title)),
+            'next': remove_non_ascii(next_song)
         }
     except:
         result = {
-            'current' : 'Error :(',
-            'next' : 'Error :('
+            'current': 'Error :(',
+            'next': 'Error :('
         }
 
     return result
@@ -135,4 +142,4 @@ def get_song():
 ##############################################################################
 
 if __name__ == "__main__":
-    print get_song()
+    print(get_song())

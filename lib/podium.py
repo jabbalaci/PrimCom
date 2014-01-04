@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
+import hashlib
 import platform as p
 import uuid
-import hashlib
 
 
 def string_to_md5(content):
     """Calculate the md5 hash of a string.
-    
+
     This 'string' can be the binary content of a file too."""
     return hashlib.md5(content).hexdigest()
+
 
 def get_fingerprint(md5=False):
     """
@@ -24,12 +28,13 @@ def get_fingerprint(md5=False):
     sb.append(p.machine())
     sb.append(p.processor())
     sb.append(p.system())
-    sb.append(str(uuid.getnode()))    # MAC address
+    sb.append(str(uuid.getnode()))  # MAC address
     text = '#'.join(sb)
     if md5:
         return string_to_md5(text)
     else:
         return text
+
 
 def get_short_fingerprint(length=6):
     """
@@ -44,4 +49,4 @@ def get_short_fingerprint(length=6):
 #############################################################################
 
 if __name__ == "__main__":
-    print get_short_fingerprint()
+    print(get_short_fingerprint())

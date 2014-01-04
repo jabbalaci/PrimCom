@@ -20,6 +20,9 @@ Some rules:
   Also, they cannot be numbers (numbers have a special meaning).
 """
 
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
+
 import atexit
 import json
 import os
@@ -40,7 +43,7 @@ from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
 from modules import conferences, my_ip, pidcheck, radio, reddit, urlshortener
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.4"
+__version__ = "0.3.5"
 __date__ = "20140104"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
@@ -78,8 +81,8 @@ class NoLastKeyError(Exception):
 def check_dependencies():
     for prg in dependencies:
         if not fs.which(prg):
-            print "Warning: {0} is not available.".format(prg)
-            print "tip: {0}".format(dependencies[prg])
+            print("Warning: {0} is not available.".format(prg))
+            print("tip: {0}".format(dependencies[prg]))
 
 
 def header():
@@ -87,9 +90,9 @@ def header():
     size = len(s)
     horizontal = '+' + '-' * (size + 2) + '+'
     col = cfg.colors[cfg.g.BACKGROUND]["header"]
-    print bold(horizontal, col)
-    print bold('| ' + s + ' |', col)
-    print bold(horizontal, col)
+    print(bold(horizontal, col))
+    print(bold('| ' + s + ' |', col))
+    print(bold(horizontal, col))
 
 
 def completer(text, state):
@@ -180,7 +183,7 @@ class SearchHits(object):
             #show_tag_list(li)
             SearchHits.show_tag_list()
         else:
-            print 'Wat?'
+            print('Wat?')
 
     @staticmethod
     def add(tag):
@@ -208,7 +211,7 @@ class SearchHits(object):
             if index > 1:
                 sys.stdout.write(', ')
             sys.stdout.write(e.to_str(index))
-        print
+        print()
 
 ##########
 
@@ -239,14 +242,14 @@ class Hit(object):
         o = self.o
         if o:
             if what in ('doc', 'action', 'tags'):
-                print o[what]
+                print(o[what])
             elif what == 'json':
-                print json.dumps(o, indent=4)
+                print(json.dumps(o, indent=4))
             elif what in ('url', 'link'):
                 if self.is_link():
-                    print o["action"][1]
+                    print(o["action"][1])
             elif what == 'key':
-                print self.keys[0]
+                print(self.keys[0])
             elif what == 'edit':
                 if len(self.keys) == 1:
                     edit(self.keys[0])
@@ -254,7 +257,7 @@ class Hit(object):
                 if len(self.keys) == 1:
                     edit_entry(self.keys[0])
             else:
-                print "Wat?"
+                print("Wat?")
 
     def to_str(self, index):
         s = ""
@@ -277,21 +280,21 @@ def process(d):
     for k in d.iterkeys():
         o = d[k]
         if not(("doc" in o) and ("action" in o) and ("tags" in o)):
-            print "Error: '{k}' must have doc, action, and tags.".format(k=k)
+            print("Error: '{k}' must have doc, action, and tags.".format(k=k))
             my_exit(1)
         if len(o["doc"]) == 0:
-            print "Error: '{k}' must have a valid doc.".format(k=k)
+            print("Error: '{k}' must have a valid doc.".format(k=k))
             my_exit(1)
         if len(o["tags"]) == 0:
-            print "Error: '{k}' must have at least one tag.".format(k=k)
+            print("Error: '{k}' must have at least one tag.".format(k=k))
             my_exit(1)
         for t in o["tags"]:
             t = t.strip()
             if t[0] == '_':
-                print "Error: the tag {tag} cannot start with an underscore.".format(tag=t)
+                print("Error: the tag {tag} cannot start with an underscore.".format(tag=t))
                 my_exit(1)
             if len(t) == 1:
-                print "Error: the tag '{t}' in {k} is too short.".format(t=t, k=k)
+                print("Error: the tag '{t}' in {k} is too short.".format(t=t, k=k))
                 my_exit(1)
             if t in t2k:
                 t2k[t].append(k)
@@ -316,7 +319,7 @@ def read_json(verbose=True):
         for k in tmp:
             hdict[k] = tmp[k]
         if verbose:
-            print "# {db} reloaded".format(db=db)
+            print("# {db} reloaded".format(db=db))
     #
     # sort hdict items by date
     hdict = OrderedDict(sorted(hdict.iteritems(), key=lambda x: x[1]["meta"]["date"]))
@@ -333,18 +336,18 @@ def cat(fname, o):
     """
     fname = "data/" + fname
     #
-    print bold("-" * 78)
+    print(bold("-" * 78))
     doc = o["doc"]
     if doc:
-        print bold(doc)
-        print bold("-" * 78)
+        print(bold(doc))
+        print(bold("-" * 78))
     if fs.which("pygmentize"):
         os.system(pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname))
     else:
         with open(fname) as f:
             for line in f:
-                print line,
-    print
+                print(line, end=' ')
+    print()
     #
     process_extras(fname, o)
 
@@ -362,7 +365,7 @@ def process_extras(fname, o):
         if e == "cb()":
             text_to_clipboards(open(fname).read().rstrip("\n"))
         else:
-            print "Warning: unknown extra option: {e}".format(e=e)
+            print("Warning: unknown extra option: {e}".format(e=e))
 
 
 def extract_urls(fname):
@@ -383,13 +386,13 @@ def show_urls(key):
     # OK, we have the fname
     li = extract_urls(fname)
     for index, url in enumerate(li, start=1):
-        print "[{i}] {url}".format(i=index, url=url)
-    print "[q] <<"
+        print("[{i}] {url}".format(i=index, url=url))
+    print("[q] <<")
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             return None
         if len(inp) == 0:
             continue
@@ -404,9 +407,9 @@ def show_urls(key):
             open_url(li[index])
             return
         except IndexError:
-            print "out of range..."
+            print("out of range...")
         except ValueError:
-            print 'Wat?'
+            print('Wat?')
 
 
 def subcommand(li):
@@ -418,17 +421,17 @@ def subcommand(li):
             pre = cindex('[{0}]'.format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
         else:
             pre = cindex('[{0}]'.format(index))
-        print "{pre} {main_tag} ({doc})".format(
+        print("{pre} {main_tag} ({doc})".format(
             pre=pre,
             main_tag=hdict[k]["tags"][0],
             doc=hdict[k]["doc"]
-        )
-    print "[q] <<"
+        ))
+    print("[q] <<")
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             return None
         if len(inp) == 0:
             continue
@@ -443,14 +446,14 @@ def subcommand(li):
             perform_action(li[index])
             return
         except IndexError:
-            print "out of range..."
+            print("out of range...")
         except ValueError:
-            print 'Wat?'
+            print('Wat?')
 
 
 def debug():
     #watch_pid()
-    print "debug..."
+    print("debug...")
 
 
 def command(inp):
@@ -473,7 +476,7 @@ def perform_action(key):
     elif verb == 'open_url':
         open_url(action[1], o["doc"])
     else:
-        print "Error: unknown action: {a}.".format(a=verb)
+        print("Error: unknown action: {a}.".format(a=verb))
         my_exit(1)
 
 
@@ -493,7 +496,7 @@ def to_clipboards(key):
             with open("data/" + action[1]) as f:
                 text_to_clipboards(f.read().rstrip("\n"))
     else:
-        print "Warning: xsel is not installed, cannot copy to clipboards."
+        print("Warning: xsel is not installed, cannot copy to clipboards.")
 
 
 def path_to_clipboards(key):
@@ -504,15 +507,15 @@ def path_to_clipboards(key):
         verb = action[0]
         if verb == 'cat':
             f = os.path.abspath("data/" + action[1])
-            print '#', f
+            print('#', f)
             text_to_clipboards(f)
     else:
-        print "Warning: xsel is not installed, cannot copy to clipboards."
+        print("Warning: xsel is not installed, cannot copy to clipboards.")
 
 
 def show_doc(key):
     o = hdict[key]
-    print o["doc"]
+    print(o["doc"])
 
 
 @requires(cfg.EDITOR)
@@ -607,7 +610,7 @@ def edit_entry(key):
     assert os.path.isfile(tmpfile)
     with open(dbfile, 'w') as f:
         json.dump(dbdict, f, indent=4)
-    print "# edited"
+    print("# edited")
     read_json()
 
 
@@ -615,7 +618,7 @@ def version():
     text = """
 PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013--2014
 """.format(v=__version__, date=__date__)
-    print text.strip()
+    print(text.strip())
 
 
 def cache_pygmentize():
@@ -639,7 +642,7 @@ def menu():
         try:
             inp = raw_input(bold('pc> ')).strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             my_exit(0)
         if len(inp) == 0:
             continue
@@ -664,7 +667,7 @@ def menu():
         elif inp == 'bpy':
             os.system("bpython")
         elif inp == 'last()':
-            print last_key
+            print(last_key)
         elif inp == '!!':
             if last_key:
                 perform_action(last_key)
@@ -762,7 +765,7 @@ def menu():
                 tag = SearchHits.hits[index].tag
                 command(tag)
             except IndexError:
-                print "out of range..."
+                print("out of range...")
         elif re.search(r'^\d+\.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$', inp):
             try:
                 pos = inp.find('.')
@@ -773,7 +776,7 @@ def menu():
                 hit = SearchHits.hits[index]
                 hit.inspect(what)
             except IndexError:
-                print "out of range..."
+                print("out of range...")
         elif re.search(r'^this.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$', inp):
             try:
                 if not last_key:
@@ -789,10 +792,10 @@ def menu():
         elif inp == 'debug()':
             debug()
         elif inp in ('slay()', 'song()'):
-            print "Playing:", radio.get_song()['current']
+            print("Playing:", radio.get_song()['current'])
         else:
             if len(inp) == 1:
-                print "too short..."
+                print("too short...")
             else:
                 inp = inp.lower()
                 SearchHits.show_hint(inp)
@@ -874,7 +877,7 @@ light(), dark() - adjust colors to background
 c               - clear screen (or: clear())
 q               - quit (or: qq, qq(), quit(), exit())
 """
-    print text.strip()
+    print(text.strip())
 
 # -------------------------------------
 
@@ -910,7 +913,7 @@ lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
 pep:        - open PEP, e.g. pep:8
 """
-    print text.strip()
+    print(text.strip())
 
 # -------------------------------------
 

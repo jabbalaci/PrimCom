@@ -11,6 +11,9 @@ https://github.com/asweigart/mapitpy/blob/master/pyperclip.py
 # from lib.clipboard import text_to_clipboards
 """
 
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
 import subprocess
 
 from termcolor import colored
@@ -21,7 +24,7 @@ def text_to_clipboards(text, verbose=True):
     to_primary(text)
     to_clipboard(text)
     if verbose:
-        print bold("# copied to the clipboards")
+        print(bold("# copied to the clipboards"))
 
 
 def bold(text, color='white'):
@@ -34,6 +37,7 @@ def to_primary(text):
     xsel_proc = subprocess.Popen(['xsel', '-pi'], stdin=subprocess.PIPE)
     xsel_proc.communicate(text)
 
+
 def to_clipboard(text):
     """Write text to 'clipboard'."""
     xsel_proc = subprocess.Popen(['xsel', '-bi'], stdin=subprocess.PIPE)
@@ -43,6 +47,5 @@ def to_clipboard(text):
 
 if __name__ == "__main__":
     text = "this should go on the clipboards"
-    print text
+    print(text)
     text_to_clipboards(text)
-

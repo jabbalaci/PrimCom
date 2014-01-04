@@ -8,10 +8,13 @@ each manages its own receivers and message emission.
 The :func:`signal` function provides singleton behavior for named signals.
 
 """
+
+from __future__ import absolute_import
+
 from warnings import warn
 from weakref import WeakValueDictionary
 
-from blinker._utilities import (
+from ._utilities import (
     WeakTypes,
     contextmanager,
     defaultdict,

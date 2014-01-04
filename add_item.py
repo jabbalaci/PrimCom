@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
+
 import getpass
 import json
 import os
@@ -31,13 +34,13 @@ def create_db(db):
         with open(dbfile, "w") as f:
             f.write("{}")    # empty dict.
     else:
-        print "Warning! The file {db} already exists.".format(db=dbfile)
+        print("Warning! The file {db} already exists.".format(db=dbfile))
     #
     dbdir = "data/{db}".format(db=db)
     if not os.path.isdir(dbdir):
         os.mkdir(dbdir)
     else:
-        print "Warning! The dir. {db} already exists.".format(db=dbdir)
+        print("Warning! The dir. {db} already exists.".format(db=dbdir))
 
 
 def strip_end(text, suffix):
@@ -49,14 +52,14 @@ def strip_end(text, suffix):
 def get_db():
     li = [e for e in os.listdir("data") if e.endswith(".json") and e != "urls.json"]
     for index, db in enumerate(li, start=1):
-        print "[{i}] {db}".format(i=index, db=strip_end(db, ".json"))
-    print "[n] new..."
-    print "[q] quit"
+        print("[{i}] {db}".format(i=index, db=strip_end(db, ".json")))
+    print("[n] new...")
+    print("[q] quit")
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             sys.exit(0)
         if len(inp) == 0:
             continue
@@ -73,9 +76,9 @@ def get_db():
                     raise IndexError
                 db = li[index]
             except IndexError:
-                print "out of range..."
+                print("out of range...")
             except ValueError:
-                print 'Wat?'
+                print('Wat?')
         #
         if db:
             break
@@ -88,18 +91,18 @@ def get_new_item():
     doc = raw_input("doc: ").strip()
     action = raw_input("action: (c)at or (o)pen_url [c/o]? ").strip()
     if action not in ('c', 'o'):
-        print "Error: invalid input."
+        print("Error: invalid input.")
         sys.exit(1)
     action_value = None
     if action == 'c':
         action_text = "cat"
-        print "Choose category:"
+        print("Choose category:")
         db = get_db()
         action_value = raw_input("  filename: ").strip()
         action_value = "{db}/{av}".format(db=db, av=action_value)
         fname = "data/{db}/{f}".format(db=db, f=action_value)
         if os.path.isfile(fname):
-            print "Error: the file {fname} already exists.".format(fname=fname)
+            print("Error: the file {fname} already exists.".format(fname=fname))
             sys.exit(1)
         dbfile = "data/{db}.json".format(db=db)
     else:
@@ -136,12 +139,12 @@ def save_new_json(d, hdict, db):
     with open(orig, 'w') as f:
         json.dump(hdict, f, indent=4)
     assert os.path.getsize(orig) > os.path.getsize(bak)
-    print "# added to {db}.json".format(db=db)
+    print("# added to {db}.json".format(db=db))
     if d["action"][0] == "cat":
         fname = "data/" + d["action"][1]
         if not os.path.isfile(fname):
             if fs.touch(fname):
-                print "# {f} touched".format(f=fname)
+                print("# {f} touched".format(f=fname))
                 reply = raw_input("Do you want to edit {f} [y/n] (default: yes)? ".format(f=fname)).strip()
                 if reply in ('', 'y'):
                     os.system("{ed} {f}".format(ed=cfg.EDITOR, f=fname))
@@ -157,5 +160,5 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print
-        print "interrupted."
+        print()
+        print("interrupted.")

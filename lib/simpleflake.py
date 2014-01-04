@@ -4,12 +4,15 @@ https://github.com/SawdustSoftware/simpleflake
 Usage:
 
 from simpleflake import simpleflake
-print simpleflake()
+print(simpleflake())
 """
 
-import time
-import random
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
 import collections
+import random
+import time
 
 #: Epoch for simpleflake timestamps, starts at the year 2000
 SIMPLEFLAKE_EPOCH = 946702800

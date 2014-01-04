@@ -1,6 +1,8 @@
+from __future__ import absolute_import
+
 from weakref import ref
 
-from blinker._saferef import BoundMethodWeakref
+from ._saferef import BoundMethodWeakref
 
 
 try:

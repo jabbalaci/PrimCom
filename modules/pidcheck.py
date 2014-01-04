@@ -1,14 +1,14 @@
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
+
 import os
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../lib"))
-
-import psutil    # sudo apt-get install python-psutil
-from time import sleep
 from threading import Thread
+from time import sleep
 
-from common import exit_signal, my_exit, play_audio     # from ../lib
-import config as cfg                                    # from ..
+import psutil
+
+import config as cfg
+from lib.common import exit_signal, my_exit, play_audio
 
 ##########
 
@@ -23,7 +23,7 @@ class PidChecker(Thread):
         try:
             pid = int(pid)
         except ValueError:
-            print 'Hm?'
+            print('Hm?')
             return
         # else
         try:
@@ -31,13 +31,13 @@ class PidChecker(Thread):
             if not self.isAlive():
                 self.start()
         except psutil._error.NoSuchProcess:
-            print 'Warning: no such PID.'
+            print('Warning: no such PID.')
 
     def remove(self, pid):
         try:
             pid = int(pid)
         except ValueError:
-            print 'Hm?'
+            print('Hm?')
             return
         # else
         for proc in self.checklist:
@@ -45,8 +45,7 @@ class PidChecker(Thread):
                 self.checklist.remove(proc)
                 break
         else:
-            print 'Warning: no such PID.'
-
+            print('Warning: no such PID.')
 
     def stop(self):
         self.running = False
@@ -58,10 +57,10 @@ class PidChecker(Thread):
 
     def contents(self):
         if not self.checklist:
-            print '<empty>'
+            print('<empty>')
         else:
             for p in sorted(self.checklist, key=lambda p: p.pid):
-                print '*', p
+                print('*', p)
 
     def run(self):
         while self.running:
@@ -89,7 +88,8 @@ def notify_send(msg):
     logo = "{root}/assets/logo.xpm".format(root=cfg.ROOT)
     main = "PrimCom Alert"
     sub = msg
-    cmd = 'notify-send -i {logo} "{main}" "{sub}"'.format(logo=logo, main=main, sub=sub)
+    cmd = 'notify-send -i {logo} "{main}" "{sub}"'.format(logo=logo,
+                                                          main=main, sub=sub)
     os.system(cmd)
 
 
@@ -98,14 +98,14 @@ def watch_pid():
     try:
         pid = int(raw_input("PID: ").strip())
     except ValueError:
-        print 'Wat?'
+        print('Wat?')
         return
     except (KeyboardInterrupt, EOFError):
-        print
+        print()
         return
     # else
     if pid not in psutil.get_pid_list():
-        print 'Warning: no such PID.'
+        print('Warning: no such PID.')
         return
     # else
     pid_checker.add(pid)
@@ -120,12 +120,12 @@ def pid_alert():
 [m] this menu
 [q] <<
 """.strip()
-    print text
+    print(text)
     while True:
         try:
             inp = raw_input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
-            print
+            print()
             return None
         if len(inp) == 0:
             continue
@@ -134,7 +134,7 @@ def pid_alert():
         elif inp == 'qq':
             my_exit(0)
         elif inp == 'm':
-            print text
+            print(text)
         elif inp.startswith('!'):
             cmd = inp[1:]
             os.system(cmd)
@@ -151,5 +151,4 @@ def pid_alert():
         elif inp.startswith('remove:'):
             pid_checker.remove(inp[inp.find(':')+1:])
         else:
-            print 'Wat?'
-
+            print('Wat?')
