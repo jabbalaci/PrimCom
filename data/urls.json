@@ -309,5 +309,20 @@
             "css"
         ], 
         "extra": []
+    }, 
+    "3709950597447487468": {
+        "doc": "ASCII table", 
+        "meta": {
+            "date": "20140106_000952", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.topurlz.com/ascii_table_print.htm"
+        ], 
+        "tags": [
+            "ascii"
+        ], 
+        "extra": []
     }
 }
