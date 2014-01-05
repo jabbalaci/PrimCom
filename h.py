@@ -560,6 +560,11 @@ def cmd_google(keyword):
     open_url("https://www.google.com/search?q=" + keyword)
 
 
+def cmd_def(word):
+    keyword = "{w} meaning".format(w=word)
+    cmd_google(keyword)
+
+
 def cmd_youtube(keyword):
     open_url("https://www.youtube.com/results?search_query=" + keyword)
 
@@ -749,6 +754,8 @@ def menu():
             cmd_go1(inp[inp.find(':')+1:], site=site)
         elif inp.startswith("shorten:"):
             urlshortener.shorten_url(inp[inp.find(':')+1:])
+        elif inp.startswith("def:"):
+            cmd_def(inp[inp.find(':')+1:])
         elif inp.startswith("pep:"):
             open_pep(inp[inp.find(':')+1:])
         elif inp == 'pep()':
@@ -893,6 +900,7 @@ autocomplete_commands += [
     'lib3:',
     'shorten:',
     'pep:',
+    'def:',
 ]
 
 
@@ -912,6 +920,7 @@ lib:        - look up in Python 2 Standard Library
 lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
 pep:        - open PEP, e.g. pep:8
+def:        - define a word
 """
     print(text.strip())
 
