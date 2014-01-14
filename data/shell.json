@@ -393,5 +393,20 @@
             "clipboard"
         ], 
         "extra": []
+    }, 
+    "3716437672723517626": {
+        "doc": "how to use scp for uploading/downloading", 
+        "meta": {
+            "date": "20140114_225848", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/scp.sh"
+        ], 
+        "tags": [
+            "scp"
+        ], 
+        "extra": []
     }
 }
