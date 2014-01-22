@@ -43,8 +43,8 @@ from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
 from modules import conferences, my_ip, pidcheck, radio, reddit, urlshortener
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.5"
-__date__ = "20140104"
+__version__ = "0.3.6"
+__date__ = "20140122"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -83,6 +83,13 @@ def check_dependencies():
         if not fs.which(prg):
             print("Warning: {0} is not available.".format(prg))
             print("tip: {0}".format(dependencies[prg]))
+
+
+def check_dependencies_in_background():
+    """
+    Do this check in the background to speed up startup time.
+    """
+    Thread(target=check_dependencies).start()
 
 
 def header():
@@ -152,6 +159,7 @@ def get_db_by_key(key):
     #
     return None
 
+
 #############
 ## Classes ##
 #############
@@ -213,6 +221,7 @@ class SearchHits(object):
             sys.stdout.write(e.to_str(index))
         print()
 
+
 ##########
 
 class Hit(object):
@@ -270,6 +279,7 @@ class Hit(object):
             s += '...'
         return s
 
+
 ##########
 ## Core ##
 ##########
@@ -325,6 +335,13 @@ def read_json(verbose=True):
     hdict = OrderedDict(sorted(hdict.iteritems(), key=lambda x: x[1]["meta"]["date"]))
     #
     tag2keys = process(hdict)
+
+
+def read_json_in_background():
+    """
+    Read the JSON files in the background to speed up the startup.
+    """
+    Thread(target=read_json, kwargs={'verbose': False}).start()
 
 
 def cat(fname, o):
@@ -932,10 +949,10 @@ def cleanup():
 
 def main():
     atexit.register(cleanup)
-    check_dependencies()
+    check_dependencies_in_background()
     setup_history_and_tab_completion()
     #
-    read_json(verbose=False)
+    read_json_in_background()
     header()
     menu()
 

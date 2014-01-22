@@ -5,12 +5,13 @@ import os
 
 from lib.podium import get_short_fingerprint
 
+
 # root directory of the application
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 EDITOR = 'vim'
 GEDIT = 'gedit'
-PLAYER = 'mplayer -ao alsa'    # "-ao alsa" is a workaround to make mplayer quit
+PLAYER = 'mplayer -ao alsa'    # a workaround to make mplayer quit
 
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
@@ -24,6 +25,7 @@ LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.
 #    "text.json",
 #    "urls.json"
 #]
+
 
 class Global(object):
     pass
