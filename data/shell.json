@@ -408,5 +408,20 @@
             "scp"
         ], 
         "extra": []
+    }, 
+    "3722803918201954469": {
+        "doc": "pdf to text", 
+        "meta": {
+            "date": "20140123_174712", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/pdf2txt.sh"
+        ], 
+        "tags": [
+            "pdf2txt"
+        ], 
+        "extra": []
     }
 }
