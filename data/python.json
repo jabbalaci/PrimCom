@@ -1038,5 +1038,21 @@
             "urandom"
         ], 
         "extra": []
+    }, 
+    "3722859534908146662": {
+        "doc": "optparse module", 
+        "meta": {
+            "date": "20140123_193810", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/my_optparse.py"
+        ], 
+        "tags": [
+            "optparse", 
+            "OptionParser"
+        ], 
+        "extra": []
     }
 }
