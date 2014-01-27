@@ -815,8 +815,8 @@ def menu():
             pidcheck.pid_alert()
         elif inp == 'debug()':
             debug()
-        elif inp in ('slay()', 'song()'):
-            print("Playing:", radio.get_song()['current'])
+        elif inp in ('song()'):
+            print("Playing:", radio.get_song())
         else:
             if len(inp) == 1:
                 print("too short...")
@@ -845,7 +845,7 @@ autocomplete_commands += [
     'this.link', 'this.key', 'this.jet()', 'this.edit()',
     'hits()',
     'reddit()',
-    'radio()', 'mute()', 'slay()', 'song()',
+    'radio()', 'mute()', 'song()',
     'conferences()',
     'myip()',
     'commands()',
@@ -889,7 +889,7 @@ this
 hits()          - latest search hits
 reddit()        - reddit...
 radio()         - radio player...
-slay(), song()  - title of the current song on Slay Radio
+song()          - title of the current song on radio
 conferences()   - Python conferences
 mute()          - stop radio player
 myip()          - my public IP address
