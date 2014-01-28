@@ -65,7 +65,7 @@ def open_url(url, doc=None):
         print(bold(doc))
         print(bold("-" * 78))
     #webbrowser.open_new_tab(url)  # use this if the problem is solved
-    os.system('firefox -url "{url}" 2>/dev/null'.format(url=url))  # workaround
+    os.system('firefox -url "{url}" 2>/dev/null &'.format(url=url))  # workaround
 
 
 @requires('mplayer')

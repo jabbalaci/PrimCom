@@ -33,6 +33,7 @@ import sys
 from collections import OrderedDict
 from subprocess import call
 from threading import Thread
+from urlparse import urljoin
 
 import requests
 
@@ -769,6 +770,10 @@ def menu():
         elif inp.startswith("lib3:"):
             site = "docs.python.org/3/library/"
             cmd_go1(inp[inp.find(':')+1:], site=site)
+        elif inp.startswith("golib:"):
+            site = "http://golang.org/pkg/"
+            lib = inp[inp.find(':')+1:]
+            open_url(urljoin(site, lib))
         elif inp.startswith("shorten:"):
             urlshortener.shorten_url(inp[inp.find(':')+1:])
         elif inp.startswith("def:"):
@@ -918,6 +923,7 @@ autocomplete_commands += [
     'shorten:',
     'pep:',
     'def:',
+    'golib:',
 ]
 
 
@@ -938,6 +944,7 @@ lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
 pep:        - open PEP, e.g. pep:8
 def:        - define a word
+golib:      - open on Go standard library
 """
     print(text.strip())
 
