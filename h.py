@@ -51,6 +51,7 @@ __license__ = "GPL"
 
 
 pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
+user_agent = {'User-agent': cfg.USER_AGENT}
 
 # If you want the command "less" to use colors, follow the steps in this post:
 # https://ubuntuincident.wordpress.com/2013/06/05/syntax-highlighted-less-in-command-line/
@@ -469,9 +470,11 @@ def subcommand(li):
             print('Wat?')
 
 
-def debug():
-    #watch_pid()
-    print("debug...")
+def debug(text):
+    """
+    for development
+    """
+    print(text)
 
 
 def command(inp):
@@ -764,7 +767,7 @@ def menu():
         elif inp.startswith("wp:"):
             site = "wikipedia.org"
             cmd_go1(inp[inp.find(':')+1:], site=site)
-        elif inp.startswith("lib:"):
+        elif inp.startswith("lib:") or inp.startswith("lib2:"):
             site = "docs.python.org/2/library/"
             cmd_go1(inp[inp.find(':')+1:], site=site)
         elif inp.startswith("lib3:"):
@@ -819,8 +822,8 @@ def menu():
         elif inp == 'pid()':
             pidcheck.pid_alert()
         elif inp == 'debug()':
-            debug()
-        elif inp in ('song()'):
+            debug(None)
+        elif inp == 'song()':
             print("Playing:", radio.get_song())
         else:
             if len(inp) == 1:
@@ -918,7 +921,7 @@ autocomplete_commands += [
     'youtube:',
     'amazon:',
     'wp:',
-    'lib:',
+    'lib:', 'lib2:',
     'lib3:',
     'shorten:',
     'pep:',
@@ -939,7 +942,7 @@ go1:        - open first google hit
 imdb:       - open on IMDb
 youtube:    - open on YouTube
 wp:         - open on wikipedia
-lib:        - look up in Python 2 Standard Library
+lib:        - look up in Python 2 Standard Library (or: lib2:)
 lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
 pep:        - open PEP, e.g. pep:8

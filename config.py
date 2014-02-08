@@ -15,6 +15,8 @@ PLAYER = 'mplayer -ao alsa'    # a workaround to make mplayer quit
 
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
+USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:26.0) Gecko/20100101 Firefox/26.0'
+
 # data/*.json are loaded automatically
 LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.endswith(".json")])
 
