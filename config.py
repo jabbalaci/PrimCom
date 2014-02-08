@@ -11,7 +11,14 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 EDITOR = 'vim'
 GEDIT = 'gedit'
-PLAYER = 'mplayer -ao alsa'    # a workaround to make mplayer quit
+PLAYER = {
+    "cmd":      "mplayer",
+    "cmdline":  "mplayer -ao alsa"   # a workaround to make mplayer quit
+}
+#PLAYER = {
+#    "cmd":     "cvlc",    # command-line VLC
+#    "cmdline": "cvlc"
+#}
 
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 

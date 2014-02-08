@@ -68,13 +68,13 @@ def open_url(url, doc=None):
     os.system('firefox -url "{url}" 2>/dev/null &'.format(url=url))  # workaround
 
 
-@requires('mplayer')
+@requires(cfg.PLAYER["cmd"])
 def play_audio(audio):
     """
     Audio can be a file or an URL stream.
     """
-    cmd = '{mplayer} "{audio}" 1>/dev/null 2>&1 &'.format(mplayer=cfg.PLAYER,
-                                                          audio=audio)
+    cmd = '{player} "{audio}" 1>/dev/null 2>&1 &'.format(player=cfg.PLAYER["cmdline"],
+                                                         audio=audio)
     os.system(cmd)
 
 

@@ -17,7 +17,7 @@ from time import sleep
 import requests
 from bs4 import BeautifulSoup
 
-from config import ROOT
+import config as cfg
 from lib import common
 from lib.common import exit_signal, remove_non_ascii
 
@@ -46,7 +46,7 @@ def radio(url, stop=False, id=None):
     if not radio.on:
         common.play_audio(url)
         sleep(.1)
-        radio.pid = common.get_pid_by_name("mplayer")
+        radio.pid = common.get_pid_by_name(cfg.PLAYER["cmd"])
         radio.on = True
         radio.url = url
         if radio.id in ['slay', 'fm95']:
@@ -67,7 +67,7 @@ def read_radio_data():
     """Read the input .csv file."""
     li = []
     dic = {}
-    with open("{root}/modules/assets/radio.csv".format(root=ROOT), 'r') as f:
+    with open("{root}/modules/assets/radio.csv".format(root=cfg.ROOT), 'r') as f:
         for index, line in enumerate(f):
             li.append(line.rstrip("\n").split(';'))
             dic[li[-1][0]] = index

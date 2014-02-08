@@ -42,12 +42,12 @@ With light background: ![light background](https://dl.dropboxusercontent.com/u/1
 ### Requirements
 
 The project was developed under Ubuntu GNU/Linux with Python 2.7. It
-is suggested that you install the following packages (via apt-get): 
+is suggested that you install the following packages (via apt-get):
 
-* python-pygments (syntax highlighting) 
-* xsel (copying to the clipboard) 
-* mplayer2 (radio) 
-* python-psutil (process manipulation; or: `pip install psutil`) 
+* python-pygments (syntax highlighting)
+* xsel (copying to the clipboard)
+* mplayer2 and/or vlc (radio)
+* python-psutil (process manipulation; or: `pip install psutil`)
 * python-requests (or: `pip install requests`)
 
 ## Details
