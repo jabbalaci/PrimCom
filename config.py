@@ -43,7 +43,7 @@ g = Global()
 
 LIGHT, DARK = range(2)
 
-if get_short_fingerprint() == "d8acf3":
+if get_short_fingerprint() == "32a166":
     # my laptop
     g.BACKGROUND = LIGHT
 else:
