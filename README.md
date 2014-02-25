@@ -49,6 +49,7 @@ is suggested that you install the following packages (via apt-get):
 * mplayer2 and/or vlc (radio)
 * python-psutil (process manipulation; or: `pip install psutil`)
 * python-requests (or: `pip install requests`)
+* jinja2
 
 ## Details
 
