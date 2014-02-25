@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
 """
 https://github.com/SawdustSoftware/simpleflake
 
@@ -5,10 +8,14 @@ Usage:
 
 from simpleflake import simpleflake
 print(simpleflake())
+
+
+This is a patched version with hexa support.
+See https://github.com/jabbalaci/simpleflake
 """
 
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
 
 import collections
 import random
@@ -51,16 +58,20 @@ def extract_bits(data, shift, length):
 # ==================================================
 
 
-def simpleflake(timestamp=None, random_bits=None, epoch=SIMPLEFLAKE_EPOCH):
+def simpleflake(timestamp=None, random_bits=None, epoch=SIMPLEFLAKE_EPOCH,
+                hexa=False):
     """Generate a 64 bit, roughly-ordered, globally-unique ID."""
     second_time = timestamp if timestamp is not None else time.time()
     second_time -= epoch
-    milisecond_time = int(second_time * 1000)
+    millisecond_time = int(second_time * 1000)
 
     randomness = random.SystemRandom().getrandbits(SIMPLEFLAKE_RANDOM_LENGTH)
     randomness = random_bits if random_bits is not None else randomness
 
-    flake = (milisecond_time << SIMPLEFLAKE_TIMESTAMP_SHIFT) + randomness
+    flake = (millisecond_time << SIMPLEFLAKE_TIMESTAMP_SHIFT) + randomness
+
+    if hexa:
+        flake = hex(flake).lstrip("0x").rstrip("L")
 
     return flake
 
@@ -75,3 +86,9 @@ def parse_simpleflake(flake):
                           SIMPLEFLAKE_RANDOM_SHIFT,
                           SIMPLEFLAKE_RANDOM_LENGTH)
     return simpleflake_struct(timestamp, random)
+
+
+# ==================================================
+
+if __name__ == "__main__":
+    print(simpleflake(hexa=True))

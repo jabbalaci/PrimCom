@@ -14,7 +14,9 @@ https://github.com/asweigart/mapitpy/blob/master/pyperclip.py
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
+import shlex
 import subprocess
+from subprocess import PIPE, Popen, STDOUT
 
 from termcolor import colored
 
@@ -30,6 +32,16 @@ def text_to_clipboards(text, verbose=True):
 def bold(text, color='white'):
     return colored(text, color, attrs=['bold'])
 
+
+def get_simple_cmd_output(cmd, stderr=STDOUT):
+    """Execute a simple external command and get its output.
+
+    The command contains no pipes. Error messages are
+    redirected to the standard output by default.
+    """
+    args = shlex.split(cmd)
+    return Popen(args, stdout=PIPE, stderr=stderr).communicate()[0]
+
 #############################################################################
 
 def to_primary(text):
@@ -42,6 +54,19 @@ def to_clipboard(text):
     """Write text to 'clipboard'."""
     xsel_proc = subprocess.Popen(['xsel', '-bi'], stdin=subprocess.PIPE)
     xsel_proc.communicate(text)
+
+#############################################################################
+
+def read_primary():
+    """Read content of 'primary'."""
+    cmd = 'xsel -po'
+    return get_simple_cmd_output(cmd)
+
+
+def read_clipboard():
+    """Read content of 'clipboard'."""
+    cmd = 'xsel -bo'
+    return get_simple_cmd_output(cmd)
 
 #############################################################################
 

@@ -41,11 +41,13 @@ import config as cfg
 from lib import fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import conferences, my_ip, pidcheck, radio, reddit, urlshortener
+from modules import (conferences, my_ip, pidcheck,
+                     radio, reddit, show, urlshortener)
+
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.6"
-__date__ = "20140122"
+__version__ = "0.3.7"
+__date__ = "20140225"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -785,6 +787,8 @@ def menu():
             open_pep(inp[inp.find(':')+1:])
         elif inp == 'pep()':
             open_pep(None)
+        elif inp == 'show()':
+            show.show()
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
@@ -863,6 +867,7 @@ autocomplete_commands += [
     'version()',
     'doc', 'action', 'tags', 'json', 'url', 'link', 'key',
     'pid()',
+    'show()',
 ]
 
 
@@ -898,6 +903,7 @@ hits()          - latest search hits
 reddit()        - reddit...
 radio()         - radio player...
 song()          - title of the current song on radio
+show()          - show the content of the clipboard in the browser
 conferences()   - Python conferences
 mute()          - stop radio player
 myip()          - my public IP address
