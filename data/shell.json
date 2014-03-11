@@ -423,5 +423,21 @@
             "pdf2txt"
         ], 
         "extra": []
+    }, 
+    "3756856425987803904": {
+        "doc": "vim filetypes", 
+        "meta": {
+            "date": "20140311_172344", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/vim_filetypes.sh"
+        ], 
+        "tags": [
+            "vim", 
+            "filetypes"
+        ], 
+        "extra": []
     }
 }
