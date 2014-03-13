@@ -1054,5 +1054,22 @@
             "OptionParser"
         ], 
         "extra": []
+    }, 
+    "3758249452436585119": {
+        "doc": "Execute an external command and get its exitcode, stdout and stderr.", 
+        "meta": {
+            "date": "20140313_153135", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/exitcode_stdout_stderr.py"
+        ], 
+        "tags": [
+            "exitcode", 
+            "stdout", 
+            "stderr"
+        ], 
+        "extra": []
     }
 }
