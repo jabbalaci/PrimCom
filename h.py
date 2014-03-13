@@ -28,10 +28,8 @@ import json
 import os
 import re
 import readline
-import shlex
 import sys
 from collections import OrderedDict
-from subprocess import call
 from threading import Thread
 from urlparse import urljoin
 
@@ -41,18 +39,18 @@ import config as cfg
 from lib import fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (conferences, my_ip, pidcheck,
-                     radio, reddit, show, urlshortener)
+from modules import (colored_line_numbers, conferences, my_ip,
+                     pidcheck, radio, reddit, show, urlshortener)
+
 
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.3.7"
-__date__ = "20140225"
+__version__ = "0.4.0"
+__date__ = "20140313"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
 
-pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
 user_agent = {'User-agent': cfg.USER_AGENT}
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -348,31 +346,6 @@ def read_json_in_background():
     Thread(target=read_json, kwargs={'verbose': False}).start()
 
 
-def cat(fname, o):
-    """
-    Show file content on stdout.
-
-    If pygmentize is available, show a syntax-highlighted output.
-    Otherwise fall back to a normal "cat".
-    """
-    fname = "data/" + fname
-    #
-    print(bold("-" * 78))
-    doc = o["doc"]
-    if doc:
-        print(bold(doc))
-        print(bold("-" * 78))
-    if fs.which("pygmentize"):
-        os.system(pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname))
-    else:
-        with open(fname) as f:
-            for line in f:
-                print(line, end=' ')
-    print()
-    #
-    process_extras(fname, o)
-
-
 def process_extras(fname, o):
     """
     Currently implemented extras:
@@ -495,7 +468,9 @@ def perform_action(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        cat(action[1], o)
+        fname = "data/" + action[1]
+        colored_line_numbers.cat(fname, o)
+        process_extras(fname, o)
     elif verb == 'open_url':
         open_url(action[1], o["doc"])
     else:
@@ -610,6 +585,11 @@ def open_pep(num):
     open_url(url)
 
 
+def toggle_line_numbers():
+    cfg.SHOW_LINE_NUMBERS = not cfg.SHOW_LINE_NUMBERS
+    print('show line numbers:', 'on' if cfg.SHOW_LINE_NUMBERS else 'off')
+
+
 def add_item():
     os.system("python ./add_item.py")
 
@@ -649,22 +629,9 @@ PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013--2014
     print(text.strip())
 
 
-def cache_pygmentize():
-    """
-    The first call of pygmentize is slow, thus we call it upon
-    startup in the background.
-    """
-    fname = "{root}/assets/alap.py".format(root=cfg.ROOT)
-    if fs.which("pygmentize") and os.path.isfile(fname):
-        with open(os.devnull, 'w') as devnull:
-            cmd = pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname)
-            args = shlex.split(cmd)
-            call(args, stdout=devnull, stderr=devnull)
-
-
 @requires(cfg.EDITOR)
 def menu():
-    Thread(target=cache_pygmentize).start()
+    Thread(target=colored_line_numbers.cache_pygmentize).start()
     #
     while True:
         try:
@@ -789,6 +756,8 @@ def menu():
             open_pep(None)
         elif inp == 'show()':
             show.show()
+        elif inp == 'numbers()':
+            toggle_line_numbers()
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
@@ -868,6 +837,7 @@ autocomplete_commands += [
     'doc', 'action', 'tags', 'json', 'url', 'link', 'key',
     'pid()',
     'show()',
+    'numbers()',
 ]
 
 
@@ -912,6 +882,7 @@ commands()      - list available commands (a command has the form cmd:param)
 add()           - add new item
 pid()           - pid alert...
 light(), dark() - adjust colors to background
+numbers()       - toggle line numbers
 c               - clear screen (or: clear())
 q               - quit (or: qq, qq(), quit(), exit())
 """

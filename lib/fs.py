@@ -79,7 +79,19 @@ def set_mode_to(fname, permissions):
 
     return get_oct_mode(fname) == oct(permissions)
 
+
+def file_len(fname):
+    """
+    Number of lines in the file, like "wc -l".
+    """
+    i = 0
+    with open(fname) as f:
+        for i, _ in enumerate(f, start=1):
+            pass
+    return i
+
 #############################################################################
 
 if __name__ == "__main__":
     print(which('bash'))
+    print(file_len("na"))

@@ -1,5 +1,5 @@
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
 
 import os
 
@@ -56,16 +56,22 @@ colors = {
         "bold": None,    # will be bold black
         "cindex": "blue",
         "cindex_link": "magenta",
-        "header": "grey"
+        "header": "grey",
+        "line_numbers": "grey",
     },
     DARK: {
         "pygmentize_style": "native",
         "bold": "white",
         "cindex": "yellow",
         "cindex_link": "magenta",
-        "header": "green"
+        "header": "green",
+        "line_numbers": "yellow",
     }
 }
+
+# When printing the content of a file, show line numbers?
+SHOW_LINE_NUMBERS = True
+#SHOW_LINE_NUMBERS = False
 
 # .history file can grow quickly thus we truncate it to N lines upon startup
 TRUNCATE_HISTFILE_TO_LINES = 50
