@@ -254,5 +254,20 @@
         "extra": [
             "cb()"
         ]
+    }, 
+    "3759697623845765823": {
+        "doc": "pip3 (if you have Python 2 and Python 3 on the same machine)", 
+        "meta": {
+            "date": "20140315_152845", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pip3.sh"
+        ], 
+        "tags": [
+            "pip3"
+        ], 
+        "extra": []
     }
 }
