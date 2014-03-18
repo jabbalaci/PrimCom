@@ -43,10 +43,9 @@ from modules import (colored_line_numbers, conferences, my_ip,
                      pidcheck, radio, reddit, show, urlshortener)
 
 
-
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.4.0"
-__date__ = "20140313"
+__version__ = "0.4.1"
+__date__ = "20140318"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 

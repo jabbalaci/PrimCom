@@ -11,6 +11,9 @@ if __name__ == "__main__":
 ####################
 
 import os
+import re
+import shlex
+import subprocess as sp
 from signal import SIGTERM
 from time import sleep
 
@@ -20,7 +23,7 @@ from bs4 import BeautifulSoup
 import config as cfg
 from lib import common
 from lib.common import exit_signal, remove_non_ascii
-
+from modules.process import get_exitcode_stdout_stderr
 
 
 def radio(url, stop=False, id=None):
@@ -49,8 +52,7 @@ def radio(url, stop=False, id=None):
         radio.pid = common.get_pid_by_name(cfg.PLAYER["cmd"])
         radio.on = True
         radio.url = url
-        if radio.id in ['slay', 'fm95']:
-            print("Playing:", get_song())
+        print("Playing:", get_song())
         #print('# radio on')
     else:
         os.kill(radio.pid, SIGTERM)
@@ -112,48 +114,25 @@ def get_song():
     """
     dispatcher
     """
-    if radio.id == 'slay':
-        msg = get_song_slay()['current']
-    elif radio.id == 'fm95':
+    if radio.id == 'fm95':
         msg = get_song_fm95()
     else:
-        msg = "Extracting song title is not yet implemented for this radio."
+#        print(radio.url)
+        msg = get_stream_title(radio.url)
 
     return msg
 
 
-def get_song_slay():
-    """
-    Get info about the current and next song.
-    """
-    URL = "http://www.slayradio.org/home.php"
+def get_stream_title(url):
+    cmd = "mplayer -endpos 0.4 -ao null {url}".format(url=url)
+    out = get_exitcode_stdout_stderr(cmd)[1]
 
-    def get_elem(listiterator, index):
-        cnt = 0
-        for e in listiterator:
-            if cnt == index:
-                return e
-            cnt += 1
-    #
-    try:
-        r = requests.get(URL)
-        bs = BeautifulSoup(r.text)
-        author = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying strong")[0].text
-        div = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying")[0]
-        title = get_elem(div.children, 2)
-        p = bs.select("html body table tr td div#leftband table tr td.bandContent div#bandVisible_now_playing div#nowplaying p")[0].text
-        next_song = p[p.find('Next:'):]
-        result = {
-            'current': remove_non_ascii("{a}: {t}".format(a=author, t=title)),
-            'next': remove_non_ascii(next_song)
-        }
-    except:
-        result = {
-            'current': 'Error :(',
-            'next': 'Error :('
-        }
-
-    return result
+    for line in out.split("\n"):
+#        print(line)
+        if line.startswith('ICY Info:'):
+            match = re.search(r"StreamTitle='(.*)';StreamUrl=", line)
+            title = match.group(1)
+            return title
 
 
 def get_song_fm95():
