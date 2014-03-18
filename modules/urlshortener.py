@@ -13,8 +13,13 @@ if __name__ == "__main__":
 import json
 
 import requests
+from termcolor import colored
 
 from lib.clipboard import text_to_clipboards
+
+
+def bold(text, color='white'):
+    return colored(text, color, attrs=['bold'])
 
 
 def shorten_url(long_url):
@@ -26,20 +31,11 @@ def shorten_url(long_url):
         short = r.json()["id"]
         print(short)
         text_to_clipboards(short)
+        print(bold("# use show() to zoom in"))
     except:
         print("Hmm, strange...")
 
-
-#def shorten_url(long_url):
-#    try:
-#        url = "http://gg.gg/?action=create&url=" + long_url
-#        r = requests.get(url)
-#        short = r.text
-#        print(short)
-#        text_to_clipboards(short)
-#    except:
-#        print("Hmm, strange...")
-
+##############################################################################
 
 if __name__ == "__main__":
     url = raw_input("Long URL: ")

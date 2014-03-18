@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+"""
+It is primarily made for URL shorteners. In PrimCom we
+use the goo.gl service.
+
+The idea: you are in a classroom, your screen is projected on the wall,
+and you want to share a link with your students. With PrimCom you create
+a goo.gl link but the text is too small. With the command show() the
+link is shown with big letters so everyone can read it.
+"""
+
 from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 
