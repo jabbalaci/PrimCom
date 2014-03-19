@@ -39,18 +39,9 @@ import config as cfg
 from lib import fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (colored_line_numbers, conferences, my_ip, pidcheck,
+from modules import (colored_line_numbers, conferences, header, my_ip, pidcheck,
                      radio, reddit, selected_lines, show, urlshortener)
 
-
-__author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.4.2"
-__date__ = "20140319"
-__copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
-__license__ = "GPL"
-
-
-user_agent = {'User-agent': cfg.USER_AGENT}
 
 # If you want the command "less" to use colors, follow the steps in this post:
 # https://ubuntuincident.wordpress.com/2013/06/05/syntax-highlighted-less-in-command-line/
@@ -91,16 +82,6 @@ def check_dependencies_in_background():
     Do this check in the background to speed up startup time.
     """
     Thread(target=check_dependencies).start()
-
-
-def header():
-    s = "PrimCom {v}".format(v=__version__)
-    size = len(s)
-    horizontal = '+' + '-' * (size + 2) + '+'
-    col = cfg.colors[cfg.g.BACKGROUND]["header"]
-    print(bold(horizontal, col))
-    print(bold('| ' + s + ' |', col))
-    print(bold(horizontal, col))
 
 
 def completer(text, state):
@@ -644,8 +625,12 @@ def edit_entry(key):
 def version():
     text = """
 PrimCom {v} ({date}) by Laszlo Szathmary (jabba.laci@gmail.com), 2013--2014
-""".format(v=__version__, date=__date__)
+""".format(v=cfg.__version__, date=cfg.__date__)
     print(text.strip())
+
+
+def print_header():
+    header.header()
 
 
 @requires(cfg.EDITOR)
@@ -666,7 +651,7 @@ def menu():
             my_exit(0)
         elif inp in ('c', 'clear()'):
             os.system('clear')
-            header()
+            print_header()
         elif inp in ('light()', 'dark()'):
             if inp == 'light()':
                 cfg.g.BACKGROUND = cfg.LIGHT
@@ -962,7 +947,7 @@ def main():
     setup_history_and_tab_completion()
     #
     read_json_in_background()
-    header()
+    print_header()
     menu()
 
 #############################################################################

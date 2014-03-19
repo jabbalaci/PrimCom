@@ -6,6 +6,13 @@ import os
 from lib.podium import get_short_fingerprint
 
 
+__author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
+__version__ = "0.4.3"
+__date__ = "20140319"
+__copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
+__license__ = "GPL"
+
+
 # root directory of the application
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -22,7 +29,7 @@ PLAYER = {
 
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
-USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:26.0) Gecko/20100101 Firefox/26.0'
+USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:28.0) Gecko/20100101 Firefox/28.0'
 
 # data/*.json are loaded automatically
 LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.endswith(".json")])
