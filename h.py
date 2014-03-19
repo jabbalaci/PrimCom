@@ -39,13 +39,13 @@ import config as cfg
 from lib import fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (colored_line_numbers, conferences, my_ip,
-                     pidcheck, radio, reddit, show, urlshortener)
+from modules import (colored_line_numbers, conferences, my_ip, pidcheck,
+                     radio, reddit, selected_lines, show, urlshortener)
 
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.4.1"
-__date__ = "20140318"
+__version__ = "0.4.2"
+__date__ = "20140319"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -510,6 +510,26 @@ def path_to_clipboards(key):
         print("Warning: xsel is not installed, cannot copy to clipboards.")
 
 
+def key_to_file(key):
+    """
+    We have a key and figure out its corresponding file.
+
+    It only makes sense if the action is "cat".
+    """
+    if key is None:
+        return None
+    #
+    o = hdict[key]
+    #
+    action = o["action"]
+    verb = action[0]
+    if verb == 'cat':
+        f = os.path.abspath("data/" + action[1])
+        return f
+    # else, if it's a URL to open
+    return None
+
+
 def show_doc(key):
     o = hdict[key]
     print(o["doc"])
@@ -757,6 +777,9 @@ def menu():
             show.show()
         elif inp == 'numbers()':
             toggle_line_numbers()
+        elif re.search(r"^l([\d,-]+)\.(sh|py|py2|py3|cb)$", inp):
+            fname = key_to_file(last_key)
+            selected_lines.process_selected_lines(inp, fname)
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
