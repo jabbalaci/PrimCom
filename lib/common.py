@@ -3,6 +3,7 @@ from __future__ import (absolute_import, division, print_function,
 
 import os
 import sys
+from random import shuffle
 
 import psutil
 
@@ -90,3 +91,8 @@ def remove_non_ascii(text):
     Unicode hell :(
     """
     return ''.join(c for c in text if ord(c) < 128)
+
+
+def my_shuffle(li):
+    shuffle(li)
+    return li
