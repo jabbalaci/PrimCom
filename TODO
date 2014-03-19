@@ -4,5 +4,7 @@ l2.sh       -> take line 2 and execute it in the shell (with bash)
                if the line starts with "$ ", remove it intelligently
 l2.py       -> take line 2 and execute it with the Python 2 interpreter
 l2.py3      -> take line 2 and execute it with the Python 3 interpreter
-l4.cb       -> take line 4 and copy it to the clipboard
-l2,4-7.cb   -> take lines 2,4,5,6,7 and copy them to the clipboard
+
+* show() creates a temp. file in /tmp . Put these filenames in a queue,
+  and upon exit remove all these files if they still exist (called from
+  atexit). That is, clean up and leave no trash.
