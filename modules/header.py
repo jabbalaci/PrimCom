@@ -13,7 +13,7 @@ One logo is my own creation :)
 from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 
-from random import choice
+from random import choice, randrange
 
 import config as cfg
 from lib.common import bold, my_shuffle
@@ -123,13 +123,37 @@ r"""
 │ │   │ │ │ │ │ │ │ └───┤ └─┘ │ │ │ │
 └─┘   └─┘ └─┴─┴─┴─┴─────┴─────┴─┴─┴─┘ {v}
 """.lstrip('\n').format(v=cfg.__version__),
+# this rainbow colored logo MUST BE THE LAST ONE
+"""
+[1;38;5;33m[0m[1;38;5;39m┌─────┐           ┌─────┐[0m[1;38;5;45m[0m
+[1;38;5;51m[0m[1;38;5;50m│ ┌─┐ │           │ ┌───┘[0m[1;38;5;49m[0m
+[1;38;5;48m[0m[1;38;5;47m│ └─┘ ├───┬─┬─────┤ │   ┌─────┬─────┐[0m[1;38;5;46m[0m
+[1;38;5;82m[0m[1;38;5;118m│ ┌───┤ ┌─┼─┤ ╷ ╷ │ │   │ ┌─┐ │ ╷ ╷ │[0m[1;38;5;154m[0m
+[1;38;5;190m[0m[1;38;5;226m│ │   │ │ │ │ │ │ │ └───┤ └─┘ │ │ │ │[0m[1;38;5;220m[0m
+[1;38;5;214m[0m[1;38;5;208m└─┘   └─┘ └─┴─┴─┴─┴─────┴─────┴─┴─┴─┘[0m[1;38;5;202m[0m
+""".lstrip('\n').format(v=cfg.__version__),
 ]
 
 
 def header():
-    logo = choice(my_shuffle(logos))
-    col = cfg.colors[cfg.g.BACKGROUND]["header"]
-    print(bold(logo, col))
+    """
+    Print a fancy header. The rainbow colored logo only looks good
+    with dark background. If the background is light, skip it.
+    """
+    rainbow_index = len(logos) - 1
+    if cfg.g.BACKGROUND == cfg.DARK:
+        # include the rainbow
+        indexes = range(len(logos))
+    else:
+        # exclude the rainbow
+        indexes = range(len(logos)-1)
+
+    pos = choice(my_shuffle(indexes))
+    if pos == rainbow_index:
+        print(logos[pos])
+    else:
+        col = cfg.colors[cfg.g.BACKGROUND]["header"]
+        print(bold(logos[pos], col))
 
 
 #def header(version):
