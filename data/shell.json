@@ -439,5 +439,21 @@
             "filetypes"
         ], 
         "extra": []
+    }, 
+    "3763552990031495340": {
+        "doc": "top 10 largest directories/files", 
+        "meta": {
+            "date": "20140320_230910", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/top10dirs.sh"
+        ], 
+        "tags": [
+            "top10", 
+            "largest"
+        ], 
+        "extra": []
     }
 }
