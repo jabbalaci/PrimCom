@@ -4,8 +4,10 @@
 """
 Fancy logos for PrimCom.
 
-All the logos are created with
+Most of the logos were created with
 http://patorjk.com/software/taag
+
+One logo is my own creation :)
 """
 
 from __future__ import (absolute_import, division,
@@ -111,6 +113,15 @@ r"""
  __       __
 |__)_. _ /   _  _
 |  | ||||\__(_)||| {v}
+""".lstrip('\n').format(v=cfg.__version__),
+# this one was designed by me:
+r"""
+┌─────┐           ┌─────┐
+│ ┌─┐ │           │ ┌───┘
+│ └─┘ ├───┬─┬─────┤ │   ┌─────┬─────┐
+│ ┌───┤ ┌─┼─┤ ╷ ╷ │ │   │ ┌─┐ │ ╷ ╷ │
+│ │   │ │ │ │ │ │ │ └───┤ └─┘ │ │ │ │
+└─┘   └─┘ └─┴─┴─┴─┴─────┴─────┴─┴─┴─┘ {v}
 """.lstrip('\n').format(v=cfg.__version__),
 ]
 
