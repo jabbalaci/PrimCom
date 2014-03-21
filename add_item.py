@@ -29,14 +29,14 @@ def get_timestamp_from_year_to_second():
 
 
 def create_db(db):
-    dbfile = "data/{db}.json".format(db=db)
+    dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     if not os.path.isfile(dbfile):
         with open(dbfile, "w") as f:
             f.write("{}")    # empty dict.
     else:
         print("Warning! The file {db} already exists.".format(db=dbfile))
     #
-    dbdir = "data/{db}".format(db=db)
+    dbdir = "{root}/data/{db}".format(root=cfg.ROOT, db=db)
     if not os.path.isdir(dbdir):
         os.mkdir(dbdir)
     else:
@@ -100,16 +100,16 @@ def get_new_item():
         db = get_db()
         action_value = raw_input("  filename: ").strip()
         action_value = "{db}/{av}".format(db=db, av=action_value)
-        fname = "data/{db}/{f}".format(db=db, f=action_value)
+        fname = "{root}/data/{db}/{f}".format(root=cfg.ROOT, db=db, f=action_value)
         if os.path.isfile(fname):
             print("Error: the file {fname} already exists.".format(fname=fname))
             sys.exit(1)
-        dbfile = "data/{db}.json".format(db=db)
+        dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     else:
         action_text = "open_url"
         action_value = raw_input("  open_url: ").strip()
         db = "urls"
-        dbfile = "data/urls.json"
+        dbfile = "{root}/data/urls.json".format(root=cfg.ROOT)
     #
     tags = [tag.strip() for tag in raw_input("tags: ").split(",")]
 
@@ -131,8 +131,8 @@ def get_new_item():
 
 
 def save_new_json(d, hdict, db):
-    orig = "data/{db}.json".format(db=db)
-    bak = "tmp/{db}.json.bak".format(db=db)
+    orig = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
+    bak = "{root}/tmp/{db}.json.bak".format(root=cfg.ROOT, db=db)
     #
     os.rename(orig, bak)
     assert os.path.isfile(bak)
@@ -141,7 +141,7 @@ def save_new_json(d, hdict, db):
     assert os.path.getsize(orig) > os.path.getsize(bak)
     print("# added to {db}.json".format(db=db))
     if d["action"][0] == "cat":
-        fname = "data/" + d["action"][1]
+        fname = "{root}/data/{f}".format(root=cfg.ROOT, f=d["action"][1])
         if not os.path.isfile(fname):
             if fs.touch(fname):
                 print("# {f} touched".format(f=fname))

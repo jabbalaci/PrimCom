@@ -142,6 +142,14 @@ def get_db_by_key(key):
     return None
 
 
+def fname_to_abs(fname):
+    """
+    In the json files, file names are given like this: "flask/hello.py".
+    Let's convert it to absolute path.
+    """
+    return "{root}/data/{f}".format(root=cfg.ROOT, f=fname)
+
+
 #############
 ## Classes ##
 #############
@@ -306,7 +314,7 @@ def read_json(verbose=True):
     #
     for db in LOAD_JSON:
         tmp = OrderedDict()
-        with open("data/"+db) as f:
+        with open(fname_to_abs(db)) as f:
             tmp = json.load(f, object_pairs_hook=OrderedDict)
         for k in tmp:
             hdict[k] = tmp[k]
@@ -353,7 +361,7 @@ def show_urls(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        fname = "data/" + action[1]
+        fname = fname_to_abs(action[1])
     else:
         return
 
@@ -429,7 +437,7 @@ def debug(text):
     """
     for development
     """
-    print(text)
+    print(os.getcwd())
 
 
 def command(inp):
@@ -448,7 +456,7 @@ def perform_action(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        fname = "data/" + action[1]
+        fname = fname_to_abs(action[1])
         colored_line_numbers.cat(fname, o)
         process_extras(fname, o)
     elif verb == 'open_url':
@@ -461,7 +469,7 @@ def perform_action(key):
 def view_edit_json(key):
     db = get_db_by_key(key)
     os.system("{ed} {f}".format(ed=cfg.EDITOR,
-                                f="data/{db}.json".format(db=db)))
+                                f="{root}/data/{db}.json".format(root=cfg.ROOT, db=db)))
 
 
 def to_clipboards(key):
@@ -471,7 +479,7 @@ def to_clipboards(key):
         action = o["action"]
         verb = action[0]
         if verb == 'cat':
-            with open("data/" + action[1]) as f:
+            with open(fname_to_abs(action[1])) as f:
                 text_to_clipboards(f.read().rstrip("\n"))
     else:
         print("Warning: xsel is not installed, cannot copy to clipboards.")
@@ -484,7 +492,7 @@ def path_to_clipboards(key):
         action = o["action"]
         verb = action[0]
         if verb == 'cat':
-            f = os.path.abspath("data/" + action[1])
+            f = fname_to_abs(action[1])
             print('#', f)
             text_to_clipboards(f)
     else:
@@ -505,7 +513,7 @@ def key_to_file(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        f = os.path.abspath("data/" + action[1])
+        f = fname_to_abs(action[1])
         return f
     # else, if it's a URL to open
     return None
@@ -524,7 +532,7 @@ def edit(key):
     verb = action[0]
     if verb == 'cat':
         os.system("{ed} {fname}".format(ed=cfg.EDITOR,
-                                        fname="data/" + action[1]))
+                                        fname=fname_to_abs(action[1])))
 
 
 @requires(cfg.GEDIT)
@@ -535,7 +543,7 @@ def gedit(key):
     verb = action[0]
     if verb == 'cat':
         os.system("{ed} {fname} &".format(ed=cfg.GEDIT,
-                                          fname="data/" + action[1]))
+                                          fname=fname_to_abs(action[1])))
 
 
 def less(key):
@@ -544,7 +552,7 @@ def less(key):
     action = o["action"]
     verb = action[0]
     if verb == 'cat':
-        os.system("less {fname}".format(fname="data/" + action[1]))
+        os.system("less {fname}".format(fname=fname_to_abs(action[1])))
 
 
 def first_google_hit(keyword):
@@ -591,12 +599,12 @@ def toggle_line_numbers():
 
 
 def add_item():
-    os.system("python ./add_item.py")
+    os.system("python {root}/add_item.py".format(root=cfg.ROOT))
 
 
 def edit_entry(key):
     db = get_db_by_key(key)
-    dbfile = "data/{db}.json".format(db=db)
+    dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     d = OrderedDict()
     d[key] = hdict[key]
     tmpfile = 'tmp/temp.{pid}.json'.format(pid=os.getpid())
