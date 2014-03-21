@@ -61,9 +61,16 @@ def do_action(lines, action):
     if action == 'cb':
         # copy text to clipboard
         text_to_clipboards(text)
+    elif action == 'cb(>)':
+        # add 4 leading spaces to each line (facilitate code insert in markdown)
+        text = '\n'.join(['    ' + line for line in text.split('\n')])
+        text_to_clipboards(text)
     elif action == 'sh':
         if len(lines) == 1:
             os.system(text)
+        else:
+            print('Warning! This action is not yet implemented.')
+            print("Check out the selected_lines.py file's do_action() method.")
 
 
 def process_selected_lines(inp, fname):

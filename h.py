@@ -762,7 +762,7 @@ def menu():
             show.show()
         elif inp == 'numbers()':
             toggle_line_numbers()
-        elif re.search(r"^l([\d,-]+)\.(sh|py|py2|py3|cb)$", inp):
+        elif re.search(r"^l([\d,-]+)\.(sh|py|py2|py3|cb|cb\(>\))$", inp):
             fname = key_to_file(last_key)
             selected_lines.process_selected_lines(inp, fname)
         # disabled, always show the search hits
