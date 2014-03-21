@@ -103,20 +103,20 @@ def completer(text, state):
             return None
 
 
-def truncate_histfile(hf):
+def truncate_histfile(hfile):
     """
     Leave the last N lines of histfile.
     """
-    hf_bak = hf + ".bak"
-    if os.path.isfile(hf):
-        os.system("tail -{N} {hf} >{hf_bak}".format(N=cfg.TRUNCATE_HISTFILE_TO_LINES, hf=hf, hf_bak=hf_bak))
-        if os.path.isfile(hf_bak):
-            os.unlink(hf)
-            os.rename(hf_bak, hf)
+    hfile_bak = hfile + ".bak"
+    if os.path.isfile(hfile):
+        os.system("tail -{N} {hf} >{hf_bak}".format(N=cfg.TRUNCATE_HISTFILE_TO_LINES, hf=hfile, hf_bak=hfile_bak))
+        if os.path.isfile(hfile_bak):
+            os.unlink(hfile)
+            os.rename(hfile_bak, hfile)
 
 
 def setup_history_and_tab_completion():
-    histfile = ".history"
+    histfile = "{root}/.history".format(root=cfg.ROOT)
     #
     truncate_histfile(histfile)
     #
@@ -641,13 +641,33 @@ def print_header():
     header.header()
 
 
+def change_dir(inp):
+    bak = os.getcwd()
+    #
+    if inp == 'cd':
+        os.chdir(os.path.expanduser('~'))
+    elif inp == 'cd -':
+        os.chdir(change_dir.prev_dir)
+    elif inp.startswith('cd '):
+        dest = inp.split()[1]
+        try:
+            os.chdir(dest)
+        except OSError:
+            print('Warning! No such file or directory')
+
+#    print(os.getcwd())
+    # static variable:
+    change_dir.prev_dir = bak
+
+
 @requires(cfg.EDITOR)
 def menu():
     Thread(target=colored_line_numbers.cache_pygmentize).start()
     #
     while True:
         try:
-            inp = raw_input(bold('pc> ')).strip()
+            #inp = raw_input(bold('pc> ')).strip()
+            inp = raw_input(bold('{prompt}> '.format(prompt=os.getcwd()))).strip()
         except (KeyboardInterrupt, EOFError):
             print()
             my_exit(0)
@@ -773,6 +793,10 @@ def menu():
         elif re.search(r"^l([\d,-]+)\.(sh|py|py2|py3|cb|cb\(>\))$", inp):
             fname = key_to_file(last_key)
             selected_lines.process_selected_lines(inp, fname)
+        elif inp == 'cd' or inp.startswith('cd '):
+            change_dir(inp)
+        elif inp == 'pwd()':
+            print(os.getcwd())
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
@@ -853,6 +877,7 @@ autocomplete_commands += [
     'pid()',
     'show()',
     'numbers()',
+    'pwd()',
 ]
 
 
@@ -898,6 +923,8 @@ add()           - add new item
 pid()           - pid alert...
 light(), dark() - adjust colors to background
 numbers()       - toggle line numbers
+cd              - change directory
+pwd()           - print working directory
 c               - clear screen (or: clear())
 q               - quit (or: qq, qq(), quit(), exit())
 """
