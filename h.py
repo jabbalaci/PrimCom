@@ -29,6 +29,7 @@ import os
 import re
 import readline
 import sys
+import time
 from collections import OrderedDict
 from threading import Thread
 from urlparse import urljoin
@@ -41,6 +42,8 @@ from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
 from modules import (colored_line_numbers, conferences, header, my_ip, pidcheck,
                      radio, reddit, selected_lines, show, urlshortener)
+
+
 
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -75,13 +78,6 @@ def check_dependencies():
         if not fs.which(prg):
             print("Warning: {0} is not available.".format(prg))
             print("tip: {0}".format(dependencies[prg]))
-
-
-def check_dependencies_in_background():
-    """
-    Do this check in the background to speed up startup time.
-    """
-    Thread(target=check_dependencies).start()
 
 
 def completer(text, state):
@@ -325,13 +321,6 @@ def read_json(verbose=True):
     hdict = OrderedDict(sorted(hdict.iteritems(), key=lambda x: x[1]["meta"]["date"]))
     #
     tag2keys = process(hdict)
-
-
-def read_json_in_background():
-    """
-    Read the JSON files in the background to speed up the startup.
-    """
-    Thread(target=read_json, kwargs={'verbose': False}).start()
 
 
 def process_extras(fname, o):
@@ -662,7 +651,6 @@ def change_dir(inp):
 
 @requires(cfg.EDITOR)
 def menu():
-    Thread(target=colored_line_numbers.cache_pygmentize).start()
     #
     while True:
         try:
@@ -976,16 +964,42 @@ def cleanup():
     exit_signal.send()
 
 
+def check_command_line_arguments():
+    args = sys.argv[1:]
+    if '-c' in args:
+        os.system("clear")
+    if '-kill' in args:
+        # suicide mode: do the caching the terminate
+        background_reads()
+        N = 5
+        print("Waiting for {n} seconds...".format(n=N))
+        time.sleep(5)
+        print("quit.")
+        sys.exit(0)
+
+
+def background_reads():
+    """
+    Start these jobs in the background.
+
+    These things are necessary but they take some seconds to complete.
+    Idea: show the prompt right away then finish these things a bit later.
+    """
+    Thread(target=check_dependencies).start()
+    Thread(target=setup_history_and_tab_completion).start()
+    Thread(target=read_json, kwargs={'verbose': False}).start()
+    Thread(target=colored_line_numbers.cache_pygmentize).start()
+
+
 def main():
-    atexit.register(cleanup)
-    check_dependencies_in_background()
-    setup_history_and_tab_completion()
+    background_reads()
     #
-    read_json_in_background()
     print_header()
     menu()
 
 #############################################################################
 
 if __name__ == "__main__":
+    atexit.register(cleanup)
+    check_command_line_arguments()
     main()
