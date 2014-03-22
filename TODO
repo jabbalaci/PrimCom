@@ -1,7 +1,5 @@
 * lines are numbered, so add support to manipulate them:
 
-l2.sh       -> take line 2 and execute it in the shell (with bash)
-               if the line starts with "$ ", remove it intelligently
 l2.py       -> take line 2 and execute it with the Python 2 interpreter
 l2.py3      -> take line 2 and execute it with the Python 3 interpreter
 

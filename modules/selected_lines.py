@@ -67,6 +67,8 @@ def do_action(lines, action):
         text_to_clipboards(text)
     elif action == 'sh':
         if len(lines) == 1:
+            if text.startswith('$ '):
+                text = text[2:]
             os.system(text)
         else:
             print('Warning! This action is not yet implemented.')
