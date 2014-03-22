@@ -1,3 +1,4 @@
 import os
 
-PATH = os.path.dirname(os.path.abspath(__file__))
+# root directory of the application
+ROOT = os.path.dirname(os.path.abspath(__file__))

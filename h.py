@@ -974,7 +974,7 @@ def check_command_line_arguments():
         N = 5
         print("Waiting for {n} seconds...".format(n=N))
         time.sleep(5)
-        print("quit.")
+        print("Quit.")
         sys.exit(0)
 
 
