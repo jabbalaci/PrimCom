@@ -22,6 +22,8 @@ Some rules:
 
 from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
+import time
+start_time = time.time()
 
 import atexit
 import json
@@ -29,7 +31,6 @@ import os
 import re
 import readline
 import sys
-import time
 from collections import OrderedDict
 from threading import Thread
 from urlparse import urljoin
@@ -651,6 +652,7 @@ def change_dir(inp):
 
 @requires(cfg.EDITOR)
 def menu():
+    print("[{0:.3f}s]".format(time.time() - start_time), end='\n')
     #
     while True:
         try:
