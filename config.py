@@ -81,4 +81,4 @@ SHOW_LINE_NUMBERS = True
 #SHOW_LINE_NUMBERS = False
 
 # .history file can grow quickly thus we truncate it to N lines upon startup
-TRUNCATE_HISTFILE_TO_LINES = 50
+TRUNCATE_HISTFILE_TO_LINES = 20
