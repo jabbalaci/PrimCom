@@ -41,10 +41,9 @@ import config as cfg
 from lib import fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (colored_line_numbers, conferences, header, my_ip, pidcheck,
-                     radio, reddit, selected_lines, show, urlshortener)
-
-
+from modules import (colored_line_numbers, conferences, header,
+                     my_ip, pidcheck, radio, reddit,
+                     selected_lines, show, urlshortener, userpass)
 
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -650,6 +649,11 @@ def change_dir(inp):
     change_dir.prev_dir = bak
 
 
+def username_password():
+    print(userpass.get_username())
+    print(userpass.get_password(length=12))
+
+
 @requires(cfg.EDITOR)
 def menu():
     print("[{0:.3f}s]".format(time.time() - start_time), end='\n')
@@ -787,6 +791,8 @@ def menu():
             change_dir(inp)
         elif inp == 'pwd()':
             print(os.getcwd())
+        elif inp == 'userpass()':
+            username_password()
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
@@ -868,6 +874,7 @@ autocomplete_commands += [
     'show()',
     'numbers()',
     'pwd()',
+    'userpass()',
 ]
 
 
@@ -915,6 +922,7 @@ light(), dark() - adjust colors to background
 numbers()       - toggle line numbers
 cd              - change directory
 pwd()           - print working directory
+userpass()      - generate user name and password
 c               - clear screen (or: clear())
 q               - quit (or: qq, qq(), quit(), exit())
 """

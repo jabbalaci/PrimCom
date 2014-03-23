@@ -94,5 +94,11 @@ def remove_non_ascii(text):
 
 
 def my_shuffle(li):
+    """
+    Returns a shuffled list.
+
+    random.shuffle shuffles in place and returns None. This way shuffle can be
+    used in a chain.
+    """
     shuffle(li)
     return li
