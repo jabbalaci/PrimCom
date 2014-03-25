@@ -21,12 +21,14 @@ from subprocess import PIPE, Popen, STDOUT
 from termcolor import colored
 
 
-def text_to_clipboards(text, verbose=True):
+def text_to_clipboards(text, verbose=True, prefix=""):
     """Copy text to both clipboards."""
     to_primary(text)
     to_clipboard(text)
+    if prefix:
+        prefix += " "
     if verbose:
-        print(bold("# copied to the clipboards"))
+        print(bold("# {pre}copied to the clipboards".format(pre=prefix)))
 
 
 def bold(text, color='white'):

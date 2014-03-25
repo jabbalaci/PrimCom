@@ -8,4 +8,6 @@ l2.py3      -> take line 2 and execute it with the Python 3 interpreter
   atexit). That is, clean up and leave no trash.
 
 * userpass()
-  integrate it in
+  delete the password from the clipboard after 10 seconds (check keepassx how they do it)
+
+* StringIO

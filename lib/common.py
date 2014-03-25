@@ -81,7 +81,7 @@ def play_audio(audio):
 
 def my_exit(error_code=0):
     # threads are subscribed to this signal
-    exit_signal.send()
+    #exit_signal.send()
     #
     sys.exit(error_code)
 

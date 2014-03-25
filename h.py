@@ -38,7 +38,7 @@ from urlparse import urljoin
 import requests
 
 import config as cfg
-from lib import fs
+from lib import clipboard, common, fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
 from modules import (colored_line_numbers, conferences, header,
@@ -650,8 +650,67 @@ def change_dir(inp):
 
 
 def username_password():
-    print(userpass.get_username())
-    print(userpass.get_password(length=12))
+    """
+    Generate username and password.
+
+    This is used for online registrations.
+    The function has a static variable called
+    "password", set in init().
+    If you provide your email in the file
+    email.txt, you can also copy it to the
+    clipboards.
+    """
+    username = userpass.get_username()
+    password = userpass.get_password(length=12)
+    try:
+        email = open("{root}/email.txt".format(root=cfg.ROOT)).read().strip()
+    except IOError:
+        email = None
+
+    print("""
+[1] {u:21} (username, copy to clipboard)
+[2] {p:21} (password, copy to clipboard)
+[3] {e:21} (email, copy to clipboard)
+[q] <<
+""".strip().format(u=username, p=password, e=email))
+    while True:
+        try:
+            inp = raw_input("~~> ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print()
+            return
+        if len(inp) == 0:
+            continue
+        elif inp == 'q':
+            return
+        elif inp == 'qq':
+            common.my_exit(0)
+        elif inp == '1':
+            text_to_clipboards(username, prefix="username")
+        elif inp == '2':
+            text_to_clipboards(password, prefix="password")
+            username_password.password = password
+        elif inp == '3':
+            if email:
+                text_to_clipboards(email, prefix="email")
+            else:
+                print("Warning! You have no email specified.")
+                print("Tip: create an email.txt file in the PrimCom folder.")
+        else:
+           print('Wat?')
+
+
+@exit_signal.connect
+def clear_password(sender):
+    """
+    Password removal.
+    """
+    if clipboard.read_primary() == username_password.password:
+        clipboard.to_primary("")
+    if clipboard.read_clipboard() == username_password.password:
+        clipboard.to_clipboard("")
+    if username_password.password:
+        username_password.password = None
 
 
 @requires(cfg.EDITOR)
@@ -970,7 +1029,16 @@ golib:      - open on Go standard library
 
 # -------------------------------------
 
+def init():
+    """
+    Do some initialization.
+    """
+    if not hasattr(username_password, "password"):
+        username_password.password = None
+
+
 def cleanup():
+    # threads are subscribed to this signal
     exit_signal.send()
 
 
@@ -1010,6 +1078,7 @@ def main():
 #############################################################################
 
 if __name__ == "__main__":
+    init()
     atexit.register(cleanup)
     check_command_line_arguments()
     main()
