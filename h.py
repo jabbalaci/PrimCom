@@ -1040,6 +1040,7 @@ def init():
 def cleanup():
     # threads are subscribed to this signal
     exit_signal.send()
+#    print("cleanup called")
 
 
 def check_command_line_arguments():

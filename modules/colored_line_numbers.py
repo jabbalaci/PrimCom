@@ -20,7 +20,6 @@ import shlex
 from subprocess import call
 
 import config as cfg
-from jabbapylib.console import color
 from lib import fs
 from lib.common import bold
 from modules import process
@@ -57,7 +56,7 @@ def print_pcat(fname):
         out = process.get_exitcode_stdout_stderr(cmd)[1]
         out = out.rstrip("\n")
         for i, line in enumerate(out.split("\n"), start=1):
-            num_str = color.bold(str(i), color=cfg.colors[cfg.g.BACKGROUND]["line_numbers"])
+            num_str = bold(str(i), color=cfg.colors[cfg.g.BACKGROUND]["line_numbers"])
             num_str = pad(num_str, width, i)
             print(num_str, line)
     else:
