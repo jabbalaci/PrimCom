@@ -57,7 +57,7 @@ def do_action(lines, action):
 
     TODO: it's not yet ready. When I meet new needs, I will extend this method.
     """
-    text = ''.join(lines)  #.rstrip('\n')
+    text = ''.join(lines).rstrip('\n')
     if action == 'cb':
         # copy text to clipboard
         text_to_clipboards(text)
