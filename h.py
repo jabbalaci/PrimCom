@@ -596,7 +596,7 @@ def edit_entry(key):
     dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     d = OrderedDict()
     d[key] = hdict[key]
-    tmpfile = 'tmp/temp.{pid}.json'.format(pid=os.getpid())
+    tmpfile = '{root}/tmp/temp.{pid}.json'.format(root=cfg.ROOT, pid=os.getpid())
     with open(tmpfile, 'w') as f:
         json.dump(d, f, indent=4)
     assert os.path.isfile(tmpfile)
@@ -610,7 +610,7 @@ def edit_entry(key):
     dbdict[key] = d[key]
     os.unlink(tmpfile)
     #
-    tmpfile = "tmp/{db}.json.bak".format(db=db)
+    tmpfile = "{root}/tmp/{db}.json.bak".format(root=cfg.ROOT, db=db)
     os.rename(dbfile, tmpfile)
     assert os.path.isfile(tmpfile)
     with open(dbfile, 'w') as f:

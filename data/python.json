@@ -1021,7 +1021,8 @@
             "python/my_md5.py"
         ], 
         "tags": [
-            "md5"
+            "md5", 
+            "hash"
         ], 
         "extra": []
     }, 
