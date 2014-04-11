@@ -51,7 +51,7 @@ def get_pid_by_name(name):
     li = [x for x in psutil.get_pid_list() if x > os.getpid()]
     for pid in li:
         p = psutil.Process(pid)
-        if p.name == name:
+        if p.name() == name:
             return pid
     #
     return None

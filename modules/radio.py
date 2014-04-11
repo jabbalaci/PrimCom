@@ -127,7 +127,7 @@ def get_stream_title(url):
     cmd = "mplayer -endpos 0.4 -ao null {url}".format(url=url)
     out = get_exitcode_stdout_stderr(cmd)[1]
 
-    for line in out.split("\n"):
+    for line in out.decode("utf8").split("\n"):
 #        print(line)
         if line.startswith('ICY Info:'):
             match = re.search(r"StreamTitle='(.*)';StreamUrl=", line)
