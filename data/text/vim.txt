@@ -1,2 +1,6 @@
 # delete blank lines
 :g/^$/d
+
+# open 2 files and split the screen vertically
+# -o splits horizontally
+vim -O file1 file2
