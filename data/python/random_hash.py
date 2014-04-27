@@ -24,3 +24,5 @@ $ pip install simpleflake
 >>> import simpleflake
 >>> simpleflake.simpleflake()
 3620361890155888216L    # just a sample
+>>> hex(simpleflake.simpleflake()).lstrip('0x').rstrip('L')
+'349b3dc4a2976240'      # just a sample
