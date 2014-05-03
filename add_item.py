@@ -50,7 +50,7 @@ def strip_end(text, suffix):
 
 
 def get_db():
-    li = [e for e in os.listdir("data") if e.endswith(".json") and e != "urls.json"]
+    li = [e for e in os.listdir("{root}/data".format(root=cfg.ROOT)) if e.endswith(".json") and e != "urls.json"]
     for index, db in enumerate(li, start=1):
         print("[{i}] {db}".format(i=index, db=strip_end(db, ".json")))
     print("[n] new...")
