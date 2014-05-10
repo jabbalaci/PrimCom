@@ -852,6 +852,8 @@ def menu():
             print(os.getcwd())
         elif inp == 'userpass()':
             username_password()
+        elif inp == 'k':
+            os.system("konsole 2>/dev/null &")
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
