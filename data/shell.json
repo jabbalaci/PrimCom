@@ -344,7 +344,9 @@
             "shell/avi2mp3.sh"
         ], 
         "tags": [
-            "avi2mp3"
+            "avi2mp3", 
+            "extract", 
+            "audio"
         ], 
         "extra": []
     }, 
@@ -470,6 +472,38 @@
             "ffmpeg", 
             "audio", 
             "video"
+        ], 
+        "extra": []
+    }, 
+    "3813514828651509474": {
+        "doc": "convert .ogv to .mp4", 
+        "meta": {
+            "date": "20140528_223346", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/ogv2mp4.sh"
+        ], 
+        "tags": [
+            "ogv2mp4", 
+            "ffmpeg"
+        ], 
+        "extra": []
+    }, 
+    "3816379188586998878": {
+        "doc": "fill empty space with random data", 
+        "meta": {
+            "date": "20140601_212457", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/random_fill.sh"
+        ], 
+        "tags": [
+            "dd", 
+            "random"
         ], 
         "extra": []
     }
