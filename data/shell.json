@@ -314,7 +314,8 @@
             "shell/python_from_bash.sh"
         ], 
         "tags": [
-            "python from bash"
+            "python from bash", 
+            "pythonpy"
         ], 
         "extra": []
     }, 

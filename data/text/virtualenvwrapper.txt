@@ -1,0 +1,15 @@
+Nice summary: http://www.silverwareconsulting.com/index.cfm/2012/7/24/Getting-Started-with-virtualenv-and-virtualenvwrapper-in-Python
+
+Most useful commands:
+
+* mkvirtualenv - used to create a new virtual environment. When you create a
+                 new environment it automatically becomes the active environment.
+* rmvirtualenv - used to remove an existing virtual environment. The environment
+                 must be deactivated (see below) before it can be removed.
+* mktmpenv     - it creates a temporary virtual environment, which is deleted as
+                 soon as you deactivate it.
+* workon       - used to activate a virtual environment. Will also list all existing
+                 virtual environments if no argument is passed.
+* deactivate   - used to deactivate the currently active virtual environment.
+                 Note that workon will automatically deactivate the current
+                 environment before activating a new one.

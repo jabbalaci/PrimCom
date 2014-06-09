@@ -269,5 +269,20 @@
             "pip3"
         ], 
         "extra": []
+    }, 
+    "3822006401039749051": {
+        "doc": "virtualenvwrapper", 
+        "meta": {
+            "date": "20140609_154502", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/virtualenvwrapper.txt"
+        ], 
+        "tags": [
+            "virtualenvwrapper"
+        ], 
+        "extra": []
     }
 }
