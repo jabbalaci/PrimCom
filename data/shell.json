@@ -519,7 +519,8 @@
             "shell/requirements_txt.sh"
         ], 
         "tags": [
-            "requirements.txt"
+            "requirements.txt", 
+            "pip"
         ], 
         "extra": []
     }

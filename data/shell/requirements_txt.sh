@@ -1,5 +1,5 @@
 # create, update
-pip freeze >requirements.txt
+pip freeze --local >requirements.txt
 
 # install from
 pip install -r requirements.txt
