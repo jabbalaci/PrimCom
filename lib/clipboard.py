@@ -28,7 +28,8 @@ def text_to_clipboards(text, verbose=True, prefix=""):
     if prefix:
         prefix += " "
     if verbose:
-        print(bold("# {pre}copied to the clipboards".format(pre=prefix)))
+        #print(bold("# {pre}copied to the clipboards".format(pre=prefix)))
+        print("# {pre}copied to the clipboards".format(pre=prefix))
 
 
 def bold(text, color='white'):

@@ -22,7 +22,7 @@ from subprocess import call
 import config as cfg
 from lib import fs
 from lib.common import bold
-from modules import process
+from . import process
 
 pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
 

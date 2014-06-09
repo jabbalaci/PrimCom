@@ -15,7 +15,9 @@ import json
 import requests
 from termcolor import colored
 
+import config as cfg
 from lib.clipboard import text_to_clipboards
+from lib.common import cindex
 
 
 def bold(text, color='white'):
@@ -29,9 +31,10 @@ def shorten_url(long_url):
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
         r = requests.post(url, data=json.dumps(data), headers=headers)
         short = r.json()["id"]
-        print(short)
+#        print(short)
+        print(cindex(short, color=cfg.colors[cfg.g.BACKGROUND]["cindex"]))
         text_to_clipboards(short)
-        print(bold("# use show() to zoom in"))
+        print("# use show() to zoom in")
     except:
         print("Hmm, strange...")
 

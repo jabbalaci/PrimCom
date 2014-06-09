@@ -8,8 +8,8 @@ from random import shuffle
 import psutil
 
 import config as cfg
-from lib import blinker, fs
-from lib.termcolor import colored
+from . import blinker, fs
+from .termcolor import colored
 
 exit_signal = blinker.signal('exit')
 

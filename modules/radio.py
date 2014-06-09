@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup
 import config as cfg
 from lib import common
 from lib.common import exit_signal, remove_non_ascii
-from modules.process import get_exitcode_stdout_stderr
+from .process import get_exitcode_stdout_stderr
 
 
 def radio(url, stop=False, id=None):
