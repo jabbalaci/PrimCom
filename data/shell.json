@@ -506,5 +506,20 @@
             "random"
         ], 
         "extra": []
+    }, 
+    "3821858983146859441": {
+        "doc": "working with requirements.txt", 
+        "meta": {
+            "date": "20140609_105225", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/requirements_txt.sh"
+        ], 
+        "tags": [
+            "requirements.txt"
+        ], 
+        "extra": []
     }
 }
