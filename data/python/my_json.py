@@ -20,3 +20,10 @@ with open(JSON, 'w') as f:
 
 # JSON prettifier
 python -mjson.tool ugly.json
+
+##########
+
+# "res" is an OrderedDict. Pretty print it:
+import json
+
+print(json.dumps(res, indent=4))
