@@ -9,3 +9,5 @@ print fname    # hello.py
 base_name, ext = os.path.splitext(fname)
 print base_name    # hello
 print ext          # .py
+
+# tip: use unipath instead...
