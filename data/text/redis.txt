@@ -1,0 +1,2 @@
+# install redis and start it upon boot
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis

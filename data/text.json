@@ -284,5 +284,20 @@
             "virtualenvwrapper"
         ], 
         "extra": []
+    }, 
+    "3830032097186289810": {
+        "doc": "redis links", 
+        "meta": {
+            "date": "20140620_173024", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/redis.txt"
+        ], 
+        "tags": [
+            "redis"
+        ], 
+        "extra": []
     }
 }
