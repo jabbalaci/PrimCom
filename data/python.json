@@ -1105,5 +1105,20 @@
             "cache"
         ], 
         "extra": []
+    }, 
+    "3830682266839435557": {
+        "doc": "django imports", 
+        "meta": {
+            "date": "20140621_150229", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/django_imports.py"
+        ], 
+        "tags": [
+            "django"
+        ], 
+        "extra": []
     }
 }

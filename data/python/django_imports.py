@@ -1,0 +1,7 @@
+# global / local  urls.py
+from django.conf.urls import patterns, include, url
+
+# local views.py
+from django.core.urlresolvers import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
