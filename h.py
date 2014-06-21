@@ -37,13 +37,13 @@ from urlparse import urljoin
 
 import requests
 
+import apps
 import config as cfg
 from lib import clipboard, common, fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (colored_line_numbers, conferences, header,
-                     my_ip, pidcheck, radio, reddit,
-                     selected_lines, show, urlshortener, userpass)
+from modules import (colored_line_numbers, conferences, header, my_ip, pidcheck,
+                     reddit, selected_lines, show, urlshortener, userpass)
 
 
 # If you want the command "less" to use colors, follow the steps in this post:
@@ -437,7 +437,7 @@ def command(inp):
         perform_action(li[0])
 
 
-def perform_action(key):
+def perform_action(key, search_term=""):
     global last_key
     last_key = key
     #
@@ -446,7 +446,7 @@ def perform_action(key):
     verb = action[0]
     if verb == 'cat':
         fname = fname_to_abs(action[1])
-        colored_line_numbers.cat(fname, o)
+        colored_line_numbers.cat(fname, o, search_term)
         process_extras(fname, o)
     elif verb == 'open_url':
         open_url(action[1], o["doc"])
@@ -786,12 +786,10 @@ def menu():
                 edit_entry(last_key)
         elif inp == 'reddit()':
             reddit.reddit()
-        elif inp == 'radio()':
-            radio.radio_player()
         elif inp == 'conferences()':
             conferences.conferences()
         elif inp == 'mute()':
-            radio.radio(None, stop=True)
+            apps.radio.radio(None, stop=True)
         elif inp == 'myip()':
             my_ip.show_my_ip()
         elif inp in ('v', 'version()'):
@@ -852,8 +850,23 @@ def menu():
             print(os.getcwd())
         elif inp == 'userpass()':
             username_password()
+        elif inp == 'apps()':
+            apps.menu.main()
         elif inp == 'k':
             os.system("konsole 2>/dev/null &")
+        elif inp.startswith("filter:"):
+            term = inp[inp.find(':')+1:]
+            if last_key:
+                perform_action(last_key, term)
+        elif inp.startswith("app:"):
+            val = inp[inp.find(':')+1:]
+            if not val:
+                apps.menu.main()
+            else:
+                apps.menu.start_app(val)
+        # shortcuts
+        elif inp == 'radio()':
+            apps.menu.start_app('radio')
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
@@ -893,7 +906,7 @@ def menu():
         elif inp == 'debug()':
             debug(None)
         elif inp == 'song()':
-            print("Playing:", radio.get_song())
+            print("Playing:", apps.radio.get_song())
         else:
             if len(inp) == 1:
                 print("too short...")
@@ -936,6 +949,7 @@ autocomplete_commands += [
     'numbers()',
     'pwd()',
     'userpass()',
+    'apps()',
 ]
 
 
@@ -984,6 +998,7 @@ numbers()       - toggle line numbers
 cd              - change directory
 pwd()           - print working directory
 userpass()      - generate user name and password
+apps()          - applications
 c               - clear screen (or: clear())
 q               - quit (or: qq, qq(), quit(), exit())
 """
@@ -1002,6 +1017,7 @@ autocomplete_commands += [
     'lib:', 'lib2:',
     'lib3:',
     'shorten:',
+    'filter:',
     'pep:',
     'def:',
     'golib:',
@@ -1023,6 +1039,7 @@ wp:         - open on wikipedia
 lib:        - look up in Python 2 Standard Library (or: lib2:)
 lib3:       - look up in Python 3 Standard Library
 shorten:    - shorten URL
+filter:     - filter lines of a file that contain a search term
 pep:        - open PEP, e.g. pep:8
 def:        - define a word
 golib:      - open on Go standard library

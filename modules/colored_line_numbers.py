@@ -45,7 +45,7 @@ def pad(text, width, num):
     return "{space}{text}".format(space=(width-num_len)*' ', text=text)
 
 
-def print_pcat(fname):
+def print_pcat(fname, search_term=""):
     cmd = pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname)
     #
     if cfg.SHOW_LINE_NUMBERS:
@@ -56,14 +56,15 @@ def print_pcat(fname):
         out = process.get_exitcode_stdout_stderr(cmd)[1]
         out = out.rstrip("\n")
         for i, line in enumerate(out.split("\n"), start=1):
-            num_str = bold(str(i), color=cfg.colors[cfg.g.BACKGROUND]["line_numbers"])
-            num_str = pad(num_str, width, i)
-            print(num_str, line)
+            if search_term in line:
+                num_str = bold(str(i), color=cfg.colors[cfg.g.BACKGROUND]["line_numbers"])
+                num_str = pad(num_str, width, i)
+                print(num_str, line)
     else:
-        os.system(cmd)
+        os.system('{0} | grep -i "{1}"'.format(cmd, search_term))
 
 
-def cat(fname, o):
+def cat(fname, o, search_term=""):
     """
     Show file content on stdout.
 
@@ -76,11 +77,12 @@ def cat(fname, o):
         print(bold(doc))
         print(bold("-" * 78))
     if fs.which("pygmentize"):
-        print_pcat(fname)
+        print_pcat(fname, search_term)
     else:
         with open(fname) as f:
             for line in f:
-                print(line, end='')
+                if search_term in line:
+                    print(line, end='')
     print()
 
 ##############################################################################

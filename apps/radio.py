@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup
 import config as cfg
 from lib import common
 from lib.common import exit_signal, remove_non_ascii
-from .process import get_exitcode_stdout_stderr
+from modules.process import get_exitcode_stdout_stderr
 
 
 def radio(url, stop=False, id=None):
@@ -69,7 +69,7 @@ def read_radio_data():
     """Read the input .csv file."""
     li = []
     dic = {}
-    with open("{root}/modules/assets/radio.csv".format(root=cfg.ROOT), 'r') as f:
+    with open("{root}/apps/assets/radio.csv".format(root=cfg.ROOT), 'r') as f:
         for index, line in enumerate(f):
             li.append(line.rstrip("\n").split(';'))
             dic[li[-1][0]] = index
