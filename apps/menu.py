@@ -11,19 +11,21 @@ if __name__ == "__main__":
     del site
 ####################
 
+import importlib
 from collections import OrderedDict
 
+from apps import radio, temp_folder
 from lib import common
 
-from apps import radio
 
 menu = OrderedDict()
-menu[(1, 'r')] = 'radio'
+menu[(1, 'r')] = ('radio', 'apps.radio.radio_player')
+menu[(2, 'ctd')] = ('create temp. directory', 'apps.temp_folder.create_temp_folder')
 
 
 def show_menu():
     for k, v in menu.iteritems():
-        print("({0})[{1}] {2}".format(k[0], k[1], v))
+        print("({0})[{1}] {2}".format(k[0], k[1], v[0]))
     print("--------")
     print("[m] menu")
     print("[q] <<")
@@ -43,9 +45,18 @@ def get_d_word(menu):
     return d
 
 
-def start_app(app_name):
-    if app_name == 'radio':
-        radio.radio_player()
+def start_app(val):
+    """
+    Call a function by name (string).
+
+    Tip from here: http://stackoverflow.com/questions/3061 .
+    """
+    _, to_call = val
+    function_string = to_call
+    mod_name, func_name = function_string.rsplit('.', 1)
+    mod = importlib.import_module(mod_name)
+    func = getattr(mod, func_name)
+    func()
 
 
 def main():
