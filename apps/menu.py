@@ -45,6 +45,14 @@ def get_d_word(menu):
     return d
 
 
+def start_app_by_shortcut(app_name):
+    for k, v in menu.iteritems():
+        if v[0] == app_name:
+            start_app(v)
+            return
+    print("Warning! Unknown app. name.")
+
+
 def start_app(val):
     """
     Call a function by name (string).

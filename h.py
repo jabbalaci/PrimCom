@@ -866,7 +866,7 @@ def menu():
                 apps.menu.start_app(val)
         # shortcuts
         elif inp == 'radio()':
-            apps.menu.start_app('radio')
+            apps.menu.start_app_by_shortcut('radio')
         # disabled, always show the search hits
         #elif inp in tag2keys:
         #    tag = inp
