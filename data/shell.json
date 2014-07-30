@@ -1,542 +1,557 @@
 {
     "3607027059365975291": {
-        "doc": "bash loops",
+        "doc": "bash loops", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/bash_loop.sh"
-        ],
+        ], 
         "tags": [
-            "bash loop",
-            "bash for",
-            "bash while",
+            "bash loop", 
+            "bash for", 
+            "bash while", 
             "basename"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059448991299": {
-        "doc": "syntax-highlighted \"cat\" in command line",
+        "doc": "syntax-highlighted \"cat\" in command line", 
         "meta": {
-            "date": "20130605",
+            "date": "20130605", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/pygmentize.sh"
-        ],
+        ], 
         "tags": [
-            "pygmentize",
-            "colored cat",
+            "pygmentize", 
+            "colored cat", 
             "colored less"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059535926093": {
-        "doc": "a sample .bashrc file",
+        "doc": "a sample .bashrc file", 
         "meta": {
-            "date": "20130611",
+            "date": "20130611", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/bashrc.sh"
-        ],
+        ], 
         "tags": [
             ".bashrc"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059617069257": {
-        "doc": "python oneliner",
+        "doc": "python oneliner", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/python_oneliner.sh"
-        ],
+        ], 
         "tags": [
             "oneliner"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059703756824": {
-        "doc": "Ubuntu update script",
+        "doc": "Ubuntu update script", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/good_shape.sh"
-        ],
+        ], 
         "tags": [
             "good_shape.sh"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059789048091": {
-        "doc": "crontab example",
+        "doc": "crontab example", 
         "meta": {
-            "date": "20130627",
+            "date": "20130627", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/crontab.txt"
-        ],
+        ], 
         "tags": [
             "crontab"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059874219514": {
-        "doc": "convert .doc to .txt",
+        "doc": "convert .doc to .txt", 
         "meta": {
-            "date": "20130630",
+            "date": "20130630", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/doc2txt.txt"
-        ],
+        ], 
         "tags": [
-            "doc2txt",
+            "doc2txt", 
             "abiword"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027059965863346": {
-        "doc": "pdftk examples",
+        "doc": "pdftk examples", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/pdftk.sh"
-        ],
+        ], 
         "tags": [
             "pdftk"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027060048919713": {
-        "doc": "Is there anybody listening on a given port?",
+        "doc": "Is there anybody listening on a given port?", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/anyone_listening.sh"
-        ],
+        ], 
         "tags": [
-            "netstat",
+            "netstat", 
             "port"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027060128473625": {
-        "doc": "remove .svn directories recursively",
+        "doc": "remove .svn directories recursively", 
         "meta": {
             "date": "20130707_181009"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/rm_svn.sh"
-        ],
+        ], 
         "tags": [
             "svn"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027060214041200": {
-        "doc": "pretty print XML",
+        "doc": "pretty print XML", 
         "meta": {
             "date": "20130804_233945"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/xmllint.sh"
-        ],
+        ], 
         "tags": [
             "xmllint"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027060304539063": {
-        "doc": "wget examples",
+        "doc": "wget examples", 
         "meta": {
             "date": "20130813_121125"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/wget.sh"
-        ],
+        ], 
         "tags": [
             "wget"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027060391782408": {
-        "doc": "blackness screensaver",
+        "doc": "blackness screensaver", 
         "meta": {
             "date": "20130815_074740"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/blackness.sh"
-        ],
+        ], 
         "tags": [
             "blackness"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3634882350516705221": {
-        "doc": "sort command in bash",
+        "doc": "sort command in bash", 
         "meta": {
-            "date": "20130924_112307",
+            "date": "20130924_112307", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/sort.txt"
-        ],
+        ], 
         "tags": [
             "sort (bash)"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3634885571829205576": {
-        "doc": "tr command in bash",
+        "doc": "tr command in bash", 
         "meta": {
-            "date": "20130924_112911",
+            "date": "20130924_112911", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/tr.txt"
-        ],
+        ], 
         "tags": [
             "tr (bash)"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3634886594999558990": {
-        "doc": "cut command in bash",
+        "doc": "cut command in bash", 
         "meta": {
-            "date": "20130924_113108",
+            "date": "20130924_113108", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/cut.txt"
-        ],
+        ], 
         "tags": [
             "cut (bash)"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3641392929502767840": {
-        "doc": "rename multiple files",
+        "doc": "rename multiple files", 
         "meta": {
-            "date": "20131003_105810",
+            "date": "20131003_105810", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/rename.sh"
-        ],
+        ], 
         "tags": [
             "rename"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3642293427420677016": {
-        "doc": "sqlite3: create .db file from the schema .sql file",
+        "doc": "sqlite3: create .db file from the schema .sql file", 
         "meta": {
-            "date": "20131004_164733",
+            "date": "20131004_164733", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/sqlite3.txt"
-        ],
+        ], 
         "tags": [
             "sqlite3"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3645214019664639877": {
-        "doc": "ACL with setfacl / getfacl",
+        "doc": "ACL with setfacl / getfacl", 
         "meta": {
-            "date": "20131008_173014",
+            "date": "20131008_173014", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/acl.sh"
-        ],
+        ], 
         "tags": [
             "setfacl"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3645277178640796245": {
-        "doc": "add user to group / remove user from group",
+        "doc": "add user to group / remove user from group", 
         "meta": {
-            "date": "20131008_193555",
+            "date": "20131008_193555", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/user_group.sh"
-        ],
+        ], 
         "tags": [
-            "users",
+            "users", 
             "groups"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3650109622011132835": {
-        "doc": "call python in a shell script",
+        "doc": "call python in a shell script", 
         "meta": {
-            "date": "20131015_113755",
+            "date": "20131015_113755", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/python_from_bash.sh"
-        ],
+        ], 
         "tags": [
-            "python from bash",
+            "python from bash", 
             "pythonpy"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3656756261770434875": {
-        "doc": "installed .deb package version",
+        "doc": "installed .deb package version", 
         "meta": {
-            "date": "20131024_154258",
+            "date": "20131024_154258", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/package_version.sh"
-        ],
+        ], 
         "tags": [
             "package version"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3668536944493871821": {
-        "doc": "avi to mp3",
+        "doc": "avi to mp3", 
         "meta": {
-            "date": "20131109_204835",
+            "date": "20131109_204835", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/avi2mp3.sh"
-        ],
+        ], 
         "tags": [
-            "avi2mp3",
-            "extract",
+            "avi2mp3", 
+            "extract", 
             "audio"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3677191138427531713": {
-        "doc": "activate screensaver (blackness)",
+        "doc": "activate screensaver (blackness)", 
         "meta": {
-            "date": "20131121_192256",
+            "date": "20131121_192256", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/blackness.txt"
-        ],
+        ], 
         "tags": [
             "black"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3684570975730387865": {
-        "doc": "curl tips and tricks",
+        "doc": "curl tips and tricks", 
         "meta": {
-            "date": "20131201_234512",
+            "date": "20131201_234512", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/curl.sh"
-        ],
+        ], 
         "tags": [
             "curl"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3695202220277072470": {
-        "doc": "xsel: text to clipboard",
+        "doc": "xsel: text to clipboard", 
         "meta": {
-            "date": "20131216_154747",
+            "date": "20131216_154747", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/xsel.sh"
-        ],
+        ], 
         "tags": [
-            "xsel",
+            "xsel", 
             "clipboard"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3716437672723517626": {
-        "doc": "how to use scp for uploading/downloading",
+        "doc": "how to use scp for uploading/downloading", 
         "meta": {
-            "date": "20140114_225848",
+            "date": "20140114_225848", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/scp.sh"
-        ],
+        ], 
         "tags": [
             "scp"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3722803918201954469": {
-        "doc": "pdf to text",
+        "doc": "pdf to text", 
         "meta": {
-            "date": "20140123_174712",
+            "date": "20140123_174712", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/pdf2txt.sh"
-        ],
+        ], 
         "tags": [
             "pdf2txt"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3756856425987803904": {
-        "doc": "vim filetypes",
+        "doc": "vim filetypes", 
         "meta": {
-            "date": "20140311_172344",
+            "date": "20140311_172344", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/vim_filetypes.sh"
-        ],
+        ], 
         "tags": [
-            "vim",
+            "vim", 
             "filetypes"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3763552990031495340": {
-        "doc": "top 10 largest directories/files",
+        "doc": "top 10 largest directories/files", 
         "meta": {
-            "date": "20140320_230910",
+            "date": "20140320_230910", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/top10dirs.sh"
-        ],
+        ], 
         "tags": [
-            "top10",
+            "top10", 
             "largest"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3795134625037797304": {
-        "doc": "ffmpeg tricks",
+        "doc": "ffmpeg tricks", 
         "meta": {
-            "date": "20140503_135534",
+            "date": "20140503_135534", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/ffmpeg_tricks.sh"
-        ],
+        ], 
         "tags": [
-            "ffmpeg",
-            "audio",
+            "ffmpeg", 
+            "audio", 
             "video"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3813514828651509474": {
-        "doc": "convert .ogv to .mp4",
+        "doc": "convert .ogv to .mp4", 
         "meta": {
-            "date": "20140528_223346",
+            "date": "20140528_223346", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/ogv2mp4.sh"
-        ],
+        ], 
         "tags": [
-            "ogv2mp4",
+            "ogv2mp4", 
             "ffmpeg"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3816379188586998878": {
-        "doc": "fill empty space with random data",
+        "doc": "fill empty space with random data", 
         "meta": {
-            "date": "20140601_212457",
+            "date": "20140601_212457", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/random_fill.sh"
-        ],
+        ], 
         "tags": [
-            "dd",
+            "dd", 
             "random"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3821858983146859441": {
-        "doc": "working with requirements.txt",
+        "doc": "working with requirements.txt", 
         "meta": {
-            "date": "20140609_105225",
+            "date": "20140609_105225", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/requirements_txt.sh"
-        ],
+        ], 
         "tags": [
-            "requirements.txt",
+            "requirements.txt", 
             "pip"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3826196598829247010": {
-        "doc": "zip compression",
+        "doc": "zip compression", 
         "meta": {
-            "date": "20140615_104833",
+            "date": "20140615_104833", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "shell/zip.sh"
-        ],
+        ], 
         "tags": [
             "zip"
-        ],
+        ], 
+        "extra": []
+    }, 
+    "3858854045196531357": {
+        "doc": "python in bash", 
+        "meta": {
+            "date": "20140730_115439", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/python-in-bash.sh"
+        ], 
+        "tags": [
+            "python in bash"
+        ], 
         "extra": []
     }
 }
