@@ -21,6 +21,7 @@ from lib import common
 menu = OrderedDict()
 menu[(1, 'r')] = ('radio', 'apps.radio.radio_player')
 menu[(2, 'ctd')] = ('create temp. directory', 'apps.temp_folder.create_temp_folder')
+menu[(3, 'pip')] = ('install a package with pip directly from github', 'apps.pip_github.start')
 
 
 def show_menu():
