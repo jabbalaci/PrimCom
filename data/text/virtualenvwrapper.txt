@@ -21,3 +21,6 @@ Most useful commands:
                    project that is associated to this venv.
                    Create the file $VENV/.project that contains the location
                    of the project folder.
+* how to rename a virt. env.:
+      cpvirtualenv oldenv newenv
+      rmvirtualenv oldenv
