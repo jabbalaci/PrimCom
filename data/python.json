@@ -1120,5 +1120,20 @@
             "django"
         ], 
         "extra": []
+    }, 
+    "3867511566245372991": {
+        "doc": "home directory in Python", 
+        "meta": {
+            "date": "20140811_103550", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/home_dir.py"
+        ], 
+        "tags": [
+            "home dir."
+        ], 
+        "extra": []
     }
 }

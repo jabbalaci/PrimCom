@@ -10,7 +10,6 @@ if __name__ == "__main__":
     del site
 ####################
 
-import unipath
 from lib.clipboard import text_to_clipboards
 
 
