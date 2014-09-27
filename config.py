@@ -8,7 +8,7 @@ from lib.podium import get_short_fingerprint
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
 __version__ = "0.4.5"
-__date__ = "20140621"
+__date__ = "20140927"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -29,7 +29,7 @@ PLAYER = {
 
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
-USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:28.0) Gecko/20100101 Firefox/28.0'
+USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:32.0) Gecko/20100101 Firefox/32.0'
 
 # data/*.json are loaded automatically
 LOAD_JSON = sorted([e for e in os.listdir("{root}/data".format(root=ROOT)) if e.endswith(".json")])
@@ -50,7 +50,7 @@ g = Global()
 
 LIGHT, DARK = range(2)
 
-if get_short_fingerprint() == "d8acf3":
+if get_short_fingerprint() in ("d8acf3", "a2b110"):
     # my laptop
     g.BACKGROUND = LIGHT
 else:
@@ -82,3 +82,8 @@ SHOW_LINE_NUMBERS = True
 
 # .history file can grow quickly thus we truncate it to N lines upon startup
 TRUNCATE_HISTFILE_TO_LINES = 20
+
+#############################################################################
+
+if __name__ == "__main__":
+    print(get_short_fingerprint())
