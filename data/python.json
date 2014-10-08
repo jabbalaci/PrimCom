@@ -1135,5 +1135,21 @@
             "home dir."
         ], 
         "extra": []
+    }, 
+    "3909782632124061002": {
+        "doc": "virtualenvwrapper for Python 2 and Python 3", 
+        "meta": {
+            "date": "20141008_182114", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/virtualenvwrapper3.sh"
+        ], 
+        "tags": [
+            "virtualenvwrapper", 
+            "python3"
+        ], 
+        "extra": []
     }
 }
