@@ -299,5 +299,21 @@
             "redis"
         ], 
         "extra": []
+    }, 
+    "3940296839084857215": {
+        "doc": "LaTeX autocompile", 
+        "meta": {
+            "date": "20141119_194719", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/latex_autocompile.txt"
+        ], 
+        "tags": [
+            "LaTeX", 
+            "autocompile"
+        ], 
+        "extra": []
     }
 }

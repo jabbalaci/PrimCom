@@ -7,8 +7,8 @@ from lib.podium import get_short_fingerprint
 
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.4.5"
-__date__ = "20140927"
+__version__ = "0.4.6"
+__date__ = "20141119"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 
@@ -16,17 +16,12 @@ __license__ = "GPL"
 # root directory of the application
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-EDITOR = 'vim'
+EDITOR = "vim"
 GEDIT = 'gedit'
 PLAYER = {
     "cmd":      "mplayer",
     "cmdline":  "mplayer -ao alsa"   # a workaround to make mplayer quit
 }
-#PLAYER = {
-#    "cmd":     "cvlc",    # command-line VLC
-#    "cmdline": "cvlc"
-#}
-
 ALERT = "{root}/assets/alert.wav".format(root=ROOT)
 
 USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:32.0) Gecko/20100101 Firefox/32.0'

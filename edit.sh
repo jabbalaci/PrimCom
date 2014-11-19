@@ -1,1 +1,1 @@
-vi h.py
+$EDITOR h.py

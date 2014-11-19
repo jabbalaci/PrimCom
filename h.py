@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """
 PrimCom
@@ -202,9 +202,8 @@ class SearchHits(object):
                 SearchHits.add(tag)
 
         for index, e in enumerate(SearchHits.hits, start=1):
-            if index > 1:
-                sys.stdout.write(', ')
             sys.stdout.write(e.to_str(index))
+            sys.stdout.write(' ')
         print()
 
 
