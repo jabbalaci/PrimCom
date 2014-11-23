@@ -7,8 +7,8 @@ from lib.podium import get_short_fingerprint
 
 
 __author__ = "Laszlo Szathmary (jabba.laci@gmail.com)"
-__version__ = "0.4.6"
-__date__ = "20141119"
+__version__ = "0.4.7"
+__date__ = "20141123"
 __copyright__ = "Copyright (c) 2013--2014 Laszlo Szathmary"
 __license__ = "GPL"
 

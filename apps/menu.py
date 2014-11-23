@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # encoding: utf-8
 
 from __future__ import (absolute_import, division,
@@ -19,9 +19,14 @@ from lib import common
 
 
 menu = OrderedDict()
-menu[(1, 'r')] = ('radio', 'apps.radio.radio_player')
-menu[(2, 'ctd')] = ('create temp. directory', 'apps.temp_folder.create_temp_folder')
-menu[(3, 'pip')] = ('install a package with pip directly from github', 'apps.pip_github.start')
+menu[(1, 'r')] = ('radio',
+                  'apps.radio.radio_player')
+menu[(2, 'ctd')] = ('create temp. directory',
+                    'apps.temp_folder.create_temp_folder')
+menu[(3, 'pip')] = ('install a package with pip directly from github',
+                    'apps.pip_github.start')
+menu[(4, 'venv')] = ('create a virtual environment',
+                     'apps.venv.start')
 
 
 def show_menu():
@@ -74,7 +79,7 @@ def main():
     d_word = get_d_word(menu)
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = raw_input("~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return
@@ -98,6 +103,7 @@ def main():
             print("out of range...")
         else:
             start_app(val)
+            show_menu()
 
 ##############################################################################
 
