@@ -13,6 +13,7 @@ if __name__ == "__main__":
 import os
 
 from lib import common
+from lib.unipath import Path
 
 DONE = True
 
@@ -67,15 +68,20 @@ mkvirtualenvwrapper
     venv_name = inp
     cmd = "source `which virtualenvwrapper.sh` && mkvirtualenv -p `which python{v}` {name}".format(v=python_ver, name=venv_name)
     print("#", cmd)
-    inp = raw_input("Execute the command above (y/n, default: y)? ")
+    inp = raw_input("Execute the command above (Y/n)? ")
     if inp in ('', 'y'):
         os.system(cmd)
+        venv_dir = "{home}/.virtualenvs/{name}".format(home=os.path.expanduser("~"), name=venv_name)
         with open(".venv", "w") as f:
-            print("{home}/.virtualenvs/{name}".format(home=os.path.expanduser("~"), name=venv_name), file=f)
+            print(venv_dir, file=f)
             print("# .venv is created too")
-            return DONE
+        with open(Path(venv_dir, ".project"), "w") as f:
+            print(os.getcwd(), file=f)
+            print("# $VENV/.project is created too")
     else:
         print('no.')
+
+    return DONE
 
 
 def mk_virtualenv():
