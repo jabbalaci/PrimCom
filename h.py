@@ -1064,29 +1064,38 @@ def cleanup():
 
 def check_command_line_arguments():
     args = sys.argv[1:]
-    if '-c' in args:
-        os.system("clear")
-    if '-kill' in args:
-        # suicide mode: do the caching the terminate
-        background_reads()
-        N = 5
-        print("Waiting for {n} seconds...".format(n=N))
-        time.sleep(5)
-        print("Quit.")
-        sys.exit(0)
+    for arg in args:
+        if arg in ('-c', '--clear'):
+            os.system("clear")
+        elif arg in ('-k', '--kill'):
+            # suicide mode: do the caching and terminate
+            print("Waiting for the threads to finish...")
+            background_reads(block=True)
+            print("Quit.")
+            sys.exit(0)
+        else:
+            print("Error: unknown option: {}".format(arg), file=sys.stderr)
+            sys.exit(1)
 
 
-def background_reads():
+def background_reads(block=False):
     """
     Start these jobs in the background.
 
     These things are necessary but they take some seconds to complete.
     Idea: show the prompt right away then finish these things a bit later.
+    If block is True (used in suicide mode), then we are waiting here
+    until all threads are stopped.
     """
-    Thread(target=check_dependencies).start()
-    Thread(target=setup_history_and_tab_completion).start()
-    Thread(target=read_json, kwargs={'verbose': False}).start()
-    Thread(target=colored_line_numbers.cache_pygmentize).start()
+    t1 = Thread(target=check_dependencies)
+    t2 = Thread(target=setup_history_and_tab_completion)
+    t3 = Thread(target=read_json, kwargs={'verbose': False})
+    t4 = Thread(target=colored_line_numbers.cache_pygmentize)
+
+    t1.start(); t2.start(); t3.start(); t4.start()
+
+    if block:
+        t1.join(); t2.join(); t3.join(); t4.join()
 
 
 def main():
