@@ -10,6 +10,7 @@ if __name__ == "__main__":
     del site
 ####################
 
+import requests
 from termcolor import colored
 
 import config as cfg
@@ -17,13 +18,17 @@ from lib.clipboard import text_to_clipboards
 from lib.common import cindex
 from lib.pyshorteners import shorteners
 from lib.pyshorteners.exceptions import ShorteningErrorException
+from lib.pyshorteners.utils import is_valid_url
+
+
+class InvalidUrlException(Exception):
+    pass
 
 
 def bold(text, color='white'):
     return colored(text, color, attrs=['bold'])
 
 #import json
-#import requests
 #
 #def shorten_url(long_url):
 #    try:
@@ -39,25 +44,44 @@ def bold(text, color='white'):
 #    except:
 #        print("Hmm, strange...")
 
-def show_short_url(short_url):
+def simplify_url(url):
+    return url.strip().rstrip("/")
+
+
+def show_short_url(short_url, long_url=None, expanded=None):
     print(cindex(short_url, color=cfg.colors[cfg.g.BACKGROUND]["cindex"]))
+    if long_url and expanded:
+        expanded = simplify_url(expanded)
+        if expanded == long_url:
+            feedback = cindex("(match)", color="green")
+        else:
+            feedback = cindex("(differs)", color="red")
+        print('# expanded from shortened URL: {url} {f}'.format(url=expanded, f=feedback))
     text_to_clipboards(short_url)
     print("# use show() to zoom in")
 
 
 def shorten_url(long_url):
+    long_url = simplify_url(long_url)
     classes = [shorteners.GoogleShortener,
                shorteners.TinyurlShortener,
                shorteners.IsgdShortener]
     for cl in classes:
         try:
+            if not is_valid_url(long_url):
+                raise InvalidUrlException
             obj = cl()
             short_url = obj.short(long_url)
+            expanded = obj.expand(short_url)
+            show_short_url(short_url, long_url, expanded)
+            break
+        except InvalidUrlException:
+            print("Error: invalid URL.")
+            break
         except ShorteningErrorException as e:
             print('# {cl}: {err}.'.format(cl=obj.__class__.__name__, err=e))
-        else:
-            show_short_url(short_url)
-            print('# expanded from shortened URL:', obj.expand(short_url))
+        except requests.exceptions.MissingSchema as e:
+            print('# error:', e)
             break
 
 ##############################################################################
