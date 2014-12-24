@@ -1,5 +1,6 @@
 beautifulsoup4
-psutil
-termcolor
 jinja2
+psutil
+requests
+termcolor
 unipath

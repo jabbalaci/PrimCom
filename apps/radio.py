@@ -122,17 +122,26 @@ def get_song():
 
     return msg
 
+#def get_stream_title(url):
+#    cmd = "{player} --length 0.4 -ao null {url}".format(player=cfg.PLAYER["cmd"],url=url)
+##    cmd = "mplayer -endpos 0.4 -ao null {url}".format(player=cfg.PLAYER["cmd"],url=url)
+#    out = get_exitcode_stdout_stderr(cmd)[1]
+#
+#    for line in out.decode("ISO-8859-1").split("\n"):    # http://stackoverflow.com/questions/19699367
+##        print(line)
+#        if line.startswith('ICY Info:'):
+#            match = re.search(r"StreamTitle='(.*)';StreamUrl=", line)
+#            title = match.group(1)
+#            return title
 
 def get_stream_title(url):
-    cmd = "mplayer -endpos 0.4 -ao null {url}".format(url=url)
+    cmd = "mpv --length 0.4 -ao null {url}".format(url=url)
     out = get_exitcode_stdout_stderr(cmd)[1]
 
     for line in out.decode("ISO-8859-1").split("\n"):    # http://stackoverflow.com/questions/19699367
-#        print(line)
-        if line.startswith('ICY Info:'):
-            match = re.search(r"StreamTitle='(.*)';StreamUrl=", line)
-            title = match.group(1)
-            return title
+        # print(line)
+        if re.search(r'\s*icy-title:', line):
+            return line.split(":")[1].strip()
 
 
 def get_song_fm95():
