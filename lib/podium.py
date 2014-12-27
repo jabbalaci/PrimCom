@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
@@ -50,3 +50,4 @@ def get_short_fingerprint(length=6):
 
 if __name__ == "__main__":
     print(get_short_fingerprint())
+    print(string_to_md5("test"))

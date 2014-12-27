@@ -588,7 +588,7 @@ def toggle_line_numbers():
 
 
 def add_item():
-    os.system("python {root}/add_item.py".format(root=cfg.ROOT))
+    os.system("python2 {root}/add_item.py".format(root=cfg.ROOT))
 
 
 def edit_entry(key):

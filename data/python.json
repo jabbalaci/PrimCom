@@ -1169,5 +1169,22 @@
             "update"
         ], 
         "extra": []
+    }, 
+    "3967284550611002426": {
+        "doc": "debug with ipython", 
+        "meta": {
+            "date": "20141227_012721", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/debug_with_ipython.py"
+        ], 
+        "tags": [
+            "ipython", 
+            "debug", 
+            "ipdb"
+        ], 
+        "extra": []
     }
 }
