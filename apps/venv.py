@@ -66,12 +66,15 @@ mkvirtualenvwrapper
     if len(inp) == 0:
         inp = venv_name
     venv_name = inp
-    cmd = "source `which virtualenvwrapper.sh` && mkvirtualenv -p `which python{v}` {name}".format(v=python_ver, name=venv_name)
+    venv_dir = "{home}/.virtualenvs/{name}".format(home=os.path.expanduser("~"), name=venv_name)
+    if python_ver == 2:
+        cmd = "source `which virtualenvwrapper.sh` && mkvirtualenv -p `which python2` {name}".format(name=venv_name)
+    else:  # Python 3.4+
+        cmd = "pyvenv {venv_dir}".format(venv_dir=venv_dir)
     print("#", cmd)
-    inp = raw_input("Execute the command above (Y/n)? ")
+    inp = raw_input("Execute the command above (Y/n)? ").lower()
     if inp in ('', 'y'):
         os.system(cmd)
-        venv_dir = "{home}/.virtualenvs/{name}".format(home=os.path.expanduser("~"), name=venv_name)
         with open(".venv", "w") as f:
             print(venv_dir, file=f)
             print("# .venv is created too")
@@ -120,7 +123,7 @@ def start():
     Create a virtual environment.
     """
     print("""
-[1] with virtualenvwrapper
+[1] with virtualenvwrapper / pyvenv
 [2] with virtualenv
 --------
 [q] <<
