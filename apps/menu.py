@@ -27,6 +27,8 @@ menu[(3, 'pip')] = ('install a package with pip directly from github',
                     'apps.pip_github.start')
 menu[(4, 'venv')] = ('create a virtual environment',
                      'apps.venv.start')
+menu[(5, 'secret')] = ('generate a 50 characters long secret key',
+                     'apps.secret_key.start')
 
 
 def show_menu():
