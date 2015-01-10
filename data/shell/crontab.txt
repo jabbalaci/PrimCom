@@ -1,0 +1,8 @@
+# m h  dom mon dow   command
+DISPLAY=:0
+PYTHONPATH=/home/jabba/Dropbox/python/lib/jabbapylib
+
+DIR=/home/jabba/Dropbox/python/lib/jabbapylib/jabbapylib/apps
+0 22 * * * $DIR/bing.py >>$HOME/bing.log.txt
+
+# visual crontab editor: http://www.corntab.com/pages/crontab-gui

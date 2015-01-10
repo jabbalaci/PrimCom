@@ -1,0 +1,319 @@
+{
+    "3607027104811646259": {
+        "doc": "dist-packages paths", 
+        "meta": {
+            "date": "20130529", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/dist-packages.txt"
+        ], 
+        "tags": [
+            "dist", 
+            "dist-packages", 
+            "path"
+        ], 
+        "extra": []
+    }, 
+    "3607027104898688939": {
+        "doc": "wordpress: python sourcecode tag", 
+        "meta": {
+            "date": "20130604", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wordpress_sourcecode_python.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3607027104981688163": {
+        "doc": "grub2 info and example", 
+        "meta": {
+            "date": "20130610", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/grub2.txt"
+        ], 
+        "tags": [
+            "grub2"
+        ], 
+        "extra": []
+    }, 
+    "3607027105067222243": {
+        "doc": "vim tricks", 
+        "meta": {
+            "date": "20130619", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/vim.txt"
+        ], 
+        "tags": [
+            "vim"
+        ], 
+        "extra": []
+    }, 
+    "3607027105154465602": {
+        "doc": "sample .gitconfig file", 
+        "meta": {
+            "date": "20130706", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/gitconfig.txt"
+        ], 
+        "tags": [
+            ".gitconfig"
+        ], 
+        "extra": []
+    }, 
+    "3607027105242426591": {
+        "doc": "mc tips", 
+        "meta": {
+            "date": "20130706", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/mc.txt"
+        ], 
+        "tags": [
+            "mc"
+        ], 
+        "extra": []
+    }, 
+    "3607027105331376099": {
+        "doc": "wordpress: pre tag", 
+        "meta": {
+            "date": "20130706_201344"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_pre.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3607027105410271780": {
+        "doc": "wordpress: sub tag", 
+        "meta": {
+            "date": "20130706_201610"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_sub.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3607027105492832538": {
+        "doc": "wordpress: ul tag", 
+        "meta": {
+            "date": "20130706_201704"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_ul.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3607027105581022178": {
+        "doc": "wordpress: ol tag", 
+        "meta": {
+            "date": "20130706_201810"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_ol.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": []
+    }, 
+    "3640720417193007424": {
+        "doc": "pmwiki: frame and code", 
+        "meta": {
+            "date": "20131002_124243", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pmwiki_frame_and_code.txt"
+        ], 
+        "tags": [
+            "pmwiki"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3640721807316294132": {
+        "doc": "pmwiki: python source", 
+        "meta": {
+            "date": "20131002_124443", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pmwiki_python_source.txt"
+        ], 
+        "tags": [
+            "pmwiki"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3640737150276330425": {
+        "doc": "wp: highlight text background", 
+        "meta": {
+            "date": "20131002_131526", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wordpress_highlight_text_bg.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3649379420012936054": {
+        "doc": "wordpress: li tag", 
+        "meta": {
+            "date": "20131014_112608", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_li.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3661213994379776081": {
+        "doc": "add CSS definition to HTML source", 
+        "meta": {
+            "date": "20131030_181921", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/css_to_html.html"
+        ], 
+        "tags": [
+            "css"
+        ], 
+        "extra": []
+    }, 
+    "3722869032448765493": {
+        "doc": "wp (wordpress: underline)", 
+        "meta": {
+            "date": "20140123_195643", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_underline.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "3759697623845765823": {
+        "doc": "pip3 (if you have Python 2 and Python 3 on the same machine)", 
+        "meta": {
+            "date": "20140315_152845", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/pip3.sh"
+        ], 
+        "tags": [
+            "pip3"
+        ], 
+        "extra": []
+    }, 
+    "3822006401039749051": {
+        "doc": "virtualenvwrapper", 
+        "meta": {
+            "date": "20140609_154502", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/virtualenvwrapper.txt"
+        ], 
+        "tags": [
+            "virtualenvwrapper"
+        ], 
+        "extra": []
+    }, 
+    "3830032097186289810": {
+        "doc": "redis links", 
+        "meta": {
+            "date": "20140620_173024", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/redis.txt"
+        ], 
+        "tags": [
+            "redis"
+        ], 
+        "extra": []
+    }, 
+    "3940296839084857215": {
+        "doc": "LaTeX autocompile", 
+        "meta": {
+            "date": "20141119_194719", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/latex_autocompile.txt"
+        ], 
+        "tags": [
+            "LaTeX", 
+            "autocompile"
+        ], 
+        "extra": []
+    }
+}

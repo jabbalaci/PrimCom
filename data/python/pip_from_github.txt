@@ -1,0 +1,12 @@
+requests on GitHub is here:
+    https://github.com/kennethreitz/requests
+
+here is how to install it via pip from GitHub:
+    sudo pip install -U https://github.com/kennethreitz/requests/zipball/master
+
+another way (it worked better for me than the previous one):
+    sample repo: https://github.com/morninj/django-email-obfuscator
+    command: pip install -e git+https://github.com/morninj/django-email-obfuscator.git#egg=django-email-obfuscator
+
+(1) pip freeze > requirements.txt
+(2) pip install -r requirements.txt

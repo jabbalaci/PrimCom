@@ -1,0 +1,3 @@
+wget https://raw.githubusercontent.com/seb-m/pyinotify/master/python2/examples/autocompile.py
+chmod u+x autocompile.py
+./autocompile.py . .tex,.bib ./compile.sh

@@ -1,0 +1,18 @@
+sqlite3 database.db < schema.sql
+
+# ==========
+# a simple example for a schema (schema.sql):
+
+drop table if exists entries;
+
+create table entries (
+    id integer primary key autoincrement,
+    title text not null,
+    text text not null
+);
+
+#############################################################################
+## dump the database in an SQL text format
+#############################################################################
+
+sqlite3 database.db .dump

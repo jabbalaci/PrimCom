@@ -1,0 +1,8 @@
+Copy the name of the current file to the mini shell:
+"Esc+Enter" or "Ctrl+Enter"
+
+Paste to the shell the path of the selected panel:
+"Esc+a" or "Ctrl+x p"
+
+Paste to the shell the path of the unselected (other) panel:
+"Esc+A" or "Ctrl+x Ctrl+p"

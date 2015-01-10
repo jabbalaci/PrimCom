@@ -1,0 +1,344 @@
+{
+    "3607027148636772099": {
+        "doc": "a Perl to Python regexp tutorial", 
+        "meta": {
+            "date": "20130529", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.loria.fr/~szathmar/pmwiki/index.php?n=Python.20091106Perl2PythonRegex"
+        ], 
+        "tags": [
+            "regex", 
+            "regexp", 
+            "re", 
+            "perl"
+        ], 
+        "extra": []
+    }, 
+    "3607027148725621232": {
+        "doc": "Python Module of the Week", 
+        "meta": {
+            "date": "20130529", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pymotw.com/2/contents.html"
+        ], 
+        "tags": [
+            "pymotw"
+        ], 
+        "extra": []
+    }, 
+    "3607027148803071602": {
+        "doc": "google search", 
+        "meta": {
+            "date": "20130529", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://www.google.com/"
+        ], 
+        "tags": [
+            "go", 
+            "google"
+        ], 
+        "extra": []
+    }, 
+    "3607027148888296269": {
+        "doc": "Python 2 Standard Library", 
+        "meta": {
+            "date": "20130604", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/2/library/"
+        ], 
+        "tags": [
+            "python2 standard library", 
+            "stdlib"
+        ], 
+        "extra": []
+    }, 
+    "3607027148970475437": {
+        "doc": "Python 3 Standard Library", 
+        "meta": {
+            "date": "20130604", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://docs.python.org/3/library/"
+        ], 
+        "tags": [
+            "python3 standard library", 
+            "stdlib"
+        ], 
+        "extra": []
+    }, 
+    "3607027149067619476": {
+        "doc": "PyPI - the Python Package Index", 
+        "meta": {
+            "date": "20130604", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pypi.python.org/pypi"
+        ], 
+        "tags": [
+            "pypi"
+        ], 
+        "extra": []
+    }, 
+    "3607027149153461417": {
+        "doc": "Black Hat World", 
+        "meta": {
+            "date": "20130606", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.blackhatworld.com/blackhat-seo/forum.php"
+        ], 
+        "tags": [
+            "black hat"
+        ], 
+        "extra": []
+    }, 
+    "3607027149237282297": {
+        "doc": "String formatting in Python", 
+        "meta": {
+            "date": "20130606", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://knowledgestockpile.blogspot.com/2011/01/string-formatting-in-python_09.html"
+        ], 
+        "tags": [
+            "string formatting"
+        ], 
+        "extra": []
+    }, 
+    "3607027149318552305": {
+        "doc": "Digitally Imported radio stations", 
+        "meta": {
+            "date": "20130606", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://ubuntuincident.wordpress.com/2013/06/06/digitally-imported-station-urls/"
+        ], 
+        "tags": [
+            "di", 
+            "music"
+        ], 
+        "extra": []
+    }, 
+    "3607027149409676715": {
+        "doc": "10 Minute Mail", 
+        "meta": {
+            "date": "20130606", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://10minutemail.com"
+        ], 
+        "tags": [
+            "trashmail"
+        ], 
+        "extra": []
+    }, 
+    "3607027149494407662": {
+        "doc": "psutil (CPU, memory, disks, network, users)", 
+        "meta": {
+            "date": "20130609", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://code.google.com/p/psutil/#Process_management"
+        ], 
+        "tags": [
+            "psutil", 
+            "ps"
+        ], 
+        "extra": []
+    }, 
+    "3607027149575557262": {
+        "doc": "PRAW: The Python Reddit Api Wrapper", 
+        "meta": {
+            "date": "20130609", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://praw.readthedocs.org/en/latest/"
+        ], 
+        "tags": [
+            "praw", 
+            "reddit API"
+        ], 
+        "extra": []
+    }, 
+    "3607027149664049538": {
+        "doc": "configuration manager (dict, json, yaml, .ini, python file)", 
+        "meta": {
+            "date": "20130622", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://github.com/emre/kaptan"
+        ], 
+        "tags": [
+            "configuration manager"
+        ], 
+        "extra": []
+    }, 
+    "3607027149743298864": {
+        "doc": "UberWriter is a writing application for markdown", 
+        "meta": {
+            "date": "20130625", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://uberwriter.wolfvollprecht.de/"
+        ], 
+        "tags": [
+            "markdown"
+        ], 
+        "extra": []
+    }, 
+    "3607027149840882982": {
+        "doc": "PyData's Videos", 
+        "meta": {
+            "date": "20130625", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://vimeo.com/pydata/videos"
+        ], 
+        "tags": [
+            "pydata", 
+            "video"
+        ], 
+        "extra": []
+    }, 
+    "3607027149919462933": {
+        "doc": "a basic socket client server example", 
+        "meta": {
+            "date": "20130706", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pythonadventures.wordpress.com/2013/07/06/a-basic-socket-client-server-example/"
+        ], 
+        "tags": [
+            "socket", 
+            "client server"
+        ], 
+        "extra": []
+    }, 
+    "3607027150002387658": {
+        "doc": "APScheduler examples", 
+        "meta": {
+            "date": "20130806_012730"
+        }, 
+        "action": [
+            "open_url", 
+            "https://pythonadventures.wordpress.com/2013/08/06/apscheduler-examples/"
+        ], 
+        "tags": [
+            "APScheduler"
+        ], 
+        "extra": []
+    }, 
+    "3607027150088435021": {
+        "doc": "a simple script that adds history and basic tab completion to the default python shell", 
+        "meta": {
+            "date": "20130813_213846"
+        }, 
+        "action": [
+            "open_url", 
+            "http://pythonadventures.wordpress.com/2013/07/05/add-history-and-tab-completion-to-the-default-python-shell/"
+        ], 
+        "tags": [
+            "tab completion", 
+            "python shell"
+        ], 
+        "extra": []
+    }, 
+    "3621446254540941819": {
+        "doc": "facebook mail", 
+        "meta": {
+            "date": "20130905_222748", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://www.facebook.com/messages/new"
+        ], 
+        "tags": [
+            "facebook mail"
+        ], 
+        "extra": []
+    }, 
+    "3694623745596688510": {
+        "doc": "xpath to css", 
+        "meta": {
+            "date": "20131215_203820", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://github.com/santiycr/cssify"
+        ], 
+        "tags": [
+            "xpath", 
+            "css"
+        ], 
+        "extra": []
+    }, 
+    "3709950597447487468": {
+        "doc": "ASCII table", 
+        "meta": {
+            "date": "20140106_000952", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "http://www.topurlz.com/ascii_table_print.htm"
+        ], 
+        "tags": [
+            "ascii"
+        ], 
+        "extra": []
+    }, 
+    "3828411583534994769": {
+        "doc": "unipath -- an object-oriented approach to Python file/directory operations", 
+        "meta": {
+            "date": "20140618_115103", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "open_url", 
+            "https://github.com/mikeorr/Unipath"
+        ], 
+        "tags": [
+            "unipath", 
+            "path"
+        ], 
+        "extra": []
+    }
+}
