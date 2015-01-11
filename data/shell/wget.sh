@@ -9,3 +9,6 @@ wget -c --mirror -p --html-extension --convert-links --no-parent $url
 
 # spider a website and get the URLs only (-l2: max. recursion depth is 2)
 wget --spider --force-html -r -l2 $url 2>&1 | grep '^--' | awk '{ print $3  }'
+
+# using wget to recursively fetch a directory with arbitrary files in it
+wget -r --no-parent --reject "index.html*" http://...
