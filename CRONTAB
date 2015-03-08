@@ -1,0 +1,5 @@
+Add the following lines to your crontab to keep PrimCom cached:
+
+
+# start PrimCom in suicide mode to keep it cached
+5 * * * * $HOME/python/PrimCom/h.py --kill
