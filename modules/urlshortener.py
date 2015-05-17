@@ -11,6 +11,7 @@ if __name__ == "__main__":
 ####################
 
 import requests
+#requests.packages.urllib3.disable_warnings()
 from termcolor import colored
 
 import config as cfg
