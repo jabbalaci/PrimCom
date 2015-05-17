@@ -4,11 +4,14 @@ from __future__ import unicode_literals
 import json
 
 import requests
-requests.packages.urllib3.disable_warnings()
 
+import config as cfg
+
+from .exceptions import (ExpandingErrorException, ShorteningErrorException,
+                         UnknownShortenerException)
 from .utils import is_valid_url
-from .exceptions import (UnknownShortenerException, ShorteningErrorException,
-                         ExpandingErrorException)
+
+requests.packages.urllib3.disable_warnings()
 
 __all__ = ['Shortener', ]
 module = __import__('lib.pyshorteners.shorteners')
@@ -77,7 +80,14 @@ class GoogleShortener(object):
     Googl Shortener Implementation
     Doesn't need anything from the app
     """
+    try:
+        api_key = open("{root}/goo_gl_api.txt".format(root=cfg.ROOT)).read().strip()
+    except IOError:
+        api_key = None
+
     api_url = "https://www.googleapis.com/urlshortener/v1/url"
+    if api_key:
+        api_url += "?key=" + api_key
 
     def short(self, url):
         params = json.dumps({'longUrl': url})
