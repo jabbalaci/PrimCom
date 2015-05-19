@@ -11,7 +11,7 @@ from .exceptions import (ExpandingErrorException, ShorteningErrorException,
                          UnknownShortenerException)
 from .utils import is_valid_url
 
-requests.packages.urllib3.disable_warnings()
+#requests.packages.urllib3.disable_warnings()
 
 __all__ = ['Shortener', ]
 module = __import__('lib.pyshorteners.shorteners')
