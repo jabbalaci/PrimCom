@@ -1,0 +1,2 @@
+# a given file belongs to which package
+pacman -Qo <file>

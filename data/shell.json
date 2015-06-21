@@ -568,5 +568,20 @@
             "iotop"
         ], 
         "extra": []
+    }, 
+    "4080048846680643173": {
+        "doc": "pacman tips", 
+        "meta": {
+            "date": "20150531_162914", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/pacman.txt"
+        ], 
+        "tags": [
+            "pacman"
+        ], 
+        "extra": []
     }
 }
