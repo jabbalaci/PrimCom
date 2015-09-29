@@ -5,10 +5,12 @@ import os
 import sys
 from random import shuffle
 
+import blinker
 import psutil
 
 import config as cfg
-from . import blinker, fs
+
+from . import fs
 from .termcolor import colored
 
 exit_signal = blinker.signal('exit')

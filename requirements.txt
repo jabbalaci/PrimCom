@@ -1,6 +1,9 @@
-beautifulsoup4
-jinja2
-psutil
-requests
-termcolor
-unipath
+beautifulsoup4==4.4.0
+blinker==1.4
+Jinja2==2.8
+MarkupSafe==0.23
+psutil==3.2.1
+Pygments==2.0.2
+requests==2.7.0
+termcolor==1.1.0
+Unipath==1.1

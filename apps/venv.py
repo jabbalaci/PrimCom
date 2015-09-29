@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 import os
 
 from lib import common
-from lib.unipath import Path
+from unipath import Path
 
 DONE = True
 
