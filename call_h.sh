@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-source ~/.virtualenvs/PrimCom_project/bin/activate
+source /home/jabba/.virtualenvs/PrimCom_project/bin/activate
 
-cd ~/Dropbox/python/PrimCom_project
+cd /home/jabba/Dropbox/python/PrimCom_project
 ./h.py "$@"
 
 deactivate
