@@ -583,5 +583,36 @@
             "pacman"
         ], 
         "extra": []
+    }, 
+    "4177244233548559772": {
+        "doc": "resize to fix width", 
+        "meta": {
+            "date": "20151012_185915", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/resize.sh"
+        ], 
+        "tags": [
+            "resize", 
+            "convert"
+        ], 
+        "extra": []
+    }, 
+    "4181704953919419343": {
+        "doc": "feh (image viewer)", 
+        "meta": {
+            "date": "20151018_224159", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/feh.sh"
+        ], 
+        "tags": [
+            "feh"
+        ], 
+        "extra": []
     }
 }
