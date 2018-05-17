@@ -1,5 +1,8 @@
 import os
+# Py2:
 from urlparse import urlparse
+# Py3:
+from urllib.parse import urlparse
 
 url = "http://fc00.deviantart.net/fs70/i/2013/050/f/4/hiro_protagonist__snow_crash_by_ariokh-d5vkofi.jpg"
 fname = os.path.split(urlparse(url)[2])[1]

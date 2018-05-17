@@ -1,1207 +1,1256 @@
 {
     "3607027024939045888": {
-        "doc": "use accented characters in Python source code",
+        "doc": "use accented characters in Python source code", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/accent.py"
-        ],
+        ], 
         "tags": [
-            "accent",
+            "accent", 
             "ekezet"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025021730359": {
-        "doc": "split path",
+        "doc": "split path", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/split_path.py"
-        ],
+        ], 
         "tags": [
-            "split path",
-            "splitext",
+            "split path", 
+            "splitext", 
             "basename"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025103537400": {
-        "doc": "join path",
+        "doc": "join path", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/join_path.py"
-        ],
+        ], 
         "tags": [
             "join path"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025189264916": {
-        "doc": "split url",
+        "doc": "split url", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/split_url.py"
-        ],
+        ], 
         "tags": [
-            "split url",
+            "split url", 
             "urlparse"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025285429311": {
-        "doc": "join url",
+        "doc": "join url", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/join_url.py"
-        ],
+        ], 
         "tags": [
-            "join url",
+            "join url", 
             "urljoin"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025367505007": {
-        "doc": "alap (basic) Python script",
+        "doc": "alap (basic) Python script", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/alap.py"
-        ],
+        ], 
         "tags": [
             "alap"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025452113531": {
-        "doc": "queue",
+        "doc": "queue", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_queue.py"
-        ],
+        ], 
         "tags": [
-            "queue",
+            "queue", 
             "sor"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025539161085": {
-        "doc": "stack",
+        "doc": "stack", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_stack.py"
-        ],
+        ], 
         "tags": [
-            "stack",
+            "stack", 
             "verem"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025617336220": {
-        "doc": "threading",
+        "doc": "threading", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_threading.py"
-        ],
+        ], 
         "tags": [
-            "threads",
+            "threads", 
             "super"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025710782437": {
-        "doc": "http server on localhost with Python",
+        "doc": "http server on localhost with Python", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/http_server.sh"
-        ],
+        ], 
         "tags": [
             "http server"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025791486766": {
-        "doc": "json",
+        "doc": "json", 
         "meta": {
-            "date": "20130529",
+            "date": "20130529", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_json.py"
-        ],
+        ], 
         "tags": [
-            "json",
+            "json", 
             "OrderedDict"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025875776188": {
-        "doc": "curses with curses.wrapper",
+        "doc": "curses with curses.wrapper", 
         "meta": {
-            "date": "20130602",
+            "date": "20130602", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/curses_wrapper.py"
-        ],
+        ], 
         "tags": [
             "curses.wrapper"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027025958829579": {
-        "doc": "Python job scheduling for humans",
+        "doc": "Python job scheduling for humans", 
         "meta": {
-            "date": "20130603",
+            "date": "20130603", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/schedule.py"
-        ],
+        ], 
         "tags": [
             "schedule"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026046936883": {
-        "doc": "the atexit module defines a single function to register cleanup functions",
+        "doc": "the atexit module defines a single function to register cleanup functions", 
         "meta": {
-            "date": "20130603",
+            "date": "20130603", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_atexit.py"
-        ],
+        ], 
         "tags": [
             "atexit"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026138885153": {
-        "doc": "How can I make a chain of function decorators in Python?",
+        "doc": "How can I make a chain of function decorators in Python?", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/decorators.py"
-        ],
+        ], 
         "tags": [
             "decorators"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026219184433": {
-        "doc": "equivalent of the which command in Python",
+        "doc": "equivalent of the which command in Python", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/which.py"
-        ],
+        ], 
         "tags": [
             "which"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026303229048": {
-        "doc": "regex to find urls in string",
+        "doc": "regex to find urls in string", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/urls_in_string.py"
-        ],
+        ], 
         "tags": [
             "urls in string"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026390659287": {
-        "doc": "smokesignal is a simple Python library for sending and receiving signals",
+        "doc": "smokesignal is a simple Python library for sending and receiving signals", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/smokesignal.py"
-        ],
+        ], 
         "tags": [
-            "smokesignal",
+            "smokesignal", 
             "signal"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026476547624": {
-        "doc": "autocomplete with TAB",
+        "doc": "autocomplete with TAB", 
         "meta": {
-            "date": "20130604",
+            "date": "20130604", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/autocomplete.py"
-        ],
+        ], 
         "tags": [
-            "autocomplete",
+            "autocomplete", 
             "tab completion"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026570281020": {
-        "doc": "import from parent directory",
+        "doc": "import from parent directory", 
         "meta": {
-            "date": "20130608",
+            "date": "20130608", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/import-from-parent-dir.py"
-        ],
+        ], 
         "tags": [
-            "sys.path",
+            "sys.path", 
             "import from parent"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026652901813": {
-        "doc": "same output as Unix's date command",
+        "doc": "same output as Unix's date command", 
         "meta": {
-            "date": "20130609",
+            "date": "20130609", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/unix-date.py"
-        ],
+        ], 
         "tags": [
             "unix date"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026734969827": {
-        "doc": "open url in a new Firefox tab (workaround)",
+        "doc": "open url in a new Firefox tab (workaround)", 
         "meta": {
-            "date": "20130609",
+            "date": "20130609", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/open_url.py"
-        ],
+        ], 
         "tags": [
-            "open url",
+            "open url", 
             "webbrowser"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026821642559": {
-        "doc": "reverse list",
+        "doc": "reverse list", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_reverse.py"
-        ],
+        ], 
         "tags": [
             "reverse"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026906568713": {
-        "doc": "extract URLs",
+        "doc": "extract URLs", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/extract_urls.py"
-        ],
+        ], 
         "tags": [
             "extract URLs"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027026987125778": {
-        "doc": "list/dict/set comprehensions",
+        "doc": "list/dict/set comprehensions", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/comprehensions.py"
-        ],
+        ], 
         "tags": [
-            "comprehensions",
+            "comprehensions", 
             "set"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027082429146": {
-        "doc": "positive and negative infinity",
+        "doc": "positive and negative infinity", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/infinity.py"
-        ],
+        ], 
         "tags": [
             "infinity"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027165687445": {
-        "doc": "splat operator ('*' and '**')",
+        "doc": "splat operator ('*' and '**')", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/asterisks.py"
-        ],
+        ], 
         "tags": [
-            "splat",
+            "splat", 
             "asterisks"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027247535451": {
-        "doc": "itertools",
+        "doc": "itertools", 
         "meta": {
-            "date": "20130619",
+            "date": "20130619", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_itertools.py"
-        ],
+        ], 
         "tags": [
             "itertools"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027333217952": {
-        "doc": "create a temp file",
+        "doc": "create a temp file", 
         "meta": {
-            "date": "20130620",
+            "date": "20130620", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/tempfile.py"
-        ],
+        ], 
         "tags": [
             "tempfile"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027412155181": {
-        "doc": "BeautifulSoup4 example",
+        "doc": "BeautifulSoup4 example", 
         "meta": {
-            "date": "20130622",
+            "date": "20130622", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/bs4_example.py"
-        ],
+        ], 
         "tags": [
             "bs4"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027505336487": {
-        "doc": "collections.defaultdict",
+        "doc": "collections.defaultdict", 
         "meta": {
-            "date": "20130622",
+            "date": "20130622", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_defaultdict.py"
-        ],
+        ], 
         "tags": [
             "defaultdict"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027591148889": {
-        "doc": "verify if the given external command is available",
+        "doc": "verify if the given external command is available", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/requires.py"
-        ],
+        ], 
         "tags": [
             "requires"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027672084759": {
-        "doc": "exceptions",
+        "doc": "exceptions", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_exception.py"
-        ],
+        ], 
         "tags": [
             "exceptions"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027761206028": {
-        "doc": "static variable (keep its value between function calls)",
+        "doc": "static variable (keep its value between function calls)", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/static_var.py"
-        ],
+        ], 
         "tags": [
-            "static variable",
+            "static variable", 
             "hasattr"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027839915976": {
-        "doc": "variables and functions of an object",
+        "doc": "variables and functions of an object", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/object_inspection.py"
-        ],
+        ], 
         "tags": [
-            "object inspection",
-            "getattr",
+            "object inspection", 
+            "getattr", 
             "hasattr"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027027929543359": {
-        "doc": "install a package with pip from a github repository",
+        "doc": "install a package with pip from a github repository", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/pip_from_github.txt"
-        ],
+        ], 
         "tags": [
-            "pip",
+            "pip", 
             "github"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028014586271": {
-        "doc": "read XML with untangle",
+        "doc": "read XML with untangle", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_untangle.py"
-        ],
+        ], 
         "tags": [
             "read xml, untangle"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028103837037": {
-        "doc": "update all Python packages",
+        "doc": "update all Python packages", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/update-pip.py"
-        ],
+        ], 
         "tags": [
             "update pip"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028189141623": {
-        "doc": "lamdba functions",
+        "doc": "lamdba functions", 
         "meta": {
-            "date": "20130625",
+            "date": "20130625", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_lambda.py"
-        ],
+        ], 
         "tags": [
             "lambda"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028270859060": {
-        "doc": "increase a string by one",
+        "doc": "increase a string by one", 
         "meta": {
-            "date": "20130626",
+            "date": "20130626", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/inc_string.py"
-        ],
+        ], 
         "tags": [
             "increase string"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028355669770": {
-        "doc": "traverse directory recursively",
+        "doc": "traverse directory recursively", 
         "meta": {
-            "date": "20130626",
+            "date": "20130626", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/recursive_dir_traversal.py"
-        ],
+        ], 
         "tags": [
-            "recursive dir. traversal",
-            "traverse",
+            "recursive dir. traversal", 
+            "traverse", 
             "walk"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028436820002": {
-        "doc": "set operations",
+        "doc": "set operations", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_set.txt"
-        ],
+        ], 
         "tags": [
             "set"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028530980038": {
-        "doc": "kill a process",
+        "doc": "kill a process", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_kill.py"
-        ],
+        ], 
         "tags": [
             "kill"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028614690165": {
-        "doc": "blinker example",
+        "doc": "blinker example", 
         "meta": {
-            "date": "20130628",
+            "date": "20130628", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_blinker.py"
-        ],
+        ], 
         "tags": [
-            "blinker",
+            "blinker", 
             "signal"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028699518074": {
-        "doc": "get external command's output",
+        "doc": "get external command's output", 
         "meta": {
-            "date": "20130701",
+            "date": "20130701", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/command_output.py"
-        ],
+        ], 
         "tags": [
             "command output"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028778466638": {
-        "doc": "a function defined in .bashrc to facilitate using virtualenv",
+        "doc": "a function defined in .bashrc to facilitate using virtualenv", 
         "meta": {
-            "date": "20130705",
+            "date": "20130705", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/virtualenv_function.sh"
-        ],
+        ], 
         "tags": [
             "virtualenv"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028862733067": {
-        "doc": "try / except / else / finally",
+        "doc": "try / except / else / finally", 
         "meta": {
-            "date": "20130705",
+            "date": "20130705", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_except.py"
-        ],
+        ], 
         "tags": [
             "try / except / else / finally"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027028945415812": {
-        "doc": "directory of the file (even if you called it from another directory)",
+        "doc": "directory of the file (even if you called it from another directory)", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/PATH.py"
-        ],
+        ], 
         "tags": [
-            "PATH",
+            "PATH", 
             "ROOT"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029037688088": {
-        "doc": "socket server and socket client",
+        "doc": "socket server and socket client", 
         "meta": {
-            "date": "20130706",
+            "date": "20130706", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_socket.py"
-        ],
+        ], 
         "tags": [
-            "socket",
+            "socket", 
             "client server"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029125326196": {
-        "doc": "96 bit random hash; simpleflake",
+        "doc": "96 bit random hash; simpleflake", 
         "meta": {
             "date": "20130706_193110"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/random_hash.py"
-        ],
+        ], 
         "tags": [
             "random hash, simpleflake"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029210199450": {
-        "doc": "remove a substring from the end of a string",
+        "doc": "remove a substring from the end of a string", 
         "meta": {
             "date": "20130802_002744"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/strip_end.py"
-        ],
+        ], 
         "tags": [
-            "rstrip",
+            "rstrip", 
             "lstrip"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029294168008": {
-        "doc": "logging with Python",
+        "doc": "logging with Python", 
         "meta": {
             "date": "20130805_100429"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/mylogging.py"
-        ],
+        ], 
         "tags": [
             "logging"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029388443650": {
-        "doc": "pickle serialization",
+        "doc": "pickle serialization", 
         "meta": {
             "date": "20130811_223855"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_pickle.py"
-        ],
+        ], 
         "tags": [
             "pickle"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029470032741": {
-        "doc": "redis example",
+        "doc": "redis example", 
         "meta": {
             "date": "20130812_011000"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_redis.py"
-        ],
+        ], 
         "tags": [
             "redis"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029553318230": {
-        "doc": "random module",
+        "doc": "random module", 
         "meta": {
             "date": "20130813_003940"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_random.py"
-        ],
+        ], 
         "tags": [
             "random"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029640693038": {
-        "doc": "prime test (basic)",
+        "doc": "prime test (basic)", 
         "meta": {
             "date": "20130813_092022"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/prime_basic.py"
-        ],
+        ], 
         "tags": [
             "prime"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029720480237": {
-        "doc": "concurrent.futures example with ThreadPoolExecutor",
+        "doc": "concurrent.futures example with ThreadPoolExecutor", 
         "meta": {
             "date": "20130813_115737"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/concurrent.futures_with_threads.py"
-        ],
+        ], 
         "tags": [
-            "concurrent.futures",
+            "concurrent.futures", 
             "threads"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029810723575": {
-        "doc": "concurrent.futures example with ProcessPoolExecutor",
+        "doc": "concurrent.futures example with ProcessPoolExecutor", 
         "meta": {
             "date": "20130813_120045"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/concurrent.futures_with_processes.py"
-        ],
+        ], 
         "tags": [
-            "concurrent.futures",
-            "processes",
+            "concurrent.futures", 
+            "processes", 
             "redis"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3607027029900329672": {
-        "doc": "redirect command output to /dev/null",
+        "doc": "redirect command output to /dev/null", 
         "meta": {
             "date": "20130817_001400"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/to_dev_null.py"
-        ],
+        ], 
         "tags": [
-            "devnull",
-            "shlex",
+            "devnull", 
+            "shlex", 
             "subprocess"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3620287690012737517": {
-        "doc": "measure execution time",
+        "doc": "measure execution time", 
         "meta": {
-            "date": "20130904_080614",
+            "date": "20130904_080614", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/execution_time.py"
-        ],
+        ], 
         "tags": [
             "execution time"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3621090273298650211": {
-        "doc": "check indentation",
+        "doc": "check indentation", 
         "meta": {
-            "date": "20130905_104044",
+            "date": "20130905_104044", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/check_indent.sh"
-        ],
+        ], 
         "tags": [
             "indentation"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3622878356492663577": {
-        "doc": "file size (in bytes)",
+        "doc": "file size (in bytes)", 
         "meta": {
-            "date": "20130907_215315",
+            "date": "20130907_215315", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/filesize.py"
-        ],
+        ], 
         "tags": [
             "file size"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3622910815899284012": {
-        "doc": "ignored exception",
+        "doc": "ignored exception", 
         "meta": {
-            "date": "20130907_225731",
+            "date": "20130907_225731", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/ignored_exception.py"
-        ],
+        ], 
         "tags": [
             "ignored exception"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3623344231384939773": {
-        "doc": "1 hour from now",
+        "doc": "1 hour from now", 
         "meta": {
-            "date": "20130908_131903",
+            "date": "20130908_131903", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/one_hour.py"
-        ],
+        ], 
         "tags": [
-            "timedelta",
+            "timedelta", 
             "datetime"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3623621872773349207": {
-        "doc": "generator example with Fibonacci numbers",
+        "doc": "generator example with Fibonacci numbers", 
         "meta": {
-            "date": "20130908_223027",
+            "date": "20130908_223027", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_generator.py"
-        ],
+        ], 
         "tags": [
             "generator"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3624088738928577471": {
-        "doc": "machine fingerprint",
+        "doc": "machine fingerprint", 
         "meta": {
-            "date": "20130909_135749",
+            "date": "20130909_135749", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/fingerprint.py"
-        ],
+        ], 
         "tags": [
             "fingerprint"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3640729041468095891": {
-        "doc": "md5: string and file to md5",
+        "doc": "md5: string and file to md5", 
         "meta": {
-            "date": "20131002_125913",
+            "date": "20131002_125913", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_md5.py"
-        ],
+        ], 
         "tags": [
-            "md5",
+            "md5", 
             "hash"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3642274683955238695": {
-        "doc": "urandom example: return a string of n random bytes suitable for cryptographic use",
+        "doc": "urandom example: return a string of n random bytes suitable for cryptographic use", 
         "meta": {
-            "date": "20131004_161029",
+            "date": "20131004_161029", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/urandom.py"
-        ],
+        ], 
         "tags": [
             "urandom"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3722859534908146662": {
-        "doc": "optparse module",
+        "doc": "optparse module", 
         "meta": {
-            "date": "20140123_193810",
+            "date": "20140123_193810", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/my_optparse.py"
-        ],
+        ], 
         "tags": [
-            "optparse",
+            "optparse", 
             "OptionParser"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3758249452436585119": {
-        "doc": "Execute an external command and get its exitcode, stdout and stderr.",
+        "doc": "Execute an external command and get its exitcode, stdout and stderr.", 
         "meta": {
-            "date": "20140313_153135",
+            "date": "20140313_153135", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/exitcode_stdout_stderr.py"
-        ],
+        ], 
         "tags": [
-            "exitcode",
-            "stdout",
+            "exitcode", 
+            "stdout", 
             "stderr"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3763936650197175624": {
-        "doc": "Set the maximum depth of the Python interpreter stack.",
+        "doc": "Set the maximum depth of the Python interpreter stack.", 
         "meta": {
-            "date": "20140321_115125",
+            "date": "20140321_115125", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/recursion_limit.py"
-        ],
+        ], 
         "tags": [
             "recursion"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3763938110028252988": {
-        "doc": "memoization decorator",
+        "doc": "memoization decorator", 
         "meta": {
-            "date": "20140321_115357",
+            "date": "20140321_115357", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/memoize.py"
-        ],
+        ], 
         "tags": [
-            "memoization",
-            "decorator",
+            "memoization", 
+            "decorator", 
             "cache"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3830682266839435557": {
-        "doc": "django imports",
+        "doc": "django imports", 
         "meta": {
-            "date": "20140621_150229",
+            "date": "20140621_150229", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/django_imports.py"
-        ],
+        ], 
         "tags": [
             "django"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3867511566245372991": {
-        "doc": "home directory in Python",
+        "doc": "home directory in Python", 
         "meta": {
-            "date": "20140811_103550",
+            "date": "20140811_103550", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/home_dir.py"
-        ],
+        ], 
         "tags": [
             "home dir."
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3909782632124061002": {
-        "doc": "virtualenvwrapper and virtualenv for Python 2 and Python 3",
+        "doc": "virtualenvwrapper and virtualenv for Python 2 and Python 3", 
         "meta": {
-            "date": "20141008_182114",
+            "date": "20141008_182114", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/virtualenvwrapper3.sh"
-        ],
+        ], 
         "tags": [
-            "virtualenv",
-            "virtualenvwrapper",
-            "python2",
+            "virtualenv", 
+            "virtualenvwrapper", 
+            "python2", 
             "python3"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3911393983977616015": {
-        "doc": "upgrading all packages with pip",
+        "doc": "upgrading all packages with pip", 
         "meta": {
-            "date": "20141010_234216",
+            "date": "20141010_234216", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/pip_update_all_packages.sh"
-        ],
+        ], 
         "tags": [
-            "pip",
+            "pip", 
             "update"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "3967284550611002426": {
-        "doc": "debug with ipython",
+        "doc": "debug with ipython", 
         "meta": {
-            "date": "20141227_012721",
+            "date": "20141227_012721", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/debug_with_ipython.py"
-        ],
+        ], 
         "tags": [
-            "ipython",
-            "debug",
+            "ipython", 
+            "debug", 
             "ipdb"
-        ],
+        ], 
         "extra": []
-    },
+    }, 
     "4166976110417756698": {
-        "doc": "ipython notebook",
+        "doc": "ipython notebook", 
         "meta": {
-            "date": "20150928_145814",
+            "date": "20150928_145814", 
             "author": "jabba"
-        },
+        }, 
         "action": [
-            "cat",
+            "cat", 
             "python/ipnb.sh"
-        ],
+        ], 
         "tags": [
-            "ipython",
-            "notebook",
+            "ipython", 
+            "notebook", 
             "ipnb"
-        ],
+        ], 
+        "extra": []
+    }, 
+    "4333672982240833558": {
+        "doc": "UTF-8 patch for Python 2 for displaying Unicode characters in terminal", 
+        "meta": {
+            "date": "20160515_145531", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/python2utf8.py"
+        ], 
+        "tags": [
+            "python2", 
+            "utf8", 
+            "sys"
+        ], 
+        "extra": []
+    }, 
+    "4334635036751724388": {
+        "doc": "PID of the current Python script", 
+        "meta": {
+            "date": "20160516_224635", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/pid.py"
+        ], 
+        "tags": [
+            "pid"
+        ], 
+        "extra": []
+    }, 
+    "4513964341097891599": {
+        "doc": "suppress warnings in sklearn", 
+        "meta": {
+            "date": "20170119_080232", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "python/sklearn_warnings.py"
+        ], 
+        "tags": [
+            "sklearn", 
+            "DeprecationWarning", 
+            "warning"
+        ], 
         "extra": []
     }
 }

@@ -1,0 +1,29 @@
+create a conda virt. env.
+
+    conda create -n `basename $PWD` python
+
+activate the virt. env.
+
+    source /opt/anaconda3/bin/activate `basename $PWD`
+
+deactivate the virt. env.
+
+    source /opt/anaconda3/bin/deactivate
+
+export the list of installed packages
+
+    conda env export
+    conda env export > environment.yml
+
+install (missing) packages from the environment file
+
+    conda env update --file environment.yml
+
+create the environment from the environment.yml file
+(it'll create the virt. env. too)
+
+    conda env create -f environment.yml
+
+more info
+
+    https://conda.io/docs/user-guide/tasks/manage-environments.html

@@ -1,0 +1,8 @@
+How to download an MP3 track from a YouTube video
+-------------------------------------------------
+youtube-dl --extract-audio --audio-format mp3 <video URL>
+
+download all the videos of a YouTube channel in mp4
+---------------------------------------------------
+URL="<channel URL>"
+youtube-dl --ignore-errors --download-archive downloaded.txt -f 22 "$URL"

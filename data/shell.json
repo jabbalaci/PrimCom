@@ -614,5 +614,37 @@
             "feh"
         ], 
         "extra": []
+    }, 
+    "4343727040305828615": {
+        "doc": "full path of the script's directory", 
+        "meta": {
+            "date": "20160529_115101", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/curr_dir.sh"
+        ], 
+        "tags": [
+            "bash", 
+            "ROOT"
+        ], 
+        "extra": []
+    }, 
+    "4590185793003818061": {
+        "doc": "Profiling in Python", 
+        "meta": {
+            "date": "20170504_130033", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "shell/profiling.txt"
+        ], 
+        "tags": [
+            "python", 
+            "profile"
+        ], 
+        "extra": []
     }
 }

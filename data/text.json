@@ -190,7 +190,7 @@
         ]
     }, 
     "3640737150276330425": {
-        "doc": "wp: highlight text background", 
+        "doc": "wordpress: highlight text background", 
         "meta": {
             "date": "20131002_131526", 
             "author": "jabba"
@@ -239,7 +239,7 @@
         "extra": []
     }, 
     "3722869032448765493": {
-        "doc": "wp (wordpress: underline)", 
+        "doc": "wordpress: underline", 
         "meta": {
             "date": "20140123_195643", 
             "author": "jabba"
@@ -313,6 +313,100 @@
         "tags": [
             "LaTeX", 
             "autocompile"
+        ], 
+        "extra": []
+    }, 
+    "4594612594117350264": {
+        "doc": "pmwiki: python source", 
+        "meta": {
+            "date": "20170510_153543", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_pmwiki_py_src.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "4594621956740575602": {
+        "doc": "pmwiki: frame with monospace", 
+        "meta": {
+            "date": "20170510_155435", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/wp_frame_monospace.txt"
+        ], 
+        "tags": [
+            "wp"
+        ], 
+        "extra": [
+            "cb()"
+        ]
+    }, 
+    "4604982799609013610": {
+        "doc": "ipython notes", 
+        "meta": {
+            "date": "20170524_225910", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/ipython.txt"
+        ], 
+        "tags": [
+            "ipython"
+        ], 
+        "extra": []
+    }, 
+    "4608145675332470328": {
+        "doc": "mongodb notes", 
+        "meta": {
+            "date": "20170529_074322", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/mongo.txt"
+        ], 
+        "tags": [
+            "mongodb"
+        ], 
+        "extra": []
+    }, 
+    "4634901228396371696": {
+        "doc": "youtube-dl", 
+        "meta": {
+            "date": "20170705_054202", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/youtube_dl.txt"
+        ], 
+        "tags": [
+            "youtube-dl"
+        ], 
+        "extra": []
+    }, 
+    "4766712227746684333": {
+        "doc": "conda", 
+        "meta": {
+            "date": "20180103_012649", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/conda.txt"
+        ], 
+        "tags": [
+            "conda"
         ], 
         "extra": []
     }

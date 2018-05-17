@@ -1,0 +1,2 @@
+# https://toucantoco.com/en/tech-blog/tech/python-performance-optimization
+python -m cProfile -s tottime your_program.py

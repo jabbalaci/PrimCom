@@ -1,0 +1,2 @@
+* saving a collection in JSON
+  mongoexport --db=<db> --collection=<collection> --out=data.json

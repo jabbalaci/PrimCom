@@ -741,11 +741,15 @@ def menu():
         elif inp in ('t', 'tags()', 'all()', 'd'):
             SearchHits.show_tag_list(tag2keys.keys())
         elif inp == 'p':
-            os.system("python")
+            os.system("python3")    # default
+        elif inp == 'p2':
+            os.system("python2")
         elif inp == 'p3':
             os.system("python3")
         elif inp == 'bpy':
             os.system("bpython")
+        elif inp == 'ipy':
+            os.system("ipython")
         elif inp == 'last()':
             print(last_key)
         elif inp == '!!':

@@ -21,3 +21,9 @@ for dist_name in sorted(dists, key=lambda s: s.lower()):
 local version, can be used in a virtualenv for instance
 """
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
+
+"""
+local version #2, painless way
+"""
+pip install pip-review
+pip-review --local --interactive

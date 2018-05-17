@@ -1,2 +1,5 @@
 # a given file belongs to which package
 pacman -Qo <file>
+
+# Pacman is currently in use, please wait.
+$ sudo rm /var/lib/pacman/db.lck

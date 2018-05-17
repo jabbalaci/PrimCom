@@ -1,0 +1,2 @@
+# export history that looks similar to the traditional Python shell
+%history -op -f out.txt
