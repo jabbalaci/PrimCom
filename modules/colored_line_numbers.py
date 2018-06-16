@@ -15,13 +15,15 @@ if __name__ == "__main__":
     del site
 ####################
 
+import config as cfg
 import os
 import shlex
+from pathlib import Path
 from subprocess import call
 
-import config as cfg
 from lib import fs
 from lib.common import bold
+
 from . import process
 
 pcat = "pygmentize -f terminal256 -O style={0} -g {1}"
@@ -47,6 +49,7 @@ def pad(text, width, num):
 
 def print_pcat(fname, search_term=""):
     cmd = pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname)
+    print(cmd)
     #
     if cfg.SHOW_LINE_NUMBERS:
         lines = fs.file_len(fname)
@@ -71,12 +74,15 @@ def cat(fname, o, search_term=""):
     If pygmentize is available, show a syntax-highlighted output.
     Otherwise fall back to a normal "cat".
     """
+    p = Path(fname)
+    ext = p.suffix
+
     print(bold("-" * 78))
     doc = o["doc"]
     if doc:
         print(bold(doc))
         print(bold("-" * 78))
-    if fs.which("pygmentize"):
+    if fs.which("pygmentize") and ext != ".txt":    # .txt files were colored incorrectly, so let's switch coloring off for .txt files
         print_pcat(fname, search_term)
     else:
         with open(fname) as f:

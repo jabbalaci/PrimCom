@@ -2,6 +2,7 @@ beautifulsoup4==4.4.0
 blinker==1.4
 Jinja2==2.8
 MarkupSafe==0.23
+pathlib==1.0.1
 psutil==3.2.1
 Pygments==2.0.2
 requests==2.7.0

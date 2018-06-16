@@ -409,5 +409,20 @@
             "conda"
         ], 
         "extra": []
+    }, 
+    "4885973082861281752": {
+        "doc": "nim notes", 
+        "meta": {
+            "date": "20180616_153645", 
+            "author": "jabba"
+        }, 
+        "action": [
+            "cat", 
+            "text/nim.txt"
+        ], 
+        "tags": [
+            "nim"
+        ], 
+        "extra": []
     }
 }

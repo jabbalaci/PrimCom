@@ -1,0 +1,11 @@
+# just compile (240 kB)
+$ nim c hello.nim
+
+# compile and run
+$ nim c -r hello.nim
+
+# Which option to use for the fastest executable? (70 kB)
+$ nim -d:release c -r hello.nim
+
+# Which option to use for the smallest executable? (45 kB)
+$ nim -d:quick --opt:size c -r hello.nim
