@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+beautifulsoup4 = "==4.4.0"
+blinker = "==1.4"
+pathlib = "==1.0.1"
+psutil = "==3.2.1"
+requests = "==2.7.0"
+termcolor = "==1.1.0"
+Jinja2 = "==2.8"
+MarkupSafe = "==0.23"
+Pygments = "==2.0.2"
+Unipath = "==1.1"
+
+[requires]
+python_version = "2.7"

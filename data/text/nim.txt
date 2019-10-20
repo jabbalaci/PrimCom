@@ -9,3 +9,10 @@ $ nim -d:release c -r hello.nim
 
 # Which option to use for the smallest executable? (45 kB)
 $ nim -d:quick --opt:size c -r hello.nim
+
+# compile, run, and hide compiler output
+$ nim c -r  --hints:off --verbosity:0 hello.nim
+
+# REPLs
+$ nrpl
+$ tnim
