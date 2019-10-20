@@ -39,17 +39,9 @@ With dark background: ![dark background](https://dl.dropboxusercontent.com/u/144
 
 With light background: ![light background](https://dl.dropboxusercontent.com/u/144888/wordpress/20130802-PrimCom/pc02.png)
 
-### Requirements
+### Platform
 
-The project was developed under Ubuntu GNU/Linux with Python 2.7. It
-is suggested that you install the following packages (via apt-get):
-
-* python-pygments (syntax highlighting)
-* xsel (copying to the clipboard)
-* mplayer2 and/or vlc (radio)
-* python-psutil (process manipulation; or: `pip install psutil`)
-* python-requests (or: `pip install requests`)
-* jinja2
+The project was developed under Ubuntu GNU/Linux with Python 2.7.
 
 ## Details
 
