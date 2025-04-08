@@ -35,7 +35,7 @@ class Shortener(object):
         self.expanded = None
 
         try:
-            print '#', self.engine
+            print('#', self.engine)
             getattr(module.shorteners, self.engine)
         except AttributeError:
             raise UnknownShortenerException('Please enter a valid shortener.')

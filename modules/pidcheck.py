@@ -28,7 +28,7 @@ class PidChecker(Thread):
         # else
         try:
             self.checklist.add(psutil.Process(pid))
-            if not self.isAlive():
+            if not self.is_alive():
                 self.start()
         except psutil._error.NoSuchProcess:
             print('Warning: no such PID.')
@@ -51,7 +51,7 @@ class PidChecker(Thread):
         self.running = False
 
     def terminate(self, data):
-        if self.isAlive():
+        if self.is_alive():
             self.stop()
             self.join()
 
@@ -96,7 +96,7 @@ def notify_send(msg):
 def watch_pid():
     pid_checker.contents()
     try:
-        pid = int(raw_input("PID: ").strip())
+        pid = int(input("PID: ").strip())
     except ValueError:
         print('Wat?')
         return
@@ -123,7 +123,7 @@ def pid_alert():
     print(text)
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return None

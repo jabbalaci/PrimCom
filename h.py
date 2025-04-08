@@ -20,10 +20,8 @@ Some rules:
   Also, they cannot be numbers (numbers have a special meaning).
 """
 
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
-
 import time
+
 start_time = time.time()
 
 import atexit
@@ -34,7 +32,7 @@ import readline
 import sys
 from collections import OrderedDict
 from threading import Thread
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 import requests
 
@@ -43,24 +41,33 @@ import config as cfg
 from lib import clipboard, common, fs
 from lib.clipboard import text_to_clipboards
 from lib.common import bold, cindex, exit_signal, my_exit, open_url, requires
-from modules import (colored_line_numbers, conferences, header, my_ip, pidcheck,
-                     reddit, selected_lines, show, urlshortener, userpass)
-
+from modules import (
+    colored_line_numbers,
+    conferences,
+    header,
+    my_ip,
+    pidcheck,
+    reddit,
+    selected_lines,
+    show,
+    urlshortener,
+    userpass,
+)
 
 # If you want the command "less" to use colors, follow the steps in this post:
 # https://ubuntuincident.wordpress.com/2013/06/05/syntax-highlighted-less-in-command-line/
 
 # these are all re-set in read_json()
-hdict = OrderedDict()       # will be set later
-tag2keys = OrderedDict()    # will be set later
-#search_result = []         # will be updated after each search
-last_key = None             # will be updated after each command
+hdict = OrderedDict()  # will be set later
+tag2keys = OrderedDict()  # will be set later
+# search_result = []         # will be updated after each search
+last_key = None  # will be updated after each command
 autocomplete_commands = []  # will be filled later (used for autocomplete)
 
 dependencies = {
     # command: package installation
-    'pygmentize': 'sudo apt-get install python-pygments',
-    'xsel': 'sudo apt-get install xsel',
+    "pygmentize": "sudo apt-get install python-pygments",
+    "xsel": "sudo apt-get install xsel",
 }
 
 LOAD_JSON = cfg.LOAD_JSON
@@ -69,6 +76,7 @@ LOAD_JSON = cfg.LOAD_JSON
 #############
 ## Helpers ##
 #############
+
 
 class NoLastKeyError(Exception):
     pass
@@ -83,16 +91,16 @@ def check_dependencies():
 
 def completer(text, state):
     # for autocomplete
-    if re.search(r'^\d+\.', text):    # if it starts with a number
-        pos = text.find('.')
+    if re.search(r"^\d+\.", text):  # if it starts with a number
+        pos = text.find(".")
         num = text[:pos]
-        text = text[pos+1:]
+        text = text[pos + 1 :]
         options = [x for x in autocomplete_commands if x.startswith(text)]
         try:
-            return num + '.' + options[state]
+            return num + "." + options[state]
         except IndexError:
             return None
-    else:    # normal case
+    else:  # normal case
         options = [x for x in autocomplete_commands if x.startswith(text)]
         try:
             return options[state]
@@ -106,7 +114,11 @@ def truncate_histfile(hfile):
     """
     hfile_bak = hfile + ".bak"
     if os.path.isfile(hfile):
-        os.system("tail -{N} {hf} >{hf_bak}".format(N=cfg.TRUNCATE_HISTFILE_TO_LINES, hf=hfile, hf_bak=hfile_bak))
+        os.system(
+            "tail -{N} {hf} >{hf_bak}".format(
+                N=cfg.TRUNCATE_HISTFILE_TO_LINES, hf=hfile, hf_bak=hfile_bak
+            )
+        )
         if os.path.isfile(hfile_bak):
             os.unlink(hfile)
             os.rename(hfile_bak, hfile)
@@ -132,7 +144,7 @@ def get_db_by_key(key):
     action = o["action"]
     if action[0] == "cat":
         val = action[1]
-        return val[:val.find('/')]
+        return val[: val.find("/")]
     elif action[0] == "open_url":
         return "urls"
     #
@@ -151,6 +163,7 @@ def fname_to_abs(fname):
 ## Classes ##
 #############
 
+
 class SearchHits(object):
     inp = None
     hits = []
@@ -165,20 +178,20 @@ class SearchHits(object):
         SearchHits.reset()
         #
         SearchHits.inp = inp.lower()
-        for o in hdict.itervalues():
+        for o in hdict.values():
             for t in o["tags"]:
                 if inp in t.lower():
-                    #li.append(t)
+                    # li.append(t)
                     SearchHits.add(t)
         #
         SearchHits.remove_duplicates_and_keep_order()
         #
-        #if li:
+        # if li:
         if SearchHits.hits:
-            #show_tag_list(li)
+            # show_tag_list(li)
             SearchHits.show_tag_list()
         else:
-            print('Wat?')
+            print("Wat?")
 
     @staticmethod
     def add(tag):
@@ -204,22 +217,23 @@ class SearchHits(object):
 
         for index, e in enumerate(SearchHits.hits, start=1):
             sys.stdout.write(e.to_str(index))
-            sys.stdout.write(' ')
+            sys.stdout.write(" ")
         print()
 
 
 ##########
 
+
 class Hit(object):
     def __init__(self, tag, key=None):
-        if not key:     # normal "constructor":
+        if not key:  # normal "constructor":
             self.tag = tag
             self.keys = tag2keys[tag]
             if len(self.keys) == 1:
                 self.o = hdict[self.keys[0]]
             else:
                 self.o = None
-        else:           # alternative "constructor":
+        else:  # alternative "constructor":
             self.keys = [key]
             self.o = hdict[key]
             self.tag = self.o["tags"][0]
@@ -236,19 +250,19 @@ class Hit(object):
     def inspect(self, what):
         o = self.o
         if o:
-            if what in ('doc', 'action', 'tags'):
+            if what in ("doc", "action", "tags"):
                 print(o[what])
-            elif what == 'json':
+            elif what == "json":
                 print(json.dumps(o, indent=4))
-            elif what in ('url', 'link'):
+            elif what in ("url", "link"):
                 if self.is_link():
                     print(o["action"][1])
-            elif what == 'key':
+            elif what == "key":
                 print(self.keys[0])
-            elif what == 'edit':
+            elif what == "edit":
                 if len(self.keys) == 1:
                     edit(self.keys[0])
-            elif what == 'jet':
+            elif what == "jet":
                 if len(self.keys) == 1:
                     edit_entry(self.keys[0])
             else:
@@ -257,12 +271,12 @@ class Hit(object):
     def to_str(self, index):
         s = ""
         if self.is_link():
-            s += cindex('({0}) '.format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
+            s += cindex("({0}) ".format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
         else:
-            s += cindex('({0}) '.format(index))
+            s += cindex("({0}) ".format(index))
         s += self.tag
         if len(self.keys) > 1:
-            s += '...'
+            s += "..."
         return s
 
 
@@ -270,12 +284,13 @@ class Hit(object):
 ## Core ##
 ##########
 
+
 def process(d):
-    t2k = OrderedDict()    # tag2keys
+    t2k = OrderedDict()  # tag2keys
     #
-    for k in d.iterkeys():
+    for k in d.keys():
         o = d[k]
-        if not(("doc" in o) and ("action" in o) and ("tags" in o)):
+        if not (("doc" in o) and ("action" in o) and ("tags" in o)):
             print("Error: '{k}' must have doc, action, and tags.".format(k=k))
             my_exit(1)
         if len(o["doc"]) == 0:
@@ -286,7 +301,7 @@ def process(d):
             my_exit(1)
         for t in o["tags"]:
             t = t.strip()
-            if t[0] == '_':
+            if t[0] == "_":
                 print("Error: the tag {tag} cannot start with an underscore.".format(tag=t))
                 my_exit(1)
             if len(t) == 1:
@@ -318,7 +333,7 @@ def read_json(verbose=True):
             print("# {db} reloaded".format(db=db))
     #
     # sort hdict items by date
-    hdict = OrderedDict(sorted(hdict.iteritems(), key=lambda x: x[1]["meta"]["date"]))
+    hdict = OrderedDict(sorted(hdict.items(), key=lambda x: x[1]["meta"]["date"]))
     #
     tag2keys = process(hdict)
 
@@ -341,7 +356,10 @@ def process_extras(fname, o):
 
 def extract_urls(fname):
     with open(fname) as f:
-        return re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', f.read())
+        return re.findall(
+            r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+",
+            f.read(),
+        )
 
 
 def show_urls(key):
@@ -349,7 +367,7 @@ def show_urls(key):
     #
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
+    if verb == "cat":
         fname = fname_to_abs(action[1])
     else:
         return
@@ -361,15 +379,15 @@ def show_urls(key):
     print("[q] <<")
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return None
         if len(inp) == 0:
             continue
-        if inp == 'q':
+        if inp == "q":
             return None
-        if inp == 'qq':
+        if inp == "qq":
             my_exit(0)
         try:
             index = int(inp) - 1
@@ -380,7 +398,7 @@ def show_urls(key):
         except IndexError:
             print("out of range...")
         except ValueError:
-            print('Wat?')
+            print("Wat?")
 
 
 def subcommand(li):
@@ -389,26 +407,26 @@ def subcommand(li):
 
     for index, k in enumerate(li, start=1):
         if is_link(k):
-            pre = cindex('[{0}]'.format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
+            pre = cindex("[{0}]".format(index), color=cfg.colors[cfg.g.BACKGROUND]["cindex_link"])
         else:
-            pre = cindex('[{0}]'.format(index))
-        print("{pre} {main_tag} ({doc})".format(
-            pre=pre,
-            main_tag=hdict[k]["tags"][0],
-            doc=hdict[k]["doc"]
-        ))
+            pre = cindex("[{0}]".format(index))
+        print(
+            "{pre} {main_tag} ({doc})".format(
+                pre=pre, main_tag=hdict[k]["tags"][0], doc=hdict[k]["doc"]
+            )
+        )
     print("[q] <<")
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return None
         if len(inp) == 0:
             continue
-        if inp == 'q':
+        if inp == "q":
             return None
-        if inp == 'qq':
+        if inp == "qq":
             my_exit(0)
         try:
             index = int(inp) - 1
@@ -419,7 +437,7 @@ def subcommand(li):
         except IndexError:
             print("out of range...")
         except ValueError:
-            print('Wat?')
+            print("Wat?")
 
 
 def debug(text):
@@ -444,11 +462,11 @@ def perform_action(key, search_term=""):
     o = hdict[key]
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
+    if verb == "cat":
         fname = fname_to_abs(action[1])
         colored_line_numbers.cat(fname, o, search_term)
         process_extras(fname, o)
-    elif verb == 'open_url':
+    elif verb == "open_url":
         open_url(action[1], o["doc"])
     else:
         print("Error: unknown action: {a}.".format(a=verb))
@@ -457,8 +475,9 @@ def perform_action(key, search_term=""):
 
 def view_edit_json(key):
     db = get_db_by_key(key)
-    os.system("{ed} {f}".format(ed=cfg.EDITOR,
-                                f="{root}/data/{db}.json".format(root=cfg.ROOT, db=db)))
+    os.system(
+        "{ed} {f}".format(ed=cfg.EDITOR, f="{root}/data/{db}.json".format(root=cfg.ROOT, db=db))
+    )
 
 
 def to_clipboards(key):
@@ -467,7 +486,7 @@ def to_clipboards(key):
         #
         action = o["action"]
         verb = action[0]
-        if verb == 'cat':
+        if verb == "cat":
             with open(fname_to_abs(action[1])) as f:
                 text_to_clipboards(f.read().rstrip("\n"))
     else:
@@ -480,9 +499,9 @@ def path_to_clipboards(key):
         #
         action = o["action"]
         verb = action[0]
-        if verb == 'cat':
+        if verb == "cat":
             f = fname_to_abs(action[1])
-            print('#', f)
+            print("#", f)
             text_to_clipboards(f)
     else:
         print("Warning: xsel is not installed, cannot copy to clipboards.")
@@ -501,7 +520,7 @@ def key_to_file(key):
     #
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
+    if verb == "cat":
         f = fname_to_abs(action[1])
         return f
     # else, if it's a URL to open
@@ -519,9 +538,8 @@ def edit(key):
     #
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
-        os.system("{ed} {fname}".format(ed=cfg.EDITOR,
-                                        fname=fname_to_abs(action[1])))
+    if verb == "cat":
+        os.system("{ed} {fname}".format(ed=cfg.EDITOR, fname=fname_to_abs(action[1])))
 
 
 @requires(cfg.GEDIT)
@@ -530,9 +548,8 @@ def gedit(key):
     #
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
-        os.system("{ed} {fname} &".format(ed=cfg.GEDIT,
-                                          fname=fname_to_abs(action[1])))
+    if verb == "cat":
+        os.system("{ed} {fname} &".format(ed=cfg.GEDIT, fname=fname_to_abs(action[1])))
 
 
 def less(key):
@@ -540,7 +557,7 @@ def less(key):
     #
     action = o["action"]
     verb = action[0]
-    if verb == 'cat':
+    if verb == "cat":
         os.system("less {fname}".format(fname=fname_to_abs(action[1])))
 
 
@@ -575,7 +592,7 @@ def cmd_go1(keyword, site=None):
 
 
 def open_pep(num):
-    url = 'http://www.python.org/dev/peps'
+    url = "http://www.python.org/dev/peps"
     if num:
         url = "{url}/pep-{num}".format(url=url, num=num.zfill(4))
     #
@@ -584,7 +601,7 @@ def open_pep(num):
 
 def toggle_line_numbers():
     cfg.SHOW_LINE_NUMBERS = not cfg.SHOW_LINE_NUMBERS
-    print('show line numbers:', 'on' if cfg.SHOW_LINE_NUMBERS else 'off')
+    print("show line numbers:", "on" if cfg.SHOW_LINE_NUMBERS else "off")
 
 
 def add_item():
@@ -596,8 +613,8 @@ def edit_entry(key):
     dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     d = OrderedDict()
     d[key] = hdict[key]
-    tmpfile = '{root}/tmp/temp.{pid}.json'.format(root=cfg.ROOT, pid=os.getpid())
-    with open(tmpfile, 'w') as f:
+    tmpfile = "{root}/tmp/temp.{pid}.json".format(root=cfg.ROOT, pid=os.getpid())
+    with open(tmpfile, "w") as f:
         json.dump(d, f, indent=4)
     assert os.path.isfile(tmpfile)
     os.system("{ed} {fname}".format(ed=cfg.EDITOR, fname=tmpfile))
@@ -613,7 +630,7 @@ def edit_entry(key):
     tmpfile = "{root}/tmp/{db}.json.bak".format(root=cfg.ROOT, db=db)
     os.rename(dbfile, tmpfile)
     assert os.path.isfile(tmpfile)
-    with open(dbfile, 'w') as f:
+    with open(dbfile, "w") as f:
         json.dump(dbdict, f, indent=4)
     print("# edited")
     read_json()
@@ -633,18 +650,18 @@ def print_header():
 def change_dir(inp):
     bak = os.getcwd()
     #
-    if inp == 'cd':
-        os.chdir(os.path.expanduser('~'))
-    elif inp == 'cd -':
+    if inp == "cd":
+        os.chdir(os.path.expanduser("~"))
+    elif inp == "cd -":
         os.chdir(change_dir.prev_dir)
-    elif inp.startswith('cd '):
+    elif inp.startswith("cd "):
         dest = inp.split()[1]
         try:
             os.chdir(dest)
         except OSError:
-            print('Warning! No such file or directory')
+            print("Warning! No such file or directory")
 
-#    print(os.getcwd())
+    #    print(os.getcwd())
     # static variable:
     change_dir.prev_dir = bak
 
@@ -661,43 +678,45 @@ def username_password():
     clipboards.
     """
     username = userpass.get_username()
-    password = userpass.get_password(length=12)
+    password = userpass.get_password(length=16)
     try:
         email = open("{root}/email.txt".format(root=cfg.ROOT)).read().strip()
     except IOError:
         email = None
 
-    print("""
+    print(
+        """
 [1] {u:21} (username, copy to clipboard)
 [2] {p:21} (password, copy to clipboard)
 [3] {e:21} (email, copy to clipboard)
 [q] <<
-""".strip().format(u=username, p=password, e=email))
+""".strip().format(u=username, p=password, e=email)
+    )
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return
         if len(inp) == 0:
             continue
-        elif inp == 'q':
+        elif inp == "q":
             return
-        elif inp == 'qq':
+        elif inp == "qq":
             common.my_exit(0)
-        elif inp == '1':
+        elif inp == "1":
             text_to_clipboards(username, prefix="username")
-        elif inp == '2':
+        elif inp == "2":
             text_to_clipboards(password, prefix="password")
             username_password.password = password
-        elif inp == '3':
+        elif inp == "3":
             if email:
                 text_to_clipboards(email, prefix="email")
             else:
                 print("Warning! You have no email specified.")
                 print("Tip: create an email.txt file in the PrimCom folder.")
         else:
-           print('Wat?')
+            print("Wat?")
 
 
 @exit_signal.connect
@@ -715,167 +734,167 @@ def clear_password(sender):
 
 @requires(cfg.EDITOR)
 def menu():
-    print("[{0:.3f}s]".format(time.time() - start_time), end='\n')
+    print("[{0:.3f}s]".format(time.time() - start_time), end="\n")
     #
     while True:
         try:
-            #inp = raw_input(bold('pc> ')).strip()
-            inp = raw_input(bold('{prompt}> '.format(prompt=os.getcwd()))).strip()
+            # inp = input(bold('pc> ')).strip()
+            inp = input(bold("{prompt}> ".format(prompt=os.getcwd()))).strip()
         except (KeyboardInterrupt, EOFError):
             print()
             my_exit(0)
         if len(inp) == 0:
             continue
-        if inp in ('h', 'help()'):
+        if inp in ("h", "help()"):
             info()
-        elif inp in ('q', 'qq', ':q', ':x', 'quit()', 'exit()'):
+        elif inp in ("q", "qq", ":q", ":x", "quit()", "exit()"):
             my_exit(0)
-        elif inp in ('c', 'clear()'):
-            os.system('clear')
+        elif inp in ("c", "clear()"):
+            os.system("clear")
             print_header()
-        elif inp in ('light()', 'dark()'):
-            if inp == 'light()':
+        elif inp in ("light()", "dark()"):
+            if inp == "light()":
                 cfg.g.BACKGROUND = cfg.LIGHT
             else:
                 cfg.g.BACKGROUND = cfg.DARK
-        elif inp in ('t', 'tags()', 'all()', 'd'):
+        elif inp in ("t", "tags()", "all()", "d"):
             SearchHits.show_tag_list(tag2keys.keys())
-        elif inp == 'p':
-            os.system("python3")    # default
-        elif inp == 'p2':
+        elif inp == "p":
+            os.system("python3")  # default
+        elif inp == "p2":
             os.system("python2")
-        elif inp == 'p3':
+        elif inp == "p3":
             os.system("python3")
-        elif inp == 'bpy':
+        elif inp == "bpy":
             os.system("bpython")
-        elif inp == 'ipy':
+        elif inp == "ipy":
             os.system("ipython")
-        elif inp == 'last()':
+        elif inp == "last()":
             print(last_key)
-        elif inp == '!!':
+        elif inp == "!!":
             if last_key:
                 perform_action(last_key)
-        elif inp.startswith('!'):
+        elif inp.startswith("!"):
             cmd = inp[1:]
             os.system(cmd)
-        elif inp == 'edit()':
+        elif inp == "edit()":
             if last_key:
                 edit(last_key)
-        elif inp == 'gedit()':
+        elif inp == "gedit()":
             if last_key:
                 gedit(last_key)
-        elif inp == 'less()':
+        elif inp == "less()":
             if last_key:
                 less(last_key)
-        elif inp in ('urls()', 'links()'):
+        elif inp in ("urls()", "links()"):
             if last_key:
                 show_urls(last_key)
-        elif inp in ('cb()', 'tocb()'):
+        elif inp in ("cb()", "tocb()"):
             if last_key:
                 to_clipboards(last_key)
-        elif inp == 'path()':
+        elif inp == "path()":
             if last_key:
                 path_to_clipboards(last_key)
         elif inp == "doc()":
             if last_key:
                 show_doc(last_key)
-        elif inp == 'json.reload()':
+        elif inp == "json.reload()":
             read_json()
-        elif inp in ('json.view()', 'json.edit()'):
+        elif inp in ("json.view()", "json.edit()"):
             if last_key:
                 view_edit_json(last_key)
                 read_json()
         elif inp in ("json.edit(this)", "jet()"):
             if last_key:
                 edit_entry(last_key)
-        elif inp == 'reddit()':
+        elif inp == "reddit()":
             reddit.reddit()
-        elif inp == 'conferences()':
+        elif inp == "conferences()":
             conferences.conferences()
-        elif inp == 'mute()':
+        elif inp == "mute()":
             apps.radio.radio(None, stop=True)
-        elif inp == 'myip()':
+        elif inp == "myip()":
             my_ip.show_my_ip()
-        elif inp in ('v', 'version()'):
+        elif inp in ("v", "version()"):
             version()
-        elif inp == 'commands()':
+        elif inp == "commands()":
             show_commands()
-        elif inp == 'add()':
+        elif inp == "add()":
             add_item()
             read_json()
-        elif inp == 'hits()':
+        elif inp == "hits()":
             SearchHits.show_tag_list()
         elif inp.startswith("pymotw:"):
             site = "pymotw.com"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("go:"):
-            cmd_google(inp[inp.find(':')+1:])
+            cmd_google(inp[inp.find(":") + 1 :])
         elif inp.startswith("go1:"):
-            cmd_go1(inp[inp.find(':')+1:])
+            cmd_go1(inp[inp.find(":") + 1 :])
         elif inp.startswith("imdb:"):
             site = "imdb.com"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("amazon:"):
             site = "amazon.com"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("youtube:"):
-            cmd_youtube(inp[inp.find(':')+1:])
+            cmd_youtube(inp[inp.find(":") + 1 :])
         elif inp.startswith("wp:"):
             site = "wikipedia.org"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("lib:") or inp.startswith("lib2:"):
             site = "docs.python.org/2/library/"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("lib3:"):
             site = "docs.python.org/3/library/"
-            cmd_go1(inp[inp.find(':')+1:], site=site)
+            cmd_go1(inp[inp.find(":") + 1 :], site=site)
         elif inp.startswith("golib:"):
             site = "http://golang.org/pkg/"
-            lib = inp[inp.find(':')+1:]
+            lib = inp[inp.find(":") + 1 :]
             open_url(urljoin(site, lib))
         elif inp.startswith("shorten:"):
-            urlshortener.shorten_url(inp[inp.find(':')+1:])
+            urlshortener.shorten_url(inp[inp.find(":") + 1 :])
         elif inp.startswith("def:"):
-            cmd_def(inp[inp.find(':')+1:])
+            cmd_def(inp[inp.find(":") + 1 :])
         elif inp.startswith("pep:"):
-            open_pep(inp[inp.find(':')+1:])
-        elif inp == 'pep()':
+            open_pep(inp[inp.find(":") + 1 :])
+        elif inp == "pep()":
             open_pep(None)
-        elif inp == 'show()':
+        elif inp == "show()":
             show.show()
-        elif inp == 'numbers()':
+        elif inp == "numbers()":
             toggle_line_numbers()
         elif re.search(r"^l([\d,-]+)\.(sh|py|py2|py3|cb|cb\(>\))$", inp):
             fname = key_to_file(last_key)
             selected_lines.process_selected_lines(inp, fname)
-        elif inp == 'cd' or inp.startswith('cd '):
+        elif inp == "cd" or inp.startswith("cd "):
             change_dir(inp)
-        elif inp == 'pwd()':
+        elif inp == "pwd()":
             print(os.getcwd())
-        elif inp == 'userpass()':
+        elif inp == "userpass()":
             username_password()
-        elif inp == 'apps()':
+        elif inp == "apps()":
             apps.menu.main()
-        elif inp == 'k':
+        elif inp == "k":
             os.system("konsole 2>/dev/null &")
         elif inp.startswith("filter:"):
-            term = inp[inp.find(':')+1:]
+            term = inp[inp.find(":") + 1 :]
             if last_key:
                 perform_action(last_key, term)
         elif inp.startswith("app:"):
-            val = inp[inp.find(':')+1:]
+            val = inp[inp.find(":") + 1 :]
             if not val:
                 apps.menu.main()
             else:
                 apps.menu.start_app(val)
         # shortcuts
-        elif inp == 'radio()':
-            apps.menu.start_app_by_shortcut('radio')
+        elif inp == "radio()":
+            apps.menu.start_app_by_shortcut("radio")
         # disabled, always show the search hits
-        #elif inp in tag2keys:
+        # elif inp in tag2keys:
         #    tag = inp
         #    command(tag)
-        elif re.search(r'^\d+$', inp):
+        elif re.search(r"^\d+$", inp):
             try:
                 index = int(inp) - 1
                 if index < 0:
@@ -884,32 +903,32 @@ def menu():
                 command(tag)
             except IndexError:
                 print("out of range...")
-        elif re.search(r'^\d+\.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$', inp):
+        elif re.search(r"^\d+\.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$", inp):
             try:
-                pos = inp.find('.')
+                pos = inp.find(".")
                 index = int(inp[:pos]) - 1
-                what = inp[pos+1:].rstrip("()")
+                what = inp[pos + 1 :].rstrip("()")
                 if index < 0:
                     raise IndexError
                 hit = SearchHits.hits[index]
                 hit.inspect(what)
             except IndexError:
                 print("out of range...")
-        elif re.search(r'^this.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$', inp):
+        elif re.search(r"^this.(doc|action|tags|json|url|link|key|jet|edit)(\(\))?$", inp):
             try:
                 if not last_key:
                     raise NoLastKeyError
-                pos = inp.find('.')
-                what = inp[pos+1:].rstrip("()")
+                pos = inp.find(".")
+                what = inp[pos + 1 :].rstrip("()")
                 hit = Hit(tag=None, key=last_key)
                 hit.inspect(what)
             except NoLastKeyError:
                 pass
-        elif inp == 'pid()':
+        elif inp == "pid()":
             pidcheck.pid_alert()
-        elif inp == 'debug()':
+        elif inp == "debug()":
             debug(None)
-        elif inp == 'song()':
+        elif inp == "song()":
             print("Playing:", apps.radio.get_song())
         else:
             if len(inp) == 1:
@@ -918,42 +937,67 @@ def menu():
                 inp = inp.lower()
                 SearchHits.show_hint(inp)
 
+
 # -------------------------------------
 
 autocomplete_commands += [
-    'debug()',    # for development only
-    'light()', 'dark()',
-    'help()',
-    'tags()', 'all()',
-    'last()',
-    'doc()',
-    'edit()',
-    'gedit()',
-    'less()',
-    'bash', 'python',    # to be used as !bash and !python
-    'urls()', 'links()',
-    'cb()', 'tocb()',
-    'path()',
-    'json.reload()', 'json.view()', 'json.edit()', 'jet()',
-    'this.doc', 'this.action', 'this.tags', 'this.json', 'this.url',
-    'this.link', 'this.key', 'this.jet()', 'this.edit()',
-    'hits()',
-    'reddit()',
-    'radio()', 'mute()', 'song()',
-    'conferences()',
-    'myip()',
-    'commands()',
-    'add()',
-    'clear()',
-    'quit()', 'exit()',
-    'version()',
-    'doc', 'action', 'tags', 'json', 'url', 'link', 'key',
-    'pid()',
-    'show()',
-    'numbers()',
-    'pwd()',
-    'userpass()',
-    'apps()',
+    "debug()",  # for development only
+    "light()",
+    "dark()",
+    "help()",
+    "tags()",
+    "all()",
+    "last()",
+    "doc()",
+    "edit()",
+    "gedit()",
+    "less()",
+    "bash",
+    "python",  # to be used as !bash and !python
+    "urls()",
+    "links()",
+    "cb()",
+    "tocb()",
+    "path()",
+    "json.reload()",
+    "json.view()",
+    "json.edit()",
+    "jet()",
+    "this.doc",
+    "this.action",
+    "this.tags",
+    "this.json",
+    "this.url",
+    "this.link",
+    "this.key",
+    "this.jet()",
+    "this.edit()",
+    "hits()",
+    "reddit()",
+    "radio()",
+    "mute()",
+    "song()",
+    "conferences()",
+    "myip()",
+    "commands()",
+    "add()",
+    "clear()",
+    "quit()",
+    "exit()",
+    "version()",
+    "doc",
+    "action",
+    "tags",
+    "json",
+    "url",
+    "link",
+    "key",
+    "pid()",
+    "show()",
+    "numbers()",
+    "pwd()",
+    "userpass()",
+    "apps()",
 ]
 
 
@@ -1008,23 +1052,25 @@ q               - quit (or: qq, qq(), quit(), exit())
 """
     print(text.strip())
 
+
 # -------------------------------------
 
 autocomplete_commands += [
-    'pymotw:',
-    'go:',
-    'go1:',
-    'imdb:',
-    'youtube:',
-    'amazon:',
-    'wp:',
-    'lib:', 'lib2:',
-    'lib3:',
-    'shorten:',
-    'filter:',
-    'pep:',
-    'def:',
-    'golib:',
+    "pymotw:",
+    "go:",
+    "go1:",
+    "imdb:",
+    "youtube:",
+    "amazon:",
+    "wp:",
+    "lib:",
+    "lib2:",
+    "lib3:",
+    "shorten:",
+    "filter:",
+    "pep:",
+    "def:",
+    "golib:",
 ]
 
 
@@ -1050,7 +1096,9 @@ golib:      - open on Go standard library
 """
     print(text.strip())
 
+
 # -------------------------------------
+
 
 def init():
     """
@@ -1063,15 +1111,17 @@ def init():
 def cleanup():
     # threads are subscribed to this signal
     exit_signal.send()
+
+
 #    print("cleanup called")
 
 
 def check_command_line_arguments():
     args = sys.argv[1:]
     for arg in args:
-        if arg in ('-c', '--clear'):
+        if arg in ("-c", "--clear"):
             os.system("clear")
-        elif arg in ('-k', '--kill'):
+        elif arg in ("-k", "--kill"):
             # suicide mode: do the caching and terminate
             print("Waiting for the threads to finish...")
             background_reads(block=True)
@@ -1093,13 +1143,19 @@ def background_reads(block=False):
     """
     t1 = Thread(target=check_dependencies)
     t2 = Thread(target=setup_history_and_tab_completion)
-    t3 = Thread(target=read_json, kwargs={'verbose': False})
+    t3 = Thread(target=read_json, kwargs={"verbose": False})
     t4 = Thread(target=colored_line_numbers.cache_pygmentize)
 
-    t1.start(); t2.start(); t3.start(); t4.start()
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
 
     if block:
-        t1.join(); t2.join(); t3.join(); t4.join()
+        t1.join()
+        t2.join()
+        t3.join()
+        t4.join()
 
 
 def main():
@@ -1107,6 +1163,7 @@ def main():
     #
     print_header()
     menu()
+
 
 #############################################################################
 

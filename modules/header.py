@@ -143,10 +143,10 @@ def header():
     rainbow_index = len(logos) - 1
     if cfg.g.BACKGROUND == cfg.DARK:
         # include the rainbow
-        indexes = range(len(logos))
+        indexes = list(range(len(logos)))
     else:
         # exclude the rainbow
-        indexes = range(len(logos)-1)
+        indexes = list(range(len(logos)-1))
 
     pos = choice(my_shuffle(indexes))
     if pos == rainbow_index:

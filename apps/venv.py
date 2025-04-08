@@ -26,7 +26,7 @@ def get_python_ver():
     """
     while True:
         try:
-            inp = raw_input("~~~> ").strip()
+            inp = input("~~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return
@@ -62,7 +62,7 @@ mkvirtualenvwrapper
         return
     #
     venv_name = os.path.split(os.getcwd())[1]
-    inp = raw_input("Name of virt. env. (default: {}): ".format(venv_name))
+    inp = input("Name of virt. env. (default: {}): ".format(venv_name))
     if len(inp) == 0:
         inp = venv_name
     venv_name = inp
@@ -72,7 +72,7 @@ mkvirtualenvwrapper
     else:  # Python 3.4+
         cmd = "pyvenv {venv_dir}".format(venv_dir=venv_dir)
     print("#", cmd)
-    inp = raw_input("Execute the command above (Y/n)? ").lower()
+    inp = input("Execute the command above (Y/n)? ").lower()
     if inp in ('', 'y'):
         os.system(cmd)
         with open(".venv", "w") as f:
@@ -102,12 +102,12 @@ mkvirtualenv
     if python_ver not in (2, 3):
         return
     #
-    venv_name = raw_input("Name of virt. env. (default: venv): ")
+    venv_name = input("Name of virt. env. (default: venv): ")
     if len(venv_name) == 0:
         venv_name = "venv"
     cmd = "virtualenv -p python{v} {name}".format(v=python_ver, name=venv_name)
     print("#", cmd)
-    inp = raw_input("Execute the command above (y/n, default: y)? ")
+    inp = input("Execute the command above (y/n, default: y)? ")
     if inp in ('', 'y'):
         os.system(cmd)
         with open(".venv", "w") as f:
@@ -130,7 +130,7 @@ def start():
     """.strip())
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return

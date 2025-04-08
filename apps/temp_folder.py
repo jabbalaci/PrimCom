@@ -36,7 +36,7 @@ def create_temp_folder():
     """
     prefix = my_hash()
     try:
-        suffix = raw_input("Informative suffix [optional]: ")
+        suffix = input("Informative suffix [optional]: ")
     except (KeyboardInterrupt, EOFError):
         print()
         return

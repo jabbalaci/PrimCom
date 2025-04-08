@@ -57,7 +57,7 @@ def get_db():
     print("[q] quit")
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             sys.exit(0)
@@ -66,7 +66,7 @@ def get_db():
         elif inp in ('q', 'qq'):
             sys.exit(0)
         elif inp == "n":
-            db = raw_input("New DB: ").strip()
+            db = input("New DB: ").strip()
             if db:
                 create_db(db)
         else:
@@ -88,8 +88,8 @@ def get_db():
 
 def get_new_item():
     myid = simpleflake()
-    doc = raw_input("doc: ").strip()
-    action = raw_input("action: (c)at or (o)pen_url [c/o]? ").strip()
+    doc = input("doc: ").strip()
+    action = input("action: (c)at or (o)pen_url [c/o]? ").strip()
     if action not in ('c', 'o'):
         print("Error: invalid input.")
         sys.exit(1)
@@ -98,7 +98,7 @@ def get_new_item():
         action_text = "cat"
         print("Choose category:")
         db = get_db()
-        action_value = raw_input("  filename: ").strip()
+        action_value = input("  filename: ").strip()
         action_value = "{db}/{av}".format(db=db, av=action_value)
         fname = "{root}/data/{db}/{f}".format(root=cfg.ROOT, db=db, f=action_value)
         if os.path.isfile(fname):
@@ -107,11 +107,11 @@ def get_new_item():
         dbfile = "{root}/data/{db}.json".format(root=cfg.ROOT, db=db)
     else:
         action_text = "open_url"
-        action_value = raw_input("  open_url: ").strip()
+        action_value = input("  open_url: ").strip()
         db = "urls"
         dbfile = "{root}/data/urls.json".format(root=cfg.ROOT)
     #
-    tags = [tag.strip() for tag in raw_input("tags: ").split(",")]
+    tags = [tag.strip() for tag in input("tags: ").split(",")]
 
     with open(dbfile) as f:
         dbdict = json.load(f, object_pairs_hook=OrderedDict)
@@ -145,7 +145,7 @@ def save_new_json(d, hdict, db):
         if not os.path.isfile(fname):
             if fs.touch(fname):
                 print("# {f} touched".format(f=fname))
-                reply = raw_input("Do you want to edit {f} [y/n] (default: yes)? ".format(f=fname)).strip()
+                reply = input("Do you want to edit {f} [y/n] (default: yes)? ".format(f=fname)).strip()
                 if reply in ('', 'y'):
                     os.system("{ed} {f}".format(ed=cfg.EDITOR, f=fname))
 

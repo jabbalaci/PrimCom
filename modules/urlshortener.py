@@ -88,5 +88,5 @@ def shorten_url(long_url):
 ##############################################################################
 
 if __name__ == "__main__":
-    url = raw_input("Long URL: ")
+    url = input("Long URL: ")
     shorten_url(url)

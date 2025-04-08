@@ -59,9 +59,9 @@ def touch(fname, mode=None):
 def get_oct_mode(fname):
     """Get the permissions of an entry in octal mode.
 
-    The return value is a string (ex. '0600')."""
+    The return value is a string (ex. '0o600')."""
     entry_stat = os.stat(fname)
-    mode = oct(entry_stat[stat.ST_MODE] & 0777)
+    mode = oct(entry_stat[stat.ST_MODE] & 0o777)
     return mode
 
 

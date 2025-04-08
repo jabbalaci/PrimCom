@@ -113,7 +113,7 @@ def pairwise(iterable):
     """
     iterator = iter(iterable)
     try:
-        a = iterator.next()
+        a = next(iterator)
     except StopIteration:
         return
     for b in iterator:
@@ -140,8 +140,8 @@ class MarkovChain(object):
             counts[current][next] += 1
 
         self.totals = dict(
-            (current, sum(next_counts.itervalues()))
-            for current, next_counts in counts.iteritems()
+            (current, sum(next_counts.values()))
+            for current, next_counts in counts.items()
         )
 
 
@@ -150,7 +150,7 @@ class MarkovChain(object):
         Choose at random and return a next state from a current state,
         according to the probabilities for this chain
         """
-        nexts = self.counts[state].iteritems()
+        nexts = self.counts[state].items()
         # Like random.choice() but with a different weight for each element
         rand = random.randrange(0, self.totals[state])
         # Using bisection here could be faster, but simplicity prevailed.
@@ -164,7 +164,7 @@ class MarkovChain(object):
         """
         Return an infinite iterator of states.
         """
-        state = random.choice(self.counts.keys())
+        state = random.choice(list(self.counts.keys()))
         while True:
             state = self.next(state)
             yield state

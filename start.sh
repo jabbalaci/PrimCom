@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pip freeze --local
+uv run h.py "$@"

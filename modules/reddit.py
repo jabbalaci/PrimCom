@@ -13,7 +13,7 @@ def read_subreddits():
 
 def enter_subreddit():
     try:
-        sr = raw_input("subreddit: ").strip()
+        sr = input("subreddit: ").strip()
     except (KeyboardInterrupt, EOFError):
         print()
         return None
@@ -39,7 +39,7 @@ def reddit():
     print("[q] <<")
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return None

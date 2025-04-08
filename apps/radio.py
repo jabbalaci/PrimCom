@@ -85,7 +85,7 @@ def radio_player():
     print("[q] <<")
     while True:
         try:
-            inp = raw_input("~~> ").strip()
+            inp = input("~~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return None

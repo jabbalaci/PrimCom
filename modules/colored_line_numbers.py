@@ -5,22 +5,22 @@
 # from modules import colored_line_numbers
 """
 
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 ####################
 if __name__ == "__main__":
     import site
+
     site.addsitedir(".")
     del site
 ####################
 
-import config as cfg
 import os
 import shlex
 from pathlib import Path
 from subprocess import call
 
+import config as cfg
 from lib import fs
 from lib.common import bold
 
@@ -36,7 +36,7 @@ def cache_pygmentize():
     """
     fname = "{root}/assets/alap.py".format(root=cfg.ROOT)
     if fs.which("pygmentize") and os.path.isfile(fname):
-        with open(os.devnull, 'w') as devnull:
+        with open(os.devnull, "w") as devnull:
             cmd = pcat.format(cfg.colors[cfg.g.BACKGROUND]["pygmentize_style"], fname)
             args = shlex.split(cmd)
             call(args, stdout=devnull, stderr=devnull)
@@ -44,7 +44,7 @@ def cache_pygmentize():
 
 def pad(text, width, num):
     num_len = len(str(num))
-    return "{space}{text}".format(space=(width-num_len)*' ', text=text)
+    return "{space}{text}".format(space=(width - num_len) * " ", text=text)
 
 
 def print_pcat(fname, search_term=""):
@@ -56,7 +56,7 @@ def print_pcat(fname, search_term=""):
         lines_len = len(str(lines))
         width = lines_len + 1
         #
-        out = process.get_exitcode_stdout_stderr(cmd)[1]
+        out = process.get_exitcode_stdout_stderr(cmd)[1].decode("utf-8")
         out = out.rstrip("\n")
         for i, line in enumerate(out.split("\n"), start=1):
             if search_term in line:
@@ -82,14 +82,17 @@ def cat(fname, o, search_term=""):
     if doc:
         print(bold(doc))
         print(bold("-" * 78))
-    if fs.which("pygmentize") and ext != ".txt":    # .txt files were colored incorrectly, so let's switch coloring off for .txt files
+    if (
+        fs.which("pygmentize") and ext != ".txt"
+    ):  # .txt files were colored incorrectly, so let's switch coloring off for .txt files
         print_pcat(fname, search_term)
     else:
         with open(fname) as f:
             for line in f:
                 if search_term in line:
-                    print(line, end='')
+                    print(line, end="")
     print()
+
 
 ##############################################################################
 

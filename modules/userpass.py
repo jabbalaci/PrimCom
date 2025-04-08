@@ -6,9 +6,6 @@ Username and password generator.
 Made for online registrations.
 """
 
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
-
 ####################
 if __name__ == "__main__":
     import site
@@ -30,7 +27,7 @@ def get_username(length=6):
     return markov_passwords.get_word(length)
 
 
-def get_password(length=8):
+def get_password(length=16):
     """
     Create a password with uppercase letters, lowercase letters, and digits.
 
@@ -38,8 +35,10 @@ def get_password(length=8):
     """
     assert length >= 8
     #
-    chars = string.ascii_lowercase + string.ascii_lowercase + string.ascii_lowercase + \
-            string.ascii_uppercase + string.digits + string.digits + string.digits
+    special = """§'~"+^!%/=()$<>,;.:-*"""
+    chars = string.ascii_lowercase + string.ascii_lowercase + \
+            string.ascii_uppercase + string.digits + string.digits + \
+            special
     chars = ''.join(my_shuffle([x for x in chars]))
     return ''.join(choice(chars) for x in range(length))
 

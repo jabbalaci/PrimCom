@@ -32,7 +32,7 @@ menu[(5, 'secret')] = ('generate a 50 characters long secret key',
 
 
 def show_menu():
-    for k, v in menu.iteritems():
+    for k, v in menu.items():
         print("({0})[{1}] {2}".format(k[0], k[1], v[0]))
     print("--------")
     print("[m] menu")
@@ -41,20 +41,20 @@ def show_menu():
 
 def get_d_num(menu):
     d = {}
-    for k, v in menu.iteritems():
+    for k, v in menu.items():
         d[k[0]] = v
     return d
 
 
 def get_d_word(menu):
     d = {}
-    for k, v in menu.iteritems():
+    for k, v in menu.items():
         d[k[1]] = v
     return d
 
 
 def start_app_by_shortcut(app_name):
-    for k, v in menu.iteritems():
+    for k, v in menu.items():
         if v[0] == app_name:
             start_app(v)
             return
@@ -81,7 +81,7 @@ def main():
     d_word = get_d_word(menu)
     while True:
         try:
-            inp = raw_input("~> ").strip()
+            inp = input("~> ").strip()
         except (KeyboardInterrupt, EOFError):
             print()
             return

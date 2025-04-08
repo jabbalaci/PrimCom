@@ -19,7 +19,7 @@ def start(url=None):
     """
     if not url:
         try:
-            url = raw_input("GitHub URL of the project: ")
+            url = input("GitHub URL of the project: ")
         except (KeyboardInterrupt, EOFError):
             print()
             return
